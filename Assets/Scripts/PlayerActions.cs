@@ -13,7 +13,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] [Range(1,1000)] private float rabbitAngularSpeed;
     [SerializeField] [Range(1,100)] private float rabbitAcceleration;
 
-    [HideInInspector] public List<GameObject> interactableElements = new List<GameObject>();
+    public List<GameObject> interactableElements = new List<GameObject>();
 
     void Awake() {
         collider = GetComponent<SphereCollider>();

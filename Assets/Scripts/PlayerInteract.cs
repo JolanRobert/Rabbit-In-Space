@@ -9,10 +9,10 @@ public class PlayerInteract : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Station")) playerActions.interactableElements.Add(other.gameObject);
+        if (other.GetComponent<IInteractable>() != null) playerActions.interactableElements.Add(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Station")) playerActions.interactableElements.Remove(other.gameObject);
+        if (other.GetComponent<IInteractable>() != null) playerActions.interactableElements.Remove(other.gameObject);
     }
 }

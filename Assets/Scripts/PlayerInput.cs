@@ -37,7 +37,16 @@ public class PlayerInput : MonoBehaviour {
 
     private Vector3 ScreenToRay(Vector2 screenPosition) {
         Ray ray = mainCamera.ScreenPointToRay(screenPosition);
-        if (Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, Mathf.Infinity)) return hit.point+Vector3.up;
+        Debug.DrawRay(ray.origin, ray.direction * Mathf.Infinity,Color.red);
+        if (Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, Mathf.Infinity))
+        {
+            if (playerActions.interactableElements.Contains(hit.collider.gameObject))
+            {
+                hit.collider.GetComponent<IInteractable>().Interact();
+                return Vector3.negativeInfinity;
+            }
+            return hit.point+Vector3.up;
+        }
         return Vector3.negativeInfinity;
     }
 }
