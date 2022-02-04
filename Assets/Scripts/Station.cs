@@ -8,7 +8,7 @@ public class Station : MonoBehaviour, IInteractable {
 
     public Vector3 InteractPosition { get; private set; }
 
-    void Awake() {
+    private void Start() {
         InteractPosition = stationSO.interactPosition;
         stationPanel = Instantiate(stationPanel,transform.GetChild(0));
         stationPanel.GetComponent<Image>().color = stationSO.panelColor;

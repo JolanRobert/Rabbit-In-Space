@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[DefaultExecutionOrder(-1)]
 public class PlayerManager : MonoBehaviour {
 
     public static PlayerManager instance;
@@ -9,8 +8,11 @@ public class PlayerManager : MonoBehaviour {
     private PlayerMovement playerMovement;
     private PlayerInteract playerInteract;
 
-    void Awake() {
+    private void Awake() {
         instance = this;
+    }
+
+    private void Start() {
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
         playerInteract = GetComponent<PlayerInteract>();

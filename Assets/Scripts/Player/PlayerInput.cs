@@ -8,12 +8,12 @@ public class PlayerInput : MonoBehaviour {
     [SerializeField] private bool activateTouch;
     [SerializeField] private bool activateMouse; //Mouse only
 
-    void Awake() {
-        playerManager = PlayerManager.instance;
+    private void Start() {
         mainCamera = Camera.main;
+        playerManager = PlayerManager.instance;
     }
     
-    void Update() {
+    private void Update() {
         if (activateTouch) HandleTouch();
         else if (activateMouse) HandleMouse();
     }
