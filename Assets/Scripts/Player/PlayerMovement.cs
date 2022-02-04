@@ -1,37 +1,33 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerActions : MonoBehaviour
-{
-    private SphereCollider collider;
+public class PlayerMovement : MonoBehaviour {
+    
+    private PlayerManager playerManager;
     private NavMeshAgent agent;
 
     [Header("Parameters")] 
-    [SerializeField] [Range(0.1f,3)] private float interactableRange;
     [SerializeField] [Range(1,10)] private float rabbitSpeed;
     [SerializeField] [Range(1,1000)] private float rabbitAngularSpeed;
     [SerializeField] [Range(1,100)] private float rabbitAcceleration;
 
-    public List<GameObject> interactableElements = new List<GameObject>();
-
     void Awake() {
-        collider = GetComponent<SphereCollider>();
+        playerManager = PlayerManager.instance;
         agent = GetComponent<NavMeshAgent>();
     }
     
     private void Start() {
-        collider.radius = interactableRange;
         agent.speed = rabbitSpeed;
         agent.angularSpeed = rabbitAngularSpeed;
         agent.acceleration = rabbitAcceleration;
     }
 
     public void Move(Vector3 newPosition) {
-        if (newPosition != Vector3.negativeInfinity) agent.destination = newPosition;
-    }
+        if (playerManager.GetInteract().isInteracting) return;
+        if (newPosition == Vector3.negativeInfinity) return;
+        newPosition.y = transform.position.y;
+        agent.destination = newPosition;
 
-    public void Interact() {
-        
+        playerManager.GetInteract().StopInteract();
     }
 }
