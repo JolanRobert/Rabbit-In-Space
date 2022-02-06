@@ -29,11 +29,13 @@ public class UIManager : MonoBehaviour {
     public void OpenPanel(GameObject go) {
         currentPanel = go;
         currentPanel.SetActive(true);
+        GameManager.instance.StartMinigame();
     }
 
     public void ClosePanel() {
         currentPanel.SetActive(false);
         currentPanel = null;
         PlayerManager.instance.GetInteract().isInteracting = false;
+        GameManager.instance.EndMinigame();
     }
 }

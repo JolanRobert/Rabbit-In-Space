@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
     public GameState gameState;
+    private Camera pointedCam;
+    [SerializeField] private Camera miniGameCam;
 
     public PlayerManager playerManager;
 
@@ -13,6 +15,15 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         gameState = GameState.KITCHEN;
+    }
+    public void StartMinigame() {
+        miniGameCam.gameObject.SetActive(true);
+        pointedCam = miniGameCam;
+    }
+    public void EndMinigame()
+    {
+        pointedCam = Camera.main;
+        miniGameCam.gameObject.SetActive(false);
     }
 }
 
