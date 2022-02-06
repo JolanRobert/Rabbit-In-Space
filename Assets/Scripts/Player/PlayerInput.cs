@@ -43,13 +43,13 @@ public class PlayerInput : MonoBehaviour {
         }
         
         //Raycast hit a non-Interactable object
-        if (hit.collider.GetComponent<IInteractable>() == null) {
+        if (hit.collider.GetComponent<InteractableElement>() == null) {
             playerManager.GetMovement().Move(hit.point);
             return;
         }
         
         //Raycast hit an Interactable object
-        playerManager.GetMovement().Move(hit.collider.GetComponent<IInteractable>().InteractPosition);
-        playerManager.GetInteract().TryInteract(hit.collider.GetComponent<IInteractable>());
+        playerManager.GetMovement().Move(hit.collider.GetComponent<InteractableElement>().interactPosition);
+        playerManager.GetInteract().TryInteract(hit.collider.GetComponent<InteractableElement>());
     }
 }
