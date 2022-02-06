@@ -6,7 +6,7 @@ public class InteractableElement : MonoBehaviour {
     [SerializeField] private GameObject interactPanel;
     protected ElementType elementType;
     
-    public void Interact() {
+    public virtual void Interact() {
         UIManager.instance.OpenPanel(interactPanel);
     }
 
