@@ -16,11 +16,11 @@ public class GameManager : MonoBehaviour {
     }
     
     public void StartMinigame() {
-        CameraManager.instance.EnableMinigameCamera(true);
+        
     }
     
     public void EndMinigame() {
-        CameraManager.instance.EnableMinigameCamera(false);
+        
     }
 }
 
