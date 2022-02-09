@@ -42,6 +42,11 @@ public class UIManager : MonoBehaviour {
         OpenPanel(go);
     }
 
+    public void OpenFridge(GameObject go)
+    {
+        OpenPanel(go);
+    }
+
     public void CloseMinigame() {
         CameraManager.Instance.DisableCamera(CameraType.MINIGAME);
         ClosePanel();
