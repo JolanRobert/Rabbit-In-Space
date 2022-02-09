@@ -7,7 +7,9 @@ public class InteractableElement : MonoBehaviour {
     protected ElementType elementType;
     
     public void Interact() {
-        UIManager.instance.OpenPanel(interactPanel);
+        if (elementType == ElementType.STATION) UIManager.Instance.OpenMinigame(interactPanel);
+        else if (elementType == ElementType.PARCEL) UIManager.Instance.OpenPanel(interactPanel);
+        
     }
 
     protected enum ElementType {

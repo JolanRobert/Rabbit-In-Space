@@ -9,9 +9,9 @@ public class SwitchScene : MonoBehaviour {
     private PlayerManager playerManager;
 
     private void Start() {
-        uiManager = UIManager.instance;
+        uiManager = UIManager.Instance;
         mainCamera = Camera.main;
-        gameManager = GameManager.instance;
+        gameManager = GameManager.Instance;
         playerManager = gameManager.playerManager;
     }
     

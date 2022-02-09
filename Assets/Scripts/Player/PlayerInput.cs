@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour {
 
     private void Start() {
         mainCamera = Camera.main;
-        playerManager = PlayerManager.instance;
+        playerManager = PlayerManager.Instance;
     }
     
     private void Update() {

@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
 
-    public static PlayerManager instance;
+    public static PlayerManager Instance;
 
     private PlayerInput playerInput;
     private PlayerMovement playerMovement;
     private PlayerInteract playerInteract;
 
     private void Awake() {
-        instance = this;
+        Instance = this;
     }
 
     private void Start() {

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] [Range(1,100)] private float rabbitAcceleration;
     
     private void Start() {
-        playerManager = PlayerManager.instance;
+        playerManager = PlayerManager.Instance;
         agent = GetComponent<NavMeshAgent>();
         
         agent.speed = rabbitSpeed;

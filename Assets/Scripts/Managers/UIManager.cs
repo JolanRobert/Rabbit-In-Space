@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-    public static UIManager instance;
+    public static UIManager Instance;
 
     public GameObject currentPanel;
 
@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour {
     public TMP_Text switchSceneText { get; private set; }
 
     void Awake() {
-        instance = this;
+        Instance = this;
         Init();
     }
 
@@ -34,6 +34,16 @@ public class UIManager : MonoBehaviour {
     public void ClosePanel() {
         currentPanel.SetActive(false);
         currentPanel = null;
-        PlayerManager.instance.GetInteract().isInteracting = false;
+        PlayerManager.Instance.GetInteract().isInteracting = false;
+    }
+
+    public void OpenMinigame(GameObject go) {
+        CameraManager.Instance.EnableCamera(CameraType.MINIGAME);
+        OpenPanel(go);
+    }
+
+    public void CloseMinigame() {
+        CameraManager.Instance.DisableCamera(CameraType.MINIGAME);
+        ClosePanel();
     }
 }

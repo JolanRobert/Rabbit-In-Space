@@ -2,25 +2,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public static GameManager instance;
+    public static GameManager Instance;
     public GameState gameState;
 
     public PlayerManager playerManager;
 
     void Awake() {
-        instance = this;
+        Instance = this;
     }
 
     void Start() {
         gameState = GameState.KITCHEN;
-    }
-    
-    public void StartMinigame() {
-        
-    }
-    
-    public void EndMinigame() {
-        
     }
 }
 
