@@ -42,9 +42,10 @@ public class UIManager : MonoBehaviour {
         OpenPanel(go);
     }
 
-    public void OpenFridge(GameObject go)
+    public void OpenFridge()
     {
-        OpenPanel(go);
+        currentPanel = FridgeInventoryManager.instance.inventory;
+        FridgeInventoryManager.instance.OpenInventory();
     }
 
     public void CloseMinigame() {

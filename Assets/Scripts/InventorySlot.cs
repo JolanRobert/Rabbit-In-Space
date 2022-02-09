@@ -18,7 +18,7 @@ public class InventorySlot : MonoBehaviour
     public int itemNumber;
     private void Start()
     {
-        inventoryManager = GetComponentInParent<FridgeInventoryManager>();
+        inventoryManager = transform.parent.parent.GetComponent<FridgeInventoryManager>();
     }
 
     public void SetupSlot(FridgeInventoryManager.ItemTypes newType, int newAmount)
@@ -44,12 +44,12 @@ public class InventorySlot : MonoBehaviour
         UpdateSlot();
     }
     
-    public void AddItems(int amount)
+    public void UpdateAmount(int amount)
     {
-        itemNumber += amount;
+        itemNumber = amount;
         UpdateSlot();
     }
-    void UpdateSlot()
+    public void UpdateSlot()
     {
         amountText.text = itemNumber.ToString();
     }

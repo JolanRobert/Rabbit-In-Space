@@ -9,7 +9,7 @@ public class InteractableElement : MonoBehaviour {
     public void Interact() {
         if (elementType == ElementType.STATION) UIManager.Instance.OpenMinigame(interactPanel);
         else if (elementType == ElementType.PARCEL) UIManager.Instance.OpenPanel(interactPanel);
-        else if (elementType == ElementType.FRIDGE) UIManager.Instance.OpenFridge(interactPanel);
+        else if (elementType == ElementType.FRIDGE) UIManager.Instance.OpenFridge();
         
     }
 
