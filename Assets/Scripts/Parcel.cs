@@ -1,6 +1,10 @@
+using System.Collections.Generic;
+
 public class Parcel : InteractableElement {
 
+    public List<Plant> plants;
+
     void Start() {
-        elementType = ElementType.PARCEL;
+        interactElementType = InteractElementType.PARCEL;
     }
 }
