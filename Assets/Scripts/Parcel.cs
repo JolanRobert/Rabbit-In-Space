@@ -1,10 +1,17 @@
-using System.Collections.Generic;
+using UnityEngine;
 
 public class Parcel : InteractableElement {
-
-    public List<Plant> plants;
+    
+    [SerializeField] private GameObject[] plants;
+    public Food[] foodSlots;
 
     void Start() {
-        interactElementType = InteractElementType.PARCEL;
+        foodSlots = new[]{new Food(plants[0]),new Food(plants[1]),new Food(plants[2])};
+        elementType = ElementType.PARCEL;
+    }
+
+    public override void Interact() {
+        UIManager.Instance.OpenPanel(interactPanel);
+        GardenManager.Instance.SelectParcel(this);
     }
 }

@@ -1,33 +1,15 @@
-using DG.Tweening;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
     public static UIManager Instance;
 
-    [SerializeField] private GameObject currentPanel;
+    [SerializeField] private GardenUI gardenUI;
 
-    [Header("Switch Scene")]
-    [SerializeField] private SwitchScene switchScene;
-    public Button switchSceneButton;
-    public TMP_Text switchSceneText { get; private set; }
-
-    [Header("Garden")]
-    [SerializeField] private GameObject menuSeed;
+    private GameObject currentPanel;
 
     void Awake() {
         Instance = this;
-        Init();
-    }
-
-    private void Init() {
-        switchSceneText = switchSceneButton.transform.GetChild(0).GetComponent<TMP_Text>();
-    }
-
-    public void SwitchScene() {
-        switchScene.Switch();
     }
 
     public void OpenPanel(GameObject go) {
@@ -51,11 +33,7 @@ public class UIManager : MonoBehaviour {
         ClosePanel();
     }
 
-    public void OpenMenuSeed() {
-        menuSeed.transform.DOLocalMoveX(-75, 0.325f).SetEase(Ease.OutBack, 1.87f);
-    }
-
-    public void CloseMenuSeed() {
-        menuSeed.transform.DOLocalMoveX(75, 0.325f).SetEase(Ease.InBack, 1.87f);
+    public GardenUI GetGardenUI() {
+        return gardenUI;
     }
 }

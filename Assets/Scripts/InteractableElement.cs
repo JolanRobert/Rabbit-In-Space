@@ -1,18 +1,16 @@
 using UnityEngine;
 
-public class InteractableElement : MonoBehaviour {
+public abstract class InteractableElement : MonoBehaviour {
 
     public Vector3 interactPosition;
-    [SerializeField] private GameObject interactPanel;
-    protected InteractElementType interactElementType;
-    
-    public void Interact() {
-        if (interactElementType == InteractElementType.STATION) UIManager.Instance.OpenMinigame(interactPanel);
-        else if (interactElementType == InteractElementType.PARCEL) UIManager.Instance.OpenPanel(interactPanel);
-        
-    }
+    [SerializeField] protected GameObject interactPanel;
+    protected ElementType elementType;
 
-    protected enum InteractElementType {
+    public abstract void Interact();
+
+    protected enum ElementType {
         STATION, PARCEL
     }
 }
+
+

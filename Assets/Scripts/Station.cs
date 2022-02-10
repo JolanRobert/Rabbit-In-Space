@@ -1,6 +1,10 @@
 public class Station : InteractableElement {
 
     void Start() {
-        interactElementType = InteractElementType.STATION;
+        elementType = ElementType.STATION;
+    }
+
+    public override void Interact() {
+        UIManager.Instance.OpenMinigame(interactPanel);
     }
 }

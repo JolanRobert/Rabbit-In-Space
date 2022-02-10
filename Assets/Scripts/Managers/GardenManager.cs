@@ -5,25 +5,25 @@ public class GardenManager : MonoBehaviour {
 
     public static GardenManager Instance;
 
-    [SerializeField] private List<Parcel> parcels;
-    [SerializeField] private List<PlantSO> plantSOs;
-
-    public Parcel currentParcel;
-    public Plant currentPlant;
+    [SerializeField] private List<FoodSO> foodList;
+    
+    public Parcel myParcel;
+    public int mySlot;
 
     void Awake() {
         Instance = this;
     }
-
+    
     public void SelectParcel(Parcel parcel) {
-        currentParcel = parcel;
+        myParcel = parcel;
     }
 
-    public void SelectPlant(int plantIndex) {
-        currentPlant = currentParcel.plants[plantIndex];
+    public void SelectFood(int foodSlot) {
+        mySlot = foodSlot;
     }
 
-    public void SelectSeed(int seedIndex) {
-        currentPlant.PlantSeed(plantSOs[seedIndex]);    
+    public void PlantSeed(int seedIndex) {
+        myParcel.foodSlots[mySlot].InitFood(foodList[seedIndex]);
+        UIManager.Instance.GetGardenUI().CloseMenuSeed();
     }
 }
