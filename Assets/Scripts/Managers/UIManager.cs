@@ -44,8 +44,13 @@ public class UIManager : MonoBehaviour {
 
     public void OpenFridge()
     {
-        currentPanel = FridgeInventoryManager.instance.inventory;
-        FridgeInventoryManager.instance.OpenInventory();
+        currentPanel = InventoryManager.fridgeInstance.inventory;
+        InventoryManager.fridgeInstance.OpenInventory();
+    }
+    public void OpenWorkplan()
+    {
+        currentPanel = InventoryManager.workPlanInstance.inventory;
+        InventoryManager.workPlanInstance.OpenInventory();
     }
 
     public void CloseMinigame() {
