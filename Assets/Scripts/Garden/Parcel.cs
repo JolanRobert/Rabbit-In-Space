@@ -7,11 +7,11 @@ public class Parcel : InteractableElement {
 
     void Start() {
         foodSlots = new[]{
-            interactPanel.AddComponent<Food>(),
-            interactPanel.AddComponent<Food>(),
-            interactPanel.AddComponent<Food>()};
+            gameObject.AddComponent<Food>(),
+            gameObject.AddComponent<Food>(),
+            gameObject.AddComponent<Food>()};
         
-        for (int i = 0; i < foodSlots.Length; i++) foodSlots[i].CreateFood(parcelUI.GetChild(0).GetChild(i));
+        for (int i = 0; i < foodSlots.Length; i++) foodSlots[i].CreateFood(parcelUI.GetChild(i));
         
         elementType = ElementType.PARCEL;
     }
