@@ -3,7 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Food", menuName = "ScriptableObjects/Food")]
 public class FoodSO : ScriptableObject {
 
-    public string foodName;
+    [Header("Global Infos")]
+    public new string name;
     public ItemType itemType;
     
     [Header("Sprites")]
@@ -13,10 +14,7 @@ public class FoodSO : ScriptableObject {
     
     [Header("Attributes")]
     public int price;
-    public int growthTime;
+    public int growingTime;
+    public int decayTime;
     public Vector2 minMaxProduction;
-}
-
-public enum ItemType {
-    NONE, MOON_RICE, STARBERRY, NEBULAZUKI
 }

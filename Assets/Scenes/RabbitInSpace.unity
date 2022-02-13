@@ -576,11 +576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 17.5, y: 0, z: -1}
   interactPanel: {fileID: 0}
-  foodSlots:
-  - itemType: 0
-  - itemType: 0
-  - itemType: 0
-  plants: []
+  parcelUI: {fileID: 0}
+  foodSlots: []
 --- !u!1 &87372374
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,8 +780,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 476555589}
   - {fileID: 1119033480}
+  - {fileID: 476555589}
   m_Father: {fileID: 1324680018}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1556,7 +1553,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 206751973}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2683,11 +2680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 17.5, y: 0, z: -4}
   interactPanel: {fileID: 0}
-  foodSlots:
-  - itemType: 0
-  - itemType: 0
-  - itemType: 0
-  plants: []
+  parcelUI: {fileID: 0}
+  foodSlots: []
 --- !u!1 &687202003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,10 +2729,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 687202003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3b3ab4fa88fe64abfb5a3778682e05, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickEvent:
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 687202006}
+  m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 540513983}
@@ -2931,11 +2954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 22.5, y: 0, z: -1}
   interactPanel: {fileID: 0}
-  foodSlots:
-  - itemType: 0
-  - itemType: 0
-  - itemType: 0
-  plants: []
+  parcelUI: {fileID: 0}
+  foodSlots: []
 --- !u!1 &842311936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,6 +2967,7 @@ GameObject:
   - component: {fileID: 842311937}
   - component: {fileID: 842311940}
   - component: {fileID: 842311939}
+  - component: {fileID: 842311941}
   - component: {fileID: 842311938}
   m_Layer: 5
   m_Name: Starberry
@@ -2988,24 +3009,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 842311936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3b3ab4fa88fe64abfb5a3778682e05, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f1605d02b4925b4894b762c3fa4bc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 272087243}
-        m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
-        m_MethodName: PlantSeed
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  itemType: 2
 --- !u!114 &842311939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,6 +3051,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842311936}
   m_CullTransparentMesh: 1
+--- !u!114 &842311941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842311936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 842311939}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 272087243}
+        m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
+        m_MethodName: PlantSeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 842311938}
+          m_ObjectArgumentAssemblyTypeName: GetEnum, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &847601444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,6 +4451,7 @@ GameObject:
   - component: {fileID: 1077516395}
   - component: {fileID: 1077516398}
   - component: {fileID: 1077516397}
+  - component: {fileID: 1077516399}
   - component: {fileID: 1077516396}
   m_Layer: 5
   m_Name: Nebulazuki
@@ -4429,24 +4493,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1077516394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3b3ab4fa88fe64abfb5a3778682e05, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f1605d02b4925b4894b762c3fa4bc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 272087243}
-        m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
-        m_MethodName: PlantSeed
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  itemType: 3
 --- !u!114 &1077516397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4485,6 +4535,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077516394}
   m_CullTransparentMesh: 1
+--- !u!114 &1077516399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077516394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1077516397}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 272087243}
+        m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
+        m_MethodName: PlantSeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1077516396}
+          m_ObjectArgumentAssemblyTypeName: GetEnum, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1119033479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,7 +4623,7 @@ RectTransform:
   - {fileID: 2049677796}
   - {fileID: 1410250759}
   m_Father: {fileID: 206751973}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4660,14 +4766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 15, y: 0, z: 1.5}
   interactPanel: {fileID: 206751972}
-  foodSlots:
-  - itemType: 0
-  - itemType: 0
-  - itemType: 0
-  plants:
-  - {fileID: 328202770}
-  - {fileID: 2049677795}
-  - {fileID: 1410250758}
+  parcelUI: {fileID: 206751973}
+  foodSlots: []
 --- !u!1 &1167409432
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,6 +5607,7 @@ GameObject:
   - component: {fileID: 1380849908}
   - component: {fileID: 1380849907}
   - component: {fileID: 1380849906}
+  - component: {fileID: 1380849909}
   m_Layer: 5
   m_Name: Moon Rice
   m_TagString: Untagged
@@ -5547,19 +5648,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1380849904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3b3ab4fa88fe64abfb5a3778682e05, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickEvent:
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1380849907}
+  m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 272087243}
         m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
         m_MethodName: PlantSeed
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1380849909}
+          m_ObjectArgumentAssemblyTypeName: GetEnum, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5603,6 +5733,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380849904}
   m_CullTransparentMesh: 1
+--- !u!114 &1380849909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380849904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1605d02b4925b4894b762c3fa4bc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 1
 --- !u!1 &1409545451
 GameObject:
   m_ObjectHideFlags: 0
@@ -6726,7 +6869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7742,7 +7885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7817,7 +7960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7952,11 +8095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 22.5, y: 0, z: 2}
   interactPanel: {fileID: 0}
-  foodSlots:
-  - itemType: 0
-  - itemType: 0
-  - itemType: 0
-  plants: []
+  parcelUI: {fileID: 0}
+  foodSlots: []
 --- !u!1 &2146520987
 GameObject:
   m_ObjectHideFlags: 0
@@ -8067,11 +8207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 22.5, y: 0, z: -4}
   interactPanel: {fileID: 0}
-  foodSlots:
-  - itemType: 0
-  - itemType: 0
-  - itemType: 0
-  plants: []
+  parcelUI: {fileID: 0}
+  foodSlots: []
 --- !u!224 &6278310440924876426
 RectTransform:
   m_ObjectHideFlags: 0

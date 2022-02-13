@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,8 +23,21 @@ public class GardenManager : MonoBehaviour {
         mySlot = foodSlot;
     }
 
-    public void PlantSeed(int seedIndex) {
-        myParcel.foodSlots[mySlot].InitFood(foodList[seedIndex]);
+    public void PlantSeed(GetEnum ge) {
+        FoodSO foodSO = GetCorrectFoodSo(ge.itemType);
+        myParcel.foodSlots[mySlot].InitFood(foodSO);
         UIManager.Instance.GetGardenUI().CloseMenuSeed();
     }
+
+    private FoodSO GetCorrectFoodSo(ItemType itemType) {
+        foreach (FoodSO fso in foodList) {
+            if (fso.itemType == itemType) return fso;
+        }
+
+        throw new Exception("Unknown Food");
+    }
+}
+
+public enum ItemType {
+    NONE, MOON_RICE, STARBERRY, NEBULAZUKI
 }

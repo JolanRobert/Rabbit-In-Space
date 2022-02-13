@@ -20,19 +20,23 @@ public class GardenUI : MonoBehaviour {
     }
 
     //-----------------------------------------//
+    //Plant Updater
+    //-----------------------------------------//
 
-    public void SetPlantSprite(GameObject plant, Sprite newSprite) {
-        Transform plantSprite = plant.transform.GetChild(0);
-        plantSprite.GetComponent<Image>().sprite = newSprite;
+    public void SetPlantSprite(Transform plant, Sprite newSprite) {
+        Transform plantSprite = plant.GetChild(0);
+        Image img = plantSprite.GetComponent<Image>();
+        img.sprite = newSprite;
+        img.SetNativeSize();
     }
     
-    public void SetPlantName(GameObject plant, string newName) {
-        Transform plantName = plant.transform.GetChild(1);
+    public void SetPlantName(Transform plant, string newName) {
+        Transform plantName = plant.GetChild(1);
         plantName.GetComponent<TMP_Text>().text = newName;
     }
 
-    public void SetPlantGrowthTime(GameObject plant, int newGrowthTime) {
-        Transform plantGrowthTime = plant.transform.GetChild(2);
+    public void SetPlantGrowthTime(Transform plant, int newGrowthTime) {
+        Transform plantGrowthTime = plant.GetChild(2);
         plantGrowthTime.GetComponent<TMP_Text>().text = "" + newGrowthTime;
     }
 }

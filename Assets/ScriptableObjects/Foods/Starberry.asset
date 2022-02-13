@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e73a319ddf9a4646a443878b7dd820d, type: 3}
-  m_Name: 2_Starberry
+  m_Name: Starberry
   m_EditorClassIdentifier: 
-  foodName: Starberry
+  name: Starberry
   itemType: 2
   seedSprite: {fileID: 0}
   plantSprites:
@@ -22,5 +22,6 @@ MonoBehaviour:
   - {fileID: 5612701118477199520, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   foodSprite: {fileID: -244593514229266007, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   price: 20
-  growthTime: 20
+  growingTime: 10
+  decayTime: 10
   minMaxProduction: {x: 2, y: 4}
