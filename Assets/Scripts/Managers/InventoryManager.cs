@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -41,7 +42,7 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Count; i++)
         {
             slot = Instantiate(slotPrefab, Vector3.zero, quaternion.identity, transform.GetChild(0).GetChild(0));
-            items[i].amount = 0; //Lire save
+            items[i].amount = FoodDataManager.instance.Load(items[i].type.ToString()).amount;; //Lire save
             LinkSlot(items[i].type, slot.GetComponent<InventorySlot>(), items[i].sprite, items[i].amount);
         }
     }
@@ -78,7 +79,7 @@ public class InventoryManager : MonoBehaviour
                 
                 item.amount += amount;
                 slots[type].UpdateAmount(item.amount);
-                //MAJ save file
+                FoodDataManager.instance.Save(type.ToString(), item);
                 break;
             }
         }
@@ -88,8 +89,9 @@ public class InventoryManager : MonoBehaviour
     public class FoodItem
     {
         public EnumManager.ItemType type;
+        [XmlIgnore]
         public Sprite sprite;
-        public int amount;
+        public int amount = 0;
     }
 }
 
