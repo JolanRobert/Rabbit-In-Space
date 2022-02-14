@@ -1,5 +1,5 @@
 using UnityEngine;
 
 public class GetEnum : MonoBehaviour {
-    public ItemType itemType;
+    public EnumManager.ItemType itemType;
 }

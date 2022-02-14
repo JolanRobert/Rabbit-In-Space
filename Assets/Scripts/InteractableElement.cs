@@ -9,7 +9,7 @@ public abstract class InteractableElement : MonoBehaviour {
     public abstract void Interact();
 
     protected enum ElementType {
-        STATION, PARCEL
+        STATION, PARCEL, FRIDGE, WORKPLAN
     }
 }
 

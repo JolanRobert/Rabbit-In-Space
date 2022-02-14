@@ -15,7 +15,7 @@ public class Food : MonoBehaviour {
     private Slider ui_growthSlider;
     private TMP_Text ui_growthText;
     
-    public ItemType itemType;
+    public EnumManager.ItemType itemType;
 
     private Sprite seedSprite, foodSprite;
     private Sprite[] plantSprites;
@@ -110,7 +110,7 @@ public class Food : MonoBehaviour {
         if (growthLevel < 2) return;
         if (growthLevel == 2) {
             int randomValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
-            Debug.Log("Harvest "+itemType+" : "+randomValue);
+            InventoryManager.fridgeInstance.AddItems(itemType, randomValue);
         }
         ResetFood();
     }
