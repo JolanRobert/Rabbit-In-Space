@@ -23,7 +23,7 @@ public class Food : MonoBehaviour {
         set {
             growingTime = value;
             if (growingTime == growthStageOne) GrowthLevel = 1;
-            myFoodUI.UpdateGrowthText(growingTime.ToString());
+            if (growingTime > 0) myFoodUI.UpdateGrowthText(growingTime.ToString());
         }
     }
     
@@ -46,6 +46,7 @@ public class Food : MonoBehaviour {
 
     public void InitFood(FoodSO foodSo) {
         StopAllCoroutines();
+        myFoodUI.ResetFoodUI();
         
         foodName = foodSo.name;
         itemType = foodSo.itemType;
@@ -60,7 +61,7 @@ public class Food : MonoBehaviour {
         decayTime = foodSo.decayTime;
         minMaxProduction = foodSo.minMaxProduction;
         
-        growthLevel = 0;
+        GrowthLevel = 0;
         StartCoroutine(Growth());
     }
     
@@ -94,9 +95,12 @@ public class Food : MonoBehaviour {
         if (growthLevel < 2) return;
         if (growthLevel == 2) {
             int randomValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
-            InventoryManager.fridgeInstance.AddItems(itemType, randomValue);
+            Debug.Log("Harvest "+randomValue+" "+itemType);
+            //InventoryManager.fridgeInstance.AddItems(itemType, randomValue);
         }
         
+        StopAllCoroutines();
         myFoodUI.ResetFoodUI();
+        itemType = ItemType.NONE;
     }
 }
