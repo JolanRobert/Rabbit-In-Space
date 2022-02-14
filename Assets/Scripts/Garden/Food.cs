@@ -10,10 +10,9 @@ using Random = UnityEngine.Random;
 public class Food : MonoBehaviour {
     
     //UI
-    private Image ui_sprite;
+    private Image ui_sprite, ui_growthFill, ui_deadFill;
     private TMP_Text ui_name;
     private Slider ui_growthSlider;
-    private RectTransform ui_growthFill, ui_deadFill;
     private TMP_Text ui_growthText;
     
     public ItemType itemType;
@@ -54,10 +53,9 @@ public class Food : MonoBehaviour {
     public void CreateFood(Transform plant) {
         ui_sprite = plant.GetChild(0).GetComponent<Image>();
         ui_name = plant.GetChild(1).GetComponent<TMP_Text>();
-        ui_growthSlider = plant.GetChild(2).GetComponent<Slider>();
-        ui_growthFill = ui_growthSlider.fillRect;
-        ui_deadFill = ui_growthSlider.transform.GetChild(1).GetChild(1).GetComponent<RectTransform>();
-        ui_growthText = plant.GetChild(2).GetChild(2).GetComponent<TMP_Text>();
+        ui_growthFill = plant.GetChild(2).GetComponent<Image>();
+        ui_deadFill = plant.GetChild(3).GetComponent<Image>();
+        ui_growthText = plant.GetChild(4).GetComponent<TMP_Text>();
 
         plant.GetChild(0).GetComponent<Button>().onClick.AddListener(Harvest);
     }
@@ -84,7 +82,7 @@ public class Food : MonoBehaviour {
     
     private WaitForSeconds oneSec = new WaitForSeconds(1);
     private IEnumerator Growth() {
-        ui_growthSlider.DOValue(1, GrowingTime).SetEase(Ease.Linear);
+        ui_growthFill.DOFillAmount(1, GrowingTime).SetEase(Ease.Linear);
         
         while (GrowingTime > 0) {
             yield return oneSec;
@@ -97,9 +95,7 @@ public class Food : MonoBehaviour {
     }
 
     private IEnumerator Decay() {
-        ui_growthSlider.fillRect = ui_deadFill;
-        ui_growthSlider.value = 0;
-        ui_growthSlider.DOValue(1, decayTime).SetEase(Ease.Linear);
+        ui_deadFill.DOFillAmount(1, decayTime).SetEase(Ease.Linear);
         
         while (GrowingTime != -decayTime) {
             yield return oneSec;
@@ -124,10 +120,10 @@ public class Food : MonoBehaviour {
         ui_sprite.sprite = null;
         ui_sprite.rectTransform.sizeDelta = new Vector2(300, 250);
         ui_name.text = "Plant";
+        ui_growthFill.DOKill();
+        ui_deadFill.DOKill();
+        ui_growthFill.fillAmount = 0;
+        ui_deadFill.fillAmount = 0;
         ui_growthText.text = "";
-        ui_growthSlider.DOKill();
-        ui_growthSlider.value = 0;
-        ui_growthSlider.fillRect = ui_growthFill;
-        ui_growthSlider.value = 0;
     }
 }
