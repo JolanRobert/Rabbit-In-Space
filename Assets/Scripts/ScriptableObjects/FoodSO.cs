@@ -5,7 +5,7 @@ public class FoodSO : ScriptableObject {
 
     [Header("Global Infos")]
     public new string name;
-    public EnumManager.ItemType itemType;
+    public ItemType itemType;
     
     [Header("Sprites")]
     public Sprite seedSprite;

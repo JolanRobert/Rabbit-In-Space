@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -7,18 +8,18 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager fridgeInstance;
     public static InventoryManager workPlanInstance;
-    [SerializeField] private EnumManager.StockType stockType;
+    [SerializeField] private StockType stockType;
     [SerializeField] public GameObject inventory;
     [SerializeField] private GameObject slotPrefab;
     private GameObject slot;
     [SerializeField] public List<FoodItem> items;
-    public Dictionary<EnumManager.ItemType, InventorySlot> slots = new Dictionary<EnumManager.ItemType, InventorySlot>();
+    public Dictionary<ItemType, InventorySlot> slots = new Dictionary<ItemType, InventorySlot>();
     
     private void Awake()
     {
         switch (stockType)
         {
-            case EnumManager.StockType.FRIDGE:
+            case StockType.FRIDGE:
                 if (fridgeInstance != null)
                 {
                     return;
@@ -26,7 +27,7 @@ public class InventoryManager : MonoBehaviour
                 DontDestroyOnLoad(gameObject);
                 fridgeInstance = this;
                 break;
-            case EnumManager.StockType.WORKPLAN:
+            case StockType.WORKPLAN:
                 if (workPlanInstance != null)
                 {
                     return;
@@ -36,16 +37,18 @@ public class InventoryManager : MonoBehaviour
                 break;
         }
     }
+    
     private void Start()
     {
         for (int i = 0; i < items.Count; i++)
         {
             slot = Instantiate(slotPrefab, Vector3.zero, quaternion.identity, transform.GetChild(0).GetChild(0));
-            items[i].amount = 0; //Lire save
+            items[i].amount = FoodDataManager.Instance.Load(items[i].type.ToString()).amount; //Lire save
             LinkSlot(items[i].type, slot.GetComponent<InventorySlot>(), items[i].sprite, items[i].amount);
         }
     }
-    void LinkSlot(EnumManager.ItemType type, InventorySlot slot, Sprite sprite, int amount)
+    
+    private void LinkSlot(ItemType type, InventorySlot slot, Sprite sprite, int amount)
     {
         if (!slots.ContainsKey(type))
         {
@@ -59,9 +62,9 @@ public class InventoryManager : MonoBehaviour
         inventory.SetActive(true);
     }
 
-    public bool AddItems(EnumManager.ItemType type, int amount)
+    public bool AddItems(ItemType type, int amount)
     {
-        if (type == EnumManager.ItemType.NONE)
+        if (type == ItemType.NONE)
         {
             Debug.Log("Invalid type");
             return false;
@@ -78,18 +81,19 @@ public class InventoryManager : MonoBehaviour
                 
                 item.amount += amount;
                 slots[type].UpdateAmount(item.amount);
-                //MAJ save file
+                FoodDataManager.Instance.Save(type.ToString(), item);
                 break;
             }
         }
         return true;
     }
+    
     [Serializable]
     public class FoodItem
     {
-        public EnumManager.ItemType type;
-        public Sprite sprite;
-        public int amount;
+        public ItemType type;
+        [XmlIgnore] public Sprite sprite;
+        public int amount = 0;
     }
 }
 

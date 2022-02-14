@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 public class SwitchScene : MonoBehaviour {
 
     private GameManager gameManager;
-    [SerializeField] private EnumManager.SceneType toScene;
+    [SerializeField] private SceneName toScene;
     
     public void Switch() {
         string nextScene = toScene switch {
-            EnumManager.SceneType.FRONT_TRUCK => "Front_Truck",
-            EnumManager.SceneType.KITCHEN => "Kitchen",
-            EnumManager.SceneType.GARDEN => "Garden",
+            SceneName.FRONT_TRUCK => "Front_Truck",
+            SceneName.KITCHEN => "Kitchen",
+            SceneName.GARDEN => "Garden",
             _ => throw new ArgumentOutOfRangeException()
         };
 
