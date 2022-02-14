@@ -22,6 +22,6 @@ MonoBehaviour:
   - {fileID: -1316742258507442140, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   foodSprite: {fileID: 3501834645412458559, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   price: 30
-  growingTime: 15
-  decayTime: 15
-  minMaxProduction: {x: 3, y: 8}
+  growingTime: 10
+  decayTime: 20
+  minMaxProduction: {x: 3, y: 5}

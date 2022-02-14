@@ -45,7 +45,7 @@ public class FoodUI {
 
     public void ResetFoodUI() {
         plantSprite.sprite = null;
-        plantSprite.rectTransform.sizeDelta = new Vector2(300, 250);
+        plantSprite.rectTransform.sizeDelta = new Vector2(250, 250);
         plantName.text = "";
         growthFill.DOKill();
         growthFill.fillAmount = 0;
