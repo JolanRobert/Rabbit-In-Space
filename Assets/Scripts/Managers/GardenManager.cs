@@ -29,15 +29,11 @@ public class GardenManager : MonoBehaviour {
         UIManager.Instance.GetGardenUI().CloseMenuSeed();
     }
 
-    private FoodSO GetCorrectFoodSo(ItemType itemType) {
+    private FoodSO GetCorrectFoodSo(EnumManager.ItemType itemType) {
         foreach (FoodSO fso in foodList) {
             if (fso.itemType == itemType) return fso;
         }
 
         throw new Exception("Unknown Food");
     }
-}
-
-public enum ItemType {
-    NONE, MOON_RICE, STARBERRY, NEBULAZUKI
 }

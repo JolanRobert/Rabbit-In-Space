@@ -4,4 +4,8 @@ public class Fridge : InteractableElement
     {
         elementType = ElementType.FRIDGE;
     }
+
+    public override void Interact() {
+        UIManager.Instance.OpenFridge();
+    }
 }

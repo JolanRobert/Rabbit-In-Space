@@ -4,7 +4,7 @@ using UnityEditor;
 [CustomEditor(typeof(InventoryManager))]
 public class InventoryDebugger : Editor
 {
-    private InventoryManager.ItemType itemType = InventoryManager.ItemType.MOONRICE;
+    private EnumManager.ItemType itemType = EnumManager.ItemType.MOON_RICE;
     private int amount = 1;
     public override void OnInspectorGUI()
     {
@@ -17,7 +17,7 @@ public class InventoryDebugger : Editor
         
         InventoryManager inventoryManager = (InventoryManager) target;
         
-        itemType = (InventoryManager.ItemType)EditorGUILayout.EnumPopup("Item :", itemType);
+        itemType = (EnumManager.ItemType)EditorGUILayout.EnumPopup("Item :", itemType);
         amount = EditorGUILayout.IntField("Amount :", amount);
         if (GUILayout.Button("Add Item"))
         {

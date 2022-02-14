@@ -4,4 +4,8 @@ public class Workplan : InteractableElement
     {
         elementType = ElementType.WORKPLAN;
     }
+
+    public override void Interact() {
+        UIManager.Instance.OpenWorkplan();
+    }
 }
