@@ -10,7 +10,7 @@ public class InventorySlot : MonoBehaviour
     [Header("Attributes")]
     public int itemNumber;
 
-    public void SetupSlot(EnumManager.ItemType newType, Sprite sprite, int newAmount)
+    public void SetupSlot(ItemType newType, Sprite sprite, int newAmount)
     {
         itemNumber = newAmount;
         image.sprite = sprite;

@@ -3,9 +3,6 @@ using UnityEngine;
 public class UIManager : MonoBehaviour {
 
     public static UIManager Instance;
-
-    [SerializeField] private GardenUI gardenUI;
-
     private GameObject currentPanel;
 
     void Awake() {
@@ -42,9 +39,5 @@ public class UIManager : MonoBehaviour {
     public void CloseMinigame() {
         CameraManager.Instance.DisableCamera(CameraType.MINIGAME);
         ClosePanel();
-    }
-
-    public GardenUI GetGardenUI() {
-        return gardenUI;
     }
 }
