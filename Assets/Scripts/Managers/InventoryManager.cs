@@ -7,26 +7,18 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager fridgeInstance;
     public static InventoryManager workPlanInstance;
-    [SerializeField] private StockType stockType;
+    [SerializeField] private EnumManager.StockType stockType;
     [SerializeField] public GameObject inventory;
     [SerializeField] private GameObject slotPrefab;
     private GameObject slot;
     [SerializeField] public List<FoodItem> items;
-    public Dictionary<ItemType, InventorySlot> slots = new Dictionary<ItemType, InventorySlot>();
-
-    public enum StockType
-    {
-        FRIDGE, WORKPLAN
-    }
-    public enum ItemType
-    {
-        NONE, MOONRICE, STARBERRY, NEBULAZUKI, STARBERRY_DAIFUKU, HANAMI_DANGOS, MOCHI_WAFFLE, STARBERRY_BUBBLE_TEA
-    }
+    public Dictionary<EnumManager.ItemType, InventorySlot> slots = new Dictionary<EnumManager.ItemType, InventorySlot>();
+    
     private void Awake()
     {
         switch (stockType)
         {
-            case StockType.FRIDGE:
+            case EnumManager.StockType.FRIDGE:
                 if (fridgeInstance != null)
                 {
                     return;
@@ -34,7 +26,7 @@ public class InventoryManager : MonoBehaviour
                 DontDestroyOnLoad(gameObject);
                 fridgeInstance = this;
                 break;
-            case StockType.WORKPLAN:
+            case EnumManager.StockType.WORKPLAN:
                 if (workPlanInstance != null)
                 {
                     return;
@@ -53,7 +45,7 @@ public class InventoryManager : MonoBehaviour
             LinkSlot(items[i].type, slot.GetComponent<InventorySlot>(), items[i].sprite, items[i].amount);
         }
     }
-    void LinkSlot(ItemType type, InventorySlot slot, Sprite sprite, int amount)
+    void LinkSlot(EnumManager.ItemType type, InventorySlot slot, Sprite sprite, int amount)
     {
         if (!slots.ContainsKey(type))
         {
@@ -67,9 +59,9 @@ public class InventoryManager : MonoBehaviour
         inventory.SetActive(true);
     }
 
-    public bool AddItems(ItemType type, int amount)
+    public bool AddItems(EnumManager.ItemType type, int amount)
     {
-        if (type == ItemType.NONE)
+        if (type == EnumManager.ItemType.NONE)
         {
             Debug.Log("Invalid type");
             return false;
@@ -95,7 +87,7 @@ public class InventoryManager : MonoBehaviour
     [Serializable]
     public class FoodItem
     {
-        public ItemType type;
+        public EnumManager.ItemType type;
         public Sprite sprite;
         public int amount;
     }

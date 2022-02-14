@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: e9c2cffad23e6f2439ede9e3c4fe41bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4385290734033360122
+    second: Plantes_0
+  - first:
+      213: 3969470173392646928
+    second: Plantes_1
+  - first:
+      213: 2564371660620649439
+    second: Plantes_2
+  - first:
+      213: 2945860285502092737
+    second: Plantes_3
+  - first:
+      213: 4946396153592311711
+    second: Plantes_4
+  - first:
+      213: -4623650251852113169
+    second: Plantes_5
+  - first:
+      213: 5078395417056662394
+    second: Plantes_6
+  - first:
+      213: -8525697841399660432
+    second: Plantes_7
+  - first:
+      213: -5035783115838828588
+    second: Plantes_8
+  - first:
+      213: 177780845000448897
+    second: Plantes_9
+  - first:
+      213: -7769892685718114121
+    second: Plantes_10
+  - first:
+      213: 6160784161526035626
+    second: Plantes_11
+  - first:
+      213: -6434682102455363821
+    second: Plantes_12
+  - first:
+      213: -7464370195473465707
+    second: Plantes_13
+  - first:
+      213: 5612701118477199520
+    second: Plantes_14
+  - first:
+      213: -244593514229266007
+    second: Plantes_15
+  - first:
+      213: 7311987054858343207
+    second: Plantes_16
+  - first:
+      213: -2173704924732995874
+    second: Plantes_17
+  - first:
+      213: 1382509564196640973
+    second: Plantes_18
+  - first:
+      213: -1356754425212294312
+    second: Plantes_19
+  - first:
+      213: 7652073494319157437
+    second: Plantes_20
+  - first:
+      213: 3188948220596142971
+    second: Plantes_21
+  - first:
+      213: -736696397143332114
+    second: Plantes_22
+  - first:
+      213: -505687963081043703
+    second: Plantes_23
+  - first:
+      213: -7234079514200266517
+    second: Plantes_24
+  - first:
+      213: 6707968011777584545
+    second: Plantes_25
+  - first:
+      213: -1316742258507442140
+    second: Plantes_26
+  - first:
+      213: 3501834645412458559
+    second: Plantes_27
+  - first:
+      213: -3221347042982220743
+    second: Plantes_28
+  - first:
+      213: 1078965904551577148
+    second: Plantes_29
+  - first:
+      213: -8839045623918976102
+    second: Plantes_30
+  - first:
+      213: -8353102379085232977
+    second: Plantes_31
+  - first:
+      213: -7315425602383009895
+    second: Plantes_32
+  - first:
+      213: 9200984306531266575
+    second: Plantes_33
+  - first:
+      213: -3520046740206110544
+    second: Plantes_34
+  - first:
+      213: 3248420306359643742
+    second: Plantes_35
+  - first:
+      213: -2008075799741483102
+    second: Plantes_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Plantes_1
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 2338
+        width: 305
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013b39f6714661730800000000000000
+      internalID: 3969470173392646928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_2
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 2341
+        width: 388
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd35f5f407a769320800000000000000
+      internalID: 2564371660620649439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_3
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 2353
+        width: 301
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c57843625cc1e820800000000000000
+      internalID: 2945860285502092737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_4
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 2321
+        width: 205
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f6a35381125a440800000000000000
+      internalID: 4946396153592311711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_5
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 2302
+        width: 279
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea95b4d79e75dfb0800000000000000
+      internalID: -4623650251852113169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1552
+        width: 156
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0bddcd4cbcb2490800000000000000
+      internalID: -7769892685718114121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_11
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1545
+        width: 166
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4bc9dbd808f7550800000000000000
+      internalID: 6160784161526035626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_13
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 1552
+        width: 286
+        height: 459
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e7acaeada396890800000000000000
+      internalID: -7464370195473465707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_14
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1577
+        width: 149
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8654d0ee154ed40800000000000000
+      internalID: 5612701118477199520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_15
+      rect:
+        serializedVersion: 2
+        x: 2329
+        y: 1628
+        width: 335
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a90006ae770b9cf0800000000000000
+      internalID: -244593514229266007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_25
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 598
+        width: 317
+        height: 593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adafaacd5d771d50800000000000000
+      internalID: 6707968011777584545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_26
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 654
+        width: 330
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4281bec64edf9bde0800000000000000
+      internalID: -1316742258507442140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_27
+      rect:
+        serializedVersion: 2
+        x: 2395
+        y: 622
+        width: 422
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3037f57e04099030800000000000000
+      internalID: 3501834645412458559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_30
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 630
+        width: 212
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93a6d816d6655580800000000000000
+      internalID: -8839045623918976102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plantes_32
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 681
+        width: 153
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997a9256c236a7a90800000000000000
+      internalID: -7315425602383009895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 169a6a9f083bdeb47a1f4f1ff8816ee9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
