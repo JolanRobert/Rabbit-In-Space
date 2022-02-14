@@ -1,8 +1,8 @@
-using System;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 using UnityEngine;
+
 [XmlRoot("Data")]
 public class DataSerializer : MonoBehaviour
 {
