@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodDataManager : MonoBehaviour
 {
-    public static FoodDataManager instance;
+    public static FoodDataManager Instance;
     [SerializeField] private DataSerializer dataSerializer;
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }

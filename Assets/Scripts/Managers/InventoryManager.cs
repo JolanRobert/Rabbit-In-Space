@@ -37,16 +37,18 @@ public class InventoryManager : MonoBehaviour
                 break;
         }
     }
+    
     private void Start()
     {
         for (int i = 0; i < items.Count; i++)
         {
             slot = Instantiate(slotPrefab, Vector3.zero, quaternion.identity, transform.GetChild(0).GetChild(0));
-            items[i].amount = FoodDataManager.instance.Load(items[i].type.ToString()).amount;; //Lire save
+            items[i].amount = FoodDataManager.Instance.Load(items[i].type.ToString()).amount; //Lire save
             LinkSlot(items[i].type, slot.GetComponent<InventorySlot>(), items[i].sprite, items[i].amount);
         }
     }
-    void LinkSlot(ItemType type, InventorySlot slot, Sprite sprite, int amount)
+    
+    private void LinkSlot(ItemType type, InventorySlot slot, Sprite sprite, int amount)
     {
         if (!slots.ContainsKey(type))
         {
@@ -79,18 +81,18 @@ public class InventoryManager : MonoBehaviour
                 
                 item.amount += amount;
                 slots[type].UpdateAmount(item.amount);
-                FoodDataManager.instance.Save(type.ToString(), item);
+                FoodDataManager.Instance.Save(type.ToString(), item);
                 break;
             }
         }
         return true;
     }
+    
     [Serializable]
     public class FoodItem
     {
-        public EnumManager.ItemType type;
-        [XmlIgnore]
-        public Sprite sprite;
+        public ItemType type;
+        [XmlIgnore] public Sprite sprite;
         public int amount = 0;
     }
 }
