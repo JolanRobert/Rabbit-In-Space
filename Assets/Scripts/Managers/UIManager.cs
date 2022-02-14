@@ -28,6 +28,17 @@ public class UIManager : MonoBehaviour {
         OpenPanel(go);
     }
 
+    public void OpenFridge()
+    {
+        currentPanel = InventoryManager.fridgeInstance.inventory;
+        InventoryManager.fridgeInstance.OpenInventory();
+    }
+    public void OpenWorkplan()
+    {
+        currentPanel = InventoryManager.workPlanInstance.inventory;
+        InventoryManager.workPlanInstance.OpenInventory();
+    }
+
     public void CloseMinigame() {
         CameraManager.Instance.DisableCamera(CameraType.MINIGAME);
         ClosePanel();
