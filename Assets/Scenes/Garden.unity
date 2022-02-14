@@ -1429,6 +1429,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484266970}
   m_CullTransparentMesh: 1
+--- !u!1 &492912748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492912750}
+  - component: {fileID: 492912749}
+  m_Layer: 0
+  m_Name: UIGarden
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &492912749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492912748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bd6afadec34cd46a88664861cdfcb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSeed: {fileID: 289282720}
+  closeOverlay: {fileID: 1202964121}
+--- !u!4 &492912750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492912748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1535803438}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &495355835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,79 +1624,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507154568}
   m_CullTransparentMesh: 1
---- !u!1 &542031597
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 542031598}
-  - component: {fileID: 542031601}
-  - component: {fileID: 542031600}
-  - component: {fileID: 542031599}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &542031598
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542031597}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1393033107}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &542031599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542031597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82bd6afadec34cd46a88664861cdfcb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuSeed: {fileID: 0}
-  closeOverlay: {fileID: 0}
---- !u!114 &542031600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542031597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4813ae18604be8541a7546893353ee20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toScene: 0
---- !u!114 &542031601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542031597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8eca0826c809dc438cea30ec4a75a3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gardenUI: {fileID: 542031599}
 --- !u!1 &543395892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,8 +1706,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GardenUI, Assembly-CSharp
+      - m_Target: {fileID: 492912749}
+        m_TargetAssemblyTypeName: UIGarden, Assembly-CSharp
         m_MethodName: OpenMenuSeed
         m_Mode: 3
         m_Arguments:
@@ -1812,9 +1784,9 @@ Transform:
   m_GameObject: {fileID: 578225314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 989367367}
+  m_Father: {fileID: 1749235990}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &578225316
@@ -2544,7 +2516,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 804131425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1605d02b4925b4894b762c3fa4bc06, type: 3}
+  m_Script: {fileID: 11500000, guid: a5ee27b92b64efe4b8459a22c541a870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
@@ -2592,13 +2564,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1880289212}
         m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
         m_MethodName: PlantSeed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 804131427}
-          m_ObjectArgumentAssemblyTypeName: GetEnum, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: EnumManager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2952,38 +2924,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955414057}
   m_CullTransparentMesh: 1
---- !u!1 &989367366
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 989367367}
-  m_Layer: 0
-  m_Name: Elements
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &989367367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989367366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 578225315}
-  - {fileID: 2134607829}
-  m_Father: {fileID: 1535803438}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105830238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,8 +3281,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GardenUI, Assembly-CSharp
+      - m_Target: {fileID: 492912749}
+        m_TargetAssemblyTypeName: UIGarden, Assembly-CSharp
         m_MethodName: CloseMenuSeed
         m_Mode: 1
         m_Arguments:
@@ -3525,51 +3465,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222534755}
   m_CullTransparentMesh: 1
---- !u!1 &1292470608
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1292470609}
-  - component: {fileID: 1292470610}
-  m_Layer: 0
-  m_Name: CameraManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1292470609
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292470608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1393033107}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1292470610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292470608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45ad2b8b478f234391d2df5c0913e01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  minigameCamera: {fileID: 0}
 --- !u!1 &1315828153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,7 +3555,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1333481824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1605d02b4925b4894b762c3fa4bc06, type: 3}
+  m_Script: {fileID: 11500000, guid: a5ee27b92b64efe4b8459a22c541a870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 3
@@ -3708,13 +3603,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1880289212}
         m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
         m_MethodName: PlantSeed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1333481826}
-          m_ObjectArgumentAssemblyTypeName: GetEnum, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: EnumManager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3933,10 +3828,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 542031598}
-  - {fileID: 1292470609}
-  - {fileID: 1880289211}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4037,118 +3929,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413279765}
   m_CullTransparentMesh: 1
---- !u!1 &1446780535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1446780536}
-  - component: {fileID: 1446780540}
-  - component: {fileID: 1446780539}
-  - component: {fileID: 1446780538}
-  - component: {fileID: 1446780537}
-  m_Layer: 0
-  m_Name: Parcel 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
-  m_IsActive: 1
---- !u!4 &1446780536
+--- !u!4 &1446780536 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+  m_PrefabInstance: {fileID: 1693293649970998605}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446780535}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0.5, z: 2.5}
-  m_LocalScale: {x: 3, y: 0.75, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2134607829}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1446780537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446780535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e766a40e61504114699f97bc64a8812b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactPosition: {x: 15, y: 0, z: 1.5}
-  interactPanel: {fileID: 845555517}
-  parcelUI: {fileID: 845555518}
-  foodSlots: []
---- !u!65 &1446780538
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446780535}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1446780539
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446780535}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: bd861feb00972e547a4ee2ba98f487b1, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1446780540
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446780535}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1523360834
 GameObject:
   m_ObjectHideFlags: 0
@@ -4251,7 +4036,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 989367367}
+  - {fileID: 1880289211}
+  - {fileID: 492912750}
+  - {fileID: 1749235990}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4337,9 +4124,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 492912749}
+        m_TargetAssemblyTypeName: UIGarden, Assembly-CSharp
+        m_MethodName: CloseParcel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5040,6 +4827,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748016294}
   m_CullTransparentMesh: 1
+--- !u!1 &1749235989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749235990}
+  m_Layer: 0
+  m_Name: Elements
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749235990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749235989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 578225315}
+  - {fileID: 2134607829}
+  m_Father: {fileID: 1535803438}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1780747465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,8 +4941,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GardenUI, Assembly-CSharp
+      - m_Target: {fileID: 492912749}
+        m_TargetAssemblyTypeName: UIGarden, Assembly-CSharp
         m_MethodName: OpenMenuSeed
         m_Mode: 3
         m_Arguments:
@@ -5528,7 +5347,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1866940164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1605d02b4925b4894b762c3fa4bc06, type: 3}
+  m_Script: {fileID: 11500000, guid: a5ee27b92b64efe4b8459a22c541a870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
@@ -5576,13 +5395,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1880289212}
         m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
         m_MethodName: PlantSeed
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1866940166}
-          m_ObjectArgumentAssemblyTypeName: GetEnum, Assembly-CSharp
+          m_ObjectArgument: {fileID: 1333481826}
+          m_ObjectArgumentAssemblyTypeName: EnumManager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5650,12 +5469,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880289210}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1393033107}
-  m_RootOrder: 2
+  m_Father: {fileID: 1535803438}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1880289212
 MonoBehaviour:
@@ -5952,8 +5771,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GardenUI, Assembly-CSharp
+      - m_Target: {fileID: 492912749}
+        m_TargetAssemblyTypeName: UIGarden, Assembly-CSharp
         m_MethodName: OpenMenuSeed
         m_Mode: 3
         m_Arguments:
@@ -6611,11 +6430,84 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134607828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1446780536}
-  m_Father: {fileID: 989367367}
+  m_Father: {fileID: 1749235990}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1693293649970998605
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2134607829}
+    m_Modifications:
+    - target: {fileID: 1693293648662908382, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: myPlantUI
+      value: 
+      objectReference: {fileID: 1413279766}
+    - target: {fileID: 1693293648837689624, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: myPlantUI
+      value: 
+      objectReference: {fileID: 2124321909}
+    - target: {fileID: 1693293649196888884, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 845555517}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888885, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649196888890, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: m_Name
+      value: Parcel 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693293649708530431, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}
+      propertyPath: myPlantUI
+      value: 
+      objectReference: {fileID: 829668183}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8c6e6c58b64e7c4496c2c38750e63a2, type: 3}

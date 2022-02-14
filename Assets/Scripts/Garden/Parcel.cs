@@ -1,23 +1,21 @@
-using UnityEngine;
-
 public class Parcel : InteractableElement {
     
-    [SerializeField] private Transform parcelUI;
-    public Food[] foodSlots;
+    public Food[] foodList;
 
     void Start() {
-        foodSlots = new[]{
+        foodList = new[] {
             gameObject.AddComponent<Food>(),
             gameObject.AddComponent<Food>(),
-            gameObject.AddComponent<Food>()};
-        
-        for (int i = 0; i < foodSlots.Length; i++) foodSlots[i].CreateFood(parcelUI.GetChild(i));
-        
-        elementType = ElementType.PARCEL;
-    }
+            gameObject.AddComponent<Food>()
+        };
 
+        for (int i = 0; i < foodList.Length; i++) {
+            foodList[i].InitFoodUI(interactPanel.transform.GetChild(i));
+        }
+    }
+    
     public override void Interact() {
-        UIManager.Instance.OpenPanel(interactPanel);
+        UIGarden.Instance.OpenParcel(interactPanel);
         GardenManager.Instance.SelectParcel(this);
     }
 }

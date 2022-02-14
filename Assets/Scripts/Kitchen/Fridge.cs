@@ -1,9 +1,4 @@
-public class Fridge : InteractableElement
-{
-    void Start()
-    {
-        elementType = ElementType.FRIDGE;
-    }
+public class Fridge : InteractableElement {
 
     public override void Interact() {
         UIManager.Instance.OpenFridge();

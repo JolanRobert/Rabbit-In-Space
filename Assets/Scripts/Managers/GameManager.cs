@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
-    public GameState gameState;
+    [SerializeField] private GameState gameState;
 
     public PlayerManager playerManager;
 
@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start() {
-        gameState = GameState.KITCHEN;
+        gameState = GameState.GARDEN;
     }
 }
 

@@ -23,13 +23,13 @@ public class GardenManager : MonoBehaviour {
         mySlot = foodSlot;
     }
 
-    public void PlantSeed(GetEnum ge) {
-        FoodSO foodSO = GetCorrectFoodSo(ge.itemType);
-        myParcel.foodSlots[mySlot].InitFood(foodSO);
-        UIManager.Instance.GetGardenUI().CloseMenuSeed();
+    public void PlantSeed(EnumManager myEnum) {
+        FoodSO foodSO = GetCorrectFoodSo(myEnum.itemType);
+        myParcel.foodList[mySlot].InitFood(foodSO);
+        UIGarden.Instance.CloseMenuSeed();
     }
 
-    private FoodSO GetCorrectFoodSo(EnumManager.ItemType itemType) {
+    private FoodSO GetCorrectFoodSo(ItemType itemType) {
         foreach (FoodSO fso in foodList) {
             if (fso.itemType == itemType) return fso;
         }
