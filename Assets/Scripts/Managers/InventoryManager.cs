@@ -43,57 +43,28 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Count; i++)
         {
             slot = Instantiate(slotPrefab, Vector3.zero, quaternion.identity, transform.GetChild(0).GetChild(0));
-            items[i].amount = FoodDataManager.Instance.Load(items[i].type.ToString()).amount; //Lire save
-            LinkSlot(items[i].type, slot.GetComponent<InventorySlot>(), items[i].sprite, items[i].amount);
+            LinkSlot(items[i].type, slot.GetComponent<InventorySlot>(), items[i].sprite);
         }
     }
-    
-    private void LinkSlot(ItemType type, InventorySlot slot, Sprite sprite, int amount)
+    void LinkSlot(ItemType type, InventorySlot slot, Sprite sprite)
     {
         if (!slots.ContainsKey(type))
         {
             slots.Add(type, slot);
-            slot.SetupSlot(type, sprite, amount);
+            slot.SetupSlot(type, sprite);
         }
     }
-
     public void OpenInventory()
     {
         inventory.SetActive(true);
     }
-
-    public bool AddItems(ItemType type, int amount)
-    {
-        if (type == ItemType.NONE)
-        {
-            Debug.Log("Invalid type");
-            return false;
-        }
-        foreach (FoodItem item in items)
-        {
-            if (item.type == type)
-            {
-                if (item.amount + amount < 0)
-                {
-                    Debug.Log("Too few items");
-                    return false;
-                }
-                
-                item.amount += amount;
-                slots[type].UpdateAmount(item.amount);
-                FoodDataManager.Instance.Save(type.ToString(), item);
-                break;
-            }
-        }
-        return true;
-    }
-    
     [Serializable]
     public class FoodItem
     {
         public ItemType type;
-        [XmlIgnore] public Sprite sprite;
-        public int amount = 0;
+        [XmlIgnore]
+        public Sprite sprite;
+        public int amount;
     }
 }
 

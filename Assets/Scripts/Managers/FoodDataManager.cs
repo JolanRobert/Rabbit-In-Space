@@ -21,6 +21,24 @@ public class FoodDataManager : MonoBehaviour
         dataSerializer.SaveData(fileName,fooditem); 
     }
 
+    public bool AddItems(ItemType type, int amount)
+    {
+        if (type == ItemType.NONE)
+        {
+            Debug.LogWarning("Invalid type");
+            return false;
+        }
+        InventoryManager.FoodItem item = Load(type.ToString());
+        if (item.amount + amount < 0)
+        {
+            Debug.Log("Too few items");
+            return false;
+        }
+        item.amount += amount;
+        Save(type.ToString(), item);
+        return true;
+    }
+
     public InventoryManager.FoodItem Load(string fileName)
     {
         if (dataSerializer.LoadData<InventoryManager.FoodItem>(fileName) == default)
