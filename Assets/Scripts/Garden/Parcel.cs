@@ -8,14 +8,14 @@ public class Parcel : InteractableElement {
             gameObject.AddComponent<Food>(),
             gameObject.AddComponent<Food>()
         };
-
+        
         for (int i = 0; i < foodList.Length; i++) {
-            foodList[i].InitFoodUI(interactPanel.transform.GetChild(i));
+            foodList[i].InitFoodUI(interactPanel.transform.GetChild(0).GetChild(i));
         }
     }
     
     public override void Interact() {
-        UIGarden.Instance.OpenParcel(interactPanel);
+        UIGarden.Instance.OpenMenuParcel(interactPanel);
         GardenManager.Instance.SelectParcel(this);
     }
 }

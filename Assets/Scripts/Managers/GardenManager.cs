@@ -23,7 +23,7 @@ public class GardenManager : MonoBehaviour {
         mySlot = foodSlot;
     }
 
-    public void PlantSeed(EnumManager myEnum) {
+    public void PlantSeed(GetEnum myEnum) {
         FoodSO foodSO = GetCorrectFoodSo(myEnum.itemType);
         myParcel.foodList[mySlot].InitFood(foodSO);
         UIGarden.Instance.CloseMenuSeed();
