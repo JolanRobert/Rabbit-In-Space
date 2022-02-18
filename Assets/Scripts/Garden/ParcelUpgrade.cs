@@ -1,29 +1,16 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ParcelUpgrade : MonoBehaviour {
 
-    public List<UpgradeItem> upgradeList;
+    [SerializeField] private List<ParcelUpgradeSO> puSos;
+    [SerializeField] private GameObject entryPrefab;
+    [SerializeField] private Transform contentParent;
 
-    public void InitUI(Transform upgrades) {
-        for (int i = 0; i < upgrades.childCount; i++) {
-            //upgradeList.Add();
+    void Start() {
+        foreach (ParcelUpgradeSO puSo in puSos) {
+            GameObject entry = Instantiate(entryPrefab, contentParent);
+            entry.GetComponent<ParcelUpgradeEntry>().Init(puSo);
         }
-    }
-
-    public void BuyUpgrade(UpgradeType upgradeType) {
-        
-    }
-
-    public void IsActive(UpgradeType upgradeType) {
-        
-    }
-
-    [Serializable]
-    public class UpgradeItem {
-        public Transform upgradeUI;
-        public UpgradeType upgradeType;
-        public bool isActive;
     }
 }
