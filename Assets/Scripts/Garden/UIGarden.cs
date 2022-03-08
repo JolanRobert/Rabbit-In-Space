@@ -18,7 +18,7 @@ public class UIGarden : MonoBehaviour {
     public void OpenMenuParcel(Transform parcelUI) {
         myParcelUI = parcelUI;
         menuParcel = parcelUI.GetChild(0);
-        menuUpgrade = parcelUI.GetChild(1);
+        //menuUpgrade = parcelUI.GetChild(1);
         
         menuParcel.gameObject.SetActive(true);
         menuParcel.DOScale(1, 0.325f);

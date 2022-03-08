@@ -8,10 +8,9 @@ public class FoodSO : ScriptableObject {
     public ItemType itemType;
     
     [Header("Sprites")]
-    public Sprite seedSprite;
-    public Sprite[] plantSprites;
     public Sprite foodSprite;
-    
+    public Sprite[] plantSprites;
+
     [Header("Attributes")]
     public int price;
     public int growingTime;

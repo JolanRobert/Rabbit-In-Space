@@ -11,7 +11,7 @@ public class Food : MonoBehaviour {
     private string foodName;
     public ItemType itemType;
 
-    private Sprite seedSprite, foodSprite;
+    private Sprite foodSprite;
     private Sprite[] plantSprites;
     
     private int price;
@@ -51,7 +51,6 @@ public class Food : MonoBehaviour {
         foodName = foodSo.name;
         itemType = foodSo.itemType;
         
-        seedSprite = foodSo.seedSprite;
         plantSprites = foodSo.plantSprites;
         foodSprite = foodSo.foodSprite;
         

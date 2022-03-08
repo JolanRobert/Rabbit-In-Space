@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Starberry
   itemType: 2
-  seedSprite: {fileID: 0}
+  foodSprite: {fileID: -244593514229266007, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   plantSprites:
   - {fileID: -7769892685718114121, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: 6160784161526035626, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: -7464370195473465707, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: 5612701118477199520, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
-  foodSprite: {fileID: -244593514229266007, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   price: 20
   growingTime: 5
   decayTime: 10

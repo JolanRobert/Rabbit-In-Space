@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Nebulazuki
   itemType: 3
-  seedSprite: {fileID: 0}
+  foodSprite: {fileID: 3501834645412458559, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   plantSprites:
   - {fileID: -7315425602383009895, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: -8839045623918976102, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: 6707968011777584545, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: -1316742258507442140, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
-  foodSprite: {fileID: 3501834645412458559, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   price: 30
   growingTime: 10
   decayTime: 20

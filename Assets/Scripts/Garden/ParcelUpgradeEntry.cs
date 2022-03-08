@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class ParcelUpgradeEntry : MonoBehaviour {
 
-    public UpgradeType upgradeType;
-    
     private TMP_Text name, description, unlockCost;
     private GameObject upgradeInfos, banner;
-
+    
+    private UpgradeType upgradeType;
     public bool isUnlock;
 
     void Awake() {
@@ -20,11 +19,11 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     }
     
     public void Init(ParcelUpgradeSO puSo) {
-        upgradeType = puSo.upgradeType;
-        
         name.text = puSo.name;
         description.text = puSo.description;
         unlockCost.text = puSo.unlockCost + "$";
+        
+        upgradeType = puSo.upgradeType;
     }
 
     public void Unlock() {
