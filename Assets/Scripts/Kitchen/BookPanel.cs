@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class BookPanel : MonoBehaviour
 {
+    [SerializeField] private Transform panelGroup;
+    [SerializeField] private GameObject recipePanelPrefab;
+    private GameObject recipePanel;
     [SerializeField] private List<RecipeSO> recipes;
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = 0; i < recipes.Count; i++)
+        {
+            recipePanel = Instantiate(recipePanelPrefab, Vector3.zero, Quaternion.identity, panelGroup);
+            recipePanel.GetComponent<RecipePanel>().SetupPanel(recipes[i]);
+        }
     }
 }
