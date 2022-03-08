@@ -42,7 +42,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < items.Count; i++)
         {
-            slot = Instantiate(slotPrefab, Vector3.zero, quaternion.identity, transform.GetChild(0).GetChild(0));
+            slot = Instantiate(slotPrefab, Vector3.zero, Quaternion.identity, transform.GetChild(0).GetChild(0));
             LinkSlot(items[i].type, slot.GetComponent<InventorySlot>(), items[i].sprite);
         }
     }
