@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e73a319ddf9a4646a443878b7dd820d, type: 3}
-  m_Name: New Food
+  m_Script: {fileID: 11500000, guid: d82946ecdd25d0a408207b426c52925c, type: 3}
+  m_Name: Mochi Beater
   m_EditorClassIdentifier: 
-  name: 
-  itemType: 0
-  seedSprite: {fileID: 0}
-  plantSprites: []
-  foodSprite: {fileID: 0}
-  price: 0
-  growingTime: 0
-  decayTime: 0
-  minMaxProduction: {x: 0, y: 0}
+  name: Mochi Beater
+  stationType: 1
+  icon: {fileID: 0}

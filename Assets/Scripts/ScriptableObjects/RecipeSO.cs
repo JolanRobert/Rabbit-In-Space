@@ -16,6 +16,7 @@ public class RecipeSO : ScriptableObject
 
     [Header("Attributes")] 
     public List<RecipeElement> recipeElements;
+    public List<StationSO> stations;
     public int price;
     
 }
@@ -23,6 +24,6 @@ public class RecipeSO : ScriptableObject
 [Serializable]
 public class RecipeElement
 {
-    public ItemType itemType;
+    public FoodSO food;
     public int amount;
 }

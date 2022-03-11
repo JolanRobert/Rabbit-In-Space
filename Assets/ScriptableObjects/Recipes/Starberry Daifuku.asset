@@ -16,6 +16,11 @@ MonoBehaviour:
   itemType: 4
   foodSprite: {fileID: 0}
   recipeElements:
-  - itemType: 4
-    amount: 3
+  - food: {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
+    amount: 2
+  - food: {fileID: 11400000, guid: 995bfe4002b0a184d97fecbd0b9c18fd, type: 2}
+    amount: 1
+  stations:
+  - {fileID: 11400000, guid: d5f75ba5a6a451b43b2df5f6c47c1246, type: 2}
+  - {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
   price: 50
