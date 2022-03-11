@@ -23,19 +23,25 @@ public class FoodDataManager : MonoBehaviour
 
     public bool AddItems(ItemType type, int amount)
     {
+        InventoryManager.FoodItem item = Load(type.ToString());
+        item.amount += amount;
+        Save(type.ToString(), item);
+        return true;
+    }
+
+    public bool CheckItemQuantity(ItemType type, int amount)
+    {
         if (type == ItemType.NONE)
         {
             Debug.LogWarning("Invalid type");
             return false;
         }
         InventoryManager.FoodItem item = Load(type.ToString());
-        if (item.amount + amount < 0)
+        if (amount > item.amount)
         {
             Debug.Log("Too few items");
             return false;
         }
-        item.amount += amount;
-        Save(type.ToString(), item);
         return true;
     }
 
