@@ -63,6 +63,7 @@ public class RecipeManager : MonoBehaviour
         {
             return true;
         }
+        Debug.Log(type + " is not the anticipated station.");
         return false;
     }
     public void ForwardStep()

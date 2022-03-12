@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     return;
                 }
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
                 fridgeInstance = this;
                 break;
             case StockType.WORKPLAN:
@@ -32,7 +32,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     return;
                 }
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
                 workPlanInstance = this;
                 break;
         }
