@@ -4,6 +4,10 @@ public class Station : InteractableElement
 {
     [SerializeField] private StationSO station;
     public override void Interact() {
-        UIManager.Instance.OpenMinigame(interactPanel.gameObject);
+        if (RecipeManager.instance.CheckIsNextStation(station.stationType))
+        {
+            UIManager.Instance.OpenMinigame(interactPanel);
+            RecipeManager.instance.ForwardStep();
+        }
     }
 }
