@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 1693293649196888886}
   - component: {fileID: 1693293649196888887}
   - component: {fileID: 1693293649196888884}
+  - component: {fileID: 6758901255603670082}
+  - component: {fileID: 1946708266900502629}
+  - component: {fileID: 3956263272170774081}
   m_Layer: 0
   m_Name: Parcel
   m_TagString: Untagged
@@ -108,9 +111,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e766a40e61504114699f97bc64a8812b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactPosition: {x: -5, y: 0, z: 2}
+  interactPosition: {x: 0, y: 0, z: -1}
   interactPanel: {fileID: 0}
   foodList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6758901255603670082}
+  - {fileID: 1946708266900502629}
+  - {fileID: 3956263272170774081}
+--- !u!114 &6758901255603670082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693293649196888890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4743753d86311824b9a397ef5bb07035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
+--- !u!114 &1946708266900502629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693293649196888890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4743753d86311824b9a397ef5bb07035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
+--- !u!114 &3956263272170774081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693293649196888890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4743753d86311824b9a397ef5bb07035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0

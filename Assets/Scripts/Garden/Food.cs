@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 [Serializable]
 public class Food : MonoBehaviour {
 
-    private FoodUI myFoodUI;
-    
     private string foodName;
     public ItemType itemType;
 
@@ -15,15 +14,15 @@ public class Food : MonoBehaviour {
     private Sprite[] plantSprites;
     
     private int price;
-    private int growthStageOne;
-
+    private int tmp_growingTime;
     private int growingTime;
+
     private int GrowingTime {
         get => growingTime;
         set {
             growingTime = value;
-            if (growingTime == growthStageOne) GrowthLevel = 1;
-            if (growingTime > 0) myFoodUI.UpdateGrowthText(growingTime.ToString());
+            if (growingTime == tmp_growingTime / 2) GrowthLevel = 1;
+            UI_UpdateGrowthText(growingTime.ToString());
         }
     }
     
@@ -35,18 +34,13 @@ public class Food : MonoBehaviour {
         get => growthLevel;
         set {
             growthLevel = value;
-            myFoodUI.UpdatePlantSprite(plantSprites[growthLevel]);
+            UI_UpdatePlantSprite();
         }
     }
 
-    public void InitFoodUI(Transform myPlantUI) {
-        myFoodUI = new FoodUI(this);
-        myFoodUI.InitFoodUI(myPlantUI);
-    }
-
-    public void InitFood(FoodSO foodSo) {
+    public void StartNewFood(FoodSO foodSo) {
         StopAllCoroutines();
-        myFoodUI.ResetFoodUI();
+        foodUI.Reset();
         
         foodName = foodSo.name;
         itemType = foodSo.itemType;
@@ -55,38 +49,39 @@ public class Food : MonoBehaviour {
         foodSprite = foodSo.foodSprite;
         
         price = foodSo.price;
-        growthStageOne = foodSo.growingTime / 2;
+        tmp_growingTime = foodSo.growingTime;
         GrowingTime = foodSo.growingTime;
         decayTime = foodSo.decayTime;
         minMaxProduction = foodSo.minMaxProduction;
-        
+
         GrowthLevel = 0;
+        
         StartCoroutine(Growth());
     }
     
     private WaitForSeconds oneSec = new WaitForSeconds(1);
     private IEnumerator Growth() {
-        myFoodUI.Growth(GrowingTime);
+        //foodUI.growthFill.DOFillAmount(1, growingTime).SetEase(Ease.Linear);
         
-        while (GrowingTime > 0) {
+        while (growingTime > 0) {
             yield return oneSec;
             GrowingTime--;
         }
 
-        myFoodUI.UpdateGrowthText("Done");
+        UI_UpdateGrowthText("Done");
         GrowthLevel = 2;
         StartCoroutine(Decay());
     }
 
     private IEnumerator Decay() {
-        myFoodUI.Decay(decayTime);
+        //foodUI.deadFill.DOFillAmount(1, decayTime).SetEase(Ease.Linear);
         
-        while (GrowingTime != -decayTime) {
+        while (growingTime != -decayTime) {
             yield return oneSec;
-            GrowingTime--;
+            growingTime--;
         }
 
-        myFoodUI.UpdateGrowthText("Dead");
+        UI_UpdateGrowthText("Dead");
         GrowthLevel = 3;
     }
 
@@ -99,7 +94,45 @@ public class Food : MonoBehaviour {
         }
         
         StopAllCoroutines();
-        myFoodUI.ResetFoodUI();
+        if (foodUI != null) foodUI.Reset();
         itemType = ItemType.NONE;
+    }
+    
+    //
+    // UI
+    //
+    
+    public ParcelMenuEntry foodUI;
+
+    public void InitFoodUI() {
+        if (itemType == ItemType.NONE) {
+            foodUI.Reset();
+            return;
+        }
+        
+        foodUI.plantSprite.sprite = plantSprites[GrowthLevel];
+        foodUI.plantName.text = foodName;
+
+        foodUI.growthText.text = GrowthLevel switch {
+            2 => "Done",
+            3 => "Dead",
+            _ => growingTime.ToString()
+        };
+    }
+
+    public void UI_UpdatePlantSprite() {
+        if (foodUI == null) return;
+        foodUI.plantSprite.sprite = plantSprites[GrowthLevel];
+        foodUI.plantSprite.SetNativeSize();
+    }
+    
+    public void UI_UpdatePlantName() {
+        if (foodUI == null) return;
+        foodUI.plantName.text = foodName;
+    }
+
+    public void UI_UpdateGrowthText(string text) {
+        if (foodUI == null) return;
+        foodUI.growthText.text = text;
     }
 }

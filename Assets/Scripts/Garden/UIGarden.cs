@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -5,56 +6,62 @@ public class UIGarden : MonoBehaviour {
 
     public static UIGarden Instance;
 
-    private Transform myParcelUI;
-    private Transform menuParcel, menuUpgrade;
+    [Header("Parcel Menu")]
+    [SerializeField] private GameObject parcelMenu;
+    [SerializeField] private List<GameObject> plants;
     
-    [SerializeField] private GameObject menuSeed;
+    [Header("Parcel Upgrade")]
+    [SerializeField] private GameObject parcelUpgrade;
+    
+    [Header("Food Shop")]
+    [SerializeField] private GameObject foodShop;
     [SerializeField] private GameObject closeOverlay;
 
     void Awake() {
         Instance = this;
     }
 
-    public void OpenMenuParcel(Transform parcelUI) {
-        myParcelUI = parcelUI;
-        menuParcel = parcelUI.GetChild(0);
-        //menuUpgrade = parcelUI.GetChild(1);
+    public void OpenParcelMenu() {
+        for (int i = 0; i < plants.Count; i++) {
+            GardenManager.Instance.myParcel.foodList[i].foodUI = plants[i].GetComponent<ParcelMenuEntry>();
+            GardenManager.Instance.myParcel.foodList[i].InitFoodUI();
+        }
         
-        menuParcel.gameObject.SetActive(true);
-        menuParcel.DOScale(1, 0.325f);
+        parcelMenu.SetActive(true);
+        parcelMenu.transform.DOScale(1, 0.325f);
     }
 
     public void CloseMenuParcel() {
-        menuParcel.DOScale(0, 0.325f).OnComplete(() => {
-            menuParcel.gameObject.SetActive(false);
-            menuParcel = null;
+        parcelMenu.transform.DOScale(0, 0.325f).OnComplete(() => {
+            parcelMenu.gameObject.SetActive(false);
+            for (int i = 0; i < plants.Count; i++) GardenManager.Instance.myParcel.foodList[i].foodUI = null;
         });
         
         PlayerManager.Instance.GetInteract().isInteracting = false;
-
-        menuUpgrade = null;
     }
 
     public void OpenMenuUpgrade() {
-        menuParcel.gameObject.SetActive(false);
-        menuUpgrade.gameObject.SetActive(true);
+        parcelMenu.gameObject.SetActive(false);
+        parcelUpgrade.gameObject.SetActive(true);
     }
 
     public void CloseMenuUpgrade() {
-        menuUpgrade.gameObject.SetActive(false);
-        menuParcel.gameObject.SetActive(true);
+        parcelUpgrade.gameObject.SetActive(false);
+        parcelMenu.gameObject.SetActive(true);
     }
     
     public void OpenMenuSeed(int foodSlot) {
         closeOverlay.SetActive(true);
-        menuSeed.transform.DOMoveX(menuSeed.transform.position.x - 300, 0.325f);
-        myParcelUI.DOMoveX(myParcelUI.transform.position.x - 150, 0.325f);
-        GardenManager.Instance.SelectFood(foodSlot);
+        
+        foodShop.transform.DOMoveX(foodShop.transform.position.x - 300, 0.325f);
+        parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
+        GardenManager.Instance.SelectSlot(foodSlot);
     }
 
     public void CloseMenuSeed() {
         closeOverlay.SetActive(false);
-        menuSeed.transform.DOMoveX(menuSeed.transform.position.x + 300, 0.325f);
-        myParcelUI.DOMoveX(myParcelUI.transform.position.x + 150, 0.325f);
+        
+        foodShop.transform.DOMoveX(foodShop.transform.position.x + 300, 0.325f);
+        parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f);
     }
 }

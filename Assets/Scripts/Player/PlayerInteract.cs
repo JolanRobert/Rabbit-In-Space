@@ -14,7 +14,7 @@ public class PlayerInteract : MonoBehaviour {
     }
 
     private IEnumerator InteractCR(InteractableElement interactableGO) {
-        Vector3 interactableGOPos = interactableGO.interactPosition;
+        Vector3 interactableGOPos = interactableGO.transform.position+interactableGO.interactPosition;
         interactableGOPos.y = transform.position.y;
         isTryingToInteract = true;
         
