@@ -49,7 +49,7 @@ public class PlayerInput : MonoBehaviour {
         }
         
         //Raycast hit an Interactable object
-        playerManager.GetMovement().Move(hit.collider.GetComponent<InteractableElement>().interactPosition);
+        playerManager.GetMovement().Move(hit.collider.transform.position + hit.collider.GetComponent<InteractableElement>().interactPosition);
         playerManager.GetInteract().TryInteract(hit.collider.GetComponent<InteractableElement>());
     }
 }

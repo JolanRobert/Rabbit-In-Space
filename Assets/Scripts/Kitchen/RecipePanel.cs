@@ -39,7 +39,7 @@ public class RecipePanel : MonoBehaviour
         foreach (StationSO station in recipe.stations)
         {
             StationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<StationSlot>();
-            slot.sprite.sprite = station.icon;
+            slot.image.sprite = station.icon;
         }
     }
 
@@ -56,11 +56,9 @@ public class RecipePanel : MonoBehaviour
         foreach (RecipeElement element in recipe.recipeElements)
         {
             FoodDataManager.Instance.AddItems(element.food.itemType, -element.amount);
-            Debug.Log("Took " + element.amount + " " + element.food.name);
+            //Debug.Log("Took " + element.amount + " " + element.food.name);
         }
         
-        RecipeManager.instance.StartRecipeTimeline(recipe.stations);
-        Debug.Log("Start " + name);
-        return;
+        RecipeManager.instance.StartRecipeTimeline(recipe);
     }
 }

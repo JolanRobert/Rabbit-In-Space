@@ -33,7 +33,6 @@ public class GardenManager : MonoBehaviour {
         foreach (FoodSO fso in foodList) {
             if (fso.itemType == itemType) return fso;
         }
-
         throw new Exception("Unknown Food");
     }
 }

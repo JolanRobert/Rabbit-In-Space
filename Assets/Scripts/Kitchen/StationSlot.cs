@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public class StationSlot : MonoBehaviour
 {
-    [SerializeField] public Image sprite;
+    [SerializeField] public Image image;
 }

@@ -37,7 +37,7 @@ public class DataSerializer : MonoBehaviour
         xmlSerializer.Serialize(streamWriter, data);
         streamWriter.Close();
         
-        Debug.Log("Save " + fileName);
+        //Debug.Log("Save " + fileName);
     }
 
     public T LoadData<T>(string fileName)
@@ -51,11 +51,11 @@ public class DataSerializer : MonoBehaviour
 
             T data = (T) xmlSerializer.Deserialize(fileStream);
             fileStream.Close();
-            Debug.Log(fileName + " Data Loaded");
+            //Debug.Log(fileName + " Data Loaded");
 
             return data;
         }
-        Debug.LogWarning("Path don't exist");
+        //Debug.LogWarning("Path don't exist");
         return default;
     }
 }
