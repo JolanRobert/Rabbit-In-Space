@@ -9,5 +9,9 @@ public class Station : InteractableElement
             UIManager.Instance.OpenMinigame(interactPanel);
             RecipeManager.instance.ForwardStep();
         }
+        else
+        {
+            PlayerManager.Instance.GetInteract().isInteracting = false;
+        }
     }
 }
