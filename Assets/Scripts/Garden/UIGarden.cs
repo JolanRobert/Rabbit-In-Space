@@ -22,6 +22,7 @@ public class UIGarden : MonoBehaviour {
     }
 
     public void OpenParcelMenu() {
+        //Get Parcel values into ParcelMenu UI Menu
         for (int i = 0; i < plants.Count; i++) {
             GardenManager.Instance.myParcel.foodList[i].foodUI = plants[i].GetComponent<ParcelMenuEntry>();
             GardenManager.Instance.myParcel.foodList[i].InitFoodUI();

@@ -14,18 +14,27 @@ public class Food : MonoBehaviour {
     private Sprite[] plantSprites;
     
     private int price;
-    private int tmp_growingTime;
+    private int m_growingTime;
     private int growingTime;
 
     private int GrowingTime {
         get => growingTime;
         set {
             growingTime = value;
-            if (growingTime == tmp_growingTime / 2) GrowthLevel = 1;
-            UI_UpdateGrowthText(growingTime.ToString());
+            if (growingTime == m_growingTime / 2) GrowthLevel = 1;
+
+            if (foodUI == null) return;
+            if (growingTime > 0) {
+                foodUI.UpdateGrowthText(growingTime.ToString());
+                foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
+            }
+            else if (growingTime <= 0) {
+                foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
+                foodUI.UpdateDeadFill(-growingTime,decayTime);
+            }
         }
     }
-    
+
     private int decayTime;
     private Vector2 minMaxProduction;
 
@@ -34,7 +43,11 @@ public class Food : MonoBehaviour {
         get => growthLevel;
         set {
             growthLevel = value;
-            UI_UpdatePlantSprite();
+
+            if (foodUI == null) return;
+            foodUI.UpdatePlantSprite(plantSprites[growthLevel]);
+            if (growthLevel == 2) foodUI.UpdateGrowthText("Done");
+            else if (growthLevel == 3) foodUI.UpdateGrowthText("Dead");
         }
     }
 
@@ -49,7 +62,7 @@ public class Food : MonoBehaviour {
         foodSprite = foodSo.foodSprite;
         
         price = foodSo.price;
-        tmp_growingTime = foodSo.growingTime;
+        m_growingTime = foodSo.growingTime;
         GrowingTime = foodSo.growingTime;
         decayTime = foodSo.decayTime;
         minMaxProduction = foodSo.minMaxProduction;
@@ -61,27 +74,21 @@ public class Food : MonoBehaviour {
     
     private WaitForSeconds oneSec = new WaitForSeconds(1);
     private IEnumerator Growth() {
-        //foodUI.growthFill.DOFillAmount(1, growingTime).SetEase(Ease.Linear);
-        
-        while (growingTime > 0) {
+        while (GrowingTime > 0) {
             yield return oneSec;
             GrowingTime--;
         }
 
-        UI_UpdateGrowthText("Done");
         GrowthLevel = 2;
         StartCoroutine(Decay());
     }
 
     private IEnumerator Decay() {
-        //foodUI.deadFill.DOFillAmount(1, decayTime).SetEase(Ease.Linear);
-        
-        while (growingTime != -decayTime) {
+        while (GrowingTime != -decayTime) {
             yield return oneSec;
-            growingTime--;
+            GrowingTime--;
         }
 
-        UI_UpdateGrowthText("Dead");
         GrowthLevel = 3;
     }
 
@@ -98,41 +105,24 @@ public class Food : MonoBehaviour {
         itemType = ItemType.NONE;
     }
     
-    //
-    // UI
-    //
-    
     public ParcelMenuEntry foodUI;
 
     public void InitFoodUI() {
+        foodUI.SetTouchEvent(this);
+        
         if (itemType == ItemType.NONE) {
             foodUI.Reset();
             return;
         }
         
-        foodUI.plantSprite.sprite = plantSprites[GrowthLevel];
-        foodUI.plantName.text = foodName;
-
-        foodUI.growthText.text = GrowthLevel switch {
-            2 => "Done",
-            3 => "Dead",
-            _ => growingTime.ToString()
-        };
-    }
-
-    public void UI_UpdatePlantSprite() {
-        if (foodUI == null) return;
-        foodUI.plantSprite.sprite = plantSprites[GrowthLevel];
-        foodUI.plantSprite.SetNativeSize();
-    }
-    
-    public void UI_UpdatePlantName() {
-        if (foodUI == null) return;
-        foodUI.plantName.text = foodName;
-    }
-
-    public void UI_UpdateGrowthText(string text) {
-        if (foodUI == null) return;
-        foodUI.growthText.text = text;
+        foodUI.UpdatePlantSprite(plantSprites[GrowthLevel]);
+        foodUI.UpdatePlantName(foodName);
+        
+        foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
+        foodUI.UpdateDeadFill(-growingTime,decayTime);
+        
+        if (GrowthLevel == 2) foodUI.UpdateGrowthText("Done");
+        else if (GrowthLevel == 3) foodUI.UpdateGrowthText("Dead");
+        else foodUI.UpdateGrowthText(growingTime.ToString());
     }
 }
