@@ -1,34 +1,39 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ParcelUpgradeEntry : MonoBehaviour {
 
-    private TMP_Text name, description, unlockCost;
-    private GameObject upgradeInfos, banner;
+    [Header("Scriptable")]
+    [SerializeField] private ParcelUpgradeSO puSo;
     
-    private UpgradeType upgradeType;
-    public bool isUnlock;
+    [Header("Actions")]
+    [SerializeField] private Button touchableUpgrade;
+    
+    [Header("UI")]
+    [SerializeField] private TMP_Text name;
+    [SerializeField] private GameObject infos;
+    [SerializeField] private GameObject banner;
 
-    void Awake() {
-        upgradeInfos = transform.GetChild(0).gameObject;
-        banner = transform.GetChild(1).gameObject;
+    void Start() {
+        touchableUpgrade.onClick.AddListener(BuyUpgrade);
         
-        name = upgradeInfos.transform.GetChild(0).GetComponent<TMP_Text>();
-        description = upgradeInfos.transform.GetChild(1).GetComponent<TMP_Text>();
-        unlockCost = upgradeInfos.transform.GetChild(2).GetComponent<TMP_Text>();
-    }
-    
-    public void Init(ParcelUpgradeSO puSo) {
         name.text = puSo.name;
-        description.text = puSo.description;
-        unlockCost.text = puSo.unlockCost + "$";
-        
-        upgradeType = puSo.upgradeType;
+        infos.transform.GetChild(0).GetComponent<TMP_Text>().text = puSo.description;
+        infos.transform.GetChild(1).GetComponent<TMP_Text>().text = puSo.unlockCost + "$";
     }
 
-    public void Unlock() {
-        isUnlock = true;
-        upgradeInfos.SetActive(false);
+    private void BuyUpgrade() {
+        GardenManager.Instance.myParcel.BuyUpgrade(puSo.upgradeType);
+    }
+    
+    public void LockUpgrade() {
+        infos.SetActive(true);
+        banner.SetActive(false);
+    }
+    
+    public void UnlockUpgrade() {
+        infos.SetActive(false);
         banner.SetActive(true);
     }
 }

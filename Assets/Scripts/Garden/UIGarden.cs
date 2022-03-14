@@ -8,10 +8,11 @@ public class UIGarden : MonoBehaviour {
 
     [Header("Parcel Menu")]
     [SerializeField] private GameObject parcelMenu;
-    [SerializeField] private List<GameObject> plants;
+    [SerializeField] private List<ParcelMenuEntry> plants;
     
     [Header("Parcel Upgrade")]
     [SerializeField] private GameObject parcelUpgrade;
+    [SerializeField] private List<ParcelUpgradeEntry> upgrades;
     
     [Header("Food Shop")]
     [SerializeField] private GameObject foodShop;
@@ -24,7 +25,7 @@ public class UIGarden : MonoBehaviour {
     public void OpenParcelMenu() {
         //Get Parcel values into ParcelMenu UI Menu
         for (int i = 0; i < plants.Count; i++) {
-            GardenManager.Instance.myParcel.foodList[i].foodUI = plants[i].GetComponent<ParcelMenuEntry>();
+            GardenManager.Instance.myParcel.foodList[i].foodUI = plants[i];
             GardenManager.Instance.myParcel.foodList[i].InitFoodUI();
         }
         
@@ -42,6 +43,9 @@ public class UIGarden : MonoBehaviour {
     }
 
     public void OpenMenuUpgrade() {
+        GardenManager.Instance.myParcel.upgradesUI = upgrades;
+        GardenManager.Instance.myParcel.InitUpgrades();
+        
         parcelMenu.gameObject.SetActive(false);
         parcelUpgrade.gameObject.SetActive(true);
     }

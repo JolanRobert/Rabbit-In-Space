@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class ParcelMenuEntry : MonoBehaviour {
 
+    [Header("Actions")]
     [SerializeField] private Button touchablePlant;
     
+    [Header("UI")]
     [SerializeField] private Image plantSprite;
     [SerializeField] private TMP_Text plantName;
     [SerializeField] private Image growthFill;
