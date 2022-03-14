@@ -7,6 +7,12 @@ using Random = UnityEngine.Random;
 [Serializable]
 public class Food : MonoBehaviour {
 
+    private Parcel myParcel;
+
+    void Awake() {
+        myParcel = GetComponent<Parcel>();
+    }
+    
     private string foodName;
     public ItemType itemType;
 
@@ -62,8 +68,8 @@ public class Food : MonoBehaviour {
         foodSprite = foodSo.foodSprite;
         
         price = foodSo.price;
-        m_growingTime = foodSo.growingTime;
-        GrowingTime = foodSo.growingTime;
+        GrowingTime = myParcel.HasUpgrade(UpgradeType.NUTRIMENTS) ? foodSo.growingTime/2 : foodSo.growingTime;
+        m_growingTime = GrowingTime;
         decayTime = foodSo.decayTime;
         minMaxProduction = foodSo.minMaxProduction;
 
@@ -80,7 +86,8 @@ public class Food : MonoBehaviour {
         }
 
         GrowthLevel = 2;
-        StartCoroutine(Decay());
+        if (myParcel.HasUpgrade(UpgradeType.RECOLTOUT)) Harvest();
+        else StartCoroutine(Decay());
     }
 
     private IEnumerator Decay() {
@@ -95,8 +102,9 @@ public class Food : MonoBehaviour {
     public void Harvest() {
         if (growthLevel < 2) return;
         if (growthLevel == 2) {
-            int randomValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
-            Debug.Log("Harvest "+randomValue+" "+itemType);
+            int prodValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
+            if (myParcel.HasUpgrade(UpgradeType.ENGRAIS)) prodValue += 2;
+            Debug.Log("Harvest "+prodValue+" "+itemType);
             //InventoryManager.fridgeInstance.AddItems(itemType, randomValue);
         }
         

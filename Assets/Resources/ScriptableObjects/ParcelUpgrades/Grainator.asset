@@ -16,3 +16,4 @@ MonoBehaviour:
   name: Grainator
   description: Plante la graine choisie automatiquement si un plant est vide
   unlockCost: 400
+  isActivable: 1

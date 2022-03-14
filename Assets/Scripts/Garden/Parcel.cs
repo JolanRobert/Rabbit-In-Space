@@ -7,13 +7,7 @@ public class Parcel : InteractableElement {
     public Food[] foodList;
 
     public List<ParcelUpgradeEntry> upgradesUI;
-    private List<Upgrade> upgrades = new List<Upgrade>();
-
-    void Start() {
-        foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
-            upgrades.Add(new Upgrade(item));
-        }
-    }
+    private int upgradeValue;
     
     public override void Interact() {
         GardenManager.Instance.SelectParcel(this);
@@ -21,30 +15,23 @@ public class Parcel : InteractableElement {
     }
 
     public void InitUpgrades() {
-        foreach (Upgrade item in upgrades) {
-            if (item.isActive) upgradesUI[(int)item.upgradeType].UnlockUpgrade();
-            else upgradesUI[(int)item.upgradeType].LockUpgrade();
+        foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
+            if (HasUpgrade(item)) upgradesUI[(int)item].UnlockUpgrade();
+            else upgradesUI[(int)item].LockUpgrade();
         }
     }
 
     public void BuyUpgrade(UpgradeType upgradeType) {
-        foreach (Upgrade item in upgrades) {
-            if (item.upgradeType != upgradeType) continue;
-            item.isActive = true;
-            break;
-        }
-        
+        upgradeValue += (int)Mathf.Pow(2, (int)upgradeType);
         upgradesUI[(int)upgradeType].UnlockUpgrade();
     }
 
-    [Serializable]
-    public class Upgrade {
-        public UpgradeType upgradeType;
-        public bool isActive;
-
-        public Upgrade(UpgradeType upgradeType) {
-            this.upgradeType = upgradeType;
-            isActive = false;
+    public bool HasUpgrade(UpgradeType upgradeType) {
+        int tmp_upgradeValue = upgradeValue;
+        for (int i = Enum.GetValues(typeof(UpgradeType)).Length; i > (int)upgradeType; i--) {
+            if (tmp_upgradeValue >= (int)Mathf.Pow(2, i)) tmp_upgradeValue -= (int)Mathf.Pow(2, i);
         }
+
+        return tmp_upgradeValue >= (int) Mathf.Pow(2, (int) upgradeType);
     }
 }

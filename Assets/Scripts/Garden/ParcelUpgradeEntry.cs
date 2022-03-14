@@ -14,6 +14,7 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     [SerializeField] private TMP_Text name;
     [SerializeField] private GameObject infos;
     [SerializeField] private GameObject banner;
+    [SerializeField] private GameObject activeUpgrade;
 
     void Start() {
         touchableUpgrade.onClick.AddListener(BuyUpgrade);
@@ -30,10 +31,16 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     public void LockUpgrade() {
         infos.SetActive(true);
         banner.SetActive(false);
+        if (puSo.isActivable) activeUpgrade.SetActive(false);
     }
     
     public void UnlockUpgrade() {
         infos.SetActive(false);
         banner.SetActive(true);
+        if (puSo.isActivable) activeUpgrade.SetActive(true);
+    }
+
+    public void SetActiveState(bool state) {
+        
     }
 }

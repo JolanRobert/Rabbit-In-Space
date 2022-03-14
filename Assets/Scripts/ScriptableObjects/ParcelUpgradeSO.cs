@@ -8,4 +8,5 @@ public class ParcelUpgradeSO : ScriptableObject {
     public new string name;
     public string description;
     public int unlockCost;
+    public bool isActivable;
 }
