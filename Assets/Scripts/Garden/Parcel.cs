@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Parcel : InteractableElement {
     
     public Food[] foodList;
 
     public List<ParcelUpgradeEntry> upgradesUI;
-
     private List<Upgrade> upgrades = new List<Upgrade>();
 
     void Start() {
@@ -22,9 +20,14 @@ public class Parcel : InteractableElement {
         UIGarden.Instance.OpenParcelMenu();
     }
 
-    public void InitGrainator() {
+    public void SetGrainatorFood(int foodSlot, ItemType itemType) {
+        foodList[foodSlot].GrainatorFood = itemType;
+    }
+
+    public void TryShowGrainator() {
+        bool show = IsUpgradeBought(UpgradeType.GRAINATOR);
         foreach (Food food in foodList) {
-            food.foodUI.ActiveGrainator(IsUpgradeBought(UpgradeType.GRAINATOR) && IsUpgradeActive(UpgradeType.GRAINATOR));
+            food.foodUI.ShowGrainator(show,food.GrainatorFood);
         }
     }
 
@@ -43,7 +46,7 @@ public class Parcel : InteractableElement {
         }
         
         upgradesUI[(int)upgradeType].UnlockUpgrade(true);
-        if (upgradeType == UpgradeType.GRAINATOR) InitGrainator();
+        if (upgradeType == UpgradeType.GRAINATOR) TryShowGrainator();
     }
 
     public void ActiveUpgrade(UpgradeType upgradeType, bool state) {
@@ -51,6 +54,12 @@ public class Parcel : InteractableElement {
             if (up.upgradeType != upgradeType) continue;
             up.isActive = state;
             break;
+        }
+
+        if (upgradeType == UpgradeType.GRAINATOR) {
+            for (int i = 0; i < foodList.Length; i++) {
+                SetGrainatorFood(i,ItemType.NONE);
+            }
         }
     }
 

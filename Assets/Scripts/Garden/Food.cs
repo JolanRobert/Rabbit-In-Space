@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -54,6 +53,14 @@ public class Food : MonoBehaviour {
             foodUI.UpdatePlantSprite(plantSprites[growthLevel]);
             if (growthLevel == 2) foodUI.UpdateGrowthText("Done");
             else if (growthLevel == 3) foodUI.UpdateGrowthText("Dead");
+        }
+    }
+    
+    public ItemType grainatorFood;
+    public ItemType GrainatorFood {
+        get => grainatorFood;
+        set {
+            grainatorFood = value;
         }
     }
 

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ParcelMenuEntry : MonoBehaviour {
 
+    [Header("ID")]
+    public int foodSlot;
+    
     [Header("Actions")]
     [SerializeField] private Button touchablePlant;
     
@@ -44,8 +47,9 @@ public class ParcelMenuEntry : MonoBehaviour {
         growthText.text = newGrowthText;
     }
 
-    public void ActiveGrainator(bool active) {
-        grainatorSelect.SetActive(active);
+    public void ShowGrainator(bool state, ItemType itemType) {
+        grainatorSelect.SetActive(state);
+        if (state) grainatorSelect.GetComponent<GrainatorMenu>().SetSelectedFood(itemType);
     }
     
     public void Reset() {

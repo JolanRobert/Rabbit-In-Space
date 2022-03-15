@@ -1,22 +1,32 @@
-using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RadialMenu : MonoBehaviour {
+public class GrainatorMenu : MonoBehaviour {
 
+    private ParcelMenuEntry myParcelMenu;
+    
     [SerializeField] private GameObject entryPrefab;
     [SerializeField] private float radius;
+    [SerializeField] private Image selectedFoodSprite;
+    
     private List<GameObject> entries = new List<GameObject>();
 
     private bool isToggle;
+
+    void Awake() {
+        myParcelMenu = transform.parent.GetComponent<ParcelMenuEntry>();
+    }
     
     void Start() {
         foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
             GameObject entry = Instantiate(entryPrefab, transform);
-            entry.GetComponent<RadialMenuEntry>().Init(foodSo);
-            entry.GetComponent<Button>().onClick.AddListener(Toggle);
+            entry.transform.GetChild(0).GetComponent<Image>().sprite = foodSo.foodSprite;
+            entry.GetComponent<Button>().onClick.AddListener(() => {
+                Toggle();
+                SetSelectedFood(foodSo.itemType);
+            });
             entries.Add(entry);
         }
     }
@@ -47,5 +57,15 @@ public class RadialMenu : MonoBehaviour {
         if (isToggle) Close();
         else Open();
         isToggle = !isToggle;
+    }
+
+    public void SetSelectedFood(ItemType itemType) {
+        foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
+            if (itemType != foodSo.itemType) continue;
+            selectedFoodSprite.sprite = foodSo.foodSprite;
+            break;
+        }
+        
+        GardenManager.Instance.myParcel.SetGrainatorFood(myParcelMenu.foodSlot,itemType);
     }
 }

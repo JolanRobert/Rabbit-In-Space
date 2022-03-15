@@ -22,6 +22,13 @@ public class UIGarden : MonoBehaviour {
         Instance = this;
     }
 
+    void Start() {
+        //Give ID to ParcelMenuEntry
+        for (int i = 0; i < plants.Count; i++) {
+            plants[i].foodSlot = i;
+        }
+    }
+
     public void OpenParcelMenu() {
         //Get Parcel values into ParcelMenu UI Menu
         for (int i = 0; i < plants.Count; i++) {
@@ -29,7 +36,7 @@ public class UIGarden : MonoBehaviour {
             GardenManager.Instance.myParcel.foodList[i].InitFoodUI();
         }
         
-        GardenManager.Instance.myParcel.InitGrainator();
+        GardenManager.Instance.myParcel.TryShowGrainator();
         
         parcelMenu.SetActive(true);
         parcelMenu.transform.DOScale(1, 0.325f);

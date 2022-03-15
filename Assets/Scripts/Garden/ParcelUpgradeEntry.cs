@@ -49,6 +49,5 @@ public class ParcelUpgradeEntry : MonoBehaviour {
 
     public void ToggleUpgrade() {
         GardenManager.Instance.myParcel.ActiveUpgrade(upgradeType,activeUpgrade.GetComponent<Toggle>().isOn);
-        if (upgradeType == UpgradeType.GRAINATOR) GardenManager.Instance.myParcel.InitGrainator();
     }
 }
