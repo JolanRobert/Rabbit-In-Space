@@ -12,7 +12,7 @@ public class UIGarden : MonoBehaviour {
     
     [Header("Parcel Upgrade")]
     [SerializeField] private GameObject parcelUpgrade;
-    [SerializeField] private List<ParcelUpgradeEntry> upgrades;
+    public List<ParcelUpgradeEntry> upgrades;
     
     [Header("Food Shop")]
     [SerializeField] private GameObject foodShop;

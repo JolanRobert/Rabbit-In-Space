@@ -4,21 +4,12 @@ using UnityEngine.UI;
 
 public class FoodShopEntry : MonoBehaviour {
 
-    private Image foodSprite;
-    private TMP_Text foodName, foodPrice, growingTime, decayTime, foodProduction;
-
-    void Awake() {
-        foodSprite = transform.GetChild(0).GetComponent<Image>();
-        foodName = transform.GetChild(1).GetComponent<TMP_Text>();
-        foodPrice = transform.GetChild(2).GetComponent<TMP_Text>();
-        growingTime = transform.GetChild(4).GetComponent<TMP_Text>();
-        decayTime = transform.GetChild(6).GetComponent<TMP_Text>();
-        foodProduction = transform.GetChild(7).GetComponent<TMP_Text>();
-        
-        GetComponent<Button>().onClick.AddListener(() => {
-            GardenManager.Instance.PlantSeed(GetComponent<GetEnum>());
-        });
-    }
+    [SerializeField] private Image foodSprite;
+    [SerializeField] private TMP_Text foodName;
+    [SerializeField] private TMP_Text foodPrice;
+    [SerializeField] private TMP_Text growingTime;
+    [SerializeField] private TMP_Text decayTime;
+    [SerializeField] private TMP_Text foodProduction;
     
     public void Init(FoodSO foodSo) {
         foodSprite.sprite = foodSo.foodSprite;
@@ -33,5 +24,8 @@ public class FoodShopEntry : MonoBehaviour {
         foodProduction.text = "+" + foodSo.minMaxProduction.x + "-" + foodSo.minMaxProduction.y;
 
         GetComponent<GetEnum>().itemType = foodSo.itemType;
+        GetComponent<Button>().onClick.AddListener(() => {
+            GardenManager.Instance.PlantSeed(GetComponent<GetEnum>());
+        });
     }
 }

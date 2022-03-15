@@ -16,14 +16,13 @@ public class Parcel : InteractableElement {
 
     public void InitUpgrades() {
         foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
-            if (HasUpgrade(item)) upgradesUI[(int)item].UnlockUpgrade();
-            else upgradesUI[(int)item].LockUpgrade();
+            upgradesUI[(int)item].UnlockUpgrade(HasUpgrade(item));
         }
     }
 
     public void BuyUpgrade(UpgradeType upgradeType) {
         upgradeValue += (int)Mathf.Pow(2, (int)upgradeType);
-        upgradesUI[(int)upgradeType].UnlockUpgrade();
+        upgradesUI[(int)upgradeType].UnlockUpgrade(true);
     }
 
     public bool HasUpgrade(UpgradeType upgradeType) {

@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 199781766292712539}
   - component: {fileID: 199781766292712538}
   m_Layer: 5
-  m_Name: GrowthTime
+  m_Name: GrowingTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,7 +778,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f9d3e34d12e6f42ab987441e1e1fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  foodSprite: {fileID: 199781765769115085}
+  foodName: {fileID: 199781766322182133}
+  foodPrice: {fileID: 199781765505319515}
+  growingTime: {fileID: 199781766292712538}
+  decayTime: {fileID: 199781767325988604}
+  foodProduction: {fileID: 199781766352186486}
 --- !u!1 &199781766835498444
 GameObject:
   m_ObjectHideFlags: 0
