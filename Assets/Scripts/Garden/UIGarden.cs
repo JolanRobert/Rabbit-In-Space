@@ -29,6 +29,8 @@ public class UIGarden : MonoBehaviour {
             GardenManager.Instance.myParcel.foodList[i].InitFoodUI();
         }
         
+        GardenManager.Instance.myParcel.InitGrainator();
+        
         parcelMenu.SetActive(true);
         parcelMenu.transform.DOScale(1, 0.325f);
     }

@@ -31,7 +31,7 @@ public class PlayerInteract : MonoBehaviour {
     }
 
     private void Interact(InteractableElement interactableGO) {
-        isInteracting = true;
         interactableGO.Interact();
+        isInteracting = true;
     }
 }

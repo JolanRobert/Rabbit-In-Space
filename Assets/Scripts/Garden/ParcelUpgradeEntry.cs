@@ -35,7 +35,10 @@ public class ParcelUpgradeEntry : MonoBehaviour {
         if (unlock) {
             infos.SetActive(false);
             banner.SetActive(true);
-            if (isActivable) activeUpgrade.SetActive(true);
+            if (isActivable) {
+                activeUpgrade.SetActive(true);
+                activeUpgrade.GetComponent<Toggle>().isOn = GardenManager.Instance.myParcel.IsUpgradeActive(upgradeType);
+            }
         }
         else {
             infos.SetActive(true);
@@ -44,7 +47,8 @@ public class ParcelUpgradeEntry : MonoBehaviour {
         }
     }
 
-    public void SetActiveState(bool state) {
-        
+    public void ToggleUpgrade() {
+        GardenManager.Instance.myParcel.ActiveUpgrade(upgradeType,activeUpgrade.GetComponent<Toggle>().isOn);
+        if (upgradeType == UpgradeType.GRAINATOR) GardenManager.Instance.myParcel.InitGrainator();
     }
 }

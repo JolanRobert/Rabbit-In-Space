@@ -7,12 +7,12 @@ public class GardenManager : MonoBehaviour {
     public static GardenManager Instance;
 
     [Header("Food Shop")]
-    [SerializeField] private List<FoodSO> foodList;
+    public List<FoodSO> foodList;
     [SerializeField] private GameObject fs_entryPrefab;
     [SerializeField] private Transform fs_contentParent;
 
     [Header("ParcelUpgrades")]
-    [SerializeField] private List<ParcelUpgradeSO> upgradeList;
+    public List<ParcelUpgradeSO> upgradeList;
     [SerializeField] private GameObject pu_entryPrefab;
     [SerializeField] private Transform pu_contentParent;
     

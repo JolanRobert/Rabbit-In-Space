@@ -14,6 +14,9 @@ public class ParcelMenuEntry : MonoBehaviour {
     [SerializeField] private Image growthFill;
     [SerializeField] private Image deadFill;
     [SerializeField] private TMP_Text growthText;
+    
+    [Header("Special")]
+    [SerializeField] private GameObject grainatorSelect;
 
     public void SetTouchEvent(Food food) {
         touchablePlant.onClick.RemoveAllListeners();
@@ -39,6 +42,10 @@ public class ParcelMenuEntry : MonoBehaviour {
 
     public void UpdateGrowthText(string newGrowthText) {
         growthText.text = newGrowthText;
+    }
+
+    public void ActiveGrainator(bool active) {
+        grainatorSelect.SetActive(active);
     }
     
     public void Reset() {

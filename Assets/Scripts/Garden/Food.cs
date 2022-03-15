@@ -68,7 +68,7 @@ public class Food : MonoBehaviour {
         foodSprite = foodSo.foodSprite;
         
         price = foodSo.price;
-        GrowingTime = myParcel.HasUpgrade(UpgradeType.NUTRIMENTS) ? foodSo.growingTime/2 : foodSo.growingTime;
+        GrowingTime = myParcel.IsUpgradeBought(UpgradeType.NUTRIMENTS) ? foodSo.growingTime/2 : foodSo.growingTime;
         m_growingTime = GrowingTime;
         decayTime = foodSo.decayTime;
         minMaxProduction = foodSo.minMaxProduction;
@@ -86,7 +86,7 @@ public class Food : MonoBehaviour {
         }
 
         GrowthLevel = 2;
-        if (myParcel.HasUpgrade(UpgradeType.RECOLTOUT)) Harvest();
+        if (myParcel.IsUpgradeBought(UpgradeType.RECOLTOUT) && myParcel.IsUpgradeActive(UpgradeType.RECOLTOUT)) Harvest();
         else StartCoroutine(Decay());
     }
 
@@ -103,7 +103,7 @@ public class Food : MonoBehaviour {
         if (growthLevel < 2) return;
         if (growthLevel == 2) {
             int prodValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
-            if (myParcel.HasUpgrade(UpgradeType.ENGRAIS)) prodValue += 2;
+            if (myParcel.IsUpgradeBought(UpgradeType.ENGRAIS)) prodValue += 2;
             Debug.Log("Harvest "+prodValue+" "+itemType);
             //InventoryManager.fridgeInstance.AddItems(itemType, randomValue);
         }
