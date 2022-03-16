@@ -58,7 +58,7 @@ public class Food : MonoBehaviour {
     
     public void StartNewFood(FoodSO foodSo) {
         StopAllCoroutines();
-        foodUI.Reset();
+        if (foodUI != null) foodUI.Reset();
         
         foodName = foodSo.name;
         itemType = foodSo.itemType;
