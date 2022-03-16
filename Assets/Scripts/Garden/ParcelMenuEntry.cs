@@ -17,13 +17,22 @@ public class ParcelMenuEntry : MonoBehaviour {
     [SerializeField] private Image growthFill;
     [SerializeField] private Image deadFill;
     [SerializeField] private TMP_Text growthText;
+    [SerializeField] private Button newSeed;
     
     [Header("Special")]
     [SerializeField] private GameObject grainatorSelect;
 
+    void Start() {
+        newSeed.onClick.AddListener(() => {
+            UIGarden.Instance.OpenMenuSeed(foodSlot);
+        });
+    }
+
     public void SetTouchEvent(Food food) {
         touchablePlant.onClick.RemoveAllListeners();
-        touchablePlant.onClick.AddListener(food.Harvest);
+        touchablePlant.onClick.AddListener(() => {
+            if (!food.Harvest()) food.ReduceTime(1);
+        });
     }
     
     public void UpdatePlantSprite(Sprite newSprite) {
@@ -47,9 +56,12 @@ public class ParcelMenuEntry : MonoBehaviour {
         growthText.text = newGrowthText;
     }
 
-    public void ShowGrainator(bool state, ItemType itemType) {
+    public void ShowGrainator(bool state) {
         grainatorSelect.SetActive(state);
-        if (state) grainatorSelect.GetComponent<GrainatorMenu>().SetSelectedFood(itemType);
+    }
+
+    public void UpdateGrainator(ItemType itemType) {
+        grainatorSelect.GetComponent<GrainatorMenu>().SetFoodSprite(itemType);
     }
     
     public void Reset() {

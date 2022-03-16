@@ -37,25 +37,12 @@ public class GardenManager : MonoBehaviour {
         }
     }
     
-    public void SelectParcel(Parcel parcel) {
-        myParcel = parcel;
-    }
-
-    public void SelectSlot(int foodSlot) {
-        mySlot = foodSlot;
-    }
-
-    public void PlantSeed(GetEnum myEnum) {
-        FoodSO foodSO = GetCorrectFoodSo(myEnum.itemType);
-        myParcel.foodList[mySlot].StartNewFood(foodSO);
-        UIGarden.Instance.CloseMenuSeed();
-    }
-
-    private FoodSO GetCorrectFoodSo(ItemType itemType) {
-        foreach (FoodSO fso in foodList) {
-            if (fso.itemType == itemType) return fso;
+    //Plant with seed menu
+    public void PlantSeed(ItemType itemType) {
+        foreach (FoodSO foodSo in foodList) {
+            if (foodSo.itemType != itemType) continue;
+            myParcel.foodList[mySlot].StartNewFood(foodSo);
+            UIGarden.Instance.CloseMenuSeed();
         }
-
-        throw new Exception("Unknown Food");
     }
 }

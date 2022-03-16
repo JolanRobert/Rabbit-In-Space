@@ -4,31 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GrainatorMenu : MonoBehaviour {
-
-    private ParcelMenuEntry myParcelMenu;
     
     [SerializeField] private GameObject entryPrefab;
     [SerializeField] private float radius;
     [SerializeField] private Image selectedFoodSprite;
     
     private List<GameObject> entries = new List<GameObject>();
-
-    private bool isToggle;
-
-    void Awake() {
-        myParcelMenu = transform.parent.GetComponent<ParcelMenuEntry>();
-    }
     
     void Start() {
+        GetComponent<Button>().onClick.AddListener(Toggle);
+        AddEntry(null,ItemType.NONE);
+
         foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
-            GameObject entry = Instantiate(entryPrefab, transform);
-            entry.transform.GetChild(0).GetComponent<Image>().sprite = foodSo.foodSprite;
-            entry.GetComponent<Button>().onClick.AddListener(() => {
-                Toggle();
-                SetSelectedFood(foodSo.itemType);
-            });
-            entries.Add(entry);
+            AddEntry(foodSo.foodSprite,foodSo.itemType);
         }
+    }
+
+    private void AddEntry(Sprite foodSprite, ItemType itemType) {
+        GameObject entry = Instantiate(entryPrefab, transform);
+        entry.transform.GetChild(0).GetComponent<Image>().sprite = foodSprite;
+        entry.GetComponent<Button>().onClick.AddListener(() => {
+            Toggle();
+            OnSelectFood(itemType);
+        });
+        entries.Add(entry);
     }
 
     private void Open() {
@@ -53,19 +52,26 @@ public class GrainatorMenu : MonoBehaviour {
         }
     }
 
+    private bool isToggle;
     public void Toggle() {
         if (isToggle) Close();
         else Open();
         isToggle = !isToggle;
     }
 
-    public void SetSelectedFood(ItemType itemType) {
+    private void OnSelectFood(ItemType itemType) {
+        ParcelMenuEntry pme = transform.parent.GetComponent<ParcelMenuEntry>();
+        GardenManager.Instance.myParcel.foodList[pme.foodSlot].SetGrainatorFood(itemType);
+        SetFoodSprite(itemType);
+    }
+
+    public void SetFoodSprite(ItemType itemType) {
         foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
             if (itemType != foodSo.itemType) continue;
             selectedFoodSprite.sprite = foodSo.foodSprite;
-            break;
+            return;
         }
-        
-        GardenManager.Instance.myParcel.SetGrainatorFood(myParcelMenu.foodSlot,itemType);
+
+        selectedFoodSprite.sprite = null;
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Parcel : InteractableElement {
     
@@ -16,24 +17,27 @@ public class Parcel : InteractableElement {
     
     public override void Interact() {
         if (PlayerManager.Instance.GetInteract().isInteracting) return;
-        GardenManager.Instance.SelectParcel(this);
+        GardenManager.Instance.myParcel = this;
         UIGarden.Instance.OpenParcelMenu();
     }
-
-    public void SetGrainatorFood(int foodSlot, ItemType itemType) {
-        foodList[foodSlot].GrainatorFood = itemType;
-    }
-
-    public void TryShowGrainator() {
-        bool show = IsUpgradeBought(UpgradeType.GRAINATOR);
-        foreach (Food food in foodList) {
-            food.foodUI.ShowGrainator(show,food.GrainatorFood);
-        }
-    }
+    
+    //
+    // UPGRADES
+    //
 
     public void InitUpgrades() {
         foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
-            upgradesUI[(int)item].UnlockUpgrade(IsUpgradeBought(item));
+            bool isBought = IsUpgradeBought(item);
+            bool isActive = IsUpgradeActive(item);
+            
+            upgradesUI[(int)item].SetupUpgrade(isBought,isActive);
+            
+            if (item == UpgradeType.GRAINATOR) {
+                for (int i = 0; i < foodList.Length; i++) {
+                    UIGarden.Instance.plants[i].ShowGrainator(isActive);
+                    foodList[i].SetGrainatorFood(isActive ? foodList[i].grainatorFood : ItemType.NONE);
+                }
+            }
         }
     }
 
@@ -45,11 +49,16 @@ public class Parcel : InteractableElement {
             break;
         }
         
-        upgradesUI[(int)upgradeType].UnlockUpgrade(true);
-        if (upgradeType == UpgradeType.GRAINATOR) TryShowGrainator();
+        upgradesUI[(int)upgradeType].SetupUpgrade(true,true);
+
+        if (upgradeType == UpgradeType.GRAINATOR) {
+            foreach (ParcelMenuEntry pme in UIGarden.Instance.plants) {
+                pme.ShowGrainator(true);
+            }
+        }
     }
 
-    public void ActiveUpgrade(UpgradeType upgradeType, bool state) {
+    public void ToggleUpgrade(UpgradeType upgradeType, bool state) {
         foreach (Upgrade up in upgrades) {
             if (up.upgradeType != upgradeType) continue;
             up.isActive = state;
@@ -58,7 +67,8 @@ public class Parcel : InteractableElement {
 
         if (upgradeType == UpgradeType.GRAINATOR) {
             for (int i = 0; i < foodList.Length; i++) {
-                SetGrainatorFood(i,ItemType.NONE);
+                UIGarden.Instance.plants[i].ShowGrainator(state);
+                foodList[i].SetGrainatorFood(!state ? ItemType.NONE : foodList[i].grainatorFood);
             }
         }
     }

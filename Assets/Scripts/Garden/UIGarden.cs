@@ -8,7 +8,7 @@ public class UIGarden : MonoBehaviour {
 
     [Header("Parcel Menu")]
     [SerializeField] private GameObject parcelMenu;
-    [SerializeField] private List<ParcelMenuEntry> plants;
+    public List<ParcelMenuEntry> plants;
     
     [Header("Parcel Upgrade")]
     [SerializeField] private GameObject parcelUpgrade;
@@ -22,13 +22,6 @@ public class UIGarden : MonoBehaviour {
         Instance = this;
     }
 
-    void Start() {
-        //Give ID to ParcelMenuEntry
-        for (int i = 0; i < plants.Count; i++) {
-            plants[i].foodSlot = i;
-        }
-    }
-
     public void OpenParcelMenu() {
         //Get Parcel values into ParcelMenu UI Menu
         for (int i = 0; i < plants.Count; i++) {
@@ -36,7 +29,8 @@ public class UIGarden : MonoBehaviour {
             GardenManager.Instance.myParcel.foodList[i].InitFoodUI();
         }
         
-        GardenManager.Instance.myParcel.TryShowGrainator();
+        GardenManager.Instance.myParcel.upgradesUI = upgrades;
+        GardenManager.Instance.myParcel.InitUpgrades();
         
         parcelMenu.SetActive(true);
         parcelMenu.transform.DOScale(1, 0.325f);
@@ -52,9 +46,6 @@ public class UIGarden : MonoBehaviour {
     }
 
     public void OpenMenuUpgrade() {
-        GardenManager.Instance.myParcel.upgradesUI = upgrades;
-        GardenManager.Instance.myParcel.InitUpgrades();
-        
         parcelMenu.gameObject.SetActive(false);
         parcelUpgrade.gameObject.SetActive(true);
     }
@@ -69,7 +60,7 @@ public class UIGarden : MonoBehaviour {
         
         foodShop.transform.DOMoveX(foodShop.transform.position.x - 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
-        GardenManager.Instance.SelectSlot(foodSlot);
+        GardenManager.Instance.mySlot = foodSlot;
     }
 
     public void CloseMenuSeed() {

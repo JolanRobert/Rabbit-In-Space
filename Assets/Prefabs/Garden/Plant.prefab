@@ -601,12 +601,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854aaf159244e7d479159cf76f9ec90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodSlot: 0
   touchablePlant: {fileID: 5439435381395118956}
   plantSprite: {fileID: 5439435381395118959}
   plantName: {fileID: 5439435381256845557}
   growthFill: {fileID: 5439435381083176678}
   deadFill: {fileID: 7706871547982702029}
   growthText: {fileID: 5439435379794873819}
+  newSeed: {fileID: 5439435379813394402}
   grainatorSelect: {fileID: 239036213524152877}
 --- !u!1 &5439435381083176676
 GameObject:

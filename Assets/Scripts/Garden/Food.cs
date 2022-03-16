@@ -56,14 +56,6 @@ public class Food : MonoBehaviour {
         }
     }
     
-    public ItemType grainatorFood;
-    public ItemType GrainatorFood {
-        get => grainatorFood;
-        set {
-            grainatorFood = value;
-        }
-    }
-
     public void StartNewFood(FoodSO foodSo) {
         StopAllCoroutines();
         foodUI.Reset();
@@ -75,8 +67,8 @@ public class Food : MonoBehaviour {
         foodSprite = foodSo.foodSprite;
         
         price = foodSo.price;
-        GrowingTime = myParcel.IsUpgradeBought(UpgradeType.NUTRIMENTS) ? foodSo.growingTime/2 : foodSo.growingTime;
-        m_growingTime = GrowingTime;
+        m_growingTime = myParcel.IsUpgradeActive(UpgradeType.NUTRIMENTS) ? foodSo.growingTime/2 : foodSo.growingTime;
+        GrowingTime = m_growingTime;
         decayTime = foodSo.decayTime;
         minMaxProduction = foodSo.minMaxProduction;
 
@@ -93,8 +85,18 @@ public class Food : MonoBehaviour {
         }
 
         GrowthLevel = 2;
-        if (myParcel.IsUpgradeBought(UpgradeType.RECOLTOUT) && myParcel.IsUpgradeActive(UpgradeType.RECOLTOUT)) Harvest();
+        if (myParcel.IsUpgradeActive(UpgradeType.RECOLTOUT)) Harvest();
         else StartCoroutine(Decay());
+    }
+
+    public void ReduceTime(int sec) {
+        GrowingTime -= sec;
+        if (GrowingTime == 0) {
+            StopAllCoroutines();
+            GrowthLevel = 2;
+            if (myParcel.IsUpgradeActive(UpgradeType.RECOLTOUT)) Harvest();
+            else StartCoroutine(Decay());
+        }
     }
 
     private IEnumerator Decay() {
@@ -106,11 +108,11 @@ public class Food : MonoBehaviour {
         GrowthLevel = 3;
     }
 
-    public void Harvest() {
-        if (growthLevel < 2) return;
+    public bool Harvest() {
+        if (growthLevel < 2) return false;
         if (growthLevel == 2) {
             int prodValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
-            if (myParcel.IsUpgradeBought(UpgradeType.ENGRAIS)) prodValue += 2;
+            if (myParcel.IsUpgradeActive(UpgradeType.ENGRAIS)) prodValue += 2;
             Debug.Log("Harvest "+prodValue+" "+itemType);
             //InventoryManager.fridgeInstance.AddItems(itemType, randomValue);
         }
@@ -118,6 +120,16 @@ public class Food : MonoBehaviour {
         StopAllCoroutines();
         if (foodUI != null) foodUI.Reset();
         itemType = ItemType.NONE;
+        
+        if (myParcel.IsUpgradeActive(UpgradeType.GRAINATOR) && grainatorFood != ItemType.NONE) {
+            foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
+                if (foodSo.itemType != grainatorFood) continue;
+                StartNewFood(foodSo);
+                break;
+            }
+        }
+        
+        return true;
     }
     
     public ParcelMenuEntry foodUI;
@@ -139,5 +151,20 @@ public class Food : MonoBehaviour {
         if (GrowthLevel == 2) foodUI.UpdateGrowthText("Done");
         else if (GrowthLevel == 3) foodUI.UpdateGrowthText("Dead");
         else foodUI.UpdateGrowthText(growingTime.ToString());
+    }
+    
+    public ItemType grainatorFood;
+    public void SetGrainatorFood(ItemType itemType) {
+        grainatorFood = itemType;
+        foodUI.UpdateGrainator(itemType);
+        
+        //Si rien n'est en train de pousser, plante automatiquement
+        if (this.itemType == ItemType.NONE && grainatorFood != ItemType.NONE) {
+            foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
+                if (foodSo.itemType != grainatorFood) continue;
+                StartNewFood(foodSo);
+                break;
+            }
+        }
     }
 }

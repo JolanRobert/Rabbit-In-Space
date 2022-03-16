@@ -25,7 +25,7 @@ public class FoodShopEntry : MonoBehaviour {
 
         GetComponent<GetEnum>().itemType = foodSo.itemType;
         GetComponent<Button>().onClick.AddListener(() => {
-            GardenManager.Instance.PlantSeed(GetComponent<GetEnum>());
+            GardenManager.Instance.PlantSeed(GetComponent<GetEnum>().itemType);
         });
     }
 }

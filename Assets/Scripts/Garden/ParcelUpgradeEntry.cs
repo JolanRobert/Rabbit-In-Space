@@ -11,13 +11,13 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     [SerializeField] private TMP_Text name;
     [SerializeField] private GameObject infos;
     [SerializeField] private GameObject banner;
-    [SerializeField] private GameObject activeUpgrade;
+    [SerializeField] private TMP_Text activeUpgrade;
 
     private UpgradeType upgradeType;
     private bool isActivable;
 
     public void Init(ParcelUpgradeSO puSo) {
-        touchableUpgrade.onClick.AddListener(BuyUpgrade);
+        touchableUpgrade.onClick.AddListener(OnClickUpgrade);
         
         name.text = puSo.name;
         infos.transform.GetChild(0).GetComponent<TMP_Text>().text = puSo.description;
@@ -27,27 +27,45 @@ public class ParcelUpgradeEntry : MonoBehaviour {
         isActivable = puSo.isActivable;
     }
 
-    private void BuyUpgrade() {
-        GardenManager.Instance.myParcel.BuyUpgrade(upgradeType);
+    private void OnClickUpgrade() {
+        if (GardenManager.Instance.myParcel.IsUpgradeBought(upgradeType)) {
+            if (!isActivable) return;
+            if (GardenManager.Instance.myParcel.IsUpgradeActive(upgradeType)) DisableUpgrade();
+            else EnableUpgrade();
+        }
+        else {
+            GardenManager.Instance.myParcel.BuyUpgrade(upgradeType);
+        }
     }
 
-    public void UnlockUpgrade(bool unlock) {
+    public void SetupUpgrade(bool unlock, bool active) {
         if (unlock) {
             infos.SetActive(false);
             banner.SetActive(true);
             if (isActivable) {
-                activeUpgrade.SetActive(true);
-                activeUpgrade.GetComponent<Toggle>().isOn = GardenManager.Instance.myParcel.IsUpgradeActive(upgradeType);
+                activeUpgrade.gameObject.SetActive(true);
+                if (active) EnableUpgrade();
+                else DisableUpgrade();
             }
         }
         else {
             infos.SetActive(true);
             banner.SetActive(false);
-            if (isActivable) activeUpgrade.SetActive(false);
+            if (isActivable) {
+                activeUpgrade.gameObject.SetActive(false);
+            }
         }
     }
 
-    public void ToggleUpgrade() {
-        GardenManager.Instance.myParcel.ActiveUpgrade(upgradeType,activeUpgrade.GetComponent<Toggle>().isOn);
+    private void EnableUpgrade() {
+        activeUpgrade.text = "Activé";
+        activeUpgrade.color = Color.green;
+        GardenManager.Instance.myParcel.ToggleUpgrade(upgradeType,true);
+    }
+
+    private void DisableUpgrade() {
+        activeUpgrade.text = "Désactivé";
+        activeUpgrade.color = Color.red;
+        GardenManager.Instance.myParcel.ToggleUpgrade(upgradeType,false);
     }
 }
