@@ -20,3 +20,7 @@ public enum ItemType {
 public enum SceneName {
     FRONT_TRUCK, KITCHEN, GARDEN
 }
+
+public enum UpgradeType {
+    ENGRAIS, NUTRIMENTS, RECOLTOUT, GRAINATOR
+}
