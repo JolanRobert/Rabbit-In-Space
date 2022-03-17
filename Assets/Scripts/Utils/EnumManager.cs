@@ -8,6 +8,10 @@ public class EnumManager : MonoBehaviour {
 public enum StockType {
     FRIDGE, WORKPLAN
 }
+
+public enum StationType {
+    BOILER, MOCHI_BEATER
+}
     
 public enum ItemType {
     NONE, MOON_RICE, STARBERRY, NEBULAZUKI, STARBERRY_DAIFUKU, HANAMI_DANGOS, MOCHI_WAFFLE, STARBERRY_BUBBLE_TEA
