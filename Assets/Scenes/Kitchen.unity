@@ -181,6 +181,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &102012814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102012815}
+  - component: {fileID: 102012817}
+  - component: {fileID: 102012816}
+  m_Layer: 0
+  m_Name: KitchenManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &102012815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102012814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1188691123}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102012816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102012814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc1ac41534c6fd4a8634b95684350e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  todayMenu: []
+  nbRecipes: 3
+  minAmountOfRecipeProd: 4
+--- !u!114 &102012817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102012814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e5f69b735be994f906add182d6bf72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeList:
+  - {fileID: 11400000, guid: 61afbe123767909459720add2a35e40c, type: 2}
+  - {fileID: 11400000, guid: 88228eaee9d4a634fb8228224eb05707, type: 2}
+  - {fileID: 11400000, guid: ee580925e83e72d458a142de7d0f8ca7, type: 2}
+  - {fileID: 11400000, guid: 8087618563aa7c14ab524468be30628e, type: 2}
+  - {fileID: 11400000, guid: 95088f6237a83014182c165e045831fe, type: 2}
 --- !u!114 &127933038 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3696676778036652209, guid: c8fea8c2918ceda449481fb39aa662fb, type: 3}
@@ -2307,6 +2372,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 102012815}
   - {fileID: 1339570586}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2668,7 +2734,7 @@ Transform:
   - {fileID: 626346342}
   - {fileID: 1850660260}
   m_Father: {fileID: 1188691123}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370028128
 GameObject:
@@ -2934,9 +3000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelGroup: {fileID: 1128599911}
   recipePanelPrefab: {fileID: 4974597499140484373, guid: 225695c994c4d9e4c9baa0536961e1dc, type: 3}
-  recipes:
-  - {fileID: 11400000, guid: 95088f6237a83014182c165e045831fe, type: 2}
-  - {fileID: 11400000, guid: 61afbe123767909459720add2a35e40c, type: 2}
 --- !u!1 &1476779544
 GameObject:
   m_ObjectHideFlags: 0

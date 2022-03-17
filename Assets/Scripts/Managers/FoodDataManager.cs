@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodDataManager : MonoBehaviour
@@ -39,7 +40,7 @@ public class FoodDataManager : MonoBehaviour
         InventoryManager.FoodItem item = Load(type.ToString());
         if (amount > item.amount)
         {
-            Debug.Log("Too few items");
+            //Debug.Log("Too few items");
             return false;
         }
         return true;

@@ -10,10 +10,6 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         Instance = this;
     }
-
-    void Start() {
-        Debug.Log("Jolan");
-    }
 }
 
 public enum GameState {
