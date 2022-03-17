@@ -4,7 +4,7 @@ using UnityEngine;
 public class CustomerSO : ScriptableObject {
     
     [Header("Global Infos")]
-    public ClientType clientType;
+    public CustomerType customerType;
     public int impatienceLimit;
 
     [Header("Sprites")]

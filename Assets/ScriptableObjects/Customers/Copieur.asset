@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf46a37841b3b2d42bc8c6dac6c4c3b0, type: 3}
   m_Name: Copieur
   m_EditorClassIdentifier: 
-  clientType: 3
+  customerType: 3
   impatienceLimit: 120
-  clientSprite: {fileID: 0}
+  clientSprite: {fileID: 3249155250164635762, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

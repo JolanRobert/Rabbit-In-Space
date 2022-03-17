@@ -7,6 +7,7 @@ public class KitchenManager : MonoBehaviour {
     private MenuGenerator menuGenerator;
 
     public List<RecipeSO> recipeList;
+    public List<CustomerSO> customerList;
 
     void Awake() {
         Instance = this;
@@ -14,6 +15,6 @@ public class KitchenManager : MonoBehaviour {
     }
 
     void Start() {
-        menuGenerator.GenerateMenu();
+        //menuGenerator.GenerateMenu();
     }
 }

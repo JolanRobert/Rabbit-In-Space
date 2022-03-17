@@ -25,6 +25,6 @@ public enum UpgradeType {
     ENGRAIS, NUTRIMENTS, RECOLTOUT, GRAINATOR
 }
 
-public enum ClientType {
+public enum CustomerType {
     NORMAL, HUPPE, RADIN, COPIEUR, ACCRO, LENT, IMPATIENT, ENERVANT
 }
