@@ -6,6 +6,7 @@ public class KitchenManager : MonoBehaviour {
     public static KitchenManager Instance;
     private MenuGenerator menuGenerator;
 
+    public List<FoodSO> foodList;
     public List<RecipeSO> recipeList;
     public List<CustomerSO> customerList;
 

@@ -38,9 +38,9 @@ public class GardenManager : MonoBehaviour {
     }
     
     //Plant with seed menu
-    public void PlantSeed(ItemType itemType) {
+    public void PlantSeed(FoodType itemType) {
         foreach (FoodSO foodSo in foodList) {
-            if (foodSo.itemType != itemType) continue;
+            if (foodSo.foodType != itemType) continue;
             myParcel.foodList[mySlot].StartNewFood(foodSo);
             UIGarden.Instance.CloseMenuSeed();
         }

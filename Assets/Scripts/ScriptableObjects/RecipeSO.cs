@@ -7,10 +7,10 @@ public class RecipeSO : ScriptableObject
 {
     [Header("Global Infos")] 
     public new string name;
-    public ItemType itemType;
+    public RecipeType recipeType;
     
     [Header("Sprites")]
-    public Sprite foodSprite;
+    public Sprite recipeSprite;
 
     [Header("Attributes")] 
     public List<RecipeElement> recipeElements;

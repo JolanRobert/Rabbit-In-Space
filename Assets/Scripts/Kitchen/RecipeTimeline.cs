@@ -11,7 +11,7 @@ public class RecipeTimeline : MonoBehaviour
 
     public void ShowRecipeTimeline(RecipeSO recipe)
     {
-        recipeImage.sprite = recipe.foodSprite;
+        recipeImage.sprite = recipe.recipeSprite;
         foreach (StationSO station in recipe.stations)
         {
             GameObject stationSlot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup);

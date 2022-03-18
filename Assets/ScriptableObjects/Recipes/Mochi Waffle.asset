@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mochi Waffle
   m_EditorClassIdentifier: 
   name: Mochi Waffle
-  itemType: 6
-  foodSprite: {fileID: 0}
+  recipeType: 3
+  recipeSprite: {fileID: 0}
   recipeElements:
   - food: {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
     amount: 1
@@ -22,5 +22,6 @@ MonoBehaviour:
     amount: 1
   - food: {fileID: 11400000, guid: 3ace6fc7a8bcb114798f8f56eb1a210a, type: 2}
     amount: 1
-  stations: []
-  price: 0
+  stations:
+  - {fileID: 11400000, guid: d5f75ba5a6a451b43b2df5f6c47c1246, type: 2}
+  price: 75

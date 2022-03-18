@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Starberry Bubble Tea
   m_EditorClassIdentifier: 
   name: Starberry Bubble Tea
-  itemType: 0
-  foodSprite: {fileID: 0}
+  recipeType: 4
+  recipeSprite: {fileID: 0}
   recipeElements:
   - food: {fileID: 11400000, guid: 995bfe4002b0a184d97fecbd0b9c18fd, type: 2}
     amount: 2
   - food: {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
     amount: 1
-  stations: []
-  price: 0
+  stations:
+  - {fileID: 11400000, guid: d5f75ba5a6a451b43b2df5f6c47c1246, type: 2}
+  price: 100

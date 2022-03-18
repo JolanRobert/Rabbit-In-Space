@@ -32,7 +32,6 @@ public class CustomerSpawner : MonoBehaviour {
             //Spawn Customer
             GameObject customer = Instantiate(customerPrefab, customerParent);
             customer.GetComponent<Customer>().Init(cc.customerSo);
-            Debug.Log("Spawn "+cc.customerSo.customerType);
             break;
         }
     }

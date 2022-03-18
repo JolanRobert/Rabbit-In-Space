@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnumManager : MonoBehaviour {
 
-    public ItemType itemType;
+    public FoodType itemType;
 }
 
 public enum StockType {
@@ -12,9 +12,13 @@ public enum StockType {
 public enum StationType {
     BOILER, MOCHI_BEATER
 }
-    
-public enum ItemType {
-    NONE, MOON_RICE, STARBERRY, NEBULAZUKI, STARBERRY_DAIFUKU, HANAMI_DANGOS, MOCHI_WAFFLE, STARBERRY_BUBBLE_TEA, KINAKO_MOCHI
+
+public enum FoodType {
+    NONE, MOON_RICE, STARBERRY, NEBULAZUKI
+}
+
+public enum RecipeType {
+    NONE, STARBERRY_DAIFUKU, HANAMI_DANGOS, MOCHI_WAFFLE, STARBERRY_BUBBLE_TEA, KINAKO_MOCHI
 }
 
 public enum SceneName {

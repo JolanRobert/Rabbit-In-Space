@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Starberry
   m_EditorClassIdentifier: 
   name: Starberry
-  itemType: 2
+  foodType: 2
   foodSprite: {fileID: -244593514229266007, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   plantSprites:
   - {fileID: -7769892685718114121, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}

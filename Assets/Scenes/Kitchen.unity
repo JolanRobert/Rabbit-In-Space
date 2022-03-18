@@ -241,6 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e5f69b735be994f906add182d6bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodList:
+  - {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
+  - {fileID: 11400000, guid: 3ace6fc7a8bcb114798f8f56eb1a210a, type: 2}
+  - {fileID: 11400000, guid: 995bfe4002b0a184d97fecbd0b9c18fd, type: 2}
   recipeList:
   - {fileID: 11400000, guid: 61afbe123767909459720add2a35e40c, type: 2}
   - {fileID: 11400000, guid: 88228eaee9d4a634fb8228224eb05707, type: 2}
@@ -268,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa0bc8df9ae45449bd567e4aa5a4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStarValue: 4
+  currentStarValue: 2
   customerPrefab: {fileID: 2078550667714367424, guid: 9021e7b3a292eb54fb0230d8d1805cae, type: 3}
   customerParent: {fileID: 1713962666}
   nbCounterCustomer: 3
@@ -4445,16 +4449,6 @@ MonoBehaviour:
   stockType: 0
   inventory: {fileID: 2137592985026835472}
   slotPrefab: {fileID: 3590970719461664086, guid: ceff9db247a45ec479354bcd8a7f8372, type: 3}
-  items:
-  - type: 1
-    sprite: {fileID: 4946396153592311711, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
-    amount: 0
-  - type: 2
-    sprite: {fileID: -244593514229266007, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
-    amount: 0
-  - type: 3
-    sprite: {fileID: 3501834645412458559, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
-    amount: 0
 --- !u!1 &4257270503475191396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4718,19 +4712,6 @@ MonoBehaviour:
   stockType: 1
   inventory: {fileID: 4257270504547387696}
   slotPrefab: {fileID: 3590970719461664086, guid: ceff9db247a45ec479354bcd8a7f8372, type: 3}
-  items:
-  - type: 4
-    sprite: {fileID: 0}
-    amount: 0
-  - type: 5
-    sprite: {fileID: 0}
-    amount: 0
-  - type: 6
-    sprite: {fileID: 0}
-    amount: 0
-  - type: 7
-    sprite: {fileID: 0}
-    amount: 0
 --- !u!1 &4257270504547387696
 GameObject:
   m_ObjectHideFlags: 0

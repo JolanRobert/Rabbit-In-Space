@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Kinako Mochi
   m_EditorClassIdentifier: 
   name: Kinako Mochi
-  itemType: 8
-  foodSprite: {fileID: 0}
+  recipeType: 5
+  recipeSprite: {fileID: 0}
   recipeElements:
   - food: {fileID: 11400000, guid: 995bfe4002b0a184d97fecbd0b9c18fd, type: 2}
     amount: 3
-  stations: []
-  price: 0
+  stations:
+  - {fileID: 11400000, guid: d5f75ba5a6a451b43b2df5f6c47c1246, type: 2}
+  price: 50
