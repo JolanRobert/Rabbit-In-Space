@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Impatient
   m_EditorClassIdentifier: 
   customerType: 6
-  impatienceLimit: 120
-  clientSprite: {fileID: -5716375310670982321, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  impatienceLimit: 60
+  customerSprite: {fileID: -5716375310670982321, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

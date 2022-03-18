@@ -10,7 +10,7 @@ public class RecipeManager : MonoBehaviour
     [SerializeField] private RecipeSO currentRecipe;
     private Queue<StationType> stations = new Queue<StationType>();
 
-    public List<Recipe> serviceRecipes = new List<Recipe>();
+    
 
     void Awake() {
         instance = this;
@@ -18,7 +18,7 @@ public class RecipeManager : MonoBehaviour
 
     void Start() {
         foreach (RecipeSO rSo in KitchenManager.Instance.recipeList) {
-            serviceRecipes.Add(new Recipe(rSo));
+            InventoryManager.workplanInstance.serviceRecipes.Add(new InventoryManager.RecipeItem(rSo));
         }
     }
 
@@ -41,7 +41,7 @@ public class RecipeManager : MonoBehaviour
 
     private void EndRecipe(bool success) {
         if (success) {
-            foreach (Recipe recipe in serviceRecipes) {
+            foreach (InventoryManager.RecipeItem recipe in InventoryManager.workplanInstance.serviceRecipes) {
                 if (currentRecipe != recipe.rSo) continue;
                 recipe.amount += 1;
                 break;
@@ -78,16 +78,5 @@ public class RecipeManager : MonoBehaviour
 
     private void SeeNextStep() {
         Debug.Log("Next step is : " + stations.Peek());
-    }
-
-    [Serializable]
-    public class Recipe {
-        public RecipeSO rSo;
-        public int amount;
-
-        public Recipe(RecipeSO rSo) {
-            this.rSo = rSo;
-            amount = 0;
-        }
     }
 }

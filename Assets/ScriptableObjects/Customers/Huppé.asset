@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerType: 1
   impatienceLimit: 120
-  clientSprite: {fileID: -5384411249408941408, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  customerSprite: {fileID: -5384411249408941408, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

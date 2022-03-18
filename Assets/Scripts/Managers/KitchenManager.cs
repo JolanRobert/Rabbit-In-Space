@@ -4,7 +4,7 @@ using UnityEngine;
 public class KitchenManager : MonoBehaviour {
 
     public static KitchenManager Instance;
-    private MenuGenerator menuGenerator;
+    public MenuGenerator menuGenerator;
 
     public List<FoodSO> foodList;
     public List<RecipeSO> recipeList;
@@ -16,6 +16,6 @@ public class KitchenManager : MonoBehaviour {
     }
 
     void Start() {
-        //menuGenerator.GenerateMenu();
+        menuGenerator.GenerateMenu();
     }
 }

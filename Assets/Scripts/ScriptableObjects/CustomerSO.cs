@@ -8,5 +8,5 @@ public class CustomerSO : ScriptableObject {
     public int impatienceLimit;
 
     [Header("Sprites")]
-    public Sprite clientSprite;
+    public Sprite customerSprite;
 }

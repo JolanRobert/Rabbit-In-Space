@@ -32,9 +32,9 @@ public class InventorySlot : MonoBehaviour {
             amountText.text = FoodDataManager.Instance.Load(foodType.ToString()).amount.ToString();
         }
         else {
-            foreach (RecipeManager.Recipe recipe in RecipeManager.instance.serviceRecipes) {
-                if (recipe.rSo.recipeType != recipeType) continue;
-                amountText.text = ""+recipe.amount;
+            foreach (InventoryManager.RecipeItem item in InventoryManager.workplanInstance.serviceRecipes) {
+                if (item.rSo.recipeType != recipeType) continue;
+                amountText.text = ""+item.amount;
                 break;
             }
         }

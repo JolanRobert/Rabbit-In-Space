@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e5f69b735be994f906add182d6bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuGenerator: {fileID: 0}
   foodList:
   - {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
   - {fileID: 11400000, guid: 3ace6fc7a8bcb114798f8f56eb1a210a, type: 2}
@@ -272,10 +273,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa0bc8df9ae45449bd567e4aa5a4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStarValue: 2
+  currentStarValue: 1
   customerPrefab: {fileID: 2078550667714367424, guid: 9021e7b3a292eb54fb0230d8d1805cae, type: 3}
-  customerParent: {fileID: 1713962666}
-  nbCounterCustomer: 3
+  customerSpawnPoint: {fileID: 1713962666}
+  nbCounterCustomer: 2
   nbHiddenCustomer: 2
   starRepartitions:
   - starValue: 1
@@ -3303,7 +3304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1713962666}
   m_Layer: 0
-  m_Name: Customers
+  m_Name: CustomerSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3316,13 +3317,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713962665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalPosition: {x: -3, y: 1, z: 2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1188691123}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!1 &1850660259
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,6 +4450,7 @@ MonoBehaviour:
   stockType: 0
   inventory: {fileID: 2137592985026835472}
   slotPrefab: {fileID: 3590970719461664086, guid: ceff9db247a45ec479354bcd8a7f8372, type: 3}
+  serviceRecipes: []
 --- !u!1 &4257270503475191396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,6 +4714,7 @@ MonoBehaviour:
   stockType: 1
   inventory: {fileID: 4257270504547387696}
   slotPrefab: {fileID: 3590970719461664086, guid: ceff9db247a45ec479354bcd8a7f8372, type: 3}
+  serviceRecipes: []
 --- !u!1 &4257270504547387696
 GameObject:
   m_ObjectHideFlags: 0

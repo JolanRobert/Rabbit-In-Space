@@ -15,6 +15,8 @@ public class InventoryManager : MonoBehaviour {
     private Dictionary<FoodType, InventorySlot> fridgeInventory = new Dictionary<FoodType, InventorySlot>();
     private Dictionary<RecipeType, InventorySlot> workplanInventory = new Dictionary<RecipeType, InventorySlot>();
     
+    public List<RecipeItem> serviceRecipes = new List<RecipeItem>();
+    
     private void Awake() {
         switch (stockType) {
             case StockType.FRIDGE:
@@ -70,6 +72,17 @@ public class InventoryManager : MonoBehaviour {
         [XmlIgnore]
         public Sprite sprite;
         public int amount;
+    }
+    
+    [Serializable]
+    public class RecipeItem {
+        public RecipeSO rSo;
+        public int amount;
+
+        public RecipeItem(RecipeSO rSo) {
+            this.rSo = rSo;
+            amount = 0;
+        }
     }
 }
 

@@ -1,31 +1,49 @@
 fileFormatVersion: 2
-guid: 2e1f284db564cc34c96906b3a48f0fab
+guid: 839e25d48c201d546bda31b0f1b0d3f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7028215270257684493
-    second: Normal
+      213: -6844812164002325513
+    second: Recipes_0
   - first:
-      213: -5384411249408941408
-    second: "Hupp\xE9"
+      213: -4216893537926596576
+    second: Recipes_1
   - first:
-      213: -8882518240985109994
-    second: Radin
+      213: -6592516867159476330
+    second: Recipes_2
   - first:
-      213: 3249155250164635762
-    second: Copieur
+      213: 704668964717809353
+    second: Recipes_3
   - first:
-      213: 8300460384929931605
-    second: Accro
+      213: 6672851640872089398
+    second: Recipes_4
   - first:
-      213: 5905982034480578280
-    second: Lent
+      213: 301771351984871595
+    second: Recipes_5
   - first:
-      213: -5716375310670982321
-    second: Impatient
+      213: -1983612587545035076
+    second: Recipes_6
   - first:
-      213: -8256170660068176849
-    second: "\xC9nervant"
+      213: -573784547007779588
+    second: Recipes_7
+  - first:
+      213: 7602362132243484761
+    second: Recipes_8
+  - first:
+      213: -399625179835262794
+    second: Recipes_9
+  - first:
+      213: -550272323666131515
+    second: Recipes_10
+  - first:
+      213: -4121283995906559729
+    second: Recipes_11
+  - first:
+      213: 2372453610254198542
+    second: Recipes_12
+  - first:
+      213: 7176023979533250297
+    second: Recipes_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +88,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Normal
+      name: Recipes_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 226
+        width: 224
+        height: 179
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ff8053e273c67e90800000000000000
-      internalID: -7028215270257684493
+      spriteID: 7fb5e5a2a975201a0800000000000000
+      internalID: -6844812164002325513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Hupp\xE9"
+      name: Recipes_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 284
+        y: 249
+        width: 165
+        height: 136
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a2ec5a1f7ab645b0800000000000000
-      internalID: -5384411249408941408
+      spriteID: 028be385ba59a75c0800000000000000
+      internalID: -4216893537926596576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Radin
+      name: Recipes_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 487
+        y: 259
+        width: 196
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61aa72fa8b4fab480800000000000000
-      internalID: -8882518240985109994
+      spriteID: 697303586dca284a0800000000000000
+      internalID: -6592516867159476330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Copieur
+      name: Recipes_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 726
+        y: 261
+        width: 189
+        height: 90
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,41 +222,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 278982a3c71571d20800000000000000
-      internalID: 3249155250164635762
+      spriteID: 9ce4f3e90bc77c900800000000000000
+      internalID: 704668964717809353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Accro
+      name: Recipes_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
+        x: 922
+        y: 211
+        width: 143
+        height: 169
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 55, y: 0, z: 6, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55163fb0eb8213370800000000000000
-      internalID: 8300460384929931605
+      spriteID: 637301d863bba9c50800000000000000
+      internalID: 6672851640872089398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lent
+      name: Recipes_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
+        x: 1179
+        y: 244
+        width: 152
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eebd0f7e5346f150800000000000000
-      internalID: 5905982034480578280
+      spriteID: ba8927e127b103400800000000000000
+      internalID: 301771351984871595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Impatient
+      name: Recipes_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
+        x: 0
+        y: 1
+        width: 213
+        height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4394ac01fa5ba0b0800000000000000
-      internalID: -5716375310670982321
+      spriteID: cbe726b7cdac874e0800000000000000
+      internalID: -1983612587545035076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\xC9nervant"
+      name: Recipes_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
+        x: 298
+        y: 41
+        width: 168
+        height: 161
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +306,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2c42a917803c6d80800000000000000
-      internalID: -8256170660068176849
+      spriteID: cfc2ef99ef18908f0800000000000000
+      internalID: -573784547007779588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipes_9
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 71
+        width: 196
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b81e98240f347af0800000000000000
+      internalID: -399625179835262794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipes_10
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 78
+        width: 93
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5c622bc3a0d58f0800000000000000
+      internalID: -550272323666131515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipes_11
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 37
+        width: 171
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01bc7d8a024ec6c0800000000000000
+      internalID: -4121283995906559729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipes_12
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 44
+        width: 193
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e076b4d1df5ace020800000000000000
+      internalID: 2372453610254198542
       vertices: []
       indices: 
       edges: []
@@ -297,7 +399,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5298c02e6d7dc674b99b7039726d3542
+    spriteID: 40c8d8e025ab3d946b3d60c8f8a66576
     internalID: 0
     vertices: []
     indices: 

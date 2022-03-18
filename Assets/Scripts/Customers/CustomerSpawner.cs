@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,17 +10,23 @@ public class CustomerSpawner : MonoBehaviour {
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
-    [SerializeField] private Transform customerParent;
+    [SerializeField] private Transform customerSpawnPoint;
     
     [Header("Customer Spawner Values")]
     [SerializeField] private int nbCounterCustomer;
     [SerializeField] private int nbHiddenCustomer;
     [SerializeField] private List<StarRepartition> starRepartitions;
 
+    private Queue<Customer> customers = new Queue<Customer>();
+
     void Start() {
         CheckStarRepartitionValues();
+
+        for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) {
+            SpawnCustomer();
+        }
         
-        for (int i = 0; i < 1000; i++) SpawnCustomer();
+        PlaceCustomers();
     }
 
     private void SpawnCustomer() {
@@ -30,9 +37,18 @@ public class CustomerSpawner : MonoBehaviour {
             if (randomValue > value) continue;
             
             //Spawn Customer
-            GameObject customer = Instantiate(customerPrefab, customerParent);
-            customer.GetComponent<Customer>().Init(cc.customerSo);
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint).GetComponent<Customer>();
+            customer.Init(cc.customerSo);
+            customers.Enqueue(customer);
             break;
+        }
+    }
+
+    private void PlaceCustomers() {
+        Customer[] tmp_customers = customers.ToArray();
+        
+        for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) {
+            tmp_customers[i].transform.position = customerSpawnPoint.position - new Vector3(2,0,0) * i;
         }
     }
 
