@@ -11,7 +11,7 @@ public class CustomerOrder : MonoBehaviour {
         customerChoiceSR.sprite = order.recipeSprite;
     }
 
-    public void UpdateImpatienceProgress(int value) {
+    public void UpdateImpatienceProgress(float value) {
         impatienceProgress.localScale = new Vector3(value, impatienceProgress.localScale.y, impatienceProgress.localScale.z);
         impatienceColorBarSR.color = new Color(1 - value, value, 0, 1);
     }

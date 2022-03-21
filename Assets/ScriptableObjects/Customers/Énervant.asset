@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: "\xC9nervant"
   m_EditorClassIdentifier: 
   customerType: 7
-  impatienceLimit: 120
+  impatienceLimit: 80
   customerSprite: {fileID: -8256170660068176849, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,21 +16,20 @@ public class CustomerSpawner : MonoBehaviour {
     [SerializeField] private int nbHiddenCustomer;
     [SerializeField] private List<StarRepartition> starRepartitions;
 
-    private Queue<Customer> customers = new Queue<Customer>();
+    public List<Customer> customerQueue = new List<Customer>();
 
     void Start() {
         CheckStarRepartitionValues();
 
-        for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) {
-            SpawnCustomer();
-        }
-        
-        PlaceCustomers();
+        KitchenManager.Instance.myMenu.GenerateMenu();
+        for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) PopCustomer();
+        MoveCustomers();
     }
 
-    private void SpawnCustomer() {
+    private void PopCustomer() {
         int randomValue = Random.Range(0, 100)+1;
         int value = 0;
+
         foreach (CustomerChance cc in starRepartitions[currentStarValue - 1].customerChances) {
             value += cc.probability;
             if (randomValue > value) continue;
@@ -39,16 +37,38 @@ public class CustomerSpawner : MonoBehaviour {
             //Spawn Customer
             Customer customer = Instantiate(customerPrefab, customerSpawnPoint).GetComponent<Customer>();
             customer.Init(cc.customerSo);
-            customers.Enqueue(customer);
+            customerQueue.Add(customer);
             break;
         }
     }
 
-    private void PlaceCustomers() {
-        Customer[] tmp_customers = customers.ToArray();
-        
-        for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) {
-            tmp_customers[i].transform.position = customerSpawnPoint.position - new Vector3(2,0,0) * i;
+    public void DepopCustomer(Customer customer) {
+        customerQueue.Remove(customer);
+        Destroy(customer.gameObject);
+        PopCustomer();
+        MoveCustomers();
+    }
+
+    //Déplace les clients
+    //Gère les commandes et les facteurs d'impatience
+    private void MoveCustomers() {
+        for (int i = 0; i < customerQueue.Count; i++) {
+            customerQueue[i].transform.position = customerSpawnPoint.transform.position - Vector3.right * i * 1.5f;
+            
+            //Les personnes devant le comptoir passent commande
+            if (i < nbCounterCustomer) customerQueue[i].MakeOrder();
+            
+            //Mise à jour du facteur d'impatience
+            int nbEnervants = 0;
+            //Client devant
+            if (i != 0 && customerQueue[i - 1].customerType == CustomerType.ENERVANT)
+                nbEnervants++;
+            
+            //Client derrière
+            if (i != customerQueue.Count-1 && customerQueue[i + 1].customerType == CustomerType.ENERVANT)
+                nbEnervants++;
+
+            customerQueue[i].impatienceFactor = 1 + 0.25f * nbEnervants;
         }
     }
 

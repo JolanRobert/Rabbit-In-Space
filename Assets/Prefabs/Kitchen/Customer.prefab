@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerOrder: {fileID: 6485164247574812216}
   customerSR: {fileID: 8958978937637705125}
+  impatienceFactor: 1
 --- !u!1 &2160457183842106719
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6794159686308330832
 Transform:
   m_ObjectHideFlags: 0

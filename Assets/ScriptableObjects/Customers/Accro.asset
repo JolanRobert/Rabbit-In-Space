@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Accro
   m_EditorClassIdentifier: 
   customerType: 4
-  impatienceLimit: 120
+  impatienceLimit: 80
   customerSprite: {fileID: 8300460384929931605, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
