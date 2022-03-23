@@ -4,53 +4,53 @@ public class FoodDataManager : MonoBehaviour
 {
     public static FoodDataManager Instance;
     [SerializeField] private DataSerializer dataSerializer;
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
+    
+    void Awake() {
+        if (Instance != null) Destroy(gameObject);
+        else {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
-    public void Save(string fileName, InventoryManager.FoodItem fooditem)
-    {
-        dataSerializer.SaveData(fileName,fooditem); 
-    }
 
-    public bool AddItems(ItemType type, int amount)
-    {
+    void Start() {
+        foreach (FoodSO fSo in KitchenManager.Instance.foodList) {
+            InventoryManager.FoodItem item = Load(fSo.foodType.ToString());
+            item.amount = 50;
+            Save(fSo.foodType.ToString(), item);
+        }
+    }
+    
+    public void AddItems(FoodType type, int amount) {
         InventoryManager.FoodItem item = Load(type.ToString());
         item.amount += amount;
         Save(type.ToString(), item);
-        return true;
     }
 
-    public bool CheckItemQuantity(ItemType type, int amount)
-    {
-        if (type == ItemType.NONE)
-        {
+    public bool CheckItemQuantity(FoodType type, int amount) {
+        if (type == FoodType.NONE) {
             Debug.LogWarning("Invalid type");
             return false;
         }
+        
         InventoryManager.FoodItem item = Load(type.ToString());
-        if (amount > item.amount)
-        {
-            Debug.Log("Too few items");
-            return false;
-        }
-        return true;
+        return amount <= item.amount;
     }
 
-    public InventoryManager.FoodItem Load(string fileName)
-    {
-        if (dataSerializer.LoadData<InventoryManager.FoodItem>(fileName) == default)
-        {
-            return new InventoryManager.FoodItem();
+    public bool HasRecipeItem(RecipeType recipeType) {
+        foreach (InventoryManager.RecipeItem item in InventoryManager.workplanInstance.serviceRecipes) {
+            if (item.rSo.recipeType != recipeType) continue;
+            return item.amount > 0;
         }
-        return dataSerializer.LoadData<InventoryManager.FoodItem>(fileName);
+
+        return false;
+    }
+    
+    private void Save(string fileName, InventoryManager.FoodItem foodItem) {
+        dataSerializer.SaveData(fileName,foodItem); 
+    }
+
+    public InventoryManager.FoodItem Load(string fileName) {
+        return dataSerializer.LoadData<InventoryManager.FoodItem>(fileName) ?? new InventoryManager.FoodItem();
     }
 }

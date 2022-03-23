@@ -15,7 +15,7 @@ public class Parcel : InteractableElement {
     }
     
     public override void Interact() {
-        if (PlayerManager.Instance.GetInteract().isInteracting) return;
+        //if (PlayerManager.Instance.GetInteract().isInteracting) return;
         GardenManager.Instance.myParcel = this;
         UIGarden.Instance.OpenParcelMenu();
     }
@@ -34,7 +34,7 @@ public class Parcel : InteractableElement {
             if (item == UpgradeType.GRAINATOR) {
                 for (int i = 0; i < foodList.Length; i++) {
                     UIGarden.Instance.plants[i].ShowGrainator(isActive);
-                    foodList[i].SetGrainatorFood(isActive ? foodList[i].grainatorFood : ItemType.NONE);
+                    foodList[i].SetGrainatorFood(isActive ? foodList[i].grainatorFood : FoodType.NONE);
                 }
             }
         }
@@ -67,7 +67,7 @@ public class Parcel : InteractableElement {
         if (upgradeType == UpgradeType.GRAINATOR) {
             for (int i = 0; i < foodList.Length; i++) {
                 UIGarden.Instance.plants[i].ShowGrainator(state);
-                foodList[i].SetGrainatorFood(!state ? ItemType.NONE : foodList[i].grainatorFood);
+                foodList[i].SetGrainatorFood(!state ? FoodType.NONE : foodList[i].grainatorFood);
             }
         }
     }

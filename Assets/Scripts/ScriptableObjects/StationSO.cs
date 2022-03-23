@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Station", menuName = "ScriptableObjects/Stations")]
+[CreateAssetMenu(fileName = "New Station", menuName = "ScriptableObjects/Station")]
 public class StationSO : ScriptableObject
 {
     [Header("Global Infos")]

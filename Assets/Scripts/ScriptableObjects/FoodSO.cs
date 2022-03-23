@@ -5,7 +5,7 @@ public class FoodSO : ScriptableObject {
 
     [Header("Global Infos")]
     public new string name;
-    public ItemType itemType;
+    public FoodType foodType;
     
     [Header("Sprites")]
     public Sprite foodSprite;

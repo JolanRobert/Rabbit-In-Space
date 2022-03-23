@@ -23,7 +23,7 @@ public class FoodShopEntry : MonoBehaviour {
         decayTime.text = foodSo.decayTime + "s";
         foodProduction.text = "+" + foodSo.minMaxProduction.x + "-" + foodSo.minMaxProduction.y;
 
-        GetComponent<EnumManager>().itemType = foodSo.itemType;
+        GetComponent<EnumManager>().itemType = foodSo.foodType;
         GetComponent<Button>().onClick.AddListener(() => {
             GardenManager.Instance.PlantSeed(GetComponent<EnumManager>().itemType);
         });

@@ -13,7 +13,7 @@ public class Food : MonoBehaviour {
     }
     
     private string foodName;
-    public ItemType itemType;
+    public FoodType foodType;
 
     private Sprite foodSprite;
     private Sprite[] plantSprites;
@@ -61,7 +61,7 @@ public class Food : MonoBehaviour {
         if (foodUI != null) foodUI.Reset();
         
         foodName = foodSo.name;
-        itemType = foodSo.itemType;
+        foodType = foodSo.foodType;
         
         plantSprites = foodSo.plantSprites;
         foodSprite = foodSo.foodSprite;
@@ -113,17 +113,17 @@ public class Food : MonoBehaviour {
         if (growthLevel == 2) {
             int prodValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
             if (myParcel.IsUpgradeActive(UpgradeType.ENGRAIS)) prodValue += 2;
-            Debug.Log("Harvest "+prodValue+" "+itemType);
+            Debug.Log("Harvest "+prodValue+" "+foodType);
             //InventoryManager.fridgeInstance.AddItems(itemType, randomValue);
         }
         
         StopAllCoroutines();
         if (foodUI != null) foodUI.Reset();
-        itemType = ItemType.NONE;
+        foodType = FoodType.NONE;
         
-        if (myParcel.IsUpgradeActive(UpgradeType.GRAINATOR) && grainatorFood != ItemType.NONE) {
+        if (myParcel.IsUpgradeActive(UpgradeType.GRAINATOR) && grainatorFood != FoodType.NONE) {
             foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
-                if (foodSo.itemType != grainatorFood) continue;
+                if (foodSo.foodType != grainatorFood) continue;
                 StartNewFood(foodSo);
                 break;
             }
@@ -137,7 +137,7 @@ public class Food : MonoBehaviour {
     public void InitFoodUI() {
         foodUI.SetTouchEvent(this);
         
-        if (itemType == ItemType.NONE) {
+        if (foodType == FoodType.NONE) {
             foodUI.Reset();
             return;
         }
@@ -153,15 +153,15 @@ public class Food : MonoBehaviour {
         else foodUI.UpdateGrowthText(growingTime.ToString());
     }
     
-    public ItemType grainatorFood;
-    public void SetGrainatorFood(ItemType itemType) {
-        grainatorFood = itemType;
-        foodUI.UpdateGrainator(itemType);
+    public FoodType grainatorFood;
+    public void SetGrainatorFood(FoodType foodType) {
+        grainatorFood = foodType;
+        foodUI.UpdateGrainator(foodType);
         
         //Si rien n'est en train de pousser, plante automatiquement
-        if (this.itemType == ItemType.NONE && grainatorFood != ItemType.NONE) {
+        if (this.foodType == FoodType.NONE && grainatorFood != FoodType.NONE) {
             foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
-                if (foodSo.itemType != grainatorFood) continue;
+                if (foodSo.foodType != grainatorFood) continue;
                 StartNewFood(foodSo);
                 break;
             }

@@ -17,14 +17,14 @@ public class RecipePanel : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text nameText, priceText;
     [Header("Attributes")]
-    public ItemType type;
+    public RecipeType type;
     public int price;
 
     public void SetupPanel(RecipeSO newRecipe)
     {
         recipe = newRecipe;
-        type = recipe.itemType;
-        image.sprite = recipe.foodSprite;
+        type = recipe.recipeType;
+        image.sprite = recipe.recipeSprite;
         name = recipe.name;
         nameText.text = name;
         price = recipe.price;
@@ -47,7 +47,7 @@ public class RecipePanel : MonoBehaviour
     {
         foreach (RecipeElement element in recipe.recipeElements)
         {
-            if(!FoodDataManager.Instance.CheckItemQuantity(element.food.itemType,element.amount))
+            if(!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType,element.amount))
             {
                 Debug.Log("Not enough " + element.food.name);
                 return;
@@ -55,7 +55,7 @@ public class RecipePanel : MonoBehaviour
         }
         foreach (RecipeElement element in recipe.recipeElements)
         {
-            FoodDataManager.Instance.AddItems(element.food.itemType, -element.amount);
+            FoodDataManager.Instance.AddItems(element.food.foodType, -element.amount);
             //Debug.Log("Took " + element.amount + " " + element.food.name);
         }
         
