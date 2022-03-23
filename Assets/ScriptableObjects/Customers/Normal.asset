@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   customerType: 0
-  impatienceLimit: 6
+  impatienceLimit: 80
   customerSprite: {fileID: -7028215270257684493, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

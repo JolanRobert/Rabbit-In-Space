@@ -15,7 +15,7 @@ public class Parcel : InteractableElement {
     }
     
     public override void Interact() {
-        if (PlayerManager.Instance.GetInteract().isInteracting) return;
+        //if (PlayerManager.Instance.GetInteract().isInteracting) return;
         GardenManager.Instance.myParcel = this;
         UIGarden.Instance.OpenParcelMenu();
     }

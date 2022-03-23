@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Radin
   m_EditorClassIdentifier: 
   customerType: 2
-  impatienceLimit: 8
+  impatienceLimit: 80
   customerSprite: {fileID: -8882518240985109994, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Front_Truck.unity
-    guid: d7eaf87c8d0a7114b8ffda2a2a97d7af
   - enabled: 1
     path: Assets/Scenes/Kitchen.unity
     guid: e26da1b403187644f81b3e9f383dc339
