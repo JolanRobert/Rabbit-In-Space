@@ -277,17 +277,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8765099013910501076, guid: 0ff09a29cdc539d42a55f359f3b2c6bc, type: 3}
   m_PrefabInstance: {fileID: 624162302}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &624162304 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8765099013910501079, guid: 0ff09a29cdc539d42a55f359f3b2c6bc, type: 3}
+--- !u!1 &716543134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8765099013910501077, guid: 0ff09a29cdc539d42a55f359f3b2c6bc, type: 3}
   m_PrefabInstance: {fileID: 624162302}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bfea7ff0b271b4db7a08ae4c0a1189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &832772722
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24c2a6b72bdeda40a2e1f8d70107d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeTimeline: {fileID: 624162304}
+  recipeTimeline: {fileID: 716543134}
   currentRecipe: {fileID: 0}
   serviceRecipes: []
 --- !u!1 &1928092798
