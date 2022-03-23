@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Customer : MonoBehaviour {
+public class Customer : InteractableElement {
 
     [SerializeField] private CustomerOrder customerOrder;
     [SerializeField] private SpriteRenderer customerSR;
@@ -14,6 +14,10 @@ public class Customer : MonoBehaviour {
     public float impatienceFactor = 1;
 
     private bool hasOrdered;
+
+    void Start() {
+        interactPosition = -transform.position + new Vector3(-3, 0, -1);
+    }
 
     public void Init(CustomerSO cSo) {
         customerSR.sprite = cSo.customerSprite;
@@ -53,11 +57,35 @@ public class Customer : MonoBehaviour {
         CompleteOrder(false);
     }
 
-    public void CompleteOrder(bool success) {
+    private void TryCompleteOrder() {
+        if (!FoodDataManager.Instance.HasRecipeItem(myOrder.recipeType)) {
+            return;
+        }
+        
+        foreach (InventoryManager.RecipeItem item in RecipeManager.instance.serviceRecipes) {
+            if (item.rSo.recipeType != myOrder.recipeType) continue;
+            item.amount--;
+            break;
+        }
+        CompleteOrder(true);
+    }
+
+    private void CompleteOrder(bool success) {
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
     }
 
-    public RecipeSO GetOrder() {
+    private RecipeSO GetOrder() {
         return myOrder;
+    }
+    
+    public override void Interact() {
+        CustomerSpawner customerSpawner = KitchenManager.Instance.customerSpawner;
+        for (int i = 0; i < customerSpawner.nbCounterCustomer; i++) {
+            if (customerSpawner.customerQueue[i] != this) continue;
+            TryCompleteOrder();
+            break;
+        }
+
+        PlayerManager.Instance.GetInteract().isInteracting = false;
     }
 }
