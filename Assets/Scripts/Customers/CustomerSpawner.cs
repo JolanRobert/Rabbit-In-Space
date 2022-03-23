@@ -9,10 +9,10 @@ public class CustomerSpawner : MonoBehaviour {
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
-    [SerializeField] private Transform customerSpawnPoint;
+    [SerializeField] private Vector3 customerSpawnPoint;
     
     [Header("Customer Spawner Values")]
-    [SerializeField] private int nbCounterCustomer;
+    public int nbCounterCustomer;
     [SerializeField] private int nbHiddenCustomer;
     [SerializeField] private List<StarRepartition> starRepartitions;
 
@@ -20,10 +20,16 @@ public class CustomerSpawner : MonoBehaviour {
 
     void Start() {
         CheckStarRepartitionValues();
+    }
 
+    public void StartService() {
         KitchenManager.Instance.myMenu.GenerateMenu();
         for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) PopCustomer();
         MoveCustomers();
+    }
+
+    public void EndService() {
+        foreach (Customer customer in customerQueue) DepopCustomer(customer);
     }
 
     private void PopCustomer() {
@@ -35,7 +41,7 @@ public class CustomerSpawner : MonoBehaviour {
             if (randomValue > value) continue;
             
             //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint).GetComponent<Customer>();
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint, Quaternion.Euler(45,0,0), transform).GetComponent<Customer>();
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
             break;
@@ -45,6 +51,8 @@ public class CustomerSpawner : MonoBehaviour {
     public void DepopCustomer(Customer customer) {
         customerQueue.Remove(customer);
         Destroy(customer.gameObject);
+        
+        if (!KitchenManager.Instance.inService) return;
         PopCustomer();
         MoveCustomers();
     }
@@ -53,7 +61,7 @@ public class CustomerSpawner : MonoBehaviour {
     //Gère les commandes et les facteurs d'impatience
     private void MoveCustomers() {
         for (int i = 0; i < customerQueue.Count; i++) {
-            customerQueue[i].transform.position = customerSpawnPoint.transform.position - Vector3.right * i * 1.5f;
+            customerQueue[i].transform.position = customerSpawnPoint - Vector3.right * i * 1.5f;
             
             //Les personnes devant le comptoir passent commande
             if (i < nbCounterCustomer) customerQueue[i].MakeOrder();

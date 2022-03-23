@@ -6,11 +6,7 @@ public class FoodDataManager : MonoBehaviour
     [SerializeField] private DataSerializer dataSerializer;
     
     void Awake() {
-        if (Instance != null) Destroy(gameObject);
-        else {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        Instance = this;
     }
 
     void Start() {
@@ -25,6 +21,7 @@ public class FoodDataManager : MonoBehaviour
         InventoryManager.FoodItem item = Load(type.ToString());
         item.amount += amount;
         Save(type.ToString(), item);
+        Debug.Log("Add "+amount+" "+type);
     }
 
     public bool CheckItemQuantity(FoodType type, int amount) {
@@ -38,7 +35,7 @@ public class FoodDataManager : MonoBehaviour
     }
 
     public bool HasRecipeItem(RecipeType recipeType) {
-        foreach (InventoryManager.RecipeItem item in InventoryManager.workplanInstance.serviceRecipes) {
+        foreach (InventoryManager.RecipeItem item in RecipeManager.instance.serviceRecipes) {
             if (item.rSo.recipeType != recipeType) continue;
             return item.amount > 0;
         }
