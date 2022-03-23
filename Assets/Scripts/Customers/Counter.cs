@@ -1,8 +1,13 @@
 public class Counter : InteractableElement {
     
     public override void Interact() {
-        TryCompleteCustomerOrder(KitchenManager.Instance.customerSpawner.customerQueue[1]);
-        TryCompleteCustomerOrder(KitchenManager.Instance.customerSpawner.customerQueue[0]);
+        if (KitchenManager.Instance.inService) {
+            CustomerSpawner customerSpawner = KitchenManager.Instance.customerSpawner;
+            for (int i = customerSpawner.nbCounterCustomer-1; i < customerSpawner.nbCounterCustomer; i--) {
+                TryCompleteCustomerOrder(customerSpawner.customerQueue[i]);
+            }
+        }
+
         PlayerManager.Instance.GetInteract().isInteracting = false;
     }
 
@@ -11,7 +16,7 @@ public class Counter : InteractableElement {
             return;
         }
         
-        foreach (InventoryManager.RecipeItem item in InventoryManager.workplanInstance.serviceRecipes) {
+        foreach (InventoryManager.RecipeItem item in RecipeManager.instance.serviceRecipes) {
             if (item.rSo.recipeType != customer.GetOrder().recipeType) continue;
             item.amount--;
             break;

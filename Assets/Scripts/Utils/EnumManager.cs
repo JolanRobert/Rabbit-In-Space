@@ -10,7 +10,7 @@ public enum StockType {
 }
 
 public enum StationType {
-    BOILER, MOCHI_BEATER
+    BOILER, MOCHI_BEATER, CUTTER, SKEWER, GRILL, TRIMMING, ROLLING_PIN, MIXER
 }
 
 public enum FoodType {
@@ -19,10 +19,6 @@ public enum FoodType {
 
 public enum RecipeType {
     NONE, STARBERRY_DAIFUKU, HANAMI_DANGOS, MOCHI_WAFFLE, STARBERRY_BUBBLE_TEA, KINAKO_MOCHI
-}
-
-public enum SceneName {
-    FRONT_TRUCK, KITCHEN, GARDEN
 }
 
 public enum UpgradeType {

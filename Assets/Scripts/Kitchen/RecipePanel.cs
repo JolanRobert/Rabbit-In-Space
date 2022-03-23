@@ -59,6 +59,6 @@ public class RecipePanel : MonoBehaviour
             //Debug.Log("Took " + element.amount + " " + element.food.name);
         }
         
-        RecipeManager.instance.StartRecipeTimeline(recipe);
+        RecipeManager.instance.InitRecipeTimeline(recipe);
     }
 }

@@ -15,18 +15,16 @@ public class InventoryManager : MonoBehaviour {
     private Dictionary<FoodType, InventorySlot> fridgeInventory = new Dictionary<FoodType, InventorySlot>();
     private Dictionary<RecipeType, InventorySlot> workplanInventory = new Dictionary<RecipeType, InventorySlot>();
     
-    public List<RecipeItem> serviceRecipes = new List<RecipeItem>();
+    
     
     private void Awake() {
         switch (stockType) {
             case StockType.FRIDGE:
                 if (fridgeInstance != null) return;
-                //DontDestroyOnLoad(gameObject);
                 fridgeInstance = this;
                 break;
             case StockType.WORKPLAN:
                 if (workplanInstance != null) return;
-                //DontDestroyOnLoad(gameObject);
                 workplanInstance = this;
                 break;
         }

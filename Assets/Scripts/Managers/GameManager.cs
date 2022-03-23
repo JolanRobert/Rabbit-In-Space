@@ -3,15 +3,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
-    [SerializeField] private GameState gameState;
-
-    public PlayerManager playerManager;
 
     void Awake() {
-        Instance = this;
+        if (Instance != null) Destroy(gameObject);
+        else {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
-}
 
-public enum GameState {
-    FRONT_TRUCK, KITCHEN, GARDEN
+    void Start() {
+        SwitchScene.Instance.ToGarden();
+    }
 }

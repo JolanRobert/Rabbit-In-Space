@@ -6,8 +6,7 @@ public class Station : InteractableElement
     public override void Interact() {
         if (RecipeManager.instance.CheckIsNextStation(station.stationType))
         {
-            UIManager.Instance.OpenMinigame(interactPanel.gameObject);
-            RecipeManager.instance.ForwardStep();
+            MinigameManager.instance.StartMinigame(station.stationType);
         }
         else
         {
