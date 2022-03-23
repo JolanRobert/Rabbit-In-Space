@@ -9,7 +9,6 @@ public class KitchenManager : MonoBehaviour {
 
     public List<FoodSO> foodList;
     public List<RecipeSO> recipeList;
-    public List<CustomerSO> customerList;
     
     public bool inService;
 
