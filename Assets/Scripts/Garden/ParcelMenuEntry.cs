@@ -60,8 +60,8 @@ public class ParcelMenuEntry : MonoBehaviour {
         grainatorSelect.SetActive(state);
     }
 
-    public void UpdateGrainator(ItemType itemType) {
-        grainatorSelect.GetComponent<GrainatorMenu>().SetFoodSprite(itemType);
+    public void UpdateGrainator(FoodType foodType) {
+        grainatorSelect.GetComponent<GrainatorMenu>().SetFoodSprite(foodType);
     }
     
     public void Reset() {

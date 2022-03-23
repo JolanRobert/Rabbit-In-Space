@@ -32,8 +32,8 @@ public class UIManager : MonoBehaviour {
     }
     public void OpenWorkplan()
     {
-        currentPanel = InventoryManager.workPlanInstance.inventory;
-        InventoryManager.workPlanInstance.OpenInventory();
+        currentPanel = InventoryManager.workplanInstance.inventory;
+        InventoryManager.workplanInstance.OpenInventory();
     }
 
     public void CloseMinigame() {

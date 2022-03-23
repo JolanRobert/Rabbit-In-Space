@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         Instance = this;
     }
-
-    void Start() {
-    }
 }
 
 public enum GameState {

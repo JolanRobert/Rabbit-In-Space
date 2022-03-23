@@ -13,19 +13,19 @@ public class GrainatorMenu : MonoBehaviour {
     
     void Start() {
         GetComponent<Button>().onClick.AddListener(Toggle);
-        AddEntry(null,ItemType.NONE);
+        AddEntry(null,FoodType.NONE);
 
         foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
-            AddEntry(foodSo.foodSprite,foodSo.itemType);
+            AddEntry(foodSo.foodSprite,foodSo.foodType);
         }
     }
 
-    private void AddEntry(Sprite foodSprite, ItemType itemType) {
+    private void AddEntry(Sprite foodSprite, FoodType foodType) {
         GameObject entry = Instantiate(entryPrefab, transform);
         entry.transform.GetChild(0).GetComponent<Image>().sprite = foodSprite;
         entry.GetComponent<Button>().onClick.AddListener(() => {
             Toggle();
-            OnSelectFood(itemType);
+            OnSelectFood(foodType);
         });
         entries.Add(entry);
     }
@@ -59,15 +59,15 @@ public class GrainatorMenu : MonoBehaviour {
         isToggle = !isToggle;
     }
 
-    private void OnSelectFood(ItemType itemType) {
+    private void OnSelectFood(FoodType foodType) {
         ParcelMenuEntry pme = transform.parent.GetComponent<ParcelMenuEntry>();
-        GardenManager.Instance.myParcel.foodList[pme.foodSlot].SetGrainatorFood(itemType);
-        SetFoodSprite(itemType);
+        GardenManager.Instance.myParcel.foodList[pme.foodSlot].SetGrainatorFood(foodType);
+        SetFoodSprite(foodType);
     }
 
-    public void SetFoodSprite(ItemType itemType) {
+    public void SetFoodSprite(FoodType foodType) {
         foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
-            if (itemType != foodSo.itemType) continue;
+            if (foodType != foodSo.foodType) continue;
             selectedFoodSprite.sprite = foodSo.foodSprite;
             return;
         }

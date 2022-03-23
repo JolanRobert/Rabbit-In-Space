@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,75 +10,73 @@ public class RecipeManager : MonoBehaviour
     [SerializeField] private RecipeSO currentRecipe;
     private Queue<StationType> stations = new Queue<StationType>();
 
-    void Awake()
-    {
+    
+
+    void Awake() {
         instance = this;
     }
 
-    public void StartRecipeTimeline(RecipeSO recipe)
-    {
-        if (currentRecipe != null)
-        {
-            EndRecipe(false);
+    void Start() {
+        foreach (RecipeSO rSo in KitchenManager.Instance.recipeList) {
+            InventoryManager.workplanInstance.serviceRecipes.Add(new InventoryManager.RecipeItem(rSo));
         }
+    }
+
+    public void StartRecipeTimeline(RecipeSO recipe) {
+        
+        if (currentRecipe != null) EndRecipe(false);
+        
         currentRecipe = recipe;
         stations.Clear();
-        foreach (StationSO station in recipe.stations)
-        {
-            stations.Enqueue(station.stationType);
-        }
+        
+        foreach (StationSO station in recipe.stations) stations.Enqueue(station.stationType);
+        
         Debug.Log(currentRecipe.name + " recipe has started.");
+        
         UIManager.Instance.ClosePanel();
         recipeTimeline.gameObject.SetActive(true);
         recipeTimeline.ShowRecipeTimeline(recipe);
         SeeNextStep();
     }
 
-    public void EndRecipe(bool success)
-    {
-        if (success)
-        {
-            FoodDataManager.Instance.AddItems(currentRecipe.itemType, 1);
+    private void EndRecipe(bool success) {
+        if (success) {
+            foreach (InventoryManager.RecipeItem recipe in InventoryManager.workplanInstance.serviceRecipes) {
+                if (currentRecipe != recipe.rSo) continue;
+                recipe.amount += 1;
+                break;
+            }
+            
             Debug.Log(currentRecipe.name + " recipe has ended with success.");
         }
-        else
-        {
-            Debug.Log(currentRecipe.name + " recipe has ended with failure.");
-        }
+        else Debug.Log(currentRecipe.name + " recipe has ended with failure.");
+        
         currentRecipe = null;
-        foreach (Transform child in recipeTimeline.transform.GetChild(1))
-        {
-            Destroy(child.gameObject);
-        }
+        foreach (Transform child in recipeTimeline.transform.GetChild(1)) Destroy(child.gameObject);
         recipeTimeline.gameObject.SetActive(false);
     }
-    public bool CheckIsNextStation(StationType type)
-    {
-        if (stations.Count == 0)
-        {
+    
+    public bool CheckIsNextStation(StationType type) {
+        if (stations.Count == 0) {
             Debug.Log("No recipe in progress...");
             return false;
         }
-        if (stations.Peek() == type)
-        {
-            return true;
-        }
+        
+        if (stations.Peek() == type) return true;
         Debug.Log(type + " is not the anticipated station.");
         return false;
     }
-    public void ForwardStep()
-    {
+    
+    public void ForwardStep() {
         stations.Dequeue();
-        if (stations.Count == 0)
-        {
+        if (stations.Count == 0) {
             EndRecipe(true);
             return;
         }
         SeeNextStep();
     }
 
-    private void SeeNextStep()
-    {
+    private void SeeNextStep() {
         Debug.Log("Next step is : " + stations.Peek());
     }
 }
