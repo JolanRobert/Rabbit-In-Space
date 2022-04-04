@@ -46,7 +46,6 @@ public class GrillMachine : MonoBehaviour {
     public void GetMochi(GrillMochi grillMochi) {
         mochis.Remove(grillMochi);
         int mochiStep = (int)Mathf.Round(grillMochi.mochiState);
-        Debug.Log(mochiStep);
 
         if (mochiStep == 2 || mochiStep == 6) completionBar.FillBar(10);
         if (mochiStep == 3 || mochiStep == 5) completionBar.FillBar(20);

@@ -18,14 +18,12 @@ namespace MochiBeater
         public void OnBeginDrag(PointerEventData eventData)
         {
             isDragging = true;
-            Debug.Log("BeginDragFoldingButton");
             dragPosition = Camera.main.ScreenToWorldPoint(eventData.position);
         }
     
         public void OnEndDrag(PointerEventData eventData)
         {
             isDragging = false;
-            Debug.Log("OnEndDragFoldingButton");
     
             deltaDrag = Camera.main.ScreenToWorldPoint(eventData.position) - (Vector3)dragPosition;
             MochiBeaterManager.Instance.TryFold(deltaDrag);

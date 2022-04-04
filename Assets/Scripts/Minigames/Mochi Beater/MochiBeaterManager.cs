@@ -41,7 +41,7 @@ namespace MochiBeater
 
         public void TryFold(Vector2 drag)
         {
-            Debug.Log(drag.magnitude + ", " + drag.normalized);
+            //Debug.Log(drag.magnitude + ", " + drag.normalized);
             if (!(drag.magnitude > foldingMagnitude - magnitudeMargin / 2) || !(drag.magnitude < foldingMagnitude + magnitudeMargin / 2))
             {
                 Debug.Log("Invalid Magnitude");

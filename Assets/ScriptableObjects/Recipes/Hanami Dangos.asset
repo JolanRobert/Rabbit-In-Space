@@ -21,6 +21,5 @@ MonoBehaviour:
   - food: {fileID: 11400000, guid: 3ace6fc7a8bcb114798f8f56eb1a210a, type: 2}
     amount: 2
   stations:
-  - {fileID: 11400000, guid: d683adb435a69be4eab83ea439b3ee3f, type: 2}
   - {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
   price: 25

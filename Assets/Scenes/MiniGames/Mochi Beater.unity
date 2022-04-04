@@ -558,7 +558,7 @@ MonoBehaviour:
   dough: {fileID: 790905475}
   completionGauge: {fileID: 1217527179}
   foldingButton: {fileID: 1694088627}
-  initialFoldsToMake: 10
+  initialFoldsToMake: 5
   newFoldProbability: 0.5
   foldingMagnitude: 5
   dirMargin: 0.5
