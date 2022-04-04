@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 3e4519d26c7490245a7c3905f15e80fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8787862702612803489
+    second: Mood_dog copy_0
+  - first:
+      213: -834773189333992813
+    second: Mood_dog copy_1
+  - first:
+      213: -2162918656302121321
+    second: Mood_dog copy_2
+  - first:
+      213: -6631924585756746139
+    second: Mood_dog copy_3
+  - first:
+      213: 7856674237258493706
+    second: Mood_dog copy_4
+  - first:
+      213: 6664423368919542731
+    second: Mood_dog copy_5
+  - first:
+      213: 8346006295640270170
+    second: Mood_dog copy_6
+  - first:
+      213: 8502196864115618006
+    second: Mood_dog copy_7
+  - first:
+      213: 1531127763128151280
+    second: Mood_dog copy_8
+  - first:
+      213: -840098475262586248
+    second: Mood_dog copy_9
+  - first:
+      213: -8734568151144341921
+    second: Mood_dog copy_10
+  - first:
+      213: -5484296841916871878
+    second: Dog_0
+  - first:
+      213: -8763370304026956820
+    second: Mood_dog copy_12
+  - first:
+      213: -7669568385864181096
+    second: Mood_dog copy_13
+  - first:
+      213: 9175975108919220985
+    second: Mood_dog copy_14
+  - first:
+      213: 6006258108684561761
+    second: Mood_dog copy_15
+  - first:
+      213: 4640820145083736003
+    second: Mood_dog copy_16
+  - first:
+      213: 6701411512337129408
+    second: Mood_dog copy_17
+  - first:
+      213: 5486836200598436668
+    second: Dog_1
+  - first:
+      213: 5303636984922699960
+    second: Mood_dog copy_19
+  - first:
+      213: 2141753655964934562
+    second: Mood_dog copy_20
+  - first:
+      213: -5488888871244633225
+    second: Mood_dog copy_21
+  - first:
+      213: 7177250085940314022
+    second: Mood_dog copy_22
+  - first:
+      213: 6596755354059348408
+    second: Dog_2
+  - first:
+      213: 5860132543577625427
+    second: Mood_dog copy_24
+  - first:
+      213: 4145342440053884659
+    second: Mood_dog copy_25
+  - first:
+      213: -187089396170338334
+    second: Mood_dog copy_26
+  - first:
+      213: -292768363816699000
+    second: Dog_3
+  - first:
+      213: -1333541335822611854
+    second: Mood_dog copy_28
+  - first:
+      213: -6497743221575814997
+    second: Mood_dog copy_29
+  - first:
+      213: 7398707624378651579
+    second: Mood_dog copy_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dog_0
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 510
+        width: 882
+        height: 1719
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee010928d1d8b000800000000000000
+      internalID: 52022122045837031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_1
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 528
+        width: 919
+        height: 1713
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebdf7629a3c4ff40800000000000000
+      internalID: 5761444954576509930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_2
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 532
+        width: 1128
+        height: 1707
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3234037426f9910800000000000000
+      internalID: 1846302430137099209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_3
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 500
+        width: 869
+        height: 1715
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2267af4d50801f9f0800000000000000
+      internalID: -436558867737184734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5d3c17d5eefaf3541835d82634177675
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
