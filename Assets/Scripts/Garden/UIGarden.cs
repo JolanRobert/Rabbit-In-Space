@@ -18,6 +18,10 @@ public class UIGarden : MonoBehaviour {
     [SerializeField] private GameObject foodShop;
     [SerializeField] private GameObject closeOverlay;
 
+    [Header("Start Service")]
+    [SerializeField] private GameObject servicePanel;
+    [SerializeField] private List<ServiceEntry> serviceEntries;
+
     void Awake() {
         Instance = this;
     }
@@ -68,5 +72,20 @@ public class UIGarden : MonoBehaviour {
         
         foodShop.transform.DOMoveX(foodShop.transform.position.x + 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f);
+    }
+
+    public void OpenService() {
+        servicePanel.SetActive(true);
+        
+        KitchenManager.Instance.myMenu.GenerateMenu();
+        List<RecipeSO> myMenu = KitchenManager.Instance.myMenu.todayMenu;
+        for (int i = 0; i < myMenu.Count; i++) {
+            serviceEntries[i].Init(myMenu[i]);
+        }
+        
+    }
+
+    public void CloseService() {
+        servicePanel.SetActive(false);
     }
 }
