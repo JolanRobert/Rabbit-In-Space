@@ -11,6 +11,7 @@ namespace MochiBeater
 {
     public class FoldingDoughButton : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     {
+        public bool dragValidity;
         public bool isDragging;
         public Vector2 dragPosition;
         public Vector2 deltaDrag;
@@ -18,15 +19,24 @@ namespace MochiBeater
         public void OnBeginDrag(PointerEventData eventData)
         {
             isDragging = true;
+            dragValidity = true;
             dragPosition = Camera.main.ScreenToWorldPoint(eventData.position);
         }
     
         public void OnEndDrag(PointerEventData eventData)
         {
             isDragging = false;
-    
-            deltaDrag = Camera.main.ScreenToWorldPoint(eventData.position) - (Vector3)dragPosition;
-            MochiBeaterManager.Instance.TryFold(deltaDrag);
+
+            if (dragValidity)
+            {
+                deltaDrag = Camera.main.ScreenToWorldPoint(eventData.position) - (Vector3)dragPosition;
+                MochiBeaterManager.Instance.TryFold(deltaDrag);
+            }
+        }
+
+        public void StompFinger()
+        {
+            dragValidity = false;
         }
     }
 }

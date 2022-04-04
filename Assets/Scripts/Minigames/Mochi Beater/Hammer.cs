@@ -28,6 +28,7 @@ namespace MochiBeater
                 slamGauge.fillAmount = 0;
                 if (doughButton.isDragging)
                 {
+                    doughButton.StompFinger();
                     errorCounter.Fail();
                 }
             }
