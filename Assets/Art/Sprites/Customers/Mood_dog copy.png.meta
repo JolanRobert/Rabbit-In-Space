@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: 3e4519d26c7490245a7c3905f15e80fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8787862702612803489
+    second: Mood_dog copy_0
+  - first:
+      213: -834773189333992813
+    second: Mood_dog copy_1
+  - first:
+      213: -2162918656302121321
+    second: Mood_dog copy_2
+  - first:
+      213: -6631924585756746139
+    second: Mood_dog copy_3
+  - first:
+      213: 7856674237258493706
+    second: Mood_dog copy_4
+  - first:
+      213: 6664423368919542731
+    second: Mood_dog copy_5
+  - first:
+      213: 8346006295640270170
+    second: Mood_dog copy_6
+  - first:
+      213: 8502196864115618006
+    second: Mood_dog copy_7
+  - first:
+      213: 1531127763128151280
+    second: Mood_dog copy_8
+  - first:
+      213: -840098475262586248
+    second: Mood_dog copy_9
+  - first:
+      213: -8734568151144341921
+    second: Mood_dog copy_10
+  - first:
+      213: -5484296841916871878
+    second: Mood_dog copy_11
+  - first:
+      213: -8763370304026956820
+    second: Mood_dog copy_12
+  - first:
+      213: -7669568385864181096
+    second: Mood_dog copy_13
+  - first:
+      213: 9175975108919220985
+    second: Mood_dog copy_14
+  - first:
+      213: 6006258108684561761
+    second: Mood_dog copy_15
+  - first:
+      213: 4640820145083736003
+    second: Mood_dog copy_16
+  - first:
+      213: 6701411512337129408
+    second: Mood_dog copy_17
+  - first:
+      213: 5486836200598436668
+    second: Mood_dog copy_18
+  - first:
+      213: 5303636984922699960
+    second: Mood_dog copy_19
+  - first:
+      213: 2141753655964934562
+    second: Mood_dog copy_20
+  - first:
+      213: -5488888871244633225
+    second: Mood_dog copy_21
+  - first:
+      213: 7177250085940314022
+    second: Mood_dog copy_22
+  - first:
+      213: 6596755354059348408
+    second: Mood_dog copy_23
+  - first:
+      213: 5860132543577625427
+    second: Mood_dog copy_24
+  - first:
+      213: 4145342440053884659
+    second: Mood_dog copy_25
+  - first:
+      213: -187089396170338334
+    second: Mood_dog copy_26
+  - first:
+      213: -292768363816699000
+    second: Mood_dog copy_27
+  - first:
+      213: -1333541335822611854
+    second: Mood_dog copy_28
+  - first:
+      213: -6497743221575814997
+    second: Mood_dog copy_29
+  - first:
+      213: 7398707624378651579
+    second: Mood_dog copy_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 3000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mood_dog copy_0
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 2299
+        width: 73
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f501cdb9e6d3b0680800000000000000
+      internalID: -8787862702612803489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_1
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 2307
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a3ab5053a4a64f0800000000000000
+      internalID: -834773189333992813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_2
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 2260
+        width: 65
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79efb0511f4cbf1e0800000000000000
+      internalID: -2162918656302121321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_3
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 2241
+        width: 65
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e1ac80abba6f3a0800000000000000
+      internalID: -6631924585756746139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_4
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 2311
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f61c3a793880d60800000000000000
+      internalID: 7856674237258493706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_5
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 2304
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbe2419eb9cc7c50800000000000000
+      internalID: 6664423368919542731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_6
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 2285
+        width: 80
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55efc0c188f2d370800000000000000
+      internalID: 8346006295640270170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_7
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 2292
+        width: 29
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d03d08500fddf570800000000000000
+      internalID: 8502196864115618006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_8
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 2245
+        width: 92
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcedfa9698af3510800000000000000
+      internalID: 1531127763128151280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_9
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 2287
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87250a543ee5754f0800000000000000
+      internalID: -840098475262586248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_10
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 2258
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ed9945b8498c680800000000000000
+      internalID: -8734568151144341921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_11
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 513
+        width: 948
+        height: 1754
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b8fbe441dd3e3b0800000000000000
+      internalID: -5484296841916871878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_12
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 2192
+        width: 68
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb24498321426680800000000000000
+      internalID: -8763370304026956820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_13
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 2258
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89adffb2038309590800000000000000
+      internalID: -7669568385864181096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_14
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 2248
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fad4f2cebc975f70800000000000000
+      internalID: 9175975108919220985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_15
+      rect:
+        serializedVersion: 2
+        x: 3077
+        y: 2243
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16de3756de38a5350800000000000000
+      internalID: 6006258108684561761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_16
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 2243
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf51367551876040800000000000000
+      internalID: 4640820145083736003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_17
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 2224
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf519ec342300d50800000000000000
+      internalID: 6701411512337129408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_18
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 529
+        width: 1021
+        height: 1729
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b7c653478252c40800000000000000
+      internalID: 5486836200598436668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_19
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 2170
+        width: 87
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8f0f7ecbd4a9940800000000000000
+      internalID: 5303636984922699960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_20
+      rect:
+        serializedVersion: 2
+        x: 3055
+        y: 2244
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a12f244a9909bd10800000000000000
+      internalID: 2141753655964934562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_21
+      rect:
+        serializedVersion: 2
+        x: 4263
+        y: 2239
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b6ed927ac83d3b0800000000000000
+      internalID: -5488888871244633225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_22
+      rect:
+        serializedVersion: 2
+        x: 4295
+        y: 2239
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af3d9c2de6ba9360800000000000000
+      internalID: 7177250085940314022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_23
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 527
+        width: 1131
+        height: 1715
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b91ddc1b026c8b50800000000000000
+      internalID: 6596755354059348408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_24
+      rect:
+        serializedVersion: 2
+        x: 4101
+        y: 2222
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35396a4008f535150800000000000000
+      internalID: 5860132543577625427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_25
+      rect:
+        serializedVersion: 2
+        x: 4327
+        y: 2207
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f643cb7cf6378930800000000000000
+      internalID: 4145342440053884659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_26
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1943
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef46087f23576df0800000000000000
+      internalID: -187089396170338334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_27
+      rect:
+        serializedVersion: 2
+        x: 3583
+        y: 498
+        width: 965
+        height: 1719
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bbb3969b0efebf0800000000000000
+      internalID: -292768363816699000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_28
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1921
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a4ef0783f4e7de0800000000000000
+      internalID: -1333541335822611854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_29
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 1851
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0754c67f063d5a0800000000000000
+      internalID: -6497743221575814997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mood_dog copy_30
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 1832
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb35014626d7da660800000000000000
+      internalID: 7398707624378651579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 69f301316c84d6b4baf8493e844646e8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
