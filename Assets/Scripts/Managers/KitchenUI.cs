@@ -27,8 +27,8 @@ public class KitchenUI : MonoBehaviour {
     public void ConfirmOverrideRecipe()
     {
         RecipeManager.instance.EndRecipe(false);
-        RecipeManager.instance.PromptRecipeAmount();
         ClosePanel();
+        RecipeManager.instance.PromptRecipeAmount();
     }
 
     public void OpenAmountRecipePrompt(RecipeSO recipe)
@@ -36,6 +36,7 @@ public class KitchenUI : MonoBehaviour {
         PlayerManager.Instance.GetInteract().isInteracting = true;
         currentPanel = amountRecipePrompt;
         currentPanel.SetActive(true);
+        RecipeAmountPrompt.instance.ClearPanel();
         RecipeAmountPrompt.instance.CreateIngredientSlots();
     }
     public void ConfirmAmountRecipe(Counter counter)
