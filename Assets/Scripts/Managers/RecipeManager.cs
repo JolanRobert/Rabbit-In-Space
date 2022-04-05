@@ -6,7 +6,8 @@ public class RecipeManager : MonoBehaviour
     public static RecipeManager instance;
     
     [SerializeField] private GameObject recipeTimeline;
-    [SerializeField] private RecipeSO currentRecipe;
+    [SerializeField] public RecipeSO currentRecipe, pendingRecipe;
+    [SerializeField] private int recipeAmount;
     private Queue<StationType> stations = new Queue<StationType>();
     
     public List<InventoryManager.RecipeItem> serviceRecipes = new List<InventoryManager.RecipeItem>();
@@ -21,10 +22,41 @@ public class RecipeManager : MonoBehaviour
         }
     }
 
+    public void TryStartRecipe(RecipeSO recipe)
+    {
+        pendingRecipe = recipe;
+        if (currentRecipe != null)
+        {
+            KitchenUI.Instance.OpenOverrideRecipePrompt();
+            return;
+        }
+        PromptRecipeAmount();
+    }
+    public void PromptRecipeAmount()
+    {
+        KitchenUI.Instance.OpenAmountRecipePrompt(pendingRecipe);
+    }
+
+    public void StartRecipe(int newRecipeAmount)
+    {
+        recipeAmount = newRecipeAmount;
+        foreach (RecipeElement element in pendingRecipe.recipeElements)
+        {
+            if(!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType,element.amount * recipeAmount))
+            {
+                Debug.Log("Not enough " + element.food.name);
+                return;
+            }
+        }
+        foreach (RecipeElement element in pendingRecipe.recipeElements)
+        {
+            FoodDataManager.Instance.AddItems(element.food.foodType, -element.amount * recipeAmount);
+            //Debug.Log("Took " + element.amount + " " + element.food.name);
+        }
+        InitRecipeTimeline(pendingRecipe);
+    }
+
     public void InitRecipeTimeline(RecipeSO recipe) {
-        
-        if (currentRecipe != null) EndRecipe(false);
-        
         currentRecipe = recipe;
         stations.Clear();
         
@@ -46,14 +78,13 @@ public class RecipeManager : MonoBehaviour
         recipeTimeline.gameObject.SetActive(false);
     }
 
-    private void EndRecipe(bool success) {
+    public void EndRecipe(bool success) {
         if (success) {
-            foreach (InventoryManager.RecipeItem recipe in serviceRecipes) {
-                if (currentRecipe != recipe.rSo) continue;
-                recipe.amount += 1;
+            foreach (InventoryManager.RecipeItem recipeItem in serviceRecipes) {
+                if (currentRecipe != recipeItem.rSo) continue;
+                recipeItem.amount += 1 * recipeAmount;
                 break;
             }
-            
             Debug.Log(currentRecipe.name + " recipe has ended with success.");
         }
         else Debug.Log(currentRecipe.name + " recipe has ended with failure.");

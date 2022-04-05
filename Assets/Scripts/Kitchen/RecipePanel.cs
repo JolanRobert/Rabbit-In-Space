@@ -45,20 +45,7 @@ public class RecipePanel : MonoBehaviour
 
     public void StartRecipe()
     {
-        foreach (RecipeElement element in recipe.recipeElements)
-        {
-            if(!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType,element.amount))
-            {
-                Debug.Log("Not enough " + element.food.name);
-                return;
-            }
-        }
-        foreach (RecipeElement element in recipe.recipeElements)
-        {
-            FoodDataManager.Instance.AddItems(element.food.foodType, -element.amount);
-            //Debug.Log("Took " + element.amount + " " + element.food.name);
-        }
-        
-        RecipeManager.instance.InitRecipeTimeline(recipe);
+        KitchenUI.Instance.ClosePanel();
+        RecipeManager.instance.TryStartRecipe(recipe);
     }
 }
