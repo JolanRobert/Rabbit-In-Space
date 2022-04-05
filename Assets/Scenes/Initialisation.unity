@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   todayMenu: []
   nbRecipes: 3
-  minAmountOfRecipeProd: 4
+  minAmountOfRecipeProd: 6
 --- !u!114 &1145351452
 MonoBehaviour:
   m_ObjectHideFlags: 0

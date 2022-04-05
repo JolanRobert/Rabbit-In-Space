@@ -19,13 +19,14 @@ public class Food : MonoBehaviour {
     private Sprite[] plantSprites;
     
     private int price;
+    
     private int m_growingTime;
     private int growingTime;
-
     private int GrowingTime {
         get => growingTime;
         set {
             growingTime = value;
+            foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
             if (growingTime == m_growingTime / 2) GrowthLevel = 1;
 
             if (foodUI == null) return;

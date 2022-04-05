@@ -1885,7 +1885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187cd1d92ece2a448901f1cfa3a3aab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateTouch: 1
+  activateTouch: 0
   activateMouse: 1
 --- !u!114 &1008222208
 MonoBehaviour:

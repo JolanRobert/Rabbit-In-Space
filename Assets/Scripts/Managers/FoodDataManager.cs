@@ -10,18 +10,23 @@ public class FoodDataManager : MonoBehaviour
     }
 
     void Start() {
-        foreach (FoodSO fSo in KitchenManager.Instance.foodList) {
+        /*foreach (FoodSO fSo in KitchenManager.Instance.foodList) {
             InventoryManager.FoodItem item = Load(fSo.foodType.ToString());
-            item.amount = 50;
+            item.amount = 10;
             Save(fSo.foodType.ToString(), item);
-        }
+        }*/
     }
     
     public void AddItems(FoodType type, int amount) {
         InventoryManager.FoodItem item = Load(type.ToString());
         item.amount += amount;
         Save(type.ToString(), item);
-        Debug.Log("Add "+amount+" "+type);
+    }
+
+    public void SetItem(FoodType type, int amount) {
+        InventoryManager.FoodItem item = Load(type.ToString());
+        item.amount = amount;
+        Save(type.ToString(), item);
     }
 
     public bool CheckItemQuantity(FoodType type, int amount) {
