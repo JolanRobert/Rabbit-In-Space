@@ -130,16 +130,6 @@ MonoBehaviour:
   stockType: 0
   inventory: {fileID: 8245018390326461392}
   slotPrefab: {fileID: 3590970719461664086, guid: ceff9db247a45ec479354bcd8a7f8372, type: 3}
-  items:
-  - type: 1
-    sprite: {fileID: 21300000, guid: 3603433ab5af7354fa7698f091f7f498, type: 3}
-    amount: 0
-  - type: 2
-    sprite: {fileID: 21300000, guid: 6d8765c8a530d094c8798d641f90a6d1, type: 3}
-    amount: 0
-  - type: 3
-    sprite: {fileID: 21300000, guid: 44970ae5599ba97429fe364874e4afa8, type: 3}
-    amount: 0
 --- !u!1 &8245018390255701083
 GameObject:
   m_ObjectHideFlags: 0

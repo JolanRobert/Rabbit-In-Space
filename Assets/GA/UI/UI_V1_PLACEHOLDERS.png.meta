@@ -1,0 +1,471 @@
+fileFormatVersion: 2
+guid: f080a1df46de16741bc728eaf4ec53bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -127547947124812062
+    second: UI_V1_PLACEHOLDERS_0
+  - first:
+      213: -9161738438647322045
+    second: UI_V1_PLACEHOLDERS_1
+  - first:
+      213: 3275316605954680314
+    second: UI_V1_PLACEHOLDERS_2
+  - first:
+      213: -596550343720166642
+    second: UI_V1_PLACEHOLDERS_3
+  - first:
+      213: -838222020702191761
+    second: UI_V1_PLACEHOLDERS_4
+  - first:
+      213: 5874709063720910545
+    second: UI_V1_PLACEHOLDERS_5
+  - first:
+      213: -3118005792023762110
+    second: UI_V1_PLACEHOLDERS_6
+  - first:
+      213: 4059210220231019873
+    second: UI_V1_PLACEHOLDERS_7
+  - first:
+      213: -4987074764670892084
+    second: UI_V1_PLACEHOLDERS_8
+  - first:
+      213: -7922515502732644058
+    second: UI_V1_PLACEHOLDERS_9
+  - first:
+      213: -5487824128955593317
+    second: UI_V1_PLACEHOLDERS_10
+  - first:
+      213: 2332465126452152082
+    second: UI_V1_PLACEHOLDERS_11
+  - first:
+      213: 2892770338790339825
+    second: UI_V1_PLACEHOLDERS_12
+  - first:
+      213: -4598767010179801634
+    second: UI_V1_PLACEHOLDERS_13
+  - first:
+      213: -5924377683263459360
+    second: UI_V1_PLACEHOLDERS_14
+  - first:
+      213: 2225093183366201600
+    second: UI_V1_PLACEHOLDERS_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_0
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 154
+        width: 765
+        height: 2726
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e69bcf51dbda3ef0800000000000000
+      internalID: -127547947124812062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_1
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 166
+        width: 755
+        height: 2701
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a62675e67fad080800000000000000
+      internalID: -9161738438647322045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_2
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 187
+        width: 882
+        height: 2708
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5edd88913447d20800000000000000
+      internalID: 3275316605954680314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_3
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 464
+        width: 445
+        height: 2403
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b1cef7f90a8b7f0800000000000000
+      internalID: -596550343720166642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_4
+      rect:
+        serializedVersion: 2
+        x: 3364
+        y: 2377
+        width: 1511
+        height: 566
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fb22563890e54f0800000000000000
+      internalID: -838222020702191761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_5
+      rect:
+        serializedVersion: 2
+        x: 5652
+        y: 2120
+        width: 467
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de3ad594c8278150800000000000000
+      internalID: 5874709063720910545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_6
+      rect:
+        serializedVersion: 2
+        x: 3361
+        y: 1801
+        width: 1511
+        height: 566
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b20d6804e9ab4d0800000000000000
+      internalID: -3118005792023762110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_7
+      rect:
+        serializedVersion: 2
+        x: 5053
+        y: 1726
+        width: 467
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d418d4036355830800000000000000
+      internalID: 4059210220231019873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_9
+      rect:
+        serializedVersion: 2
+        x: 3469
+        y: 1117
+        width: 1713
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621781420229d0290800000000000000
+      internalID: -7922515502732644058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_10
+      rect:
+        serializedVersion: 2
+        x: 5670
+        y: 1241
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9dc8cbc70557d3b0800000000000000
+      internalID: -5487824128955593317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_11
+      rect:
+        serializedVersion: 2
+        x: 3367
+        y: 410
+        width: 460
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217ca21bca49e5020800000000000000
+      internalID: 2332465126452152082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_12
+      rect:
+        serializedVersion: 2
+        x: 3869
+        y: 373
+        width: 642
+        height: 651
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4726ceb4f252820800000000000000
+      internalID: 2892770338790339825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_13
+      rect:
+        serializedVersion: 2
+        x: 4565
+        y: 398
+        width: 644
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd927105c5ed20c0800000000000000
+      internalID: -4598767010179801634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_14
+      rect:
+        serializedVersion: 2
+        x: 5249
+        y: 398
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef64d1c2e168cda0800000000000000
+      internalID: -5924377683263459360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_V1_PLACEHOLDERS_15
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 45
+        width: 2571
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0018fa2167e11ee10800000000000000
+      internalID: 2225093183366201600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e2fb663337d146d459284690bbaa95b8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
