@@ -6,6 +6,12 @@ public class ServiceManager : MonoBehaviour {
     public static ServiceManager Instance;
 
     [SerializeField] private List<ServiceEntry> serviceEntries;
+    
+    [SerializeField] private GameObject serviceValidPanel;
+    [SerializeField] private GameObject serviceInvalidPanel;
+    [SerializeField] private GameObject serviceWarningText;
+
+    public bool inService;
 
     void Awake() {
         Instance = this;
@@ -23,19 +29,19 @@ public class ServiceManager : MonoBehaviour {
         }
 
         if (myMenu.Count == 0) {
-            UIGarden.Instance.OpenServiceInvalid();
+            UIManager.Instance.OpenPanel(serviceInvalidPanel);
             return;
         }
         
-        UIGarden.Instance.ShowWarning(myMenu.Count < 3);
-        UIGarden.Instance.OpenServiceValid();
+        UIManager.Instance.SetVisible(serviceWarningText,myMenu.Count < 3);
+        UIManager.Instance.OpenPanel(serviceValidPanel);
     }
 
     public void StartService() {
-        
+        inService = true;
     }
 
     public void EndService() {
-        
+        inService = false;
     }
 }

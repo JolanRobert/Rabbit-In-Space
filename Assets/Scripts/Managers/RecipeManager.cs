@@ -32,7 +32,7 @@ public class RecipeManager : MonoBehaviour
         
         Debug.Log(currentRecipe.name + " recipe has started.");
         
-        KitchenUI.Instance.ClosePanel();
+        UIManager.Instance.ClosePanel();
         ShowRecipeTimeline();
         recipeTimeline.GetComponent<RecipeTimeline>().ShowRecipeTimeline(recipe);
         SeeNextStep();

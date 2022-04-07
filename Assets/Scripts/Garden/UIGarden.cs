@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -18,36 +19,34 @@ public class UIGarden : MonoBehaviour {
     [SerializeField] private GameObject foodShop;
     [SerializeField] private GameObject closeOverlay;
 
-    [Header("Start Service")]
-    [SerializeField] private GameObject serviceValidPanel;
-    [SerializeField] private GameObject serviceInvalidPanel;
-    [SerializeField] private GameObject serviceWarningText;
-
     void Awake() {
         Instance = this;
     }
 
     public void OpenParcelMenu() {
+        Parcel myParcel = GardenManager.Instance.myParcel;
+        
         //Get Parcel values into ParcelMenu UI Menu
         for (int i = 0; i < plants.Count; i++) {
-            GardenManager.Instance.myParcel.foodList[i].foodUI = plants[i];
-            GardenManager.Instance.myParcel.foodList[i].InitFoodUI();
+            myParcel.foodList[i].foodUI = plants[i];
+            myParcel.foodList[i].InitFoodUI();
         }
         
-        GardenManager.Instance.myParcel.upgradesUI = upgrades;
-        GardenManager.Instance.myParcel.InitUpgrades();
+        foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
+            bool isBought = myParcel.IsUpgradeBought(item);
+            bool isActive = myParcel.IsUpgradeActive(item);
+            
+            upgrades[(int)item].SetupUpgrade(isBought,isActive);
+            
+            if (item == UpgradeType.GRAINATOR) {
+                for (int i = 0; i < myParcel.foodList.Length; i++) {
+                    plants[i].ShowGrainator(isActive);
+                    myParcel.foodList[i].SetGrainatorFood(isActive ? myParcel.foodList[i].grainatorFood : FoodType.NONE);
+                }
+            }
+        }
         
-        parcelMenu.SetActive(true);
-        parcelMenu.transform.DOScale(1, 0.325f);
-    }
-
-    public void CloseMenuParcel() {
-        parcelMenu.transform.DOScale(0, 0.325f).OnComplete(() => {
-            parcelMenu.gameObject.SetActive(false);
-            for (int i = 0; i < plants.Count; i++) GardenManager.Instance.myParcel.foodList[i].foodUI = null;
-        });
-        
-        PlayerManager.Instance.GetInteract().isInteracting = false;
+        UIManager.Instance.OpenPanel(parcelMenu);
     }
 
     public void OpenMenuUpgrade() {
@@ -61,6 +60,7 @@ public class UIGarden : MonoBehaviour {
     }
     
     public void OpenMenuSeed(int foodSlot) {
+        foodShop.SetActive(true);
         closeOverlay.SetActive(true);
         
         foodShop.transform.DOMoveX(foodShop.transform.position.x - 300, 0.325f);
@@ -72,18 +72,8 @@ public class UIGarden : MonoBehaviour {
         closeOverlay.SetActive(false);
         
         foodShop.transform.DOMoveX(foodShop.transform.position.x + 300, 0.325f);
-        parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f);
-    }
-
-    public void OpenServiceValid() {
-        serviceValidPanel.SetActive(true);
-    }
-    
-    public void OpenServiceInvalid() {
-        serviceInvalidPanel.SetActive(true);
-    }
-    
-    public void ShowWarning(bool show) {
-        serviceWarningText.SetActive(show);
+        parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f).OnComplete(() => {
+            foodShop.SetActive(false);
+        });
     }
 }

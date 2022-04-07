@@ -26,12 +26,12 @@ public class CustomerSpawner : MonoBehaviour {
         KitchenManager.Instance.myMenu.GenerateMenu();
         for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) PopCustomer();
         MoveCustomers();
-        KitchenManager.Instance.inService = true;
+        ServiceManager.Instance.inService = true;
     }
 
     public void EndService() {
         foreach (Customer customer in customerQueue) DepopCustomer(customer);
-        KitchenManager.Instance.inService = false;
+        ServiceManager.Instance.inService = false;
     }
 
     private void PopCustomer() {
@@ -54,7 +54,7 @@ public class CustomerSpawner : MonoBehaviour {
         customerQueue.Remove(customer);
         Destroy(customer.gameObject);
         
-        if (!KitchenManager.Instance.inService) return;
+        if (!ServiceManager.Instance.inService) return;
         PopCustomer();
         MoveCustomers();
     }

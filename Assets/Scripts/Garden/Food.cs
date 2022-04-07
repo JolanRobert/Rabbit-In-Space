@@ -26,7 +26,6 @@ public class Food : MonoBehaviour {
         get => growingTime;
         set {
             growingTime = value;
-            foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
             if (growingTime == m_growingTime / 2) GrowthLevel = 1;
 
             if (foodUI == null) return;
@@ -62,6 +61,7 @@ public class Food : MonoBehaviour {
         if (foodUI != null) foodUI.Reset();
         
         foodName = foodSo.name;
+        if (foodUI != null) foodUI.UpdatePlantName(foodName);
         foodType = foodSo.foodType;
         
         plantSprites = foodSo.plantSprites;
@@ -122,7 +122,7 @@ public class Food : MonoBehaviour {
         foodType = FoodType.NONE;
         
         if (myParcel.IsUpgradeActive(UpgradeType.GRAINATOR) && grainatorFood != FoodType.NONE) {
-            foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
+            foreach (FoodSO foodSo in DataManager.Instance.foodList) {
                 if (foodSo.foodType != grainatorFood) continue;
                 StartNewFood(foodSo);
                 break;
@@ -160,7 +160,7 @@ public class Food : MonoBehaviour {
         
         //Si rien n'est en train de pousser, plante automatiquement
         if (this.foodType == FoodType.NONE && grainatorFood != FoodType.NONE) {
-            foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
+            foreach (FoodSO foodSo in DataManager.Instance.foodList) {
                 if (foodSo.foodType != grainatorFood) continue;
                 StartNewFood(foodSo);
                 break;

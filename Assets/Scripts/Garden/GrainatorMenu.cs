@@ -15,7 +15,7 @@ public class GrainatorMenu : MonoBehaviour {
         GetComponent<Button>().onClick.AddListener(Toggle);
         AddEntry(null,FoodType.NONE);
 
-        foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
+        foreach (FoodSO foodSo in DataManager.Instance.foodList) {
             AddEntry(foodSo.foodSprite,foodSo.foodType);
         }
     }
@@ -66,7 +66,7 @@ public class GrainatorMenu : MonoBehaviour {
     }
 
     public void SetFoodSprite(FoodType foodType) {
-        foreach (FoodSO foodSo in GardenManager.Instance.foodList) {
+        foreach (FoodSO foodSo in DataManager.Instance.foodList) {
             if (foodType != foodSo.foodType) continue;
             selectedFoodSprite.sprite = foodSo.foodSprite;
             return;

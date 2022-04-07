@@ -1,21 +1,26 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Parcel : InteractableElement {
+public class Parcel : MonoBehaviour {
     
     public Food[] foodList;
 
-    public List<ParcelUpgradeEntry> upgradesUI;
-    private List<Upgrade> upgrades = new List<Upgrade>();
+    public List<Upgrade> upgrades = new List<Upgrade>();
 
     void Start() {
-        foreach (ParcelUpgradeSO puSo in GardenManager.Instance.upgradeList) {
+        foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
             upgrades.Add(new Upgrade(puSo.upgradeType));
         }
     }
-    
-    public override void Interact() {
-        //if (PlayerManager.Instance.GetInteract().isInteracting) return;
+
+    public void OpenParcel() {
+        if (GardenManager.Instance.myParcel != null) {
+            foreach (Food food in GardenManager.Instance.myParcel.foodList) {
+                food.foodUI = null;
+            }
+        }
+        
         GardenManager.Instance.myParcel = this;
         UIGarden.Instance.OpenParcelMenu();
     }
@@ -23,22 +28,6 @@ public class Parcel : InteractableElement {
     //
     // UPGRADES
     //
-
-    public void InitUpgrades() {
-        foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
-            bool isBought = IsUpgradeBought(item);
-            bool isActive = IsUpgradeActive(item);
-            
-            upgradesUI[(int)item].SetupUpgrade(isBought,isActive);
-            
-            if (item == UpgradeType.GRAINATOR) {
-                for (int i = 0; i < foodList.Length; i++) {
-                    UIGarden.Instance.plants[i].ShowGrainator(isActive);
-                    foodList[i].SetGrainatorFood(isActive ? foodList[i].grainatorFood : FoodType.NONE);
-                }
-            }
-        }
-    }
 
     public void BuyUpgrade(UpgradeType upgradeType) {
         foreach (Upgrade up in upgrades) {
@@ -48,7 +37,7 @@ public class Parcel : InteractableElement {
             break;
         }
         
-        upgradesUI[(int)upgradeType].SetupUpgrade(true,true);
+        UIGarden.Instance.upgrades[(int)upgradeType].SetupUpgrade(true,true);
 
         if (upgradeType == UpgradeType.GRAINATOR) {
             foreach (ParcelMenuEntry pme in UIGarden.Instance.plants) {
