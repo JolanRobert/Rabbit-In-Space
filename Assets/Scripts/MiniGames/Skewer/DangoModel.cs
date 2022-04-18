@@ -62,7 +62,7 @@ public class DangoModel : MonoBehaviour {
         }
 
         if (correctDangos == nbSkewer * dangoPerSkewer) {
-            MinigameManager.instance.EndMinigame(true);
+            MinigameManager.Instance.EndMinigame(true);
         }
     }
 }

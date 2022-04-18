@@ -1,58 +1,79 @@
+using System;
 using UnityEngine;
 
-public class FoodDataManager : MonoBehaviour
-{
+public class FoodDataManager : MonoBehaviour {
+    
     public static FoodDataManager Instance;
+    
     [SerializeField] private DataSerializer dataSerializer;
     
     void Awake() {
         Instance = this;
     }
-
-    void Start() {
-        /*foreach (FoodSO fSo in KitchenManager.Instance.foodList) {
-            InventoryManager.FoodItem item = Load(fSo.foodType.ToString());
-            item.amount = 10;
-            Save(fSo.foodType.ToString(), item);
-        }*/
-    }
     
-    public void AddItems(FoodType type, int amount) {
-        InventoryManager.FoodItem item = Load(type.ToString());
-        item.amount += amount;
-        Save(type.ToString(), item);
+    public void AddItem(FoodType foodType, int amount) {
+        for (int i = 0; i < InventoryManager.Instance.foodItems.Count; i++) {
+            FoodItem item = InventoryManager.Instance.foodItems[i];
+            
+            if (item.foodType != foodType) continue;
+            item.amount += amount;
+            UIKitchen.Instance.UpdateFridgeSlot(i,item.amount);
+            Save(item.foodType.ToString(),item);
+            break;
+        }
     }
 
-    public void SetItem(FoodType type, int amount) {
-        InventoryManager.FoodItem item = Load(type.ToString());
-        item.amount = amount;
-        Save(type.ToString(), item);
-    }
-
-    public bool CheckItemQuantity(FoodType type, int amount) {
-        if (type == FoodType.NONE) {
+    public bool CheckItemQuantity(FoodType foodType, int amount) {
+        if (foodType == FoodType.NONE) {
             Debug.LogWarning("Invalid type");
             return false;
         }
         
-        InventoryManager.FoodItem item = Load(type.ToString());
-        return amount <= item.amount;
+        foreach (FoodItem item in InventoryManager.Instance.foodItems) {
+            if (item.foodType != foodType) continue;
+            return amount <= item.amount;
+        }
+
+        return false;
     }
 
     public bool HasRecipeItem(RecipeType recipeType) {
-        foreach (InventoryManager.RecipeItem item in RecipeManager.instance.serviceRecipes) {
-            if (item.rSo.recipeType != recipeType) continue;
+        foreach (RecipeItem item in InventoryManager.Instance.recipeItems) {
+            if (item.recipeType != recipeType) continue;
             return item.amount > 0;
         }
 
         return false;
     }
     
-    private void Save(string fileName, InventoryManager.FoodItem foodItem) {
-        dataSerializer.SaveData(fileName,foodItem); 
+    public void Save(string fileName, FoodItem foodItem) {
+        dataSerializer.SaveData(fileName,foodItem);
     }
 
-    public InventoryManager.FoodItem Load(string fileName) {
-        return dataSerializer.LoadData<InventoryManager.FoodItem>(fileName) ?? new InventoryManager.FoodItem();
+    public FoodItem Load(string fileName) {
+        return dataSerializer.LoadData<FoodItem>(fileName);
+    }
+    
+    
+    [Serializable]
+    public class FoodItem {
+        public FoodType foodType;
+        public int amount;
+        
+        public FoodItem(){}
+        
+        public FoodItem(FoodType foodType) {
+            this.foodType = foodType;
+        }
+    }
+    
+    [Serializable]
+    public class RecipeItem {
+        public RecipeType recipeType;
+        public int amount;
+
+        public RecipeItem(RecipeType recipeType) {
+            this.recipeType = recipeType;
+        }
     }
 }

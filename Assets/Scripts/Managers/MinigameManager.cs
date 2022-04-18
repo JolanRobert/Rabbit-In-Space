@@ -2,19 +2,22 @@ using UnityEngine;
 
 public class MinigameManager : MonoBehaviour {
     
-    public static MinigameManager instance;
+    public static MinigameManager Instance;
     public bool resultPending;
     
     void Awake() {
-        instance = this;
+        if (Instance != null) Destroy(gameObject);
+        else {
+            Instance = this;
+        }
     }
 
-    public void StartMinigame(StationType stationType) {
-        SwitchScene.Instance.ToMiniGame(stationType);
+    public void StartMinigame(string minigameScene) {
+        SwitchScene.Instance.ChangeScene(minigameScene);
         
         //Hide customers
         KitchenManager.Instance.transform.position += Vector3.left*100;
-        RecipeManager.instance.HideRecipeTimeline();
+        RecipeManager.Instance.HideRecipeTimeline();
         resultPending = true;
     }
     
@@ -22,12 +25,10 @@ public class MinigameManager : MonoBehaviour {
         if(!resultPending) return;
         resultPending = false;
         
-        SwitchScene.Instance.ToKitchen();
+        SwitchScene.Instance.ChangeScene("Kitchen");
         
-        //Show customers
-        KitchenManager.Instance.transform.position -= Vector3.left*100;
-        
-        RecipeManager.instance.ShowRecipeTimeline();
-        if (success) RecipeManager.instance.ForwardStep();
+        KitchenManager.Instance.transform.position += Vector3.right * 100;
+        RecipeManager.Instance.ShowRecipeTimeline();
+        if (success) RecipeManager.Instance.ForwardStep();
     }
 }

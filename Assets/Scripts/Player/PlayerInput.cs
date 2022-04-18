@@ -5,8 +5,8 @@ public class PlayerInput : MonoBehaviour {
     private PlayerManager playerManager;
     private Camera mainCamera;
     
-    [SerializeField] private bool activateTouch;
-    [SerializeField] private bool activateMouse; //Mouse only
+    /*[SerializeField] private bool activateTouch;
+    [SerializeField] private bool activateMouse; //Mouse only*/
 
     private void Start() {
         mainCamera = Camera.main;
@@ -14,25 +14,23 @@ public class PlayerInput : MonoBehaviour {
     }
     
     private void Update() {
-        if (activateTouch) HandleTouch();
-        else if (activateMouse) HandleMouse();
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            ScreenToRay(Input.mousePosition);
+        }
     }
 
-    private void HandleTouch() {
+    /*private void HandleTouch() {
         if (Input.touchCount == 0) return;
         Touch touch = Input.GetTouch(0);
             
         if (Input.GetTouch(0).phase == TouchPhase.Began) {
             ScreenToRay(touch.position);
         }
-    }
+    }*/
 
-    private void HandleMouse() {
-        if (Input.touchCount > 0) return;
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            ScreenToRay(Input.mousePosition);
-        }
-    }
+    /*private void HandleMouse() {
+        //if (Input.touchCount > 0) return;
+    }*/
 
     private void ScreenToRay(Vector2 screenPosition) {
         Ray ray = mainCamera.ScreenPointToRay(screenPosition);

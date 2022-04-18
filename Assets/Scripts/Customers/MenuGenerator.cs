@@ -23,8 +23,8 @@ public class MenuGenerator : MonoBehaviour {
         List<RecipeSO> availableRecipes = new List<RecipeSO>();
         foreach (RecipeSO rSo in KitchenManager.Instance.recipeList) {
             bool recipe = true;
-            foreach (RecipeElement re in rSo.recipeElements) {
-                if (!FoodDataManager.Instance.CheckItemQuantity(re.food.foodType, re.amount * minAmountOfRecipeProd)) {
+            foreach (RecipeElement element in rSo.recipeElements) {
+                if (!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType, element.amount * minAmountOfRecipeProd)) {
                     recipe = false;
                     break;
                 }

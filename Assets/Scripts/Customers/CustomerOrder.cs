@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class CustomerOrder : MonoBehaviour {
@@ -11,9 +12,16 @@ public class CustomerOrder : MonoBehaviour {
         customerChoiceSR.sprite = order.recipeSprite;
     }
 
+    private Color newColor = new Color(1,1,0,1);
+    private Vector3 newScale;
     public void UpdateImpatienceProgress(float value) {
-        impatienceProgress.localScale = new Vector3(value, impatienceProgress.localScale.y, impatienceProgress.localScale.z);
-        impatienceColorBarSR.color = new Color(1 - value, value, 0, 1);
+        newScale = transform.localScale;
+        newScale.x = value;
+        impatienceProgress.DOScale(new Vector3(value, impatienceProgress.localScale.y, impatienceProgress.localScale.z),0.2f);
+        
+        newColor.r = 1 - value;
+        newColor.g = value;
+        impatienceColorBarSR.color = newColor;
     }
 
     public void UpdateInStock(bool inStock) {

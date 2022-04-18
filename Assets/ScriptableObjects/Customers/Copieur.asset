@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerType: 3
   impatienceLimit: 80
+  xpReward: 3
   customerSprite: {fileID: -5451884213976893447, guid: c3a1537d3a295aa418c792428af68300, type: 3}

@@ -6,7 +6,6 @@ using UnityEngine;
 public class RecipeSO : ScriptableObject
 {
     [Header("Global Infos")] 
-    public new string name;
     public RecipeType recipeType;
     
     [Header("Sprites")]
@@ -20,8 +19,7 @@ public class RecipeSO : ScriptableObject
 }
 
 [Serializable]
-public class RecipeElement
-{
+public class RecipeElement {
     public FoodSO food;
     public int amount;
 }

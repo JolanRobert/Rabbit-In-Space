@@ -11,13 +11,16 @@ public class ServiceManager : MonoBehaviour {
     [SerializeField] private GameObject serviceInvalidPanel;
     [SerializeField] private GameObject serviceWarningText;
 
-    public bool inService;
-
     void Awake() {
         Instance = this;
     }
 
     public void LoadMenu() {
+        if (KitchenManager.Instance.inService) {
+            EndService();
+            return;
+        }
+        
         KitchenManager.Instance.myMenu.GenerateMenu();
         List<RecipeSO> myMenu = KitchenManager.Instance.myMenu.todayMenu;
         
@@ -37,11 +40,13 @@ public class ServiceManager : MonoBehaviour {
         UIManager.Instance.OpenPanel(serviceValidPanel);
     }
 
-    public void StartService() {
-        inService = true;
+    private void StartService() {
+        KitchenManager.Instance.inService = true;
+        KitchenManager.Instance.customerSpawner.StartService();
     }
 
-    public void EndService() {
-        inService = false;
+    private void EndService() {
+        KitchenManager.Instance.inService = false;
+        KitchenManager.Instance.customerSpawner.EndService();
     }
 }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4b7cf4bf2c21840ae1993c0506cbb1, type: 3}
+  m_Name: Star_1
+  m_EditorClassIdentifier: 
+  starValue: 1
+  customerChances:
+  - customerSo: {fileID: 11400000, guid: b1adfa73260478a44b109dd5eb2103b2, type: 2}
+    probability: 50
+  - customerSo: {fileID: 11400000, guid: 89b590e6cbe301f4b91c71f3dfb4c70b, type: 2}
+    probability: 25
+  - customerSo: {fileID: 11400000, guid: 511e3f436a24acc42876dc0407f0640a, type: 2}
+    probability: 25
+  - customerSo: {fileID: 11400000, guid: ba8af47714b8fd747948e09927d759b7, type: 2}
+    probability: 0
+  - customerSo: {fileID: 11400000, guid: 2c395c4ad7b09f045beff706c15c13e3, type: 2}
+    probability: 0
+  - customerSo: {fileID: 11400000, guid: 069d34668ee54f54a8b61da1483f1100, type: 2}
+    probability: 0
+  - customerSo: {fileID: 11400000, guid: 1b12c23d5cca6f54b9ab1e63ed4fe3b3, type: 2}
+    probability: 0
+  - customerSo: {fileID: 11400000, guid: 37aedf1de7182254d8ec6d7e7a120ed5, type: 2}
+    probability: 0

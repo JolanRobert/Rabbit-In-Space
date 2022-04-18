@@ -10,8 +10,12 @@ public class KitchenManager : MonoBehaviour {
     public List<FoodSO> foodList;
     public List<RecipeSO> recipeList;
 
+    public bool inService;
+
     void Awake() {
-        Instance = this;
-        myMenu = GetComponent<MenuGenerator>();
+        if (Instance != null) Destroy(gameObject);
+        else {
+            Instance = this;
+        }
     }
 }

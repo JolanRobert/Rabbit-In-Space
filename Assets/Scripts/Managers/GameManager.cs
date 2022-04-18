@@ -10,9 +10,5 @@ public class GameManager : MonoBehaviour {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    /*void Start() {
-        SwitchScene.Instance.ToGarden();
-    }*/
+    }   
 }

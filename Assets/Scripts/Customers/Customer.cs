@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Customer : InteractableElement {
@@ -13,16 +14,19 @@ public class Customer : InteractableElement {
     private float impatienceLimit;
     public float impatienceFactor = 1;
 
+    public int xpReward;
+
     private bool hasOrdered;
 
     void Start() {
-        interactPosition = -transform.position + new Vector3(-3, 0, -1);
+        interactPosition = -transform.position + new Vector3(-1.25f, 0, -2);
     }
 
     public void Init(CustomerSO cSo) {
         customerSR.sprite = cSo.customerSprite;
         customerType = cSo.customerType;
         impatienceLimit = cSo.impatienceLimit;
+        xpReward = cSo.xpReward;
     }
 
     public void MakeOrder() {
@@ -58,15 +62,17 @@ public class Customer : InteractableElement {
     }
 
     private void TryCompleteOrder() {
-        if (!FoodDataManager.Instance.HasRecipeItem(myOrder.recipeType)) {
-            return;
-        }
+        if (!FoodDataManager.Instance.HasRecipeItem(myOrder.recipeType)) return;
         
-        foreach (InventoryManager.RecipeItem item in RecipeManager.instance.serviceRecipes) {
-            if (item.rSo.recipeType != myOrder.recipeType) continue;
-            item.amount--;
+        for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
+            FoodDataManager.RecipeItem item = InventoryManager.Instance.recipeItems[i];
+            
+            if (item.recipeType != myOrder.recipeType) continue;
+            item.amount -= 1;
+            UIKitchen.Instance.UpdateFridgeSlot(i,item.amount);
             break;
         }
+        
         CompleteOrder(true);
     }
 

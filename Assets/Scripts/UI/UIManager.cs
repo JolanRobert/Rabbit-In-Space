@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour {
     }
 
     public void OpenPanel(GameObject go) {
+        if (panels.Contains(go)) return; //If panel already open return
+        
         PlayerManager.Instance.GetInteract().isInteracting = true;
         panels.Push(go);
         panels.Peek().transform.localScale = Vector3.zero;
@@ -23,9 +25,8 @@ public class UIManager : MonoBehaviour {
         panels.Peek().transform.DOScale(0, 0.325f).OnComplete(() => {
             panels.Peek().gameObject.SetActive(false);
             panels.Pop();
+            if (panels.Count == 0) PlayerManager.Instance.GetInteract().isInteracting = false;
         });
-        
-        if (panels.Count == 0) PlayerManager.Instance.GetInteract().isInteracting = false;
     }
 
     public void SetVisible(GameObject go, bool isVisible) {

@@ -19,7 +19,7 @@ namespace MochiBeater
         }
         IEnumerator SlamCO()
         {
-            while (MinigameManager.instance.resultPending)
+            while (MinigameManager.Instance.resultPending)
             {
                 slamGauge.DOFillAmount(1, slamDelay + fromAnimationToSlamDelay).SetEase(Ease.Linear);
                 yield return new WaitForSeconds(slamDelay);

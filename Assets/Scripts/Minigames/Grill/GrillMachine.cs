@@ -37,7 +37,7 @@ public class GrillMachine : MonoBehaviour {
         while (true) {
             foreach (GrillMochi gm in mochis) gm.SetGrillStrenght(heatBar.heatValue/100);
             if (mochis.All(gm => gm.mochiState == 7f)) {
-                MinigameManager.instance.EndMinigame(false);
+                MinigameManager.Instance.EndMinigame(false);
             }
             yield return new WaitForSeconds(1);
         }
@@ -51,7 +51,7 @@ public class GrillMachine : MonoBehaviour {
         if (mochiStep == 3 || mochiStep == 5) completionBar.FillBar(20);
         if (mochiStep == 4) completionBar.FillBar(25);
 
-        if (mochis.Count == 0) MinigameManager.instance.EndMinigame(false);
+        if (mochis.Count == 0) MinigameManager.Instance.EndMinigame(false);
     }
 }
 }

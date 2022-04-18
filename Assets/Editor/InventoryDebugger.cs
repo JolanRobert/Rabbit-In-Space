@@ -15,7 +15,6 @@ public class InventoryDebugger : Editor {
         
         itemType = (FoodType)EditorGUILayout.EnumPopup("Item :", itemType);
         amount = EditorGUILayout.IntField("Amount :", amount);
-        if (GUILayout.Button("Add Item")) foodDataManager.AddItems(itemType,amount);
-        if (GUILayout.Button("Set Item")) foodDataManager.SetItem(itemType,amount);
+        if (GUILayout.Button("Add Item")) foodDataManager.AddItem(itemType,amount);
     }
 }

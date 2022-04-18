@@ -114,7 +114,7 @@ public class Food : MonoBehaviour {
         if (growthLevel == 2) {
             int prodValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
             if (myParcel.IsUpgradeActive(UpgradeType.ENGRAIS)) prodValue += 2;
-            FoodDataManager.Instance.AddItems(foodType,prodValue);
+            FoodDataManager.Instance.AddItem(foodType,prodValue);
         }
         
         StopAllCoroutines();

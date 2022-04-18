@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour {
     
     //Interaction
-    public Coroutine interactCR { get; private set; }
-    public bool isTryingToInteract { get; private set; }
-    public bool isInteracting { get; set; }
+    private Coroutine interactCR;
+    private bool isTryingToInteract;
+    public bool isInteracting;
     
     public void TryInteract(InteractableElement interactableGO) {
         if (isTryingToInteract) StopCoroutine(interactCR);

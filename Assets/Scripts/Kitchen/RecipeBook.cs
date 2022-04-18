@@ -1,7 +1,7 @@
 public class RecipeBook : InteractableElement {
     
     public override void Interact() {
-        if (ServiceManager.Instance.inService) UIManager.Instance.OpenPanel(interactPanel.gameObject);
+        if (KitchenManager.Instance.inService) UIManager.Instance.OpenPanel(interactPanel);
         else PlayerManager.Instance.GetInteract().isInteracting = false;
     }
 }

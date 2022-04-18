@@ -12,8 +12,7 @@ public class UIGarden : MonoBehaviour {
     public List<ParcelMenuEntry> plants;
     
     [Header("Parcel Upgrade")]
-    [SerializeField] private GameObject parcelUpgrade;
-    public List<ParcelUpgradeEntry> upgrades;
+    public List<ParcelUpgradeEntry> upgrades; //Contains the list of upgrades to display when ParcelMenuUpgrade is open
     
     [Header("Food Shop")]
     [SerializeField] private GameObject foodShop;
@@ -32,6 +31,7 @@ public class UIGarden : MonoBehaviour {
             myParcel.foodList[i].InitFoodUI();
         }
         
+        //Setup ParcelMenuUpgrade with Parcel values
         foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
             bool isBought = myParcel.IsUpgradeBought(item);
             bool isActive = myParcel.IsUpgradeActive(item);
@@ -47,16 +47,6 @@ public class UIGarden : MonoBehaviour {
         }
         
         UIManager.Instance.OpenPanel(parcelMenu);
-    }
-
-    public void OpenMenuUpgrade() {
-        parcelMenu.gameObject.SetActive(false);
-        parcelUpgrade.gameObject.SetActive(true);
-    }
-
-    public void CloseMenuUpgrade() {
-        parcelUpgrade.gameObject.SetActive(false);
-        parcelMenu.gameObject.SetActive(true);
     }
     
     public void OpenMenuSeed(int foodSlot) {

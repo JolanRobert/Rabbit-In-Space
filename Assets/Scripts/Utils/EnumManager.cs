@@ -5,10 +5,6 @@ public class EnumManager : MonoBehaviour {
     public FoodType itemType;
 }
 
-public enum StockType {
-    FRIDGE, WORKPLAN
-}
-
 public enum StationType {
     BOILER, MOCHI_BEATER, CUTTER, SKEWER, GRILL, TRIMMING, ROLLING_PIN, MIXER
 }

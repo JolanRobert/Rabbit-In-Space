@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Grill
   stationType: 4
+  minigameScene: {fileID: 102900000, guid: 231936f11647dc44a841e5b1181cc9db, type: 3}
   icon: {fileID: 0}

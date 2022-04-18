@@ -23,6 +23,6 @@ public class ErrorCounter : MonoBehaviour
     {
         errorCrosses[currentErrors].GetComponent<Image>().sprite = activeError;
         currentErrors++;
-        if(currentErrors == maxErrors) MinigameManager.instance.EndMinigame(false);
+        if(currentErrors == maxErrors) MinigameManager.Instance.EndMinigame(false);
     }
 }

@@ -55,10 +55,10 @@ public class RecipePanel : MonoBehaviour
         }
         foreach (RecipeElement element in recipe.recipeElements)
         {
-            FoodDataManager.Instance.AddItems(element.food.foodType, -element.amount);
+            FoodDataManager.Instance.AddItem(element.food.foodType, -element.amount);
             //Debug.Log("Took " + element.amount + " " + element.food.name);
         }
         
-        RecipeManager.instance.InitRecipeTimeline(recipe);
+        RecipeManager.Instance.InitRecipeTimeline(recipe);
     }
 }
