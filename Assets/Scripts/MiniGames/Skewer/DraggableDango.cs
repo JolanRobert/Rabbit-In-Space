@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Skewer {
 public class DraggableDango : MonoBehaviour {
     [SerializeField] private Rigidbody2D rb;
-    private Collider2D collider;
+    private new Collider2D collider;
 
     [SerializeField] private float killY;
     [SerializeField] private float fallSpeed;

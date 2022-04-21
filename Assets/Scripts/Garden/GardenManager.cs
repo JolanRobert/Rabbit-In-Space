@@ -4,18 +4,12 @@ public class GardenManager : MonoBehaviour {
 
     public static GardenManager Instance;
 
-    [SerializeField] private GameObject gardenPanel;
-    
     [Header("Current Selection")]
     public Parcel myParcel;
     public int mySlot;
 
     void Awake() {
         Instance = this;
-    }
-
-    public void OpenGarden() {
-        UIManager.Instance.OpenPanel(gardenPanel);
     }
     
     //Plant with seed menu

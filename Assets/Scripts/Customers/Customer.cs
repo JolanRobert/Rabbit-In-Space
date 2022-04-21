@@ -18,10 +18,6 @@ public class Customer : InteractableElement {
 
     private bool hasOrdered;
 
-    void Start() {
-        interactPosition = -transform.position + new Vector3(-1.25f, 0, -2);
-    }
-
     public void Init(CustomerSO cSo) {
         customerSR.sprite = cSo.customerSprite;
         customerType = cSo.customerType;
@@ -69,7 +65,7 @@ public class Customer : InteractableElement {
             
             if (item.recipeType != myOrder.recipeType) continue;
             item.amount -= 1;
-            UIKitchen.Instance.UpdateFridgeSlot(i,item.amount);
+            UIKitchen.Instance.UpdateWorkplanSlot(i,item.amount);
             break;
         }
         

@@ -22,11 +22,22 @@ public class UIManager : MonoBehaviour {
     }
 
     public void ClosePanel() {
-        panels.Peek().transform.DOScale(0, 0.325f).OnComplete(() => {
-            panels.Peek().gameObject.SetActive(false);
-            panels.Pop();
-            if (panels.Count == 0) PlayerManager.Instance.GetInteract().isInteracting = false;
+        ClosePanel(false);
+    }
+
+    public void CloseAllPanel() {
+        ClosePanel(true);
+    }
+
+    private void ClosePanel(bool allPanel) {
+        GameObject toClose = panels.Peek();
+        toClose.transform.DOScale(0, 0.325f).OnComplete(() => {
+            toClose.gameObject.SetActive(false);
         });
+        
+        panels.Pop();
+        if (panels.Count == 0) PlayerManager.Instance.GetInteract().isInteracting = false;
+        else if (allPanel) CloseAllPanel();
     }
 
     public void SetVisible(GameObject go, bool isVisible) {

@@ -61,8 +61,8 @@ public class CustomerSpawner : MonoBehaviour {
         Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
         
         for (int i = 0; i < customerQueue.Count; i++) {
-            Debug.Log("Move");
             customerQueue[i].transform.position = customerSpawnPoint - Vector3.right * i * 1.5f + customerOffset;
+            customerQueue[i].interactPosition = -customerQueue[i].transform.position + new Vector3(-1.25f, 0, -2);
             
             //Les personnes devant le comptoir passent commande
             if (i < nbCounterCustomer) customerQueue[i].MakeOrder();
