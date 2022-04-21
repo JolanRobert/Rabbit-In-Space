@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Customer : InteractableElement {
+public class Customer : IInteractable {
 
     [SerializeField] private CustomerOrder customerOrder;
     [SerializeField] private SpriteRenderer customerSR;

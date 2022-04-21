@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Station : InteractableElement
+public class Station : IInteractable
 {
     [SerializeField] private StationSO station;
     

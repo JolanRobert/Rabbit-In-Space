@@ -1,4 +1,4 @@
-public class RecipeBook : InteractableElement {
+public class RecipeBook : IInteractable {
     
     public override void Interact() {
         if (KitchenManager.Instance.inService) UIManager.Instance.OpenPanel(interactPanel);

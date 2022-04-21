@@ -8,12 +8,12 @@ public class PlayerInteract : MonoBehaviour {
     private bool isTryingToInteract;
     public bool isInteracting;
     
-    public void TryInteract(InteractableElement interactableGO) {
+    public void TryInteract(IInteractable interactableGO) {
         if (isTryingToInteract) StopCoroutine(interactCR);
         interactCR = StartCoroutine(InteractCR(interactableGO));
     }
 
-    private IEnumerator InteractCR(InteractableElement interactableGO) {
+    private IEnumerator InteractCR(IInteractable interactableGO) {
         Vector3 interactableGOPos = interactableGO.transform.position+interactableGO.interactPosition;
         interactableGOPos.y = transform.position.y;
         isTryingToInteract = true;
@@ -30,7 +30,7 @@ public class PlayerInteract : MonoBehaviour {
         if (isTryingToInteract) StopCoroutine(interactCR);
     }
 
-    private void Interact(InteractableElement interactableGO) {
+    private void Interact(IInteractable interactableGO) {
         isInteracting = true;
         interactableGO.Interact();
     }
