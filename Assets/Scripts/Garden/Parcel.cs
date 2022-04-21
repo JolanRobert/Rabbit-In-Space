@@ -3,16 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Parcel : MonoBehaviour {
-    
+
+    [SerializeField] private int parcelID;
     public Food[] foodList;
-
-    public List<Upgrade> upgrades = new List<Upgrade>();
-
-    void Start() {
-        foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
-            upgrades.Add(new Upgrade(puSo.upgradeType));
-        }
-    }
 
     public void OpenParcel() {
         if (GardenManager.Instance.myParcel != null) {
@@ -30,7 +23,7 @@ public class Parcel : MonoBehaviour {
     //
 
     public void BuyUpgrade(UpgradeType upgradeType) {
-        foreach (Upgrade up in upgrades) {
+        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
             if (up.upgradeType != upgradeType) continue;
             up.isBought = true;
             up.isActive = true;
@@ -47,7 +40,7 @@ public class Parcel : MonoBehaviour {
     }
 
     public void ToggleUpgrade(UpgradeType upgradeType, bool state) {
-        foreach (Upgrade up in upgrades) {
+        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
             if (up.upgradeType != upgradeType) continue;
             up.isActive = state;
             break;
@@ -62,7 +55,9 @@ public class Parcel : MonoBehaviour {
     }
 
     public bool IsUpgradeBought(UpgradeType upgradeType) {
-        foreach (Upgrade up in upgrades) {
+        Debug.Log(GardenManager.Instance.upgrades.Count);
+        
+        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
             if (up.upgradeType != upgradeType) continue;
             return up.isBought;
         }
@@ -71,7 +66,7 @@ public class Parcel : MonoBehaviour {
     }
 
     public bool IsUpgradeActive(UpgradeType upgradeType) {
-        foreach (Upgrade up in upgrades) {
+        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
             if (up.upgradeType != upgradeType) continue;
             return up.isActive;
         }

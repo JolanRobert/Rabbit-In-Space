@@ -25,28 +25,33 @@ public class UIGarden : MonoBehaviour {
     public void OpenParcelMenu() {
         Parcel myParcel = GardenManager.Instance.myParcel;
         
-        //Get Parcel values into ParcelMenu UI Menu
-        for (int i = 0; i < plants.Count; i++) {
-            myParcel.foodList[i].foodUI = plants[i];
-            myParcel.foodList[i].InitFoodUI();
-        }
+        SetupParcelMenu(myParcel);
+        SetupParcelUpgrade(myParcel);
         
-        //Setup ParcelMenuUpgrade with Parcel values
+        UIManager.Instance.OpenPanel(parcelMenu);
+    }
+
+    private void SetupParcelMenu(Parcel parcel) {
+        for (int i = 0; i < plants.Count; i++) {
+            parcel.foodList[i].foodUI = plants[i];
+            parcel.foodList[i].InitFoodUI();
+        }
+    }
+
+    private void SetupParcelUpgrade(Parcel parcel) {
         foreach (UpgradeType item in Enum.GetValues(typeof(UpgradeType))) {
-            bool isBought = myParcel.IsUpgradeBought(item);
-            bool isActive = myParcel.IsUpgradeActive(item);
+            bool isBought = parcel.IsUpgradeBought(item);
+            bool isActive = parcel.IsUpgradeActive(item);
             
             upgrades[(int)item].SetupUpgrade(isBought,isActive);
             
             if (item == UpgradeType.GRAINATOR) {
-                for (int i = 0; i < myParcel.foodList.Length; i++) {
+                for (int i = 0; i < parcel.foodList.Length; i++) {
                     plants[i].ShowGrainator(isActive);
-                    myParcel.foodList[i].SetGrainatorFood(isActive ? myParcel.foodList[i].grainatorFood : FoodType.NONE);
+                    parcel.foodList[i].SetGrainatorFood(isActive ? parcel.foodList[i].grainatorFood : FoodType.NONE);
                 }
             }
         }
-        
-        UIManager.Instance.OpenPanel(parcelMenu);
     }
     
     public void OpenMenuSeed(int foodSlot) {

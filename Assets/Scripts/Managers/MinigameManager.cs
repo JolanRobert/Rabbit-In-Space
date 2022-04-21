@@ -7,9 +7,7 @@ public class MinigameManager : MonoBehaviour {
     
     void Awake() {
         if (Instance != null) Destroy(gameObject);
-        else {
-            Instance = this;
-        }
+        else Instance = this;
     }
 
     public void StartMinigame(string minigameScene) {
