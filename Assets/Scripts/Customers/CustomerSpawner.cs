@@ -22,7 +22,7 @@ public class CustomerSpawner : MonoBehaviour {
     }
 
     public void StartService() {
-        for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) {PopCustomer();}
+        while (customerQueue.Count < nbCounterCustomer+nbHiddenCustomer) {PopCustomer();}
         MoveCustomers();
     }
 
@@ -40,6 +40,13 @@ public class CustomerSpawner : MonoBehaviour {
             
             //Spawn Customer
             Customer customer = Instantiate(customerPrefab, customerSpawnPoint, Quaternion.Euler(60,0,0), transform).GetComponent<Customer>();
+            
+            //Handle Copieur xpReward
+            if (cc.customerSo.customerType == CustomerType.COPIEUR) {
+                if (customerQueue.Count == 0) return;
+                cc.customerSo.xpReward = customerQueue[customerQueue.Count - 1].xpReward;
+            }
+            
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
             break;

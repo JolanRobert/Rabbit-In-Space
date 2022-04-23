@@ -15,4 +15,7 @@ MonoBehaviour:
   customerType: 7
   impatienceLimit: 80
   xpReward: 3
+  nbBeforeReveal: 10
+  description: "Prend un plat al\xE9atoire du menu, les clients autour de lui s'impatientent
+    25% plus vite"
   customerSprite: {fileID: -8256170660068176849, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

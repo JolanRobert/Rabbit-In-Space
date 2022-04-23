@@ -55,8 +55,6 @@ public class Parcel : MonoBehaviour {
     }
 
     public bool IsUpgradeBought(UpgradeType upgradeType) {
-        Debug.Log(GardenManager.Instance.upgrades.Count);
-        
         foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
             if (up.upgradeType != upgradeType) continue;
             return up.isBought;

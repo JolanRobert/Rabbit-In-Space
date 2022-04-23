@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Customer : IInteractable {
@@ -25,19 +26,24 @@ public class Customer : IInteractable {
         xpReward = cSo.xpReward;
     }
 
+    private MenuGenerator myMenu;
+    private CustomerSpawner cSpawner;
     public void MakeOrder() {
         if (hasOrdered) return;
         hasOrdered = true;
 
+        myMenu = KitchenManager.Instance.myMenu;
+        cSpawner = KitchenManager.Instance.customerSpawner;
+
         myOrder = customerType switch {
-            CustomerType.NORMAL => KitchenManager.Instance.myMenu.GetRandomRecipe(),
-            CustomerType.HUPPE => KitchenManager.Instance.myMenu.GetExpensiveRecipe(),
-            CustomerType.RADIN => KitchenManager.Instance.myMenu.GetCheapRecipe(),
-            CustomerType.COPIEUR => KitchenManager.Instance.customerSpawner.customerQueue[0].GetOrder(),
-            CustomerType.ACCRO => KitchenManager.Instance.myMenu.GetTrueRandomRecipe(),
-            CustomerType.LENT => KitchenManager.Instance.myMenu.GetRandomRecipe(),
-            CustomerType.IMPATIENT => KitchenManager.Instance.myMenu.GetRandomRecipe(),
-            CustomerType.ENERVANT => KitchenManager.Instance.myMenu.GetRandomRecipe(),
+            CustomerType.NORMAL => myMenu.GetRandomRecipe(),
+            CustomerType.HUPPE => myMenu.GetExpensiveRecipe(),
+            CustomerType.RADIN => myMenu.GetCheapRecipe(),
+            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-1].GetOrder(),
+            CustomerType.ACCRO => myMenu.GetTrueRandomRecipe(),
+            CustomerType.LENT => myMenu.GetRandomRecipe(),
+            CustomerType.IMPATIENT => myMenu.GetRandomRecipe(),
+            CustomerType.ENERVANT => myMenu.GetRandomRecipe(),
             _ => throw new Exception("Unknown customer type")
         };
 

@@ -6,7 +6,6 @@ public class CustomerOrder : MonoBehaviour {
     [SerializeField] private SpriteRenderer customerChoiceSR;
     [SerializeField] private Transform impatienceProgress;
     [SerializeField] private SpriteRenderer impatienceColorBarSR;
-    [SerializeField] private SpriteRenderer inStockSR;
 
     public void Init(RecipeSO order) {
         customerChoiceSR.sprite = order.recipeSprite;
@@ -22,9 +21,5 @@ public class CustomerOrder : MonoBehaviour {
         newColor.r = 1 - value;
         newColor.g = value;
         impatienceColorBarSR.color = newColor;
-    }
-
-    public void UpdateInStock(bool inStock) {
-        inStockSR.color = inStock ? Color.green : Color.red;
     }
 }

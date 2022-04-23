@@ -27,7 +27,7 @@ public class RecipeAmountPrompt : MonoBehaviour {
     public void UpdateIngredientSlots() {
         if (slots.Count == 0) return;
         foreach (RecipeElement element in RecipeManager.Instance.pendingRecipe.recipeElements) {
-            slots[element.food.foodType].amountText.text = (element.amount * counter.currentValue).ToString();
+            slots[element.food.foodType].slotAmount.text = (element.amount * counter.currentValue).ToString();
         }
     }
     
