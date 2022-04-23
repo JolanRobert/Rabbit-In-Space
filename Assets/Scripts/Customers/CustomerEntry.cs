@@ -14,7 +14,9 @@ public class CustomerEntry : MonoBehaviour {
     private string revealedXp;
 
     public void Init(CustomerSO cSo) {
-        customerType.text = cSo.customerType.ToString()[0]+cSo.customerType.ToString().Substring(1).ToLower();
+        name = cSo.name;
+        
+        customerType.text = cSo.name;
         customerImage.sprite = cSo.customerSprite;
         customerImage.preserveAspect = true;
         nbBeforeReveal = cSo.nbBeforeReveal;
