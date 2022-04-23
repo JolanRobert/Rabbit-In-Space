@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RecipeTimeline : MonoBehaviour
-{
+public class RecipeTimeline : MonoBehaviour {
+    
     [SerializeField] private Transform stationsGroup;
     [SerializeField] private GameObject stationSlotPrefab;
     [SerializeField] private Image recipeImage;
@@ -12,8 +12,8 @@ public class RecipeTimeline : MonoBehaviour
         recipeImage.sprite = recipe.recipeSprite;
         foreach (StationSO station in recipe.stations)
         {
-            GameObject stationSlot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup);
-            stationSlot.GetComponent<StationSlot>().image.sprite = station.icon;
+            GameObject stationSlot = Instantiate(stationSlotPrefab, stationsGroup);
+            stationSlot.GetComponent<IngredientSlot>().slotSprite.sprite = station.icon;
         }
     }
 }

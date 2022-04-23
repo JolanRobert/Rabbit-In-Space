@@ -15,4 +15,6 @@ MonoBehaviour:
   customerType: 2
   impatienceLimit: 80
   xpReward: 2
+  nbBeforeReveal: 10
+  description: Prend le plat le moins cher du menu
   customerSprite: {fileID: -6286631964205044520, guid: 44d1acdcb56245e4aa44db03f92414d7, type: 3}

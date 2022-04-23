@@ -8,6 +8,10 @@ public class CustomerSO : ScriptableObject {
     public int impatienceLimit;
     public int xpReward;
 
+    [Header("Directory Infos")]
+    public int nbBeforeReveal;
+    public string description;
+
     [Header("Sprites")]
     public Sprite customerSprite;
 }

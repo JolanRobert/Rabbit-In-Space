@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerInput : MonoBehaviour {
 
@@ -14,9 +15,13 @@ public class PlayerInput : MonoBehaviour {
     }
     
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsMouseOverUI()) {
             ScreenToRay(Input.mousePosition);
         }
+    }
+
+    private bool IsMouseOverUI() {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     /*private void HandleTouch() {
@@ -34,18 +39,16 @@ public class PlayerInput : MonoBehaviour {
 
     private void ScreenToRay(Vector2 screenPosition) {
         Ray ray = mainCamera.ScreenPointToRay(screenPosition);
-        //Check if Raycast hit an object
-        if (!Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, Mathf.Infinity)) {
-            playerManager.GetMovement().Move(Vector3.negativeInfinity);
-            return;
-        }
+        
+        //Raycast hit nothing
+        if (!Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, Mathf.Infinity)) return;
         
         //Raycast hit a non-Interactable object
         if (hit.collider.GetComponent<IInteractable>() == null) {
             playerManager.GetMovement().Move(hit.point);
             return;
         }
-        
+
         //Raycast hit an Interactable object
         playerManager.GetMovement().Move(hit.collider.transform.position+hit.collider.GetComponent<IInteractable>().interactPosition);
         playerManager.GetInteract().TryInteract(hit.collider.GetComponent<IInteractable>());
