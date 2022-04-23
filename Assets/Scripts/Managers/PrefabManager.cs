@@ -16,11 +16,23 @@ public class PrefabManager : MonoBehaviour {
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform slotFridgeParent;
     [SerializeField] private Transform slotWorkplanParent;
+    
+    [Header("RecipeBook")]
+    [SerializeField] private GameObject recipePanelPrefab;
+    [SerializeField] private Transform recipePanelGroup;
+
+    [Header("Directory")]
+    [SerializeField] private GameObject customerEntryPrefab;
+    [SerializeField] private Transform customerEntryGroup;
 
     void Start() {
-        foreach (FoodSO foodSo in DataManager.Instance.foodList) {
+        foreach (FoodSO fSo in DataManager.Instance.foodList) {
             FoodShopEntry entry = Instantiate(foodShopEntryPrefab, foodShopEntryParent).GetComponent<FoodShopEntry>();
-            entry.Init(foodSo);
+            entry.Init(fSo);
+            
+            InventorySlot slot = Instantiate(slotPrefab, slotFridgeParent).GetComponent<InventorySlot>();
+            slot.Init(fSo);
+            UIKitchen.Instance.fridgeSlots.Add(slot);
         }
         
         foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
@@ -29,16 +41,18 @@ public class PrefabManager : MonoBehaviour {
             UIGarden.Instance.upgrades.Add(entry);
         }
 
-        foreach (FoodSO fSo in KitchenManager.Instance.foodList) {
-            InventorySlot slot = Instantiate(slotPrefab, slotFridgeParent).GetComponent<InventorySlot>();
-            slot.Init(fSo);
-            UIKitchen.Instance.fridgeSlots.Add(slot);
-        }
-
         foreach (RecipeSO rSo in KitchenManager.Instance.recipeList) {
+            RecipePanel recipePanel = Instantiate(recipePanelPrefab, recipePanelGroup).GetComponent<RecipePanel>();
+            recipePanel.SetupPanel(rSo);
+            
             InventorySlot slot = Instantiate(slotPrefab, slotWorkplanParent).GetComponent<InventorySlot>();
             slot.Init(rSo);
             UIKitchen.Instance.workplanSlots.Add(slot);
+        }
+
+        foreach (CustomerSO cSo in DataManager.Instance.customerList) {
+            CustomerEntry customerEntry = Instantiate(customerEntryPrefab, customerEntryGroup).GetComponent<CustomerEntry>();
+            customerEntry.Init(cSo);
         }
     }
 }

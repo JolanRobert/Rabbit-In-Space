@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerType: 3
   impatienceLimit: 80
-  xpReward: 3
+  xpReward: 0
+  nbBeforeReveal: 10
+  description: "Prend le m\xEAme plat que le client devant lui"
   customerSprite: {fileID: -5451884213976893447, guid: c3a1537d3a295aa418c792428af68300, type: 3}
