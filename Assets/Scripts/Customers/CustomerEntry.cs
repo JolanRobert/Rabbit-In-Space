@@ -18,7 +18,6 @@ public class CustomerEntry : MonoBehaviour {
         
         customerType.text = cSo.name;
         customerImage.sprite = cSo.customerSprite;
-        customerImage.preserveAspect = true;
         nbBeforeReveal = cSo.nbBeforeReveal;
         revealedBehaviour = cSo.description;
         revealedXp = cSo.customerType == CustomerType.COPIEUR ? "Variable" : cSo.xpReward.ToString();
