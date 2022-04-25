@@ -23,7 +23,6 @@ public class RecipePanel : MonoBehaviour
         recipe = newRecipe;
         type = recipe.recipeType;
         image.sprite = recipe.recipeSprite;
-        image.preserveAspect = true;
         name = recipe.name;
         nameText.text = name;
         price = recipe.price;
