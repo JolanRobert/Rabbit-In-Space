@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,8 +5,8 @@ using UnityEngine;
 public class StationSO : ScriptableObject
 {
     [Header("Global Infos")]
-    public new string name;
     public StationType stationType;
+    public SceneAsset minigameScene;
 
     [Header("Sprites")] public Sprite icon;
 }

@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class MenuGenerator : MonoBehaviour {
 
@@ -12,6 +10,7 @@ public class MenuGenerator : MonoBehaviour {
     public void GenerateMenu() {
         List<RecipeSO> availableRecipes = GetAvailableRecipes();
         if (availableRecipes.Count == 0) {
+            todayMenu.Clear();
             Debug.Log("Aucun plat ne correspond aux critères de lancement d'un service !");
             return;
         }
@@ -24,15 +23,14 @@ public class MenuGenerator : MonoBehaviour {
         List<RecipeSO> availableRecipes = new List<RecipeSO>();
         foreach (RecipeSO rSo in KitchenManager.Instance.recipeList) {
             bool recipe = true;
-            foreach (RecipeElement re in rSo.recipeElements) {
-                if (!FoodDataManager.Instance.CheckItemQuantity(re.food.foodType, re.amount * minAmountOfRecipeProd)) {
+            foreach (RecipeElement element in rSo.recipeElements) {
+                if (!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType, element.amount * minAmountOfRecipeProd)) {
                     recipe = false;
                     break;
                 }
             }
             
             if (recipe) availableRecipes.Add(rSo);
-            else Debug.Log("Can't add "+rSo.name+" to today's Menu");
         }
 
         return availableRecipes;

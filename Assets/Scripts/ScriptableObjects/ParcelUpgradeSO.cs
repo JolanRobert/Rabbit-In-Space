@@ -5,7 +5,6 @@ public class ParcelUpgradeSO : ScriptableObject {
 
     public UpgradeType upgradeType;
     
-    public new string name;
     public string description;
     public int unlockCost;
     public bool isActivable;

@@ -1,64 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RecipePanel : MonoBehaviour
 {
-    [Header("Components")] 
-    [SerializeField] private Transform ingredientGroup;
-    [SerializeField] private Transform stationsGroup;
+    [Header("Prefabs")] 
     [SerializeField] private GameObject ingredientSlotPrefab;
+    [SerializeField] private Transform ingredientsGroup;
     [SerializeField] private GameObject stationSlotPrefab;
+    [SerializeField] private Transform stationsGroup;
+
+    [Header("Panel Infos")]
     private RecipeSO recipe;
-    [SerializeField] private string name;
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text nameText, priceText;
+    
     [Header("Attributes")]
     public RecipeType type;
     public int price;
 
-    public void SetupPanel(RecipeSO newRecipe)
-    {
+    public void SetupPanel(RecipeSO newRecipe) {
         recipe = newRecipe;
         type = recipe.recipeType;
         image.sprite = recipe.recipeSprite;
+        image.preserveAspect = true;
         name = recipe.name;
         nameText.text = name;
         price = recipe.price;
         priceText.text = recipe.price + "$";
-        foreach (RecipeElement element in recipe.recipeElements)
-        {
-            IngredientSlot slot = Instantiate(ingredientSlotPrefab, Vector3.zero, Quaternion.identity, ingredientGroup)
-                .GetComponent<IngredientSlot>();
-            slot.ingredientSprite.sprite = element.food.foodSprite;
-            slot.amountText.text = element.amount.ToString();
+        
+        foreach (RecipeElement element in recipe.recipeElements) {
+            IngredientSlot slot = Instantiate(ingredientSlotPrefab, Vector3.zero, Quaternion.identity, ingredientsGroup).GetComponent<IngredientSlot>();
+            slot.Init(element,1);
         }
-        foreach (StationSO station in recipe.stations)
-        {
+        
+        foreach (StationSO station in recipe.stations) {
             StationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<StationSlot>();
-            slot.image.sprite = station.icon;
+            slot.Init(station);
         }
     }
 
-    public void StartRecipe()
-    {
-        foreach (RecipeElement element in recipe.recipeElements)
-        {
-            if(!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType,element.amount))
-            {
-                Debug.Log("Not enough " + element.food.name);
-                return;
-            }
-        }
-        foreach (RecipeElement element in recipe.recipeElements)
-        {
-            FoodDataManager.Instance.AddItems(element.food.foodType, -element.amount);
-            //Debug.Log("Took " + element.amount + " " + element.food.name);
-        }
-        
-        RecipeManager.instance.InitRecipeTimeline(recipe);
+    public void StartRecipe() {
+        RecipeManager.Instance.TryStartRecipe(recipe);
     }
 }
