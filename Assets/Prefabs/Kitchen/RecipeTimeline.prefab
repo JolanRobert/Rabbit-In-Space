@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8765099013910501076}
   - component: {fileID: 8765099013910501079}
   m_Layer: 5
-  m_Name: Recipe Timeline
+  m_Name: RecipeTimeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

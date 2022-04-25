@@ -37,7 +37,6 @@ public class ParcelMenuEntry : MonoBehaviour {
     
     public void UpdatePlantSprite(Sprite newSprite) {
         plantSprite.sprite = newSprite;
-        plantSprite.preserveAspect = true;
     }
     
     public void UpdatePlantName(string newName) {

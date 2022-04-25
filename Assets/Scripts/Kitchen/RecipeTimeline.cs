@@ -13,7 +13,7 @@ public class RecipeTimeline : MonoBehaviour {
         foreach (StationSO station in recipe.stations)
         {
             GameObject stationSlot = Instantiate(stationSlotPrefab, stationsGroup);
-            stationSlot.GetComponent<IngredientSlot>().slotSprite.sprite = station.icon;
+            stationSlot.GetComponent<StationSlot>().slotSprite.sprite = station.icon;
         }
     }
 }

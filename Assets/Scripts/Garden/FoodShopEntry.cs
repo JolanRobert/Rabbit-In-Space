@@ -13,7 +13,6 @@ public class FoodShopEntry : MonoBehaviour {
     
     public void Init(FoodSO foodSo) {
         foodSprite.sprite = foodSo.foodSprite;
-        foodSprite.preserveAspect = true;
         
         foodName.text = foodSo.name;
         foodPrice.text = foodSo.price + "$";
