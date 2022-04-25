@@ -4,34 +4,34 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2085304999023188788
-    second: Mood_rat_0
+    second: Rat_0
   - first:
       213: -3445481596550879101
     second: Mood_rat_1
   - first:
       213: 8176819627262263674
-    second: Mood_rat_2
+    second: Rat_1
   - first:
       213: -6286631964205044520
-    second: Mood_rat_3
+    second: Rat_2
   - first:
       213: 726658806498336320
-    second: Mood_rat_4
+    second: Rat_3
   - first:
       213: 6822597957861173052
     second: Mood_rat_5
   - first:
       213: 7558860870536896057
-    second: Mood_rat_6
+    second: Rat_4
   - first:
       213: -2891927951715056909
-    second: Mood_rat_7
+    second: Rat_5
   - first:
       213: -4469679391013495627
-    second: Mood_rat_8
+    second: Rat_6
   - first:
       213: -7911873888326581136
-    second: Mood_rat_9
+    second: Rat_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -62,7 +62,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -76,7 +76,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,11 +117,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mood_rat_0
+      name: Rat_0
       rect:
         serializedVersion: 2
         x: 228
@@ -142,7 +154,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mood_rat_2
+      name: Rat_1
       rect:
         serializedVersion: 2
         x: 1595
@@ -163,7 +175,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mood_rat_3
+      name: Rat_2
       rect:
         serializedVersion: 2
         x: 2604
@@ -184,7 +196,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mood_rat_4
+      name: Rat_3
       rect:
         serializedVersion: 2
         x: 3740
@@ -205,7 +217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mood_rat_6
+      name: Rat_4
       rect:
         serializedVersion: 2
         x: 144
@@ -226,7 +238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mood_rat_7
+      name: Rat_5
       rect:
         serializedVersion: 2
         x: 1554
@@ -247,7 +259,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mood_rat_8
+      name: Rat_6
       rect:
         serializedVersion: 2
         x: 2604
@@ -268,7 +280,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mood_rat_9
+      name: Rat_7
       rect:
         serializedVersion: 2
         x: 3740

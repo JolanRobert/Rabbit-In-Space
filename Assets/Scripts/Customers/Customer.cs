@@ -6,10 +6,9 @@ using UnityEngine;
 
 public class Customer : IInteractable {
 
-    [SerializeField] private CustomerOrder customerOrder;
     [SerializeField] private SpriteRenderer customerSR;
 
-    private RecipeSO myOrder;
+    public RecipeSO myOrder;
     public CustomerType customerType;
     
     private float impatienceLimit;
@@ -46,9 +45,7 @@ public class Customer : IInteractable {
             CustomerType.ENERVANT => myMenu.GetRandomRecipe(),
             _ => throw new Exception("Unknown customer type")
         };
-
-        customerOrder.gameObject.SetActive(true);
-        customerOrder.Init(myOrder);
+        
         StartCoroutine(Leave());
     }
     
@@ -57,7 +54,6 @@ public class Customer : IInteractable {
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
             impatienceLimit -= 1 * impatienceFactor;
-            customerOrder.UpdateImpatienceProgress(impatienceLimit/m_impatienceLimit);
         }
         
         CompleteOrder(false);

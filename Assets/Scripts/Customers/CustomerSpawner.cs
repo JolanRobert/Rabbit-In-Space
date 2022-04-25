@@ -9,7 +9,7 @@ public class CustomerSpawner : MonoBehaviour {
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
-    [SerializeField] private Vector3 customerSpawnPoint;
+    [SerializeField] private Transform customerSpawnPoint;
     
     [Header("Customer Spawner Values")]
     public int nbCounterCustomer;
@@ -22,7 +22,7 @@ public class CustomerSpawner : MonoBehaviour {
     }
 
     public void StartService() {
-        while (customerQueue.Count < nbCounterCustomer+nbHiddenCustomer) {PopCustomer();}
+        while (customerQueue.Count < nbCounterCustomer/*+nbHiddenCustomer*/) {PopCustomer();}
         MoveCustomers();
     }
 
@@ -39,7 +39,7 @@ public class CustomerSpawner : MonoBehaviour {
             if (randomValue > value) continue;
             
             //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint, Quaternion.Euler(60,0,0), transform).GetComponent<Customer>();
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
             
             //Handle Copieur xpReward
             if (cc.customerSo.customerType == CustomerType.COPIEUR) {
@@ -68,7 +68,7 @@ public class CustomerSpawner : MonoBehaviour {
         Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
         
         for (int i = 0; i < customerQueue.Count; i++) {
-            customerQueue[i].transform.position = customerSpawnPoint - Vector3.right * i * 1.5f + customerOffset;
+            customerQueue[i].transform.position = customerSpawnPoint.position - Vector3.right * i * 1.5f + customerOffset;
             customerQueue[i].interactPosition = -customerQueue[i].transform.position + new Vector3(-1.25f, 0, -2);
             
             //Les personnes devant le comptoir passent commande

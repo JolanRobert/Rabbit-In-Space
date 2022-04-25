@@ -6,7 +6,7 @@ public class ServiceManager : MonoBehaviour {
     public static ServiceManager Instance;
 
     [Header("ServiceTimer")]
-    [SerializeField] private int serviceTime;
+    [SerializeField] [Range(5,500)] private int serviceTime = 360;
     [SerializeField] private ServiceTimer myTimer;
     
     [SerializeField] private List<ServiceEntry> serviceEntries;
