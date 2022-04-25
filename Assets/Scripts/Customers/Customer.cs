@@ -8,9 +8,9 @@ public class Customer : IInteractable {
 
     [SerializeField] private SpriteRenderer customerSR;
 
-    public RecipeSO myOrder;
-    public CustomerType customerType;
-    
+    public CustomerSO customer;
+    public RecipeSO recipe;
+
     private float impatienceLimit;
     public float impatienceFactor = 1;
 
@@ -19,8 +19,9 @@ public class Customer : IInteractable {
     private bool hasOrdered;
 
     public void Init(CustomerSO cSo) {
+        customer = cSo;
+        
         customerSR.sprite = cSo.customerSprite;
-        customerType = cSo.customerType;
         impatienceLimit = cSo.impatienceLimit;
         xpReward = cSo.xpReward;
     }
@@ -34,18 +35,19 @@ public class Customer : IInteractable {
         myMenu = KitchenManager.Instance.myMenu;
         cSpawner = KitchenManager.Instance.customerSpawner;
 
-        myOrder = customerType switch {
+        recipe = customer.customerType switch {
             CustomerType.NORMAL => myMenu.GetRandomRecipe(),
             CustomerType.HUPPE => myMenu.GetExpensiveRecipe(),
             CustomerType.RADIN => myMenu.GetCheapRecipe(),
-            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-1].GetOrder(),
+            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-1].recipe,
             CustomerType.ACCRO => myMenu.GetTrueRandomRecipe(),
             CustomerType.LENT => myMenu.GetRandomRecipe(),
             CustomerType.IMPATIENT => myMenu.GetRandomRecipe(),
             CustomerType.ENERVANT => myMenu.GetRandomRecipe(),
             _ => throw new Exception("Unknown customer type")
         };
-        
+
+        CustomerOrderManager.Instance.AddCustomerOrder(this);
         StartCoroutine(Leave());
     }
     
@@ -60,12 +62,12 @@ public class Customer : IInteractable {
     }
 
     private void TryCompleteOrder() {
-        if (!FoodDataManager.Instance.HasRecipeItem(myOrder.recipeType)) return;
+        if (!FoodDataManager.Instance.HasRecipeItem(recipe.recipeType)) return;
         
         for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
             FoodDataManager.RecipeItem item = InventoryManager.Instance.recipeItems[i];
             
-            if (item.recipeType != myOrder.recipeType) continue;
+            if (item.recipeType != recipe.recipeType) continue;
             item.amount -= 1;
             UIKitchen.Instance.UpdateWorkplanSlot(i,item.amount);
             break;
@@ -75,11 +77,8 @@ public class Customer : IInteractable {
     }
 
     private void CompleteOrder(bool success) {
+        CustomerOrderManager.Instance.RemoveCustomerOrder(this);
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
-    }
-
-    private RecipeSO GetOrder() {
-        return myOrder;
     }
     
     public override void Interact() {

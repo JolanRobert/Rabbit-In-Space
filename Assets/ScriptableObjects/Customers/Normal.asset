@@ -17,4 +17,4 @@ MonoBehaviour:
   xpReward: 3
   nbBeforeReveal: 10
   description: "Prend un plat al\xE9atoire sur le menu"
-  customerSprite: {fileID: 4935620579968358508, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  customerSprite: {fileID: 6006258108684561761, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}

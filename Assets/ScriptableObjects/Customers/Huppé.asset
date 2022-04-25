@@ -17,4 +17,4 @@ MonoBehaviour:
   xpReward: 4
   nbBeforeReveal: 10
   description: Prend le plat le plus cher du menu
-  customerSprite: {fileID: 3635680848118366661, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  customerSprite: {fileID: -2711892033306577372, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}

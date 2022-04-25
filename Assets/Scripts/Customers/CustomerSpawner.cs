@@ -22,7 +22,7 @@ public class CustomerSpawner : MonoBehaviour {
     }
 
     public void StartService() {
-        while (customerQueue.Count < nbCounterCustomer/*+nbHiddenCustomer*/) {PopCustomer();}
+        while (customerQueue.Count < nbCounterCustomer+nbHiddenCustomer) {PopCustomer();}
         MoveCustomers();
     }
 
@@ -68,7 +68,7 @@ public class CustomerSpawner : MonoBehaviour {
         Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
         
         for (int i = 0; i < customerQueue.Count; i++) {
-            customerQueue[i].transform.position = customerSpawnPoint.position - Vector3.right * i * 1.5f + customerOffset;
+            customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1.5f + customerOffset;
             customerQueue[i].interactPosition = -customerQueue[i].transform.position + new Vector3(-1.25f, 0, -2);
             
             //Les personnes devant le comptoir passent commande
@@ -77,11 +77,11 @@ public class CustomerSpawner : MonoBehaviour {
             //Mise à jour du facteur d'impatience
             int nbEnervants = 0;
             //Client devant
-            if (i != 0 && customerQueue[i - 1].customerType == CustomerType.ENERVANT)
+            if (i != 0 && customerQueue[i - 1].customer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
             
             //Client derrière
-            if (i != customerQueue.Count-1 && customerQueue[i + 1].customerType == CustomerType.ENERVANT)
+            if (i != customerQueue.Count-1 && customerQueue[i + 1].customer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
 
             customerQueue[i].impatienceFactor = 1 + 0.25f * nbEnervants;
