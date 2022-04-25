@@ -13,9 +13,6 @@ public class FoodShopEntry : MonoBehaviour {
     
     public void Init(FoodSO foodSo) {
         foodSprite.sprite = foodSo.foodSprite;
-        //To modify
-        foodSprite.SetNativeSize();
-        foodSprite.GetComponent<RectTransform>().sizeDelta = foodSprite.GetComponent<RectTransform>().sizeDelta / 5;
         
         foodName.text = foodSo.name;
         foodPrice.text = foodSo.price + "$";

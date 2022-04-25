@@ -65,7 +65,7 @@ namespace MochiBeater
             foldsToMake--;
             if (foldsToMake <= 0)
             {
-                MinigameManager.instance.EndMinigame(true);
+                MinigameManager.Instance.EndMinigame(true);
                 return;
             }
             StartCoroutine(FoldingDelay());

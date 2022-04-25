@@ -1,46 +1,39 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Counter : MonoBehaviour
-{
-    private UnityEvent valueChanged;
+public class Counter : MonoBehaviour {
+    
     [SerializeField] private TMP_Text text;
     [SerializeField] private GameObject addButton, subButton;
-    [SerializeField] public int value;
-    [SerializeField] private int min, max;
+    [SerializeField] private int startValue;
+    [SerializeField] private Vector2Int minMaxValue;
+    
+    public int currentValue;
 
-    void Start()
-    {
-        value = Mathf.Clamp(value, min, max);
-        CheckValues();
+    void Start() {
+        Reset();
     }
     
-    public void Add()
-    {
-        value++;
+    public void Add() {
+        currentValue++;
         CheckValues();
     }
 
-    public void Substract()
-    {
-        value--;
+    public void Substract() {
+        currentValue--;
         CheckValues();
     }
 
-    private void CheckValues()
-    {
-        if (value == min) subButton.SetActive(false);
-        else subButton.SetActive(true);
-        
-        if (value == max) addButton.SetActive(false);
-        else addButton.SetActive(true);
+    public void Reset() {
+        currentValue = Mathf.Clamp(startValue, minMaxValue.x, minMaxValue.y);
+        CheckValues();
+    }
 
-        text.text = value.ToString();
-        RecipeAmountPrompt.instance.UpdateIngredientSlots();
+    private void CheckValues() {
+        subButton.SetActive(currentValue != minMaxValue.x);
+        addButton.SetActive(currentValue != minMaxValue.y);
+        text.text = currentValue.ToString();
+        RecipeAmountPrompt.Instance.UpdateIngredientSlots();
     }
 }

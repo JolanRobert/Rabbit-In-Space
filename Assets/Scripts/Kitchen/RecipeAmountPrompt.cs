@@ -1,48 +1,42 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecipeAmountPrompt : MonoBehaviour
-{
-    public static RecipeAmountPrompt instance;
+public class RecipeAmountPrompt : MonoBehaviour {
+    
+    public static RecipeAmountPrompt Instance;
     [SerializeField] private Counter counter;
     [SerializeField] private GameObject ingredientSlotPrefab;
     [SerializeField] private Transform ingredientGroup;
     private Dictionary<FoodType, IngredientSlot> slots = new Dictionary<FoodType, IngredientSlot>();
 
-    void Awake()
-    {
-        instance = this;
-    }
-    void OnEnable()
-    {
-        //CreateIngredientSlots();
+    void Awake() {
+        Instance = this;
     }
 
-    public void CreateIngredientSlots()
-    {
-        foreach (RecipeElement element in RecipeManager.instance.pendingRecipe.recipeElements)
-        {
-            slots.Add(element.food.foodType,
-                Instantiate(ingredientSlotPrefab, Vector3.zero, Quaternion.identity, ingredientGroup)
-                    .GetComponent<IngredientSlot>());
-            slots[element.food.foodType].ingredientSprite.sprite = element.food.foodSprite;
-            slots[element.food.foodType].amountText.text = (element.amount * counter.value).ToString();
+    public void CreateIngredientSlots() {
+        ClearPanel();
+        counter.Reset();
+        
+        foreach (RecipeElement element in RecipeManager.Instance.pendingRecipe.recipeElements) {
+            IngredientSlot ingSlot = Instantiate(ingredientSlotPrefab, ingredientGroup).GetComponent<IngredientSlot>();
+            ingSlot.Init(element,counter.currentValue);
+            slots.Add(element.food.foodType, ingSlot);
         }
     }
 
-    public void UpdateIngredientSlots()
-    {
-        foreach (RecipeElement element in RecipeManager.instance.pendingRecipe.recipeElements)
-        {
-            slots[element.food.foodType].amountText.text = (element.amount * counter.value).ToString();
+    public void UpdateIngredientSlots() {
+        if (slots.Count == 0) return;
+        foreach (RecipeElement element in RecipeManager.Instance.pendingRecipe.recipeElements) {
+            slots[element.food.foodType].slotAmount.text = (element.amount * counter.currentValue).ToString();
         }
-    }
-
-    public void ClearPanel()
-    {
-        foreach (Transform child in ingredientGroup.transform) Destroy(child.gameObject);
-        slots.Clear();
     }
     
+    public void ConfirmAmountRecipe() {
+        RecipeManager.Instance.StartRecipe(counter.currentValue);
+    }
+
+    private void ClearPanel() {
+        foreach (Transform child in ingredientGroup) Destroy(child.gameObject);
+        slots.Clear();
+    }
 }

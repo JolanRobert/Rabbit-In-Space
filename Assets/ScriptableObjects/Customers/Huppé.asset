@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerType: 1
   impatienceLimit: 80
+  xpReward: 4
+  nbBeforeReveal: 10
+  description: Prend le plat le plus cher du menu
   customerSprite: {fileID: 52022122045837031, guid: 0d8038c706d76e441866661c3b5c57fd, type: 3}

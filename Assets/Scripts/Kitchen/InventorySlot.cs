@@ -7,36 +7,20 @@ public class InventorySlot : MonoBehaviour {
     [Header("Components")]
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text amountText;
-    [Header("Attributes")]
-    public FoodType foodType;
-    public RecipeType recipeType;
 
-    private void OnEnable() {
-        UpdateSlot();
+    public void Init(FoodSO fSo) {
+        image.sprite = fSo.foodSprite;
+        amountText.text = "0";
+        UpdateAmount(InventoryManager.Instance.GetAmountOfFoodItem(fSo));
     }
 
-    public void SetupSlot(FoodType newType, Sprite sprite) {
-        foodType = newType;
-        image.sprite = sprite;
-        UpdateSlot();
+    public void Init(RecipeSO rSo) {
+        image.sprite = rSo.recipeSprite;
+        amountText.text = "0";
+        UpdateAmount(InventoryManager.Instance.GetAmountOfRecipeItem(rSo));
     }
 
-    public void SetupSlot(RecipeType newType, Sprite sprite) {
-        recipeType = newType;
-        image.sprite = sprite;
-        UpdateSlot();
-    }
-
-    private void UpdateSlot() {
-        if (foodType != FoodType.NONE) {
-            amountText.text = FoodDataManager.Instance.Load(foodType.ToString()).amount.ToString();
-        }
-        else {
-            foreach (InventoryManager.RecipeItem item in RecipeManager.instance.serviceRecipes) {
-                if (item.rSo.recipeType != recipeType) continue;
-                amountText.text = ""+item.amount;
-                break;
-            }
-        }
+    public void UpdateAmount(int amount) {
+        amountText.text = amount.ToString();
     }
 }

@@ -1,6 +1,6 @@
-public class Workplan : InteractableElement {
-
+public class Workplan : IInteractable {
+    
     public override void Interact() {
-        KitchenUI.Instance.OpenWorkplan();
+        UIManager.Instance.OpenPanel(interactPanel);
     }
 }

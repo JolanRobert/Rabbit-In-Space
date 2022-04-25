@@ -1,70 +1,84 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecipeManager : MonoBehaviour
-{
-    public static RecipeManager instance;
+public class RecipeManager : MonoBehaviour {
+    
+    public static RecipeManager Instance;
+    
+    public RecipeSO currentRecipe, pendingRecipe;
     
     [SerializeField] private GameObject recipeTimeline;
-    [SerializeField] public RecipeSO currentRecipe, pendingRecipe;
-    [SerializeField] private int recipeAmount;
-    private Queue<StationType> stations = new Queue<StationType>();
+    private int recipeAmount;
     
-    public List<InventoryManager.RecipeItem> serviceRecipes = new List<InventoryManager.RecipeItem>();
+    private Queue<StationType> stations = new Queue<StationType>();
 
     void Awake() {
-        instance = this;
+        if (Instance != null) Destroy(gameObject);
+        else Instance = this;
     }
-
-    void Start() {
-        foreach (RecipeSO rSo in KitchenManager.Instance.recipeList) {
-            serviceRecipes.Add(new InventoryManager.RecipeItem(rSo));
-        }
-    }
-
-    public void TryStartRecipe(RecipeSO recipe)
-    {
+    
+    //
+    // RECIPE
+    //
+    
+    public void TryStartRecipe(RecipeSO recipe) {
         pendingRecipe = recipe;
-        if (currentRecipe != null)
-        {
-            KitchenUI.Instance.OpenOverrideRecipePrompt();
+        
+        //On propose d'override la recette déjà existante
+        if (currentRecipe != null) {
+            UIManager.Instance.OpenPanel(UIKitchen.Instance.recipeOverridePrompt);
             return;
         }
-        PromptRecipeAmount();
+        
+        PromptAmountRecipe();
     }
-    public void PromptRecipeAmount()
-    {
-        KitchenUI.Instance.OpenAmountRecipePrompt(pendingRecipe);
-    }
-
-    public void StartRecipe(int newRecipeAmount)
-    {
+    
+    public void StartRecipe(int newRecipeAmount) {
         recipeAmount = newRecipeAmount;
-        foreach (RecipeElement element in pendingRecipe.recipeElements)
-        {
-            if(!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType,element.amount * recipeAmount))
-            {
+        foreach (RecipeElement element in pendingRecipe.recipeElements) {
+            if(!FoodDataManager.Instance.CheckItemQuantity(element.food.foodType,element.amount * recipeAmount)) {
                 Debug.Log("Not enough " + element.food.name);
                 return;
             }
         }
-        foreach (RecipeElement element in pendingRecipe.recipeElements)
-        {
-            FoodDataManager.Instance.AddItems(element.food.foodType, -element.amount * recipeAmount);
+        foreach (RecipeElement element in pendingRecipe.recipeElements) {
+            FoodDataManager.Instance.AddItem(element.food.foodType, -element.amount * recipeAmount);
             //Debug.Log("Took " + element.amount + " " + element.food.name);
         }
         InitRecipeTimeline(pendingRecipe);
     }
+    
+    public void EndRecipe(bool success) {
+        if (success) {
+            for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
+                FoodDataManager.RecipeItem item = InventoryManager.Instance.recipeItems[i];
+                if (item.recipeType != currentRecipe.recipeType) continue;
+                item.amount += 1 * recipeAmount;
+                break;
+            }
+            
+            //Debug.Log(currentRecipe.name + " recipe has ended with success.");
+        }
+        //else Debug.Log(currentRecipe.name + " recipe has ended with failure.");
+        
+        currentRecipe = null;
+        foreach (Transform child in recipeTimeline.transform.GetChild(1)) Destroy(child.gameObject);
+        recipeTimeline.gameObject.SetActive(false);
+    }
+    
+    //
+    // RECIPE TIMELINE
+    //
 
-    public void InitRecipeTimeline(RecipeSO recipe) {
+    private void InitRecipeTimeline(RecipeSO recipe) {
+        if (currentRecipe != null) EndRecipe(false);
         currentRecipe = recipe;
         stations.Clear();
         
         foreach (StationSO station in recipe.stations) stations.Enqueue(station.stationType);
         
-        Debug.Log(currentRecipe.name + " recipe has started.");
+        //Debug.Log(currentRecipe.name + " recipe has started.");
         
-        KitchenUI.Instance.ClosePanel();
         ShowRecipeTimeline();
         recipeTimeline.GetComponent<RecipeTimeline>().ShowRecipeTimeline(recipe);
         SeeNextStep();
@@ -78,30 +92,16 @@ public class RecipeManager : MonoBehaviour
         recipeTimeline.gameObject.SetActive(false);
     }
 
-    public void EndRecipe(bool success) {
-        if (success) {
-            foreach (InventoryManager.RecipeItem recipeItem in serviceRecipes) {
-                if (currentRecipe != recipeItem.rSo) continue;
-                recipeItem.amount += 1 * recipeAmount;
-                break;
-            }
-            Debug.Log(currentRecipe.name + " recipe has ended with success.");
-        }
-        else Debug.Log(currentRecipe.name + " recipe has ended with failure.");
-        
-        currentRecipe = null;
-        foreach (Transform child in recipeTimeline.transform.GetChild(1)) Destroy(child.gameObject);
-        recipeTimeline.gameObject.SetActive(false);
-    }
+    
     
     public bool CheckIsNextStation(StationType type) {
         if (stations.Count == 0) {
-            Debug.Log("No recipe in progress...");
+            //Debug.Log("No recipe in progress...");
             return false;
         }
         
         if (stations.Peek() == type) return true;
-        Debug.Log(type + " is not the anticipated station.");
+        //Debug.Log(type + " is not the anticipated station.");
         return false;
     }
     
@@ -116,5 +116,10 @@ public class RecipeManager : MonoBehaviour
 
     private void SeeNextStep() {
         Debug.Log("Next step is : " + stations.Peek());
+    }
+
+    public void PromptAmountRecipe() {
+        UIManager.Instance.OpenPanel(UIKitchen.Instance.recipeAmountPrompt);
+        RecipeAmountPrompt.Instance.CreateIngredientSlots();
     }
 }

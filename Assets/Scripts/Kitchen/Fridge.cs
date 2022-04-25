@@ -1,6 +1,6 @@
-public class Fridge : InteractableElement {
-
+public class Fridge : IInteractable {
+    
     public override void Interact() {
-        KitchenUI.Instance.OpenFridge();
+        UIManager.Instance.OpenPanel(interactPanel);
     }
 }

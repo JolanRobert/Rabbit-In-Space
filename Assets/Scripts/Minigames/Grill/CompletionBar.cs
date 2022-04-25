@@ -17,7 +17,7 @@ public class CompletionBar : MonoBehaviour {
         completionBar.DOFillAmount(completionValue/100, 0.2f);
 
         if (completionValue >= 100) {
-            MinigameManager.instance.EndMinigame(true);
+            MinigameManager.Instance.EndMinigame(true);
         }
     }
 }

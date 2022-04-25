@@ -14,7 +14,6 @@ public class CustomerSpawner : MonoBehaviour {
     [Header("Customer Spawner Values")]
     public int nbCounterCustomer;
     [SerializeField] private int nbHiddenCustomer;
-    [SerializeField] private List<StarRepartition> starRepartitions;
 
     public List<Customer> customerQueue = new List<Customer>();
 
@@ -23,25 +22,31 @@ public class CustomerSpawner : MonoBehaviour {
     }
 
     public void StartService() {
-        KitchenManager.Instance.myMenu.GenerateMenu();
-        for (int i = 0; i < nbCounterCustomer+nbHiddenCustomer; i++) PopCustomer();
+        while (customerQueue.Count < nbCounterCustomer+nbHiddenCustomer) {PopCustomer();}
         MoveCustomers();
     }
 
     public void EndService() {
-        foreach (Customer customer in customerQueue) DepopCustomer(customer);
+        while (customerQueue.Count > 0) DepopCustomer(customerQueue[0]);
     }
 
     private void PopCustomer() {
         int randomValue = Random.Range(0, 100)+1;
         int value = 0;
 
-        foreach (CustomerChance cc in starRepartitions[currentStarValue - 1].customerChances) {
+        foreach (StarRepartitionSO.CustomerChance cc in DataManager.Instance.starRepartitionList[currentStarValue - 1].customerChances) {
             value += cc.probability;
             if (randomValue > value) continue;
             
             //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint, Quaternion.Euler(45,0,0), transform).GetComponent<Customer>();
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint, Quaternion.Euler(60,0,0), transform).GetComponent<Customer>();
+            
+            //Handle Copieur xpReward
+            if (cc.customerSo.customerType == CustomerType.COPIEUR) {
+                if (customerQueue.Count == 0) return;
+                cc.customerSo.xpReward = customerQueue[customerQueue.Count - 1].xpReward;
+            }
+            
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
             break;
@@ -60,8 +65,11 @@ public class CustomerSpawner : MonoBehaviour {
     //Déplace les clients
     //Gère les commandes et les facteurs d'impatience
     private void MoveCustomers() {
+        Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
+        
         for (int i = 0; i < customerQueue.Count; i++) {
-            customerQueue[i].transform.position = customerSpawnPoint - Vector3.right * i * 1.5f;
+            customerQueue[i].transform.position = customerSpawnPoint - Vector3.right * i * 1.5f + customerOffset;
+            customerQueue[i].interactPosition = -customerQueue[i].transform.position + new Vector3(-1.25f, 0, -2);
             
             //Les personnes devant le comptoir passent commande
             if (i < nbCounterCustomer) customerQueue[i].MakeOrder();
@@ -84,10 +92,10 @@ public class CustomerSpawner : MonoBehaviour {
         int totalProbability = 0;
         List<CustomerSO> clientTypes = new List<CustomerSO>();
         
-        foreach (StarRepartition sr in starRepartitions) {
-            foreach (CustomerChance cc in sr.customerChances) {
+        foreach (StarRepartitionSO srSo in DataManager.Instance.starRepartitionList) {
+            foreach (StarRepartitionSO.CustomerChance cc in srSo.customerChances) {
                 if (clientTypes.Contains(cc.customerSo)) {
-                    throw new Exception("Plusieurs fois le même client dans CustomerSpawner - "+sr.starValue+" étoiles !");
+                    throw new Exception("Plusieurs fois le même type de client - "+srSo.starValue+" étoiles !");
                 }
 
                 clientTypes.Add(cc.customerSo);
@@ -95,7 +103,7 @@ public class CustomerSpawner : MonoBehaviour {
             }
 
             if (totalProbability != 100) {
-                throw new Exception("Probabilité totale égale à "+totalProbability+" % dans CustomerSpawner - "+sr.starValue+" étoiles !");
+                throw new Exception("Probabilité totale égale à "+totalProbability+" % - "+srSo.starValue+" étoiles !");
             }
             
             totalProbability = 0;
@@ -105,7 +113,7 @@ public class CustomerSpawner : MonoBehaviour {
         }
     }
 
-    [Serializable]
+    /*[Serializable]
     public class StarRepartition {
         public int starValue;
         public List<CustomerChance> customerChances;
@@ -115,5 +123,5 @@ public class CustomerSpawner : MonoBehaviour {
     public class CustomerChance {
         public CustomerSO customerSo;
         [Range(0,100)] public int probability;
-    }
+    }*/
 }

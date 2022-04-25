@@ -9,7 +9,7 @@ public class SkewerTrigger : MonoBehaviour {
     
     [SerializeField] private float xDelta;
     
-    public Collider2D collider;
+    public new Collider2D collider;
 
     private void OnTriggerEnter2D(Collider2D other) {
         var dango = other.GetComponent<DraggableDango>();

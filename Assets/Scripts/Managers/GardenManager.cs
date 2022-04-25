@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,40 +5,30 @@ public class GardenManager : MonoBehaviour {
 
     public static GardenManager Instance;
 
-    [Header("Food Shop")]
-    public List<FoodSO> foodList;
-    [SerializeField] private GameObject fs_entryPrefab;
-    [SerializeField] private Transform fs_contentParent;
-
-    [Header("ParcelUpgrades")]
-    public List<ParcelUpgradeSO> upgradeList;
-    [SerializeField] private GameObject pu_entryPrefab;
-    [SerializeField] private Transform pu_contentParent;
-    
     [Header("Current Selection")]
     public Parcel myParcel;
     public int mySlot;
+    
+    //Parcel ID, Upgrade List (ParcelUpgrade Memory)
+    public Dictionary<int, List<Parcel.Upgrade>> upgrades = new Dictionary<int, List<Parcel.Upgrade>>();
 
     void Awake() {
-        Instance = this;
+        if (Instance != null) Destroy(gameObject);
+        else Instance = this;
     }
 
     void Start() {
-        foreach (FoodSO foodSo in foodList) {
-            GameObject entry = Instantiate(fs_entryPrefab, fs_contentParent);
-            entry.GetComponent<FoodShopEntry>().Init(foodSo);
-        }
-        
-        foreach (ParcelUpgradeSO puSo in upgradeList) {
-            GameObject entry = Instantiate(pu_entryPrefab, pu_contentParent);
-            entry.GetComponent<ParcelUpgradeEntry>().Init(puSo);
-            UIGarden.Instance.upgrades.Add(entry.GetComponent<ParcelUpgradeEntry>());
+        for (int i = 0; i < 6; i++) {
+            upgrades.Add(i,new List<Parcel.Upgrade>());
+            foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
+                upgrades[i].Add(new Parcel.Upgrade(puSo.upgradeType));
+            }
         }
     }
     
     //Plant with seed menu
     public void PlantSeed(FoodType itemType) {
-        foreach (FoodSO foodSo in foodList) {
+        foreach (FoodSO foodSo in DataManager.Instance.foodList) {
             if (foodSo.foodType != itemType) continue;
             myParcel.foodList[mySlot].StartNewFood(foodSo);
             UIGarden.Instance.CloseMenuSeed();

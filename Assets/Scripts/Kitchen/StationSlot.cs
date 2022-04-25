@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StationSlot : MonoBehaviour
-{
-    [SerializeField] public Image image;
+public class StationSlot : MonoBehaviour {
+    
+    public Image slotSprite;
+    
+    public void Init(StationSO sSo) {
+        slotSprite.sprite = sSo.icon;
+    }
 }

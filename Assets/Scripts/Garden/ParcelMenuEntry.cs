@@ -37,7 +37,6 @@ public class ParcelMenuEntry : MonoBehaviour {
     
     public void UpdatePlantSprite(Sprite newSprite) {
         plantSprite.sprite = newSprite;
-        plantSprite.SetNativeSize();
     }
     
     public void UpdatePlantName(string newName) {
@@ -45,11 +44,13 @@ public class ParcelMenuEntry : MonoBehaviour {
     }
 
     public void UpdateGrowthFill(float timeElapsed, float totalTime) {
-        growthFill.fillAmount = timeElapsed / totalTime;
+        growthFill.DOKill();
+        growthFill.DOFillAmount(timeElapsed / totalTime, 0.5f);
     }
 
     public void UpdateDeadFill(float timeElapsed, float totalTime) {
-        deadFill.fillAmount = timeElapsed / totalTime;
+        deadFill.DOKill();
+        deadFill.DOFillAmount(timeElapsed / totalTime, 0.5f);
     }
 
     public void UpdateGrowthText(string newGrowthText) {

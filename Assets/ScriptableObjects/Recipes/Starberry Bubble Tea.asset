@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e85c1e83f8438247ae543a1a59a530a, type: 3}
   m_Name: Starberry Bubble Tea
   m_EditorClassIdentifier: 
-  name: Starberry Bubble Tea
   recipeType: 4
   recipeSprite: {fileID: -550272323666131515, guid: 839e25d48c201d546bda31b0f1b0d3f1, type: 3}
   recipeElements:
@@ -21,5 +20,5 @@ MonoBehaviour:
   - food: {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
     amount: 1
   stations:
-  - {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
+  - {fileID: 11400000, guid: c21a7eb391cd99a43b4b23b157c6127c, type: 2}
   price: 100

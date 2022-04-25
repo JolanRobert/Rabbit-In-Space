@@ -8,7 +8,7 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     [SerializeField] private Button touchableUpgrade;
     
     [Header("UI")]
-    [SerializeField] private TMP_Text name;
+    [SerializeField] private new TMP_Text name;
     [SerializeField] private GameObject infos;
     [SerializeField] private GameObject banner;
     [SerializeField] private TMP_Text activeUpgrade;

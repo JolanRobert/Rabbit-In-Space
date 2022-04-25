@@ -4,7 +4,6 @@ using UnityEngine;
 public class FoodSO : ScriptableObject {
 
     [Header("Global Infos")]
-    public new string name;
     public FoodType foodType;
     
     [Header("Sprites")]
