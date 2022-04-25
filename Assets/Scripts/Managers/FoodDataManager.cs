@@ -46,7 +46,7 @@ public class FoodDataManager : MonoBehaviour {
         return false;
     }
     
-    public void Save(string fileName, FoodItem foodItem) {
+    private void Save(string fileName, FoodItem foodItem) {
         dataSerializer.SaveData(fileName,foodItem);
     }
 
