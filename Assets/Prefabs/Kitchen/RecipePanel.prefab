@@ -422,7 +422,8 @@ MonoBehaviour:
   stationSlotPrefab: {fileID: 8770003012342678087, guid: 8b62f19199b1af6488ecb799d118f878, type: 3}
   stationsGroup: {fileID: 1750479178760270481}
   cancelGroup: {fileID: 2082862411004498854}
-  image: {fileID: 8420854743766815636}
+  recipeImage: {fileID: 8420854743766815636}
+  panelImage: {fileID: 4974597499140484375}
   nameText: {fileID: 4974597500377599537}
   priceText: {fileID: 8420854743690008570}
   type: 0
