@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82946ecdd25d0a408207b426c52925c, type: 3}
   m_Name: Mochi Beater
   m_EditorClassIdentifier: 
-  name: Mochi Beater
   stationType: 1
-  minigameScene: {fileID: 102900000, guid: 4d5a74c35821c1c458e574c2c5675beb, type: 3}
+  minigameScene: {fileID: 102900000, guid: 88791330b8d52a44593b5ec5c772ed42, type: 3}
   icon: {fileID: 0}

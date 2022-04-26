@@ -9,15 +9,18 @@ public class RecipePanel : MonoBehaviour
     [SerializeField] private Transform ingredientsGroup;
     [SerializeField] private GameObject stationSlotPrefab;
     [SerializeField] private Transform stationsGroup;
+    [SerializeField] private Transform cancelGroup;
 
     [Header("Panel Infos")]
     private RecipeSO recipe;
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text nameText, priceText;
-    
-    [Header("Attributes")]
+
+    [Header("Attributes")] 
+    private bool active = true;
     public RecipeType type;
     public int price;
+    private int originalOrderInHierarchy;
 
     public void SetupPanel(RecipeSO newRecipe) {
         recipe = newRecipe;
@@ -38,9 +41,35 @@ public class RecipePanel : MonoBehaviour
             StationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<StationSlot>();
             slot.Init(station);
         }
+
+        originalOrderInHierarchy = transform.GetSiblingIndex();
     }
 
-    public void StartRecipe() {
-        RecipeManager.Instance.TryStartRecipe(recipe);
+    public void SetAsRunning()
+    {
+        active = false;
+        transform.SetSiblingIndex(0);
+        ingredientsGroup.gameObject.SetActive(false);
+        cancelGroup.gameObject.SetActive(true);
+    }
+
+    public void SetAsInactive()
+    {
+        active = true;
+        transform.SetSiblingIndex(originalOrderInHierarchy);
+        ingredientsGroup.gameObject.SetActive(true);
+        cancelGroup.gameObject.SetActive(false);
+    }
+
+    public void StartRecipe()
+    {
+        if (!active) return;
+        RecipeManager.Instance.TryStartRecipe(recipe, this);
+    }
+
+    public void CancelRecipe()
+    {
+        RecipeManager.Instance.EndRecipe(false);
+        SetAsInactive();
     }
 }
