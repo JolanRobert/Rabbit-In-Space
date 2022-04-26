@@ -13,7 +13,7 @@ public class RecipePanel : MonoBehaviour
 
     [Header("Panel Infos")]
     private RecipeSO recipe;
-    [SerializeField] private Image image;
+    [SerializeField] private Image recipeImage, panelImage;
     [SerializeField] private TMP_Text nameText, priceText;
 
     [Header("Attributes")] 
@@ -25,8 +25,8 @@ public class RecipePanel : MonoBehaviour
     public void SetupPanel(RecipeSO newRecipe) {
         recipe = newRecipe;
         type = recipe.recipeType;
-        image.sprite = recipe.recipeSprite;
-        image.preserveAspect = true;
+        recipeImage.sprite = recipe.recipeSprite;
+        recipeImage.preserveAspect = true;
         name = recipe.name;
         nameText.text = name;
         price = recipe.price;
@@ -48,6 +48,7 @@ public class RecipePanel : MonoBehaviour
     public void SetAsRunning()
     {
         active = false;
+        panelImage.color = Color.grey;
         transform.SetSiblingIndex(0);
         ingredientsGroup.gameObject.SetActive(false);
         cancelGroup.gameObject.SetActive(true);
@@ -56,6 +57,7 @@ public class RecipePanel : MonoBehaviour
     public void SetAsInactive()
     {
         active = true;
+        panelImage.color = new Color(186/255f, 255/255f, 197/255f);
         transform.SetSiblingIndex(originalOrderInHierarchy);
         ingredientsGroup.gameObject.SetActive(true);
         cancelGroup.gameObject.SetActive(false);
