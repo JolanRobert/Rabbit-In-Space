@@ -17,4 +17,13 @@ MonoBehaviour:
   xpReward: 2
   nbBeforeReveal: 10
   description: Prend le plat le moins cher du menu
-  customerSprite: {fileID: 7558860870536896057, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  customerSprites:
+  - {fileID: 2085304999023188788, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  - {fileID: 8176819627262263674, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  - {fileID: -6286631964205044520, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  - {fileID: 726658806498336320, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  customerHeadSprites:
+  - {fileID: 7558860870536896057, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  - {fileID: -2891927951715056909, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  - {fileID: -4469679391013495627, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
+  - {fileID: -7911873888326581136, guid: 69d29578a1e6762448535e4b089d982b, type: 3}

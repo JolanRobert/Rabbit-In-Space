@@ -17,4 +17,13 @@ MonoBehaviour:
   xpReward: 4
   nbBeforeReveal: 10
   description: Prend le plat le plus cher du menu
-  customerSprite: {fileID: -2711892033306577372, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  customerSprites:
+  - {fileID: 1223526088056373679, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  - {fileID: 1639429620285364922, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  - {fileID: 7142273095176348842, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  - {fileID: -6254573127680569390, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  customerHeadSprites:
+  - {fileID: -2711892033306577372, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  - {fileID: 6681675252163612075, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  - {fileID: -8019797645948007996, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
+  - {fileID: -2613093610504121998, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}

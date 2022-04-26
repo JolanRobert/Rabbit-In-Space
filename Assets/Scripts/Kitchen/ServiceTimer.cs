@@ -24,13 +24,15 @@ public class ServiceTimer : MonoBehaviour {
 
     private WaitForSeconds oneSec = new WaitForSeconds(1);
     private IEnumerator TimerCoroutine(int time) {
-        int totalTime = time;
+        timeText.text = time.ToString();
+        timeBar.DOFillAmount(1, 1f).SetEase(Ease.Linear);
+        yield return oneSec;
+        timeBar.DOFillAmount(0, time).SetEase(Ease.Linear);
 
         while (time > 0) {
-            timeText.text = time.ToString();
-            timeBar.DOFillAmount((float) time / totalTime, 1f).SetEase(Ease.Linear);
             yield return oneSec;
             time--;
+            timeText.text = time.ToString();
         }
 
         EndTimer();

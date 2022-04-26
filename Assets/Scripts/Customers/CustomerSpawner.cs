@@ -12,7 +12,7 @@ public class CustomerSpawner : MonoBehaviour {
     [SerializeField] private Transform customerSpawnPoint;
     
     [Header("Customer Spawner Values")]
-    public int nbCounterCustomer;
+    [SerializeField] private int nbCounterCustomer;
     [SerializeField] private int nbHiddenCustomer;
 
     public List<Customer> customerQueue = new List<Customer>();
@@ -55,6 +55,7 @@ public class CustomerSpawner : MonoBehaviour {
 
     public void DepopCustomer(Customer customer) {
         customerQueue.Remove(customer);
+        customer.CancelOrder();
         Destroy(customer.gameObject);
         
         if (!KitchenManager.Instance.inService) return;
@@ -69,19 +70,18 @@ public class CustomerSpawner : MonoBehaviour {
         
         for (int i = 0; i < customerQueue.Count; i++) {
             customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1.5f + customerOffset;
-            customerQueue[i].interactPosition = -customerQueue[i].transform.position + new Vector3(-1.25f, 0, -2);
             
             //Les personnes devant le comptoir passent commande
-            if (i < nbCounterCustomer) customerQueue[i].MakeOrder();
+            /*if (i < nbCounterCustomer)*/ customerQueue[i].MakeOrder();
             
             //Mise à jour du facteur d'impatience
             int nbEnervants = 0;
             //Client devant
-            if (i != 0 && customerQueue[i - 1].customer.customerType == CustomerType.ENERVANT)
+            if (i != 0 && customerQueue[i - 1].myCustomer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
             
             //Client derrière
-            if (i != customerQueue.Count-1 && customerQueue[i + 1].customer.customerType == CustomerType.ENERVANT)
+            if (i != customerQueue.Count-1 && customerQueue[i + 1].myCustomer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
 
             customerQueue[i].impatienceFactor = 1 + 0.25f * nbEnervants;
@@ -112,16 +112,4 @@ public class CustomerSpawner : MonoBehaviour {
             //Debug.Log(sr.starValue+" étoiles OK !");
         }
     }
-
-    /*[Serializable]
-    public class StarRepartition {
-        public int starValue;
-        public List<CustomerChance> customerChances;
-    }
-
-    [Serializable]
-    public class CustomerChance {
-        public CustomerSO customerSo;
-        [Range(0,100)] public int probability;
-    }*/
 }
