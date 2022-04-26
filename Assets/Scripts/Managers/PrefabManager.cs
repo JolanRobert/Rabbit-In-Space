@@ -57,7 +57,7 @@ public class PrefabManager : MonoBehaviour
 
         if (RecipeManager.Instance.currentRecipe != null)
         {
-            recipePanelGroup.GetChild(RecipeManager.Instance.recipePanelIndex).GetComponent<RecipePanel>().SetAsRunning();
+            recipePanelGroup.GetChild(RecipeManager.Instance.recipePanelIndex).GetComponent<RecipePanel>().SetAsRunning(RecipeManager.Instance.recipeAmount);
         }
 
         foreach (CustomerSO cSo in DataManager.Instance.customerList) {

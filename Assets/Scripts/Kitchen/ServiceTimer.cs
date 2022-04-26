@@ -41,6 +41,7 @@ public class ServiceTimer : MonoBehaviour {
     private void EndTimer() {
         timerGO.SetActive(false);
         if (MinigameManager.Instance.resultPending) MinigameManager.Instance.EndMinigame(false);
+        RecipeManager.Instance.EndRecipe(false);
         ServiceManager.Instance.EndService();
     }
 }

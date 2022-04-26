@@ -14,7 +14,7 @@ public class RecipePanel : MonoBehaviour
     [Header("Panel Infos")]
     private RecipeSO recipe;
     [SerializeField] private Image recipeImage, panelImage;
-    [SerializeField] private TMP_Text nameText, priceText;
+    [SerializeField] private TMP_Text nameText, priceText, makingAmountText;
 
     [Header("Attributes")] 
     private bool active = true;
@@ -44,13 +44,14 @@ public class RecipePanel : MonoBehaviour
         originalOrderInHierarchy = transform.GetSiblingIndex();
     }
 
-    public void SetAsRunning()
+    public void SetAsRunning(int amount)
     {
         active = false;
         panelImage.color = Color.grey;
         transform.SetSiblingIndex(0);
         ingredientsGroup.gameObject.SetActive(false);
         cancelGroup.gameObject.SetActive(true);
+        makingAmountText.text = $"Making (x{amount})";
     }
 
     public void SetAsInactive()
