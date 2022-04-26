@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PrefabManager : MonoBehaviour {
-    
+public class PrefabManager : MonoBehaviour
+{
+    public static PrefabManager Instance;
     [Header("FoodShop")]
     [SerializeField] private GameObject foodShopEntryPrefab;
     [SerializeField] private Transform foodShopEntryParent;
@@ -25,6 +26,10 @@ public class PrefabManager : MonoBehaviour {
     [SerializeField] private GameObject customerEntryPrefab;
     [SerializeField] private Transform customerEntryGroup;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start() {
         foreach (FoodSO fSo in DataManager.Instance.foodList) {
             FoodShopEntry entry = Instantiate(foodShopEntryPrefab, foodShopEntryParent).GetComponent<FoodShopEntry>();
@@ -50,9 +55,19 @@ public class PrefabManager : MonoBehaviour {
             UIKitchen.Instance.workplanSlots.Add(slot);
         }
 
+        if (RecipeManager.Instance.currentRecipe != null)
+        {
+            recipePanelGroup.GetChild(RecipeManager.Instance.recipePanelIndex).GetComponent<RecipePanel>().SetAsRunning();
+        }
+
         foreach (CustomerSO cSo in DataManager.Instance.customerList) {
             CustomerEntry customerEntry = Instantiate(customerEntryPrefab, customerEntryGroup).GetComponent<CustomerEntry>();
             customerEntry.Init(cSo);
         }
+    }
+
+    public void ResetRecipeBook()
+    {
+        recipePanelGroup.GetChild(0).GetComponent<RecipePanel>().SetAsInactive();
     }
 }
