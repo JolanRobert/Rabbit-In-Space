@@ -33,11 +33,12 @@ public class Food : MonoBehaviour {
                 foodUI.UpdateGrowthText(growingTime.ToString());
                 foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
             }
-            else if (growingTime == 0) {
-                foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
-            }
             else if (growingTime < 0) {
                 foodUI.UpdateDeadFill(-growingTime,decayTime);
+            }
+            else if (growingTime == 0) {
+                foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
+                GrowthLevel = 2;
             }
         }
     }
@@ -85,7 +86,6 @@ public class Food : MonoBehaviour {
         while (GrowingTime >= 0) {
             yield return oneSec;
             GrowingTime--;
-            if (GrowingTime == 0) GrowthLevel = 2;
         }
         
         if (myParcel.IsUpgradeActive(UpgradeType.RECOLTOUT)) Harvest();
@@ -94,6 +94,7 @@ public class Food : MonoBehaviour {
 
     public void ReduceTime(int sec) {
         if (foodType == FoodType.NONE) return;
+        if (GrowingTime <= 0) return; 
         GrowingTime -= sec;
     }
 

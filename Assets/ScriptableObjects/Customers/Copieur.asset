@@ -17,4 +17,13 @@ MonoBehaviour:
   xpReward: 0
   nbBeforeReveal: 10
   description: "Prend le m\xEAme plat que le client devant lui"
-  customerSprite: {fileID: -5451884213976893447, guid: c3a1537d3a295aa418c792428af68300, type: 3}
+  customerSprites:
+  - {fileID: -4802990570011083647, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}
+  - {fileID: 2031156655383576110, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}
+  - {fileID: 2001071968565345063, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}
+  - {fileID: 2150263393358473525, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}
+  customerHeadSprites:
+  - {fileID: 1771642593912228938, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}
+  - {fileID: 4002340475170788487, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}
+  - {fileID: -8948853805727401701, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}
+  - {fileID: -8223436803716550326, guid: 9773b8e866b8fd04481ab3c95ed032b4, type: 3}

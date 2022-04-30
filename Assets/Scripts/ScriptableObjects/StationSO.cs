@@ -6,7 +6,7 @@ public class StationSO : ScriptableObject
 {
     [Header("Global Infos")]
     public StationType stationType;
-    public SceneAsset minigameScene;
+    public string minigameScene;
 
     [Header("Sprites")] public Sprite icon;
 }
