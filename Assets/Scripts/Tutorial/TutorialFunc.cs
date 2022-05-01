@@ -4,8 +4,5 @@ using UnityEngine;
 
 public abstract class TutorialFunc : MonoBehaviour
 {
-    public virtual void Do()
-    {
-        
-    }
+    public abstract void Do(int index);
 }

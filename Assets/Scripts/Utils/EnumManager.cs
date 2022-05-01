@@ -24,3 +24,8 @@ public enum UpgradeType {
 public enum CustomerType {
     NORMAL, HUPPE, RADIN, COPIEUR, ACCRO, LENT, IMPATIENT, ENERVANT
 }
+
+public enum TutorialPart
+{
+    ACCESS_GARDEN, GROW_RICE, START_SERVICE, START_RECIPE, START_MINI_GAME, SERVE, END_SERVICE
+}

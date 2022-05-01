@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Test
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialPartSO
+  m_Script: {fileID: 11500000, guid: db747d47b7a743d4e8e8c13f34c18041, type: 3}
+  m_Name: Access Garden
+  m_EditorClassIdentifier: 
+  tutorialPart: 0
   panels: []
   tutorialFunc: {fileID: 0}
