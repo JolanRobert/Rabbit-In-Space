@@ -24,8 +24,8 @@ public class Customer : MonoBehaviour {
     public void Init(CustomerSO cSo) {
         myCustomer = cSo;
 
-        customerSprites = cSo.customerHeadSprites;
-        customerHeadSprites = cSo.customerSprites;
+        customerSprites = cSo.customerSprites;
+        customerHeadSprites = cSo.customerHeadSprites;
         customerSR.sprite = customerSprites[0];
         
         impatienceLimit = cSo.impatienceLimit;
@@ -58,10 +58,18 @@ public class Customer : MonoBehaviour {
     }
     
     private IEnumerator Leave() {
-        float m_impatienceLimit = impatienceLimit;
+        int m_impatienceLimit = (int)impatienceLimit;
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
             impatienceLimit -= 1 * impatienceFactor;
+            if ((int) impatienceLimit == m_impatienceLimit*2/3) {
+                customerSR.sprite = customerSprites[1];
+                CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[1]);
+            }
+            else if ((int) impatienceLimit == m_impatienceLimit*1/3) {
+                customerSR.sprite = customerSprites[2];
+                CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[2]);
+            }
         }
         
         CompleteOrder(false);

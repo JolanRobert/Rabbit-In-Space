@@ -61,4 +61,13 @@ public class CustomerOrderManager : MonoBehaviour {
         orderList.Remove(customer);
         RearrangeOrders();
     }
+
+    //Change customer head depending of the impatience
+    public void UpdateCustomerOrder(Customer customer, Sprite newSprite) {
+        foreach (CustomerOrderEntry entry in customerOrderEntries) {
+            if (entry.customer != customer) continue;
+            entry.UpdateSprite(newSprite);
+            return;
+        }
+    } 
 }

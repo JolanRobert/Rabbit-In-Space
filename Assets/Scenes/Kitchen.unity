@@ -10615,8 +10615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd7666e32395544390a2779cbcbe1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFridgeInit: 0
-  isWorkplanInit: 0
   foodItems: []
   recipeItems: []
 --- !u!1 &1166831585
