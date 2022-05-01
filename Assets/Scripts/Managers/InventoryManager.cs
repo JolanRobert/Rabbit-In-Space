@@ -5,7 +5,7 @@ public class InventoryManager : MonoBehaviour {
     
     public static InventoryManager Instance;
 
-    public bool isFridgeInit, isWorkplanInit;
+    private bool isFridgeInit, isWorkplanInit;
 
     public List<FoodDataManager.FoodItem> foodItems = new List<FoodDataManager.FoodItem>();
     public List<FoodDataManager.RecipeItem> recipeItems = new List<FoodDataManager.RecipeItem>();

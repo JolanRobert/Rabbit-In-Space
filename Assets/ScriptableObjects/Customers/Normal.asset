@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   customerType: 0
-  impatienceLimit: 80
+  impatienceLimit: 30
   xpReward: 3
   nbBeforeReveal: 10
   description: "Prend un plat al\xE9atoire sur le menu"
-  customerSprites:
+  customerHeadSprites:
   - {fileID: -3994744024693093290, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
   - {fileID: 3704152636332655822, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
   - {fileID: 2313711220228016618, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
   - {fileID: 657091380636090156, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
-  customerHeadSprites:
+  customerSprites:
   - {fileID: 6006258108684561761, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
   - {fileID: 5486836200598436668, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
   - {fileID: 6596755354059348408, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}

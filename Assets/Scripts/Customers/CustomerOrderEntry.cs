@@ -11,8 +11,12 @@ public class CustomerOrderEntry : MonoBehaviour {
     public void Init(Customer customer) {
         this.customer = customer;
 
-        customerSR.sprite = customer.myCustomer.customerSprites[0];
+        customerSR.sprite = customer.myCustomer.customerHeadSprites[0];
         orderSR.sprite = customer.myRecipe.recipeSprite;
+    }
+
+    public void UpdateSprite(Sprite newSprite) {
+        customerSR.sprite = newSprite;
     }
 
     public void TryCompleteOrder() {

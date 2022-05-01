@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1997755825177060275}
   - component: {fileID: 8958978937637705125}
   - component: {fileID: 5846240521750298284}
-  - component: {fileID: 943434586585122160}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5846240521750298284
@@ -96,23 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f94542cf41e470b8fabe535e26b5208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactPosition: {x: 0, y: 0, z: 0}
-  interactPanel: {fileID: 0}
   customerSR: {fileID: 8958978937637705125}
-  myOrder: {fileID: 0}
-  customerType: 0
+  myCustomer: {fileID: 0}
+  myRecipe: {fileID: 0}
   impatienceFactor: 1
   xpReward: 0
---- !u!65 &943434586585122160
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078550667714367424}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
