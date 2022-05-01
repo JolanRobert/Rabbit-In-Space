@@ -94,10 +94,10 @@ TextureImporter:
       name: Mood_goat_0
       rect:
         serializedVersion: 2
-        x: 61
+        x: 217
         y: 2107
-        width: 1121
-        height: 1132
+        width: 965
+        height: 1022
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,10 +115,10 @@ TextureImporter:
       name: Mood_goat_3
       rect:
         serializedVersion: 2
-        x: 1209
+        x: 1351
         y: 2119
-        width: 1113
-        height: 1113
+        width: 971
+        height: 1008
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,10 +136,10 @@ TextureImporter:
       name: Mood_goat_4
       rect:
         serializedVersion: 2
-        x: 2432
+        x: 2584
         y: 2109
-        width: 1132
-        height: 1108
+        width: 980
+        height: 1014
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,10 +157,10 @@ TextureImporter:
       name: Mood_goat_5
       rect:
         serializedVersion: 2
-        x: 3581
+        x: 3729
         y: 2107
-        width: 1144
-        height: 1113
+        width: 996
+        height: 1021
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,13 +178,13 @@ TextureImporter:
       name: Mood_goat_14
       rect:
         serializedVersion: 2
-        x: 85
+        x: 218
         y: 362
-        width: 1113
-        height: 1731
+        width: 980
+        height: 1619
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -199,13 +199,13 @@ TextureImporter:
       name: Mood_goat_16
       rect:
         serializedVersion: 2
-        x: 1223
+        x: 1356
         y: 360
-        width: 1116
-        height: 1726
+        width: 983
+        height: 1621
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -220,10 +220,10 @@ TextureImporter:
       name: Mood_goat_18
       rect:
         serializedVersion: 2
-        x: 2449
+        x: 2539
         y: 360
-        width: 1130
-        height: 1711
+        width: 1040
+        height: 1629
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,13 +241,13 @@ TextureImporter:
       name: Mood_goat_19
       rect:
         serializedVersion: 2
-        x: 3595
+        x: 3757
         y: 357
-        width: 1147
-        height: 1717
+        width: 985
+        height: 1628
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

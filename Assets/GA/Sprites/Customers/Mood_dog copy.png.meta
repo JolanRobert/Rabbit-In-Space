@@ -70,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,6 +111,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -118,12 +130,12 @@ TextureImporter:
       name: Mood_dog copy_15
       rect:
         serializedVersion: 2
-        x: 111
+        x: 183
         y: 2244
-        width: 949
+        width: 877
         height: 1010
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,12 +151,12 @@ TextureImporter:
       name: Mood_dog copy_18
       rect:
         serializedVersion: 2
-        x: 1201
+        x: 1298
         y: 2361
-        width: 966
+        width: 869
         height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +177,7 @@ TextureImporter:
         width: 1131
         height: 987
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +193,12 @@ TextureImporter:
       name: Mood_dog copy_27
       rect:
         serializedVersion: 2
-        x: 3491
+        x: 3582
         y: 2262
-        width: 963
+        width: 872
         height: 953
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,13 +214,13 @@ TextureImporter:
       name: Mood_dog copy_41
       rect:
         serializedVersion: 2
-        x: 1291
+        x: 1382
         y: 529
-        width: 1021
+        width: 930
         height: 1729
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -223,12 +235,12 @@ TextureImporter:
       name: Mood_dog copy_47
       rect:
         serializedVersion: 2
-        x: 206
+        x: 284
         y: 513
-        width: 948
+        width: 870
         height: 1723
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,7 +261,7 @@ TextureImporter:
         width: 1131
         height: 1715
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +277,12 @@ TextureImporter:
       name: Mood_dog copy_52
       rect:
         serializedVersion: 2
-        x: 3583
+        x: 3672
         y: 498
-        width: 965
+        width: 876
         height: 1719
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

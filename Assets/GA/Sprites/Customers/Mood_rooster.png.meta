@@ -94,10 +94,10 @@ TextureImporter:
       name: Mood_rooster_0
       rect:
         serializedVersion: 2
-        x: 226
+        x: 306
         y: 2271
-        width: 877
-        height: 893
+        width: 797
+        height: 840
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,10 +115,10 @@ TextureImporter:
       name: Mood_rooster_1
       rect:
         serializedVersion: 2
-        x: 1538
+        x: 1573
         y: 2274
-        width: 844
-        height: 933
+        width: 809
+        height: 837
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,7 +139,7 @@ TextureImporter:
         x: 2761
         y: 2279
         width: 813
-        height: 924
+        height: 832
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,10 +157,10 @@ TextureImporter:
       name: Mood_rooster_3
       rect:
         serializedVersion: 2
-        x: 3808
+        x: 3886
         y: 2274
-        width: 888
-        height: 917
+        width: 810
+        height: 832
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,7 +181,7 @@ TextureImporter:
         x: 1438
         y: 280
         width: 983
-        height: 1660
+        height: 1562
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,7 +202,7 @@ TextureImporter:
         x: 2542
         y: 277
         width: 1076
-        height: 1659
+        height: 1565
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,7 +223,7 @@ TextureImporter:
         x: 227
         y: 278
         width: 915
-        height: 1619
+        height: 1569
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,7 +244,7 @@ TextureImporter:
         x: 3816
         y: 282
         width: 918
-        height: 1639
+        height: 1560
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
