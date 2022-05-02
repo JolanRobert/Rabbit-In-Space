@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db747d47b7a743d4e8e8c13f34c18041, type: 3}
+  m_Name: Grow Rice
+  m_EditorClassIdentifier: 
+  tutorialPart: 1
+  panels:
+  - {fileID: 237398952531610345, guid: a9b61b136fe9292409d3ccb4c77f90a5, type: 3}
+  - {fileID: 2949117017684899359, guid: a340204b2a296b345b260a6d289286de, type: 3}
+  - {fileID: 237398952531610345, guid: c12bce64310935e479b276879dae6a60, type: 3}
+  - {fileID: 2586324599698875570, guid: daeb5e1e56c299f47b25bdb5fdf4e7b6, type: 3}
+  - {fileID: 3262865167681830155, guid: 05aeda221ee6bdf4481c6326c099ef71, type: 3}
+  - {fileID: 237398952531610345, guid: 669685a5d71cb9041bb0e23dee89a88b, type: 3}
+  - {fileID: 237398952531610345, guid: f3b82a15d76f5b7429f1d48ff0d247e6, type: 3}
+  - {fileID: 237398952531610345, guid: f5e12dab82031424cbbd7d64b71a48a0, type: 3}
+  - {fileID: 237398952531610345, guid: 7ee406a66c8b74443a506decf9f7e192, type: 3}
+  - {fileID: 237398952531610345, guid: 1000fb2d1713a97428553bf03bc75bc0, type: 3}
+  - {fileID: 237398952531610345, guid: 016aa90d1456d744295322cc877a463c, type: 3}
+  - {fileID: 237398952531610345, guid: 1ed26596cf7cb0a4384661f24a347688, type: 3}

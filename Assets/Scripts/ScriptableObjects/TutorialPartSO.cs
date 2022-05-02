@@ -16,6 +16,24 @@ public class TutorialPartSO : ScriptableObject
             case TutorialPart.ACCESS_GARDEN:
                 tutorialFunc = new AccessGarden();
                 break;
+            case TutorialPart.GROW_RICE:
+                tutorialFunc = new GrowRice();
+                break;
+            case TutorialPart.START_SERVICE:
+                //tutorialFunc = new StartService();
+                break;
+            case TutorialPart.START_RECIPE:
+                //tutorialFunc = new StartRecipe();
+                break;
+            case TutorialPart.START_MINI_GAME:
+                //tutorialFunc = new StartMiniGame();
+                break;
+            case TutorialPart.SERVE:
+                //tutorialFunc = new Serve();
+                break;
+            case TutorialPart.END_SERVICE:
+                //tutorialFunc = new EndService();
+                break;
         }
     }
     public void Begin(){

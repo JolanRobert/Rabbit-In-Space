@@ -31,6 +31,7 @@ public class GardenManager : MonoBehaviour {
         foreach (FoodSO foodSo in DataManager.Instance.foodList) {
             if (foodSo.foodType != itemType) continue;
             myParcel.foodList[mySlot].StartNewFood(foodSo);
+            GrowRice.OnPlantMoonRice.Invoke();
             UIGarden.Instance.CloseMenuSeed();
         }
     }

@@ -58,7 +58,10 @@ public class UIGarden : MonoBehaviour {
         foodShop.SetActive(true);
         closeOverlay.SetActive(true);
         
-        foodShop.transform.DOMoveX(foodShop.transform.position.x - 300, 0.325f);
+        foodShop.transform.DOMoveX(foodShop.transform.position.x - 300, 0.325f).OnComplete(() =>
+        {
+            GrowRice.OnOpenSeedMenu.Invoke();
+        });
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
         GardenManager.Instance.mySlot = foodSlot;
     }

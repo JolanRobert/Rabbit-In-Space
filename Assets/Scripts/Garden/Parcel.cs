@@ -16,6 +16,7 @@ public class Parcel : MonoBehaviour {
         
         GardenManager.Instance.myParcel = this;
         UIGarden.Instance.OpenParcelMenu();
+        GrowRice.OnOpenParcel.Invoke();
     }
     
     //

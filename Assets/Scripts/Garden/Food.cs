@@ -112,6 +112,10 @@ public class Food : MonoBehaviour {
         if (growthLevel == 2) {
             int prodValue = Random.Range((int)minMaxProduction.x, (int)minMaxProduction.y+1);
             if (myParcel.IsUpgradeActive(UpgradeType.ENGRAIS)) prodValue += 2;
+            if (foodType == FoodType.MOON_RICE)
+            {
+                GrowRice.OnCollectMoonRice.Invoke();
+            }
             FoodDataManager.Instance.AddItem(foodType,prodValue);
         }
         

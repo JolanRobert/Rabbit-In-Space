@@ -15,5 +15,4 @@ MonoBehaviour:
   tutorialPart: 0
   panels:
   - {fileID: 3353824520829546145, guid: 54b480268e27ffb42aa2f154c8e430ec, type: 3}
-  - {fileID: 3353824520829546145, guid: a3c02cd16cfa2cf4482cacdc062937ef, type: 3}
-  tutorialFunc: {fileID: 0}
+  - {fileID: 5114956683755659403, guid: 5cd083b7ac2fa6f4dbbf809295bb5391, type: 3}

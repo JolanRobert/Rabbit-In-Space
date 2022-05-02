@@ -19335,6 +19335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialPartsSO:
   - {fileID: 11400000, guid: 11025ec97f96a434c9bba2705a6cbe4c, type: 2}
+  - {fileID: 11400000, guid: 8cdb6c918fc4a724080f61c0c49db420, type: 2}
   currentTutorialPart: {fileID: 0}
   canvasTransform: {fileID: 2111685352}
 --- !u!1 &1781005964
