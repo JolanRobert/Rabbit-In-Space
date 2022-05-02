@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Access Garden
   m_EditorClassIdentifier: 
   tutorialPart: 0
-  panels: []
+  panels:
+  - {fileID: 3353824520829546145, guid: 54b480268e27ffb42aa2f154c8e430ec, type: 3}
+  - {fileID: 3353824520829546145, guid: a3c02cd16cfa2cf4482cacdc062937ef, type: 3}
   tutorialFunc: {fileID: 0}

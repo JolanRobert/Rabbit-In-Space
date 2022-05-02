@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGames/Cutter.unity
     guid: 43b29e7450c5ccf469b2bebe4825221d
   - enabled: 1
+    path: Assets/Scenes/MiniGames/Skewer.unity
+    guid: 9500ad84e95a45a4c9a53cff2b569594
+  - enabled: 1
     path: Assets/Scenes/MiniGames/Grill.unity
     guid: 231936f11647dc44a841e5b1181cc9db
   - enabled: 1

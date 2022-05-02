@@ -6,9 +6,18 @@ using UnityEngine;
 public class TutorialPartSO : ScriptableObject
 {
     public TutorialPart tutorialPart;
-    [SerializeField] private List<GameObject> panels;
+    [SerializeField] public List<GameObject> panels;
     public TutorialFunc tutorialFunc;
 
+    public void Setup()
+    {
+        switch (tutorialPart)
+        {
+            case TutorialPart.ACCESS_GARDEN:
+                tutorialFunc = new AccessGarden();
+                break;
+        }
+    }
     public void Begin(){
         tutorialFunc.Do(0);
     }
@@ -16,10 +25,5 @@ public class TutorialPartSO : ScriptableObject
     public void DoFunc(int index)
     {
         tutorialFunc.Do(index);
-    }
-
-    public void SwitchTutorialPart(TutorialPart newTutorialPart)
-    {
-        tutorialPart = newTutorialPart;
     }
 }

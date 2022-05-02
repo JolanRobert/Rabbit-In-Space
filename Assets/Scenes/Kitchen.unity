@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.88
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15203623, g: 0.18998536, b: 0.26208714, a: 0.88}
+  m_IndirectSpecularColor: {r: 0.15203623, g: 0.18998535, b: 0.26208714, a: 0.88}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2171,6 +2171,7 @@ GameObject:
   - component: {fileID: 229472980}
   - component: {fileID: 229472982}
   - component: {fileID: 229472981}
+  - component: {fileID: 229472983}
   m_Layer: 5
   m_Name: Garden
   m_TagString: Untagged
@@ -2237,6 +2238,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229472979}
   m_CullTransparentMesh: 1
+--- !u!114 &229472983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229472979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565c083e7b6b0764f8f69049d5e489ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &231081541
 GameObject:
   m_ObjectHideFlags: 0
@@ -19320,8 +19333,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbd76bb9c071cc45be773eedb50ae4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialPartsSO: []
+  tutorialPartsSO:
+  - {fileID: 11400000, guid: 11025ec97f96a434c9bba2705a6cbe4c, type: 2}
   currentTutorialPart: {fileID: 0}
+  canvasTransform: {fileID: 2111685352}
 --- !u!1 &1781005964
 GameObject:
   m_ObjectHideFlags: 0
@@ -22479,7 +22494,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
