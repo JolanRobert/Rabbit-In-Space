@@ -23,6 +23,15 @@ public class FoodDataManager : MonoBehaviour {
         }
     }
 
+    public void AddRecipe(RecipeType recipeType, int amount) {
+        for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
+            RecipeItem item = InventoryManager.Instance.recipeItems[i];
+            if (item.recipeType != recipeType) continue;
+            item.amount += amount;
+            break;
+        }
+    }
+
     public bool CheckItemQuantity(FoodType foodType, int amount) {
         if (foodType == FoodType.NONE) {
             Debug.LogWarning("Invalid type");
@@ -46,7 +55,7 @@ public class FoodDataManager : MonoBehaviour {
         return false;
     }
     
-    public void Save(string fileName, FoodItem foodItem) {
+    private void Save(string fileName, FoodItem foodItem) {
         dataSerializer.SaveData(fileName,foodItem);
     }
 

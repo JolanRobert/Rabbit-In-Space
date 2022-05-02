@@ -1,14 +1,18 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RecipeManager : MonoBehaviour {
     
     public static RecipeManager Instance;
     
     public RecipeSO currentRecipe, pendingRecipe;
+    public RecipePanel pendingRecipePanel;
     
     [SerializeField] private GameObject recipeTimeline;
-    private int recipeAmount;
+    public int recipeAmount;
+    public int recipePanelIndex;
     
     private Queue<StationType> stations = new Queue<StationType>();
 
@@ -21,8 +25,9 @@ public class RecipeManager : MonoBehaviour {
     // RECIPE
     //
     
-    public void TryStartRecipe(RecipeSO recipe) {
+    public void TryStartRecipe(RecipeSO recipe, RecipePanel recipePanel) {
         pendingRecipe = recipe;
+        pendingRecipePanel = recipePanel;
         
         //On propose d'override la recette déjà existante
         if (currentRecipe != null) {
@@ -32,6 +37,7 @@ public class RecipeManager : MonoBehaviour {
         
         PromptAmountRecipe();
     }
+    
     
     public void StartRecipe(int newRecipeAmount) {
         recipeAmount = newRecipeAmount;
@@ -45,9 +51,12 @@ public class RecipeManager : MonoBehaviour {
             FoodDataManager.Instance.AddItem(element.food.foodType, -element.amount * recipeAmount);
             //Debug.Log("Took " + element.amount + " " + element.food.name);
         }
-        InitRecipeTimeline(pendingRecipe);
+
+        recipePanelIndex = pendingRecipePanel.transform.GetSiblingIndex();
+        pendingRecipePanel.SetAsRunning(recipeAmount);
+        InitStationsTimeline(pendingRecipe);
     }
-    
+
     public void EndRecipe(bool success) {
         if (success) {
             for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
@@ -62,38 +71,27 @@ public class RecipeManager : MonoBehaviour {
         //else Debug.Log(currentRecipe.name + " recipe has ended with failure.");
         
         currentRecipe = null;
-        foreach (Transform child in recipeTimeline.transform.GetChild(1)) Destroy(child.gameObject);
-        recipeTimeline.gameObject.SetActive(false);
+        StartCoroutine(ResetBook());
     }
-    
-    //
-    // RECIPE TIMELINE
-    //
 
-    private void InitRecipeTimeline(RecipeSO recipe) {
+    IEnumerator ResetBook()
+    {
+        while (SceneManager.GetActiveScene().name != "Kitchen")
+        {
+            yield return null;
+        }
+        PrefabManager.Instance.ResetRecipeBook();
+    }
+
+    private void InitStationsTimeline(RecipeSO recipe) {
         if (currentRecipe != null) EndRecipe(false);
         currentRecipe = recipe;
         stations.Clear();
         
         foreach (StationSO station in recipe.stations) stations.Enqueue(station.stationType);
-        
-        //Debug.Log(currentRecipe.name + " recipe has started.");
-        
-        ShowRecipeTimeline();
-        recipeTimeline.GetComponent<RecipeTimeline>().ShowRecipeTimeline(recipe);
         SeeNextStep();
     }
 
-    public void ShowRecipeTimeline() {
-        recipeTimeline.gameObject.SetActive(true);
-    }
-
-    public void HideRecipeTimeline() {
-        recipeTimeline.gameObject.SetActive(false);
-    }
-
-    
-    
     public bool CheckIsNextStation(StationType type) {
         if (stations.Count == 0) {
             //Debug.Log("No recipe in progress...");

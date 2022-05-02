@@ -17,4 +17,7 @@ MonoBehaviour:
   xpReward: 3
   nbBeforeReveal: 10
   description: "Prend un plat al\xE9atoire sur le menu, s'en va 2 fois plus vite"
-  customerSprite: {fileID: -5716375310670982321, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  customerSprites:
+  - {fileID: -5716375310670982321, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  customerHeadSprites:
+  - {fileID: -5716375310670982321, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

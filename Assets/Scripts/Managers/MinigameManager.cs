@@ -15,7 +15,6 @@ public class MinigameManager : MonoBehaviour {
         
         //Hide customers
         KitchenManager.Instance.transform.position += Vector3.left*100;
-        RecipeManager.Instance.HideRecipeTimeline();
         resultPending = true;
     }
     
@@ -26,7 +25,6 @@ public class MinigameManager : MonoBehaviour {
         SwitchScene.Instance.ChangeScene("Kitchen");
         
         KitchenManager.Instance.transform.position += Vector3.right * 100;
-        RecipeManager.Instance.ShowRecipeTimeline();
         if (success) RecipeManager.Instance.ForwardStep();
     }
 }

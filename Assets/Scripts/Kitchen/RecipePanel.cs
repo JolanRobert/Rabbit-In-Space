@@ -9,20 +9,23 @@ public class RecipePanel : MonoBehaviour
     [SerializeField] private Transform ingredientsGroup;
     [SerializeField] private GameObject stationSlotPrefab;
     [SerializeField] private Transform stationsGroup;
+    [SerializeField] private Transform cancelGroup;
 
     [Header("Panel Infos")]
     private RecipeSO recipe;
-    [SerializeField] private Image image;
-    [SerializeField] private TMP_Text nameText, priceText;
-    
-    [Header("Attributes")]
+    [SerializeField] private Image recipeImage, panelImage;
+    [SerializeField] private TMP_Text nameText, priceText, makingAmountText;
+
+    [Header("Attributes")] 
+    private bool active = true;
     public RecipeType type;
     public int price;
+    private int originalOrderInHierarchy;
 
     public void SetupPanel(RecipeSO newRecipe) {
         recipe = newRecipe;
         type = recipe.recipeType;
-        image.sprite = recipe.recipeSprite;
+        recipeImage.sprite = recipe.recipeSprite;
         name = recipe.name;
         nameText.text = name;
         price = recipe.price;
@@ -37,9 +40,38 @@ public class RecipePanel : MonoBehaviour
             StationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<StationSlot>();
             slot.Init(station);
         }
+
+        originalOrderInHierarchy = transform.GetSiblingIndex();
     }
 
-    public void StartRecipe() {
-        RecipeManager.Instance.TryStartRecipe(recipe);
+    public void SetAsRunning(int amount)
+    {
+        active = false;
+        panelImage.color = Color.grey;
+        transform.SetSiblingIndex(0);
+        ingredientsGroup.gameObject.SetActive(false);
+        cancelGroup.gameObject.SetActive(true);
+        makingAmountText.text = $"Making (x{amount})";
+    }
+
+    public void SetAsInactive()
+    {
+        active = true;
+        panelImage.color = new Color(186/255f, 255/255f, 197/255f);
+        transform.SetSiblingIndex(originalOrderInHierarchy);
+        ingredientsGroup.gameObject.SetActive(true);
+        cancelGroup.gameObject.SetActive(false);
+    }
+
+    public void StartRecipe()
+    {
+        if (!active) return;
+        RecipeManager.Instance.TryStartRecipe(recipe, this);
+    }
+
+    public void CancelRecipe()
+    {
+        RecipeManager.Instance.EndRecipe(false);
+        SetAsInactive();
     }
 }

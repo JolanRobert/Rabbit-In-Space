@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PrefabManager : MonoBehaviour {
-    
+public class PrefabManager : MonoBehaviour
+{
+    public static PrefabManager Instance;
     [Header("FoodShop")]
     [SerializeField] private GameObject foodShopEntryPrefab;
     [SerializeField] private Transform foodShopEntryParent;
@@ -13,9 +14,9 @@ public class PrefabManager : MonoBehaviour {
     [SerializeField] private Transform parcelUpgradeEntryParent;
     
     [Header("Fridge/Workplan")]
-    [SerializeField] private GameObject slotPrefab;
-    [SerializeField] private Transform slotFridgeParent;
-    [SerializeField] private Transform slotWorkplanParent;
+    [SerializeField] private GameObject inventorySlotPrefab;
+    [SerializeField] private Transform foodGroupParent;
+    [SerializeField] private Transform recipeGroupParent;
     
     [Header("RecipeBook")]
     [SerializeField] private GameObject recipePanelPrefab;
@@ -25,12 +26,16 @@ public class PrefabManager : MonoBehaviour {
     [SerializeField] private GameObject customerEntryPrefab;
     [SerializeField] private Transform customerEntryGroup;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start() {
         foreach (FoodSO fSo in DataManager.Instance.foodList) {
             FoodShopEntry entry = Instantiate(foodShopEntryPrefab, foodShopEntryParent).GetComponent<FoodShopEntry>();
             entry.Init(fSo);
             
-            InventorySlot slot = Instantiate(slotPrefab, slotFridgeParent).GetComponent<InventorySlot>();
+            InventorySlot slot = Instantiate(inventorySlotPrefab, foodGroupParent).GetComponent<InventorySlot>();
             slot.Init(fSo);
             UIKitchen.Instance.fridgeSlots.Add(slot);
         }
@@ -45,14 +50,24 @@ public class PrefabManager : MonoBehaviour {
             RecipePanel recipePanel = Instantiate(recipePanelPrefab, recipePanelGroup).GetComponent<RecipePanel>();
             recipePanel.SetupPanel(rSo);
             
-            InventorySlot slot = Instantiate(slotPrefab, slotWorkplanParent).GetComponent<InventorySlot>();
+            InventorySlot slot = Instantiate(inventorySlotPrefab, recipeGroupParent).GetComponent<InventorySlot>();
             slot.Init(rSo);
             UIKitchen.Instance.workplanSlots.Add(slot);
+        }
+
+        if (RecipeManager.Instance.currentRecipe != null)
+        {
+            recipePanelGroup.GetChild(RecipeManager.Instance.recipePanelIndex).GetComponent<RecipePanel>().SetAsRunning(RecipeManager.Instance.recipeAmount);
         }
 
         foreach (CustomerSO cSo in DataManager.Instance.customerList) {
             CustomerEntry customerEntry = Instantiate(customerEntryPrefab, customerEntryGroup).GetComponent<CustomerEntry>();
             customerEntry.Init(cSo);
         }
+    }
+
+    public void ResetRecipeBook()
+    {
+        recipePanelGroup.GetChild(0).GetComponent<RecipePanel>().SetAsInactive();
     }
 }

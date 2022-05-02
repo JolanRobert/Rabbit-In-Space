@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82946ecdd25d0a408207b426c52925c, type: 3}
   m_Name: Grill
   m_EditorClassIdentifier: 
-  name: Grill
   stationType: 4
-  minigameScene: {fileID: 102900000, guid: 231936f11647dc44a841e5b1181cc9db, type: 3}
+  minigameScene: Grill
   icon: {fileID: 0}
