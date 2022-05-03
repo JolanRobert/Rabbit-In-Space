@@ -1,31 +1,7 @@
 fileFormatVersion: 2
-guid: 8d0f759716b0a74469ab1a01daa3b70b
+guid: 02c721a1d8bf0d34890e4f15e9ea7f6f
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6006258108684561761
-    second: Dog_4
-  - first:
-      213: 5486836200598436668
-    second: Dog_5
-  - first:
-      213: 6596755354059348408
-    second: Dog_6
-  - first:
-      213: -292768363816699000
-    second: Dog_7
-  - first:
-      213: 8216803088222771436
-    second: Dog_5
-  - first:
-      213: 4935620579968358508
-    second: Dog_4
-  - first:
-      213: 3944444102858995401
-    second: Dog_6
-  - first:
-      213: -7369448574069512930
-    second: Dog_7
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +46,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,29 +87,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dog_0
+      name: Mood_rooster_0
       rect:
         serializedVersion: 2
-        x: 111
-        y: 2244
-        width: 949
-        height: 1010
+        x: 306
+        y: 2271
+        width: 797
+        height: 840
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +105,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16de3756de38a5350800000000000000
-      internalID: 6006258108684561761
+      spriteID: 7ee010928d1d8b000800000000000000
+      internalID: 52022122045837031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dog_1
+      name: Mood_rooster_1
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 2361
-        width: 966
-        height: 895
+        x: 1573
+        y: 2274
+        width: 809
+        height: 837
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3b7c653478252c40800000000000000
-      internalID: 5486836200598436668
+      spriteID: aebdf7629a3c4ff40800000000000000
+      internalID: 5761444954576509930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dog_2
+      name: Mood_rooster_2
       rect:
         serializedVersion: 2
-        x: 2358
-        y: 2253
-        width: 1131
-        height: 987
+        x: 2761
+        y: 2279
+        width: 813
+        height: 832
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b91ddc1b026c8b50800000000000000
-      internalID: 6596755354059348408
+      spriteID: 9c3234037426f9910800000000000000
+      internalID: 1846302430137099209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dog_3
+      name: Mood_rooster_3
       rect:
         serializedVersion: 2
-        x: 3491
-        y: 2262
-        width: 963
-        height: 953
+        x: 3886
+        y: 2274
+        width: 810
+        height: 832
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88bbb3969b0efebf0800000000000000
-      internalID: -292768363816699000
+      spriteID: 2267af4d50801f9f0800000000000000
+      internalID: -436558867737184734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dog_5
+      name: Mood_rooster_7
       rect:
         serializedVersion: 2
-        x: 1291
-        y: 529
-        width: 1021
-        height: 1729
+        x: 1438
+        y: 280
+        width: 983
+        height: 1562
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce8d9decfd2f70270800000000000000
-      internalID: 8216803088222771436
+      spriteID: 76bde9f75c5728c50800000000000000
+      internalID: 6666019889571879783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dog_4
+      name: Mood_rooster_8
       rect:
         serializedVersion: 2
-        x: 206
-        y: 513
-        width: 948
-        height: 1723
+        x: 2542
+        y: 277
+        width: 1076
+        height: 1565
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c681f1774c8de7440800000000000000
-      internalID: 4935620579968358508
+      spriteID: 1b5c16f8a34b8e680800000000000000
+      internalID: -8725526114423683663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dog_6
+      name: Mood_rooster_10
       rect:
         serializedVersion: 2
-        x: 2449
-        y: 527
-        width: 1131
-        height: 1715
+        x: 227
+        y: 278
+        width: 915
+        height: 1569
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c67b43530b7db630800000000000000
-      internalID: 3944444102858995401
+      spriteID: 5c149ccf778847230800000000000000
+      internalID: 3635680848118366661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dog_7
+      name: Mood_rooster_11
       rect:
         serializedVersion: 2
-        x: 3583
-        y: 498
-        width: 965
-        height: 1719
+        x: 3816
+        y: 282
+        width: 918
+        height: 1560
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e15e31021957ab990800000000000000
-      internalID: -7369448574069512930
+      spriteID: 3b29dc9eec407f380800000000000000
+      internalID: -8937669648761122125
       vertices: []
       indices: 
       edges: []
@@ -297,7 +261,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b5ca30b3244d3734887b1d77ad1c9d99
+    spriteID: 91a829511fdd4c848a86860a47ffe5db
     internalID: 0
     vertices: []
     indices: 
