@@ -4,8 +4,6 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CustomerSpawner : MonoBehaviour {
-
-    [SerializeField] private int currentStarValue;
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
@@ -34,7 +32,7 @@ public class CustomerSpawner : MonoBehaviour {
         int randomValue = Random.Range(0, 100)+1;
         int value = 0;
 
-        foreach (StarRepartitionSO.CustomerChance cc in DataManager.Instance.starRepartitionList[currentStarValue - 1].customerChances) {
+        foreach (StarSO.CustomerChance cc in GameManager.Instance.currentStar.customerChances) {
             value += cc.probability;
             if (randomValue > value) continue;
             
@@ -92,8 +90,8 @@ public class CustomerSpawner : MonoBehaviour {
         int totalProbability = 0;
         List<CustomerSO> clientTypes = new List<CustomerSO>();
         
-        foreach (StarRepartitionSO srSo in DataManager.Instance.starRepartitionList) {
-            foreach (StarRepartitionSO.CustomerChance cc in srSo.customerChances) {
+        foreach (StarSO srSo in DataManager.Instance.starList) {
+            foreach (StarSO.CustomerChance cc in srSo.customerChances) {
                 if (clientTypes.Contains(cc.customerSo)) {
                     throw new Exception("Plusieurs fois le même type de client - "+srSo.starValue+" étoiles !");
                 }

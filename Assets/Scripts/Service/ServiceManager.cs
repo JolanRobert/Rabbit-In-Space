@@ -1,19 +1,25 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ServiceManager : MonoBehaviour {
 
     public static ServiceManager Instance;
-
-    [Header("ServiceTimer")]
-    [SerializeField] [Range(5,500)] private int serviceTime = 360;
-    [SerializeField] private ServiceTimer myTimer;
     
+    [Header("Service Preparation")]
     [SerializeField] private List<ServiceEntry> serviceEntries;
     
     [SerializeField] private GameObject serviceValidPanel;
     [SerializeField] private GameObject serviceInvalidPanel;
     [SerializeField] private GameObject serviceWarningText;
+
+    [Header("Service Timer")]
+    [SerializeField] [Range(1,500)] private int serviceTime = 360;
+    [SerializeField] private ServiceTimer myTimer;
+
+    [Header("Service Summary")]
+    public ServiceSummary serviceSummary;
 
     void Awake() {
         Instance = this;
@@ -49,13 +55,26 @@ public class ServiceManager : MonoBehaviour {
     }
 
     private void StartService() {
+        //serviceSummary.ResetSummary();
+        
         KitchenManager.Instance.inService = true;
         KitchenManager.Instance.customerSpawner.StartService();
+        
         myTimer.StartTimer(serviceTime);
     }
 
     public void EndService() {
+        StartCoroutine(EndServiceCoroutine());
+    }
+
+    private IEnumerator EndServiceCoroutine() {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
+        
+        UIManager.Instance.OpenPanel(serviceSummary.gameObject);
+        serviceSummary.InitSummary();
+
+        yield return new WaitForSeconds(1);
+        StartCoroutine(serviceSummary.AnimSummary());
     }
 }

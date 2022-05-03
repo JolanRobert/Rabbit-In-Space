@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d4b7cf4bf2c21840ae1993c0506cbb1, type: 3}
-  m_Name: Star_2
+  m_Name: Star_1
   m_EditorClassIdentifier: 
-  starValue: 2
+  starValue: 1
+  xpBeforeNextStar: 250
+  nextStar: {fileID: 11400000, guid: 5dc21fc2eec614b489c6388d5072a2f3, type: 2}
   customerChances:
   - customerSo: {fileID: 11400000, guid: b1adfa73260478a44b109dd5eb2103b2, type: 2}
     probability: 30

@@ -28,8 +28,8 @@ public class RecipePanel : MonoBehaviour
         recipeImage.sprite = recipe.recipeSprite;
         name = recipe.name;
         nameText.text = name;
-        price = recipe.price;
-        priceText.text = recipe.price + "$";
+        price = recipe.goldReward;
+        priceText.text = recipe.goldReward + "$";
         
         foreach (RecipeElement element in recipe.recipeElements) {
             IngredientSlot slot = Instantiate(ingredientSlotPrefab, Vector3.zero, Quaternion.identity, ingredientsGroup).GetComponent<IngredientSlot>();

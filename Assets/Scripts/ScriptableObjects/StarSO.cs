@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New StarRepartition", menuName = "ScriptableObjects/StarRepartition")]
-public class StarRepartitionSO : ScriptableObject {
+public class StarSO : ScriptableObject {
 
     public int starValue;
+    public int xpBeforeNextStar;
+    public StarSO nextStar;
     public List<CustomerChance> customerChances;
 
     [Serializable]

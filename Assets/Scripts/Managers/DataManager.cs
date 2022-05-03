@@ -9,7 +9,7 @@ public class DataManager : MonoBehaviour {
     public List<FoodSO> foodList;
     public List<ParcelUpgradeSO> parcelUpgradeList;
     public List<RecipeSO> recipeList;
-    public List<StarRepartitionSO> starRepartitionList;
+    public List<StarSO> starList;
     public List<StationSO> stationList;
 
     void Awake() {

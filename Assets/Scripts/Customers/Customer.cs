@@ -72,7 +72,7 @@ public class Customer : MonoBehaviour {
             }
         }
         
-        CompleteOrder(false);
+        CompleteOrder(CustomerState.LEFT);
     }
 
     public void TryCompleteOrder() {
@@ -87,10 +87,11 @@ public class Customer : MonoBehaviour {
             break;
         }
         
-        CompleteOrder(true);
+        CompleteOrder(CustomerState.SERVED);
     }
 
-    private void CompleteOrder(bool success) {
+    private void CompleteOrder(CustomerState state) {
+        ServiceManager.Instance.serviceSummary.NewServiceInfo(this,state);
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
     }
 

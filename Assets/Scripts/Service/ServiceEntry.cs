@@ -6,10 +6,10 @@ public class ServiceEntry : MonoBehaviour {
 
     [Header("UI")]
     [SerializeField] private Image recipeSprite;
-    [SerializeField] private TMP_Text recipePrice;
+    [SerializeField] private TMP_Text recipeGoldReward;
 
     public void Init(RecipeSO rSo) {
         recipeSprite.sprite = rSo.recipeSprite;
-        recipePrice.text = ""+rSo.price+"$";
+        recipeGoldReward.text = ""+rSo.goldReward+"$";
     }
 }

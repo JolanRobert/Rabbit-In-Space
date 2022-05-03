@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d4b7cf4bf2c21840ae1993c0506cbb1, type: 3}
-  m_Name: Star_3
+  m_Name: Star_4
   m_EditorClassIdentifier: 
-  starValue: 3
+  starValue: 4
+  xpBeforeNextStar: 830
+  nextStar: {fileID: 11400000, guid: c8fb4c2401546274cb38a01b758b4d10, type: 2}
   customerChances:
   - customerSo: {fileID: 11400000, guid: b1adfa73260478a44b109dd5eb2103b2, type: 2}
-    probability: 20
+    probability: 15
   - customerSo: {fileID: 11400000, guid: 89b590e6cbe301f4b91c71f3dfb4c70b, type: 2}
     probability: 15
   - customerSo: {fileID: 11400000, guid: 511e3f436a24acc42876dc0407f0640a, type: 2}
@@ -29,4 +31,4 @@ MonoBehaviour:
   - customerSo: {fileID: 11400000, guid: 1b12c23d5cca6f54b9ab1e63ed4fe3b3, type: 2}
     probability: 8
   - customerSo: {fileID: 11400000, guid: 37aedf1de7182254d8ec6d7e7a120ed5, type: 2}
-    probability: 0
+    probability: 5

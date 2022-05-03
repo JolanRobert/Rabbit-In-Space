@@ -22,7 +22,7 @@ public class MinigameManager : MonoBehaviour {
         if(!resultPending) return;
         resultPending = false;
         
-        SwitchScene.Instance.ChangeScene("Kitchen");
+        SwitchScene.Instance.ChangeScene("Jolan");
         
         KitchenManager.Instance.transform.position += Vector3.right * 100;
         if (success) RecipeManager.Instance.ForwardStep();

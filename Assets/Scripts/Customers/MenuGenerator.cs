@@ -53,7 +53,7 @@ public class MenuGenerator : MonoBehaviour {
         cheapest.Add(todayMenu[0]);
 
         for (int i = 1; i < todayMenu.Count; i++) {
-            if (cheapest[0].price < todayMenu[i].price) continue;
+            if (cheapest[0].goldReward < todayMenu[i].goldReward) continue;
             cheapest.Clear();
             cheapest.Add(todayMenu[i]);
         }
@@ -67,7 +67,7 @@ public class MenuGenerator : MonoBehaviour {
         cheapest.Add(todayMenu[0]);
 
         for (int i = 1; i < todayMenu.Count; i++) {
-            if (cheapest[0].price > todayMenu[i].price) continue;
+            if (cheapest[0].goldReward > todayMenu[i].goldReward) continue;
             cheapest.Clear();
             cheapest.Add(todayMenu[i]);
         }
