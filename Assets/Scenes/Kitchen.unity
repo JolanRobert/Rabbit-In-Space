@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.88
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15203623, g: 0.18998536, b: 0.26208714, a: 0.88}
+  m_IndirectSpecularColor: {r: 0.15203623, g: 0.18998535, b: 0.26208714, a: 0.88}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -756,7 +756,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -1, y: 0, z: 0}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 0}
   station: {fileID: 11400000, guid: c21a7eb391cd99a43b4b23b157c6127c, type: 2}
+  glowMaterial: {fileID: 0}
 --- !u!65 &81815051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2851,6 +2853,7 @@ GameObject:
   - component: {fileID: 318935094}
   - component: {fileID: 318935093}
   - component: {fileID: 318935096}
+  - component: {fileID: 318935097}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2946,7 +2949,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2956,6 +2959,23 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &318935097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318935092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 7752ef19ba4b72a4189afcb2b99934e4, type: 2}
 --- !u!1 &340923094
 GameObject:
   m_ObjectHideFlags: 0
@@ -9247,9 +9267,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8964828734104651933, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8964828734104651933, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 15c794f0babe7834da1f69bbdf43960a, type: 2}
+    - target: {fileID: -8964828734104651933, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -8687863948447875799, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
       propertyPath: m_Name
       value: Wall
@@ -9415,6 +9443,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 25fe97b80548512469cc1d2c1324b72e, type: 2}
     - target: {fileID: 397216929084540400, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 397216929084540400, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f7577dde709833248a4a3101b071e57a, type: 2}
@@ -9438,6 +9470,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[5]
       value: 
       objectReference: {fileID: 2100000, guid: f7577dde709833248a4a3101b071e57a, type: 2}
+    - target: {fileID: 397216929084540400, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 566541004437464445, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
       propertyPath: m_Name
       value: Station_RiceCooker
@@ -9467,13 +9503,33 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2099298145182787728, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099298145182787728, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8d4ad96147fbac64c8363234d9930e6c, type: 2}
+    - target: {fileID: 2099298145182787728, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270233463181161462, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3270233463181161462, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b9dc6f8b388cc2e4690b81dd62b58808, type: 2}
+    - target: {fileID: 3270233463181161462, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270233463181161462, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
     - target: {fileID: 3405360924935508585, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -9791,7 +9847,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 0, y: 0, z: 0.25}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 1009210805}
   station: {fileID: 11400000, guid: c21a7eb391cd99a43b4b23b157c6127c, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
 --- !u!114 &1009210795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9806,7 +9864,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 0.25, y: 0, z: 0}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 1009210808}
   station: {fileID: 11400000, guid: d683adb435a69be4eab83ea439b3ee3f, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
 --- !u!114 &1009210796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9821,7 +9881,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -0.9, y: 0, z: -0.7}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 1009210814}
   station: {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
 --- !u!114 &1009210797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9836,7 +9898,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -0.3, y: 0, z: 0}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 1009210826}
   station: {fileID: 11400000, guid: 46506b6ed98910747b4f53028b8be6bf, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
+--- !u!23 &1009210805 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8964828734104651933, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+  m_PrefabInstance: {fileID: 1009210766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1009210808 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3270233463181161462, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+  m_PrefabInstance: {fileID: 1009210766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1009210814 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 397216929084540400, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+  m_PrefabInstance: {fileID: 1009210766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1009210826 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2099298145182787728, guid: a29a02c9b52b84b44a927431314657dc, type: 3}
+  m_PrefabInstance: {fileID: 1009210766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1022839807
 GameObject:
   m_ObjectHideFlags: 0
@@ -17751,7 +17835,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -1, y: 0, z: 0}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 0}
   station: {fileID: 11400000, guid: d683adb435a69be4eab83ea439b3ee3f, type: 2}
+  glowMaterial: {fileID: 0}
 --- !u!65 &1592799108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19063,7 +19149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -1, y: 0, z: 0}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 0}
   station: {fileID: 11400000, guid: 46506b6ed98910747b4f53028b8be6bf, type: 2}
+  glowMaterial: {fileID: 0}
 --- !u!65 &1768228679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20274,7 +20362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -1, y: 0, z: 0}
   interactPanel: {fileID: 0}
+  meshRenderer: {fileID: 0}
   station: {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
+  glowMaterial: {fileID: 0}
 --- !u!1 &1947110730
 GameObject:
   m_ObjectHideFlags: 0
