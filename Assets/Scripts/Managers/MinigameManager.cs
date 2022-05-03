@@ -25,6 +25,12 @@ public class MinigameManager : MonoBehaviour {
         SwitchScene.Instance.ChangeScene("Kitchen");
         
         KitchenManager.Instance.transform.position += Vector3.right * 100;
-        if (success) RecipeManager.Instance.ForwardStep();
+        if (success)
+        {
+            RecipeManager.Instance.ForwardStep();
+        }else
+        {
+            StartCoroutine(RecipeManager.Instance.WaitForGlow());
+        };
     }
 }
