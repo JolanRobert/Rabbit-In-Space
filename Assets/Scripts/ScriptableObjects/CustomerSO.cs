@@ -13,5 +13,6 @@ public class CustomerSO : ScriptableObject {
     public string description;
 
     [Header("Sprites")]
-    public Sprite customerSprite;
+    public Sprite[] customerHeadSprites;
+    public Sprite[] customerSprites;
 }

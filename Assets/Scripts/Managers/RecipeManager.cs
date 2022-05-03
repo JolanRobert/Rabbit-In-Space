@@ -11,7 +11,7 @@ public class RecipeManager : MonoBehaviour {
     public RecipePanel pendingRecipePanel;
     
     [SerializeField] private GameObject recipeTimeline;
-    private int recipeAmount;
+    public int recipeAmount;
     public int recipePanelIndex;
     
     private Queue<StationType> stations = new Queue<StationType>();
@@ -53,7 +53,7 @@ public class RecipeManager : MonoBehaviour {
         }
 
         recipePanelIndex = pendingRecipePanel.transform.GetSiblingIndex();
-        pendingRecipePanel.SetAsRunning();
+        pendingRecipePanel.SetAsRunning(recipeAmount);
         InitStationsTimeline(pendingRecipe);
     }
 

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cutter
   m_EditorClassIdentifier: 
   stationType: 2
-  minigameScene: {fileID: 102900000, guid: 43b29e7450c5ccf469b2bebe4825221d, type: 3}
+  minigameScene: Cutter
   icon: {fileID: 0}

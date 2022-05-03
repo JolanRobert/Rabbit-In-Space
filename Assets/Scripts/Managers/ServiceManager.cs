@@ -5,6 +5,10 @@ public class ServiceManager : MonoBehaviour {
 
     public static ServiceManager Instance;
 
+    [Header("ServiceTimer")]
+    [SerializeField] [Range(5,500)] private int serviceTime = 360;
+    [SerializeField] private ServiceTimer myTimer;
+    
     [SerializeField] private List<ServiceEntry> serviceEntries;
     
     [SerializeField] private GameObject serviceValidPanel;
@@ -13,6 +17,10 @@ public class ServiceManager : MonoBehaviour {
 
     void Awake() {
         Instance = this;
+    }
+
+    void Start() {
+        myTimer = ServiceTimer.Instance;
     }
 
     public void LoadMenu() {
@@ -43,9 +51,10 @@ public class ServiceManager : MonoBehaviour {
     private void StartService() {
         KitchenManager.Instance.inService = true;
         KitchenManager.Instance.customerSpawner.StartService();
+        myTimer.StartTimer(serviceTime);
     }
 
-    private void EndService() {
+    public void EndService() {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
     }
