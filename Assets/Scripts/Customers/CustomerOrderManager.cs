@@ -50,7 +50,10 @@ public class CustomerOrderManager : MonoBehaviour {
 
     private void RearrangeOrders() {
         for (int i = 0; i < orderList.Count; i++) {
-            if (i <= 1) ShowOrder(customerOrderEntries[i]);
+            if (i <= 1) {
+                ShowOrder(customerOrderEntries[i]);
+                StartCoroutine(orderList[i].Leave());
+            }
             else RevealOrder(customerOrderEntries[i]);
         }
     }

@@ -17,6 +17,7 @@ public class Customer : MonoBehaviour {
     public int xpReward;
 
     private bool hasOrdered;
+    private bool isLeaving;
 
     private Sprite[] customerSprites;
     private Sprite[] customerHeadSprites;
@@ -54,10 +55,13 @@ public class Customer : MonoBehaviour {
         };
 
         CustomerOrderManager.Instance.AddCustomerOrder(this);
-        StartCoroutine(Leave());
     }
     
-    private IEnumerator Leave() {
+    public IEnumerator Leave() {
+        if (isLeaving) yield break;
+        isLeaving = true;
+        Debug.Log("leave");
+        
         int m_impatienceLimit = (int)impatienceLimit;
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
