@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 88e56cf6590f5fd4ba467e9010299e7e
+guid: e842cc6257609e945afa71a4e4a34436
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6548182048292775773
-    second: BG_Icon_S
+      213: 2292526792846232288
+    second: Red_Mochi
   - first:
-      213: 5766623590449973235
-    second: BG_Icon_B
+      213: -6376880118056362081
+    second: White_Mochi
   - first:
-      213: 6584308978887455569
-    second: BG_TimeToGrow
+      213: -7262587116637206125
+    second: Bowl_Red
   - first:
-      213: 1193519916686163499
-    second: BG_TimeAlive
-  - first:
-      213: -7370413482165155560
-    second: SeedMenu_Separator_1
-  - first:
-      213: -4115842827929513460
-    second: SeedMenu_Separator_2
-  - first:
-      213: -6348368060127701207
-    second: BG_SeedMenu_1
-  - first:
-      213: 6399447215994684731
-    second: BG_SeeMenu_2
+      213: 8528428438075582214
+    second: Bowl_White
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,169 +103,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_Icon_S
-      rect:
-        serializedVersion: 2
-        x: 1084
-        y: 3401
-        width: 314
-        height: 313
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a85beeee1f2025a0800000000000000
-      internalID: -6548182048292775773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_Icon_B
-      rect:
-        serializedVersion: 2
-        x: 1484
-        y: 3401
-        width: 623
-        height: 621
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f788264a99270050800000000000000
-      internalID: 5766623590449973235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_TimeToGrow
-      rect:
-        serializedVersion: 2
-        x: 2197
-        y: 3376
-        width: 422
-        height: 363
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1537002912a206b50800000000000000
-      internalID: 6584308978887455569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_TimeAlive
-      rect:
-        serializedVersion: 2
-        x: 2684
-        y: 3352
-        width: 414
-        height: 362
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2ebe6a6a0c309010800000000000000
-      internalID: 1193519916686163499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeedMenu_Separator_1
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 3148
-        width: 1604
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 819cbc3fcf707b990800000000000000
-      internalID: -7370413482165155560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeedMenu_Separator_2
-      rect:
-        serializedVersion: 2
-        x: 2205
-        y: 3148
-        width: 1604
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c021ce131c691e6c0800000000000000
-      internalID: -4115842827929513460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_SeedMenu_1
+      name: Red_Mochi
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1928
-        height: 3026
+        y: 106
+        width: 141
+        height: 122
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 153, y: 155, z: 167, w: 155}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92717a862e016e7a0800000000000000
-      internalID: -6348368060127701207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_SeeMenu_2
-      rect:
-        serializedVersion: 2
-        x: 2042
-        y: 0
-        width: 1928
-        height: 3026
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b35c93456576fc850800000000000000
-      internalID: 6399447215994684731
+      spriteID: 0ea4aa5c8f0b0df10800000000000000
+      internalID: 2292526792846232288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Mochi
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 110
+        width: 142
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fdffb9155c087a0800000000000000
+      internalID: -6376880118056362081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bowl_Red
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 0
+        width: 330
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399c28a0f7b163b90800000000000000
+      internalID: -7262587116637206125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bowl_White
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 5
+        width: 330
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607a5d79a701b5670800000000000000
+      internalID: 8528428438075582214
       vertices: []
       indices: 
       edges: []
@@ -285,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 77c43866a6e065d428cbef91469faf45
+    spriteID: f21f907d29e565d419a343758574b2b7
     internalID: 0
     vertices: []
     indices: 
