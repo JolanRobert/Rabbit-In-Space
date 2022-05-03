@@ -28,9 +28,9 @@ public class ServiceSummary : MonoBehaviour {
     [Header("Buttons")]
     [SerializeField] private Button nextButton;
 
-    public int todayGold, todayXP;
-    public int customersServedAmount, customersLeftAmount, customersKickedAmount;
-    public int customerServedXP, customersLeftXP, customersKickedXP;
+    private int todayGold, todayXP;
+    private int customersServedAmount, customersLeftAmount, customersKickedAmount;
+    private int customerServedXP, customersLeftXP, customersKickedXP;
 
     public void InitSummary() {
         GameManager gm = GameManager.Instance;
