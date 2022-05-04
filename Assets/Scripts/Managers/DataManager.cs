@@ -10,7 +10,6 @@ public class DataManager : MonoBehaviour {
     public List<ParcelUpgradeSO> parcelUpgradeList;
     public List<RecipeSO> recipeList;
     public List<StarSO> starList;
-    public List<StationSO> stationList;
 
     void Awake() {
         Instance = this;

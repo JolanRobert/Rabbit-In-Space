@@ -25,6 +25,11 @@ public class CustomerOrderEntry : MonoBehaviour {
         backgroundSR.DOColor(new Color(255 / 255f, 50 / 255f, 50 / 255f, 1), timeLeft / impatienceFactor);
     }
 
+    public void ResetBackground() {
+        backgroundSR.DOKill();
+        backgroundSR.color = new Color(50 / 255f, 255 / 255f, 50 / 255f, 1);
+    }
+
     public void TryCompleteOrder() {
         customer.TryCompleteOrder();
     }

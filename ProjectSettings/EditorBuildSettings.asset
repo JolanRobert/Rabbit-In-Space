@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Jolan.unity
-    guid: 492df8ad5e04fc542b304dfc4b802e74
-  - enabled: 1
     path: Assets/Scenes/Kitchen.unity
-    guid: a3d6abfc88158e84d8b2041c86cdd77b
+    guid: b5b5935739e878c468ed06149e2869be
   - enabled: 1
     path: Assets/Scenes/MiniGames/Boiler.unity
     guid: 88791330b8d52a44593b5ec5c772ed42

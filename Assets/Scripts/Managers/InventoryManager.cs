@@ -15,6 +15,15 @@ public class InventoryManager : MonoBehaviour {
         else Instance = this;
     }
 
+    void Start() {
+        InitFridge();
+        InitWorkplan();
+        
+        foreach (FoodSO food in DataManager.Instance.foodList) {
+            FoodDataManager.Instance.SetItem(food.foodType,100);
+        }
+    }
+
     private void InitFridge() {
         isFridgeInit = true;
         foreach (FoodSO fSo in DataManager.Instance.foodList) {

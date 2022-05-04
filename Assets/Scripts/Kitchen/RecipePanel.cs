@@ -35,7 +35,7 @@ public class RecipePanel : MonoBehaviour
         }
         
         foreach (StationSO station in myRecipe.stations) {
-            StationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<StationSlot>();
+            BookStationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<BookStationSlot>();
             slot.Init(station);
         }
 

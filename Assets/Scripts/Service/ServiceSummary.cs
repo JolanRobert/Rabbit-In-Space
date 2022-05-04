@@ -28,7 +28,7 @@ public class ServiceSummary : MonoBehaviour {
     [Header("Buttons")]
     [SerializeField] private Button nextButton;
 
-    public int todayGold, todayXP;
+    private int todayGold, todayXP;
     private int customersServedAmount, customersLeftAmount, customersKickedAmount;
     private int customerServedXP, customersLeftXP, customersKickedXP;
 

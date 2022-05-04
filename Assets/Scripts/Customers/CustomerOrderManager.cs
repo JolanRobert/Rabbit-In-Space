@@ -63,6 +63,7 @@ public class CustomerOrderManager : MonoBehaviour {
     public void RemoveCustomerOrder(Customer customer) {
         int customerIndex = orderList.IndexOf(customer);
         HideOrder(customerOrderEntries[customerIndex]);
+        //customerOrderEntries[customerIndex].ResetBackground();
         orderList.Remove(customer);
         RearrangeOrders();
         
@@ -90,7 +91,7 @@ public class CustomerOrderManager : MonoBehaviour {
     public void UpdateCustomerOrder(Customer customer, float timeLeft, float impatienceFactor) {
         foreach (CustomerOrderEntry entry in customerOrderEntries) {
             if (entry.customer != customer) continue;
-            entry.UpdateBackground(timeLeft,impatienceFactor);
+            //entry.UpdateBackground(timeLeft,impatienceFactor);
             return;
         }
     }

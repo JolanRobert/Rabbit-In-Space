@@ -29,14 +29,9 @@ public class MinigameManager : MonoBehaviour {
         
         //Show customers and orders
         KitchenManager.Instance.transform.position += Vector3.right * 100;
-        if (success)
-        {
-            RecipeManager.Instance.ForwardStep();
-        }else
-        {
-            StartCoroutine(RecipeManager.Instance.WaitForGlow());
-        };
         CustomerOrderManager.Instance.ordersGO.SetActive(true);
+        
         if (success) RecipeManager.Instance.ForwardStep();
+        else StartCoroutine(RecipeManager.Instance.WaitForGlow());
     }
 }

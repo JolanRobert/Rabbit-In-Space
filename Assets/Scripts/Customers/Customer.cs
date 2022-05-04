@@ -84,6 +84,7 @@ public class Customer : MonoBehaviour {
     }
 
     public void TryCompleteOrder() {
+        if (!isLeaving) return;
         if (!FoodDataManager.Instance.HasRecipeItem(myRecipe.recipeType)) return;
         
         for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {

@@ -7,6 +7,7 @@ public class Station : IInteractable
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private StationSO station;
     [SerializeField] private Material glowMaterial;
+    [SerializeField] private Material emptyMaterial;
     public static UnityEvent<StationType> OnStepChange = new UnityEvent<StationType>();
 
     private void Start()
@@ -19,23 +20,13 @@ public class Station : IInteractable
         else PlayerManager.Instance.GetInteract().isInteracting = false;
     }
 
-    private void CheckIsSelf(StationType type)
-    {
-        if (station.stationType == type)
-        {
-            Glow(true);
-            Debug.Log(type);
-        }
-        else
-        {
-            Glow(false);
-        }
+    private void CheckIsSelf(StationType type) {
+        Glow(station.stationType == type);
     }
 
     List<Material> mats = new List<Material>();
     private void Glow(bool active)
     {
-        Debug.Log(glowMaterial.name);
         if (active)
         {
             meshRenderer.GetMaterials(mats);
@@ -45,7 +36,7 @@ public class Station : IInteractable
         else
         {
             meshRenderer.GetMaterials(mats);
-            mats[mats.Count - 1] = null;
+            mats[mats.Count - 1] = emptyMaterial;
             meshRenderer.materials = mats.ToArray();
         }
     }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +21,8 @@ public class ServiceManager : MonoBehaviour {
     public ServiceSummary serviceSummary;
 
     void Awake() {
-        Instance = this;
+        if (Instance != null) Destroy(gameObject);
+        else Instance = this;
     }
 
     void Start() {

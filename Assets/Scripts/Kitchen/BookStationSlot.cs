@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StationSlot : MonoBehaviour {
+public class BookStationSlot : MonoBehaviour {
     
     public Image slotSprite;
     
