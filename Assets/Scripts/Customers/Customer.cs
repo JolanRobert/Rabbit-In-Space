@@ -12,7 +12,7 @@ public class Customer : MonoBehaviour {
     public RecipeSO myRecipe;
 
     private float impatienceLimit;
-    public float impatienceFactor = 1;
+    private float impatienceFactor = 1;
 
     public int xpReward;
 
@@ -105,5 +105,10 @@ public class Customer : MonoBehaviour {
 
     public void CancelOrder() {
         CustomerOrderManager.Instance.RemoveCustomerOrder(this);
+    }
+
+    public void SetImpatienceFactor(float newFactor) {
+        impatienceFactor = newFactor;
+        if (isLeaving) CustomerOrderManager.Instance.UpdateCustomerOrder(this,impatienceLimit,impatienceFactor);
     }
 }

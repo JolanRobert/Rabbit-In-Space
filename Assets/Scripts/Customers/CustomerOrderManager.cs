@@ -84,5 +84,14 @@ public class CustomerOrderManager : MonoBehaviour {
             entry.UpdateSprite(newSprite);
             return;
         }
-    } 
+    }
+
+    //Change customer impatience background speed, if impatience factor is updated
+    public void UpdateCustomerOrder(Customer customer, float timeLeft, float impatienceFactor) {
+        foreach (CustomerOrderEntry entry in customerOrderEntries) {
+            if (entry.customer != customer) continue;
+            entry.UpdateBackground(timeLeft,impatienceFactor);
+            return;
+        }
+    }
 }

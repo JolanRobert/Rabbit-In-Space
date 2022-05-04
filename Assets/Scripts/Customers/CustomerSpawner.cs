@@ -81,7 +81,7 @@ public class CustomerSpawner : MonoBehaviour {
             if (i != customerQueue.Count-1 && customerQueue[i + 1].myCustomer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
 
-            customerQueue[i].impatienceFactor = 1 + 0.25f * nbEnervants;
+            customerQueue[i].SetImpatienceFactor(1 + 0.25f * nbEnervants);
         }
     }
 
