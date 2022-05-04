@@ -50,11 +50,12 @@ public class ServiceManager : MonoBehaviour {
             return;
         }
         
-        UIManager.Instance.SetVisible(serviceWarningText,myMenu.Count < 3);
+        serviceWarningText.SetActive(myMenu.Count < 3);
         UIManager.Instance.OpenPanel(serviceValidPanel);
     }
 
     private void StartService() {
+        UIManager.Instance.ClosePanel(serviceValidPanel);
         //serviceSummary.ResetSummary();
         
         KitchenManager.Instance.inService = true;

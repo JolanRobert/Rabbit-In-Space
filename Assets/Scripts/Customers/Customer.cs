@@ -46,7 +46,7 @@ public class Customer : MonoBehaviour {
             CustomerType.NORMAL => myMenu.GetRandomRecipe(),
             CustomerType.HUPPE => myMenu.GetExpensiveRecipe(),
             CustomerType.RADIN => myMenu.GetCheapRecipe(),
-            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-1].myRecipe,
+            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-2].myRecipe,
             CustomerType.ACCRO => myMenu.GetTrueRandomRecipe(),
             CustomerType.LENT => myMenu.GetRandomRecipe(),
             CustomerType.IMPATIENT => myMenu.GetRandomRecipe(),
@@ -56,21 +56,25 @@ public class Customer : MonoBehaviour {
 
         CustomerOrderManager.Instance.AddCustomerOrder(this);
     }
-    
-    public IEnumerator Leave() {
-        if (isLeaving) yield break;
+
+    public void Leave() {
+        if (isLeaving) return;
         isLeaving = true;
-        Debug.Log("leave");
-        
+        StartCoroutine(LeaveCR());
+    }
+    
+    private IEnumerator LeaveCR() {
         int m_impatienceLimit = (int)impatienceLimit;
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
             impatienceLimit -= 1 * impatienceFactor;
             if ((int) impatienceLimit == m_impatienceLimit*2/3) {
+                if (customerSprites.Length <= 1) yield break;
                 customerSR.sprite = customerSprites[1];
                 CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[1]);
             }
             else if ((int) impatienceLimit == m_impatienceLimit*1/3) {
+                if (customerSprites.Length <= 1) yield break;
                 customerSR.sprite = customerSprites[2];
                 CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[2]);
             }

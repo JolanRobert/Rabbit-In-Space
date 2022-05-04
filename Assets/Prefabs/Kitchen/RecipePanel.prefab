@@ -427,8 +427,8 @@ MonoBehaviour:
   nameText: {fileID: 4974597500377599537}
   priceText: {fileID: 8420854743690008570}
   makingAmountText: {fileID: 1279047196823698315}
-  type: 0
-  price: 0
+  runningColor: {r: 0.7294118, g: 0.77254903, b: 1, a: 1}
+  inactiveColor: {r: 0.7294118, g: 1, b: 0.77254903, a: 1}
 --- !u!1 &4974597500377599543
 GameObject:
   m_ObjectHideFlags: 0

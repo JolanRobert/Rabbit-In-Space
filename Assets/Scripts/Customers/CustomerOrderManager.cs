@@ -6,6 +6,8 @@ public class CustomerOrderManager : MonoBehaviour {
 
     public static CustomerOrderManager Instance;
 
+    public GameObject ordersGO;
+
     [SerializeField] private RectTransform showPosition;
     [SerializeField] private RectTransform revealPosition;
     [SerializeField] private RectTransform hidePosition;
@@ -25,22 +27,22 @@ public class CustomerOrderManager : MonoBehaviour {
     }
 
     private void ShowOrder(CustomerOrderEntry entry) {
-        Transform entryParent = entry.transform.parent;
-        entryParent.DOKill();
+        //Transform entryParent = entry.transform.parent;
+        entry.DOKill();
         entry.gameObject.SetActive(true);
-        entryParent.DOMoveX(showPosition.position.x, 1);
+        entry.transform.DOMoveX(showPosition.position.x, 1);
     }
 
     private void RevealOrder(CustomerOrderEntry entry) {
-        Transform entryParent = entry.transform.parent;
-        entryParent.DOKill();
+        //Transform entryParent = entry.transform.parent;
+        entry.DOKill();
         entry.gameObject.SetActive(true);
-        entryParent.DOMoveX(revealPosition.position.x, 1);
+        entry.transform.DOMoveX(revealPosition.position.x, 1);
     }
 
     private void HideOrder(CustomerOrderEntry entry) {
         Transform entryParent = entry.transform.parent;
-        entryParent.position = new Vector3(hidePosition.position.x, entryParent.position.y, entryParent.position.z);
+        entry.transform.DOMoveX(hidePosition.position.x, 0);
         entry.gameObject.SetActive(false);
 
         entryParent.SetAsLastSibling();
@@ -52,7 +54,7 @@ public class CustomerOrderManager : MonoBehaviour {
         for (int i = 0; i < orderList.Count; i++) {
             if (i <= 1) {
                 ShowOrder(customerOrderEntries[i]);
-                StartCoroutine(orderList[i].Leave());
+                orderList[i].Leave();
             }
             else RevealOrder(customerOrderEntries[i]);
         }
@@ -63,6 +65,16 @@ public class CustomerOrderManager : MonoBehaviour {
         HideOrder(customerOrderEntries[customerIndex]);
         orderList.Remove(customer);
         RearrangeOrders();
+        
+        if (orderList.Count == 0) ResetOrders();
+    }
+
+    private void ResetOrders() {
+        for (int i = 0; i < customerOrderEntries.Count; i++) {
+            Transform entry = customerOrderEntries[i].transform;
+            entry.DOKill();
+            entry.DOMoveX(hidePosition.position.x, 0);
+        }
     }
 
     //Change customer head depending of the impatience

@@ -10,6 +10,24 @@ public class FoodDataManager : MonoBehaviour {
     void Awake() {
         Instance = this;
     }
+
+    void Start() {
+        foreach (FoodSO food in DataManager.Instance.foodList) {
+            SetItem(food.foodType,100);
+        }    
+    }
+
+    private void SetItem(FoodType foodType, int amount) {
+        for (int i = 0; i < InventoryManager.Instance.foodItems.Count; i++) {
+            FoodItem item = InventoryManager.Instance.foodItems[i];
+            
+            if (item.foodType != foodType) continue;
+            item.amount = amount;
+            UIKitchen.Instance.UpdateFridgeSlot(i,item.amount);
+            Save(item.foodType.ToString(),item);
+            break;
+        }
+    }
     
     public void AddItem(FoodType foodType, int amount) {
         for (int i = 0; i < InventoryManager.Instance.foodItems.Count; i++) {

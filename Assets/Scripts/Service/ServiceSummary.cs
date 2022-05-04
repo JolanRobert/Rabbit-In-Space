@@ -28,9 +28,11 @@ public class ServiceSummary : MonoBehaviour {
     [Header("Buttons")]
     [SerializeField] private Button nextButton;
 
-    private int todayGold, todayXP;
+    public int todayGold, todayXP;
     private int customersServedAmount, customersLeftAmount, customersKickedAmount;
     private int customerServedXP, customersLeftXP, customersKickedXP;
+
+    private bool isAnimXPEnded, isAnimMoneyEnded, isAnimCustomerEnded;
 
     public void InitSummary() {
         GameManager gm = GameManager.Instance;
@@ -65,16 +67,20 @@ public class ServiceSummary : MonoBehaviour {
         StartCoroutine(AnimCustomer(servedText, "Served : ", "", 0, customersServedAmount, 0.5f));
         StartCoroutine(AnimCustomer(leftText, "Left : ", "", 0, customersLeftAmount, 0.5f));
         yield return StartCoroutine(AnimCustomer(kickedText, "Kicked : ", "", 0, customersKickedAmount, 0.5f));
-
+        isAnimCustomerEnded = true;
+        EndAnim();
+        
         servedValue.text = $"(+{customerServedXP})";
         leftValue.text = $"(-{customersLeftXP})";
         kickedValue.text = $"(-{customersKickedXP})";
+    }
 
-        nextButton.interactable = true;
+    private void EndAnim() {
+        if (isAnimXPEnded && isAnimMoneyEnded && isAnimCustomerEnded) nextButton.interactable = true;
     }
 
     private IEnumerator AnimXP(float animTime) {
-        if (todayXP <= 0) yield break;
+        if (todayXP < 0) todayXP = 0;
         
         GameManager gm = GameManager.Instance;
         WaitForSeconds stepTime = new WaitForSeconds(animTime / todayXP);
@@ -85,26 +91,41 @@ public class ServiceSummary : MonoBehaviour {
             tmp_xp++;
             gm.GainXP(1);
 
-            xpBar.DOFillAmount(1 - gm.GetXPLeft() / (float) gm.currentStar.xpBeforeNextStar, animTime/todayXP).OnComplete(() => {
-                UpdateStars(gm.currentStar.starValue,gm.currentStar.nextStar.starValue);
-            });
+            if (gm.currentStar.nextStar == null) xpBar.fillAmount = 1;
+            else {
+                xpBar.DOFillAmount(1 - gm.GetXPLeft() / (float) gm.currentStar.xpBeforeNextStar, animTime/todayXP).OnComplete(() => {
+                    UpdateStars(gm.currentStar.starValue,gm.currentStar.nextStar.starValue);
+                });
+            }
+            
             xpLeftText.text = $"{gm.GetXPLeft()} XP Left";
             todayXPText.text = $"+{tmp_xp}";
         }
+
+        isAnimXPEnded = true;
+        EndAnim();
     }
 
     private IEnumerator AnimMoney(float animTime) {
         GameManager gm = GameManager.Instance;
-        WaitForSeconds stepTime = new WaitForSeconds(animTime / todayGold);
+        WaitForSeconds stepTime = new WaitForSeconds(animTime/todayGold*10);
 
         int tmp_gold = 0;
-        while (tmp_gold != todayGold) {
+        while (tmp_gold < todayGold) {
             yield return stepTime;
-            tmp_gold++;
-            gm.GainGold(1);
+            tmp_gold += 10;
+
+            if (tmp_gold > todayGold) {
+                gm.GainGold(todayGold%10);
+                tmp_gold = todayGold;
+            }
+            else gm.GainGold(10);
 
             todayGoldText.text = $"+{tmp_gold}";
         }
+
+        isAnimMoneyEnded = true;
+        EndAnim();
     }
 
     private IEnumerator AnimCustomer(TMP_Text textToAnim, string prefixText, string suffixText, int fromAmount, int toAmount, float animTime) {

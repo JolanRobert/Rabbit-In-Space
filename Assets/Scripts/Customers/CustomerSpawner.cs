@@ -36,17 +36,19 @@ public class CustomerSpawner : MonoBehaviour {
             value += cc.probability;
             if (randomValue > value) continue;
             
-            //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
-            
             //Handle Copieur xpReward
             if (cc.customerSo.customerType == CustomerType.COPIEUR) {
                 if (customerQueue.Count == 0) return;
                 cc.customerSo.xpReward = customerQueue[customerQueue.Count - 1].xpReward;
             }
             
+            //Spawn Customer
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
+            
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
+            
+            customer.MakeOrder();
             break;
         }
     }
@@ -68,9 +70,6 @@ public class CustomerSpawner : MonoBehaviour {
         
         for (int i = 0; i < customerQueue.Count; i++) {
             customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1.5f + customerOffset;
-            
-            //Les personnes devant le comptoir passent commande
-            /*if (i < nbCounterCustomer)*/ customerQueue[i].MakeOrder();
             
             //Mise à jour du facteur d'impatience
             int nbEnervants = 0;

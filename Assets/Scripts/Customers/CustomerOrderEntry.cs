@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class CustomerOrderEntry : MonoBehaviour {
 
     public Customer customer;
-    
+
+    [SerializeField] private Image backgroundSR;
     [SerializeField] private Image customerSR;
     [SerializeField] private Image orderSR;
 
