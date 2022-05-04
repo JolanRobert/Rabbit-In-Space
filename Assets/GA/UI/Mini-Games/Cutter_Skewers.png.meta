@@ -1,31 +1,43 @@
 fileFormatVersion: 2
-guid: 88e56cf6590f5fd4ba467e9010299e7e
+guid: cf4a066595cc1c24195259836697acda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6548182048292775773
-    second: BG_Icon_S
+      213: -4087377375887406748
+    second: Bowl_Yellow
   - first:
-      213: 5766623590449973235
-    second: BG_Icon_B
+      213: 7145612119777547339
+    second: Bowl_Green
   - first:
-      213: 6584308978887455569
-    second: BG_TimeToGrow
+      213: 1817978925868486923
+    second: Bowl_Pink
   - first:
-      213: 1193519916686163499
-    second: BG_TimeAlive
+      213: 8861366583953244256
+    second: Skewer_Sprite
   - first:
-      213: -7370413482165155560
-    second: SeedMenu_Separator_1
+      213: 4402772291393339809
+    second: Pink_Mochi
   - first:
-      213: -4115842827929513460
-    second: SeedMenu_Separator_2
+      213: -4816225764154658234
+    second: Yellow_Mochi
   - first:
-      213: -6348368060127701207
-    second: BG_SeedMenu_1
+      213: 2208695106660384752
+    second: Green_Mochi
   - first:
-      213: 6399447215994684731
-    second: BG_SeeMenu_2
+      213: -1469149237360091398
+    second: Star_Feedback
+  - first:
+      213: 9106936324512012351
+    second: Water_Feedback
+  - first:
+      213: -4258148722743292424
+    second: Mochi_Full
+  - first:
+      213: -6496975063700910088
+    second: Half_Mochi_2
+  - first:
+      213: 4231484256638253442
+    second: Half_Mochi_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_Icon_S
+      name: Bowl_Yellow
       rect:
         serializedVersion: 2
-        x: 1084
-        y: 3401
-        width: 314
-        height: 313
+        x: 251
+        y: 501
+        width: 330
+        height: 272
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a85beeee1f2025a0800000000000000
-      internalID: -6548182048292775773
+      spriteID: 4694347bee7b647c0800000000000000
+      internalID: -4087377375887406748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_Icon_B
+      name: Bowl_Green
       rect:
         serializedVersion: 2
-        x: 1484
-        y: 3401
-        width: 623
-        height: 621
+        x: 596
+        y: 503
+        width: 330
+        height: 265
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f788264a99270050800000000000000
-      internalID: 5766623590449973235
+      spriteID: b4411162d505a2360800000000000000
+      internalID: 7145612119777547339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_TimeToGrow
+      name: Bowl_Pink
       rect:
         serializedVersion: 2
-        x: 2197
-        y: 3376
-        width: 422
-        height: 363
+        x: 935
+        y: 508
+        width: 330
+        height: 272
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,104 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1537002912a206b50800000000000000
-      internalID: 6584308978887455569
+      spriteID: b0199857332ca3910800000000000000
+      internalID: 1817978925868486923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_TimeAlive
-      rect:
-        serializedVersion: 2
-        x: 2684
-        y: 3352
-        width: 414
-        height: 362
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2ebe6a6a0c309010800000000000000
-      internalID: 1193519916686163499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeedMenu_Separator_1
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 3148
-        width: 1604
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 819cbc3fcf707b990800000000000000
-      internalID: -7370413482165155560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeedMenu_Separator_2
-      rect:
-        serializedVersion: 2
-        x: 2205
-        y: 3148
-        width: 1604
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c021ce131c691e6c0800000000000000
-      internalID: -4115842827929513460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_SeedMenu_1
+      name: Skewer_Sprite
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1928
-        height: 3026
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 153, y: 155, z: 167, w: 155}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92717a862e016e7a0800000000000000
-      internalID: -6348368060127701207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_SeeMenu_2
-      rect:
-        serializedVersion: 2
-        x: 2042
-        y: 0
-        width: 1928
-        height: 3026
+        y: 374
+        width: 777
+        height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,8 +204,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b35c93456576fc850800000000000000
-      internalID: 6399447215994684731
+      spriteID: 060cc0565f5e9fa70800000000000000
+      internalID: 8861366583953244256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pink_Mochi
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 344
+        width: 141
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1ce67721ac91d30800000000000000
+      internalID: 4402772291393339809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow_Mochi
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 344
+        width: 142
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6423a795f24592db0800000000000000
+      internalID: -4816225764154658234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green_Mochi
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 344
+        width: 141
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffb2a15f7cd6ae10800000000000000
+      internalID: 2208695106660384752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Feedback
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 14
+        width: 306
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe9d117d888c9be0800000000000000
+      internalID: -1469149237360091398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Feedback
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 170
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38d3a62656526e70800000000000000
+      internalID: 9106936324512012351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mochi_Full
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 103
+        width: 230
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd4a1c1c4408e4c0800000000000000
+      internalID: -4258148722743292424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Half_Mochi_2
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 102
+        width: 115
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff498d1a9b16d5a0800000000000000
+      internalID: -6496975063700910088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Half_Mochi_1
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 102
+        width: 117
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289b495138049ba30800000000000000
+      internalID: 4231484256638253442
       vertices: []
       indices: 
       edges: []
@@ -285,7 +381,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 77c43866a6e065d428cbef91469faf45
+    spriteID: 7b433e6931ef8eb4cbbbb5ebc33f11c1
     internalID: 0
     vertices: []
     indices: 

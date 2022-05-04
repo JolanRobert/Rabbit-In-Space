@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 88e56cf6590f5fd4ba467e9010299e7e
+guid: e905aa84e6c1d7248a2ef31252a393ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6548182048292775773
-    second: BG_Icon_S
+      213: -4308360775248920800
+    second: Dirt
   - first:
-      213: 5766623590449973235
-    second: BG_Icon_B
+      213: -215904867424362636
+    second: Button_Seed
   - first:
-      213: 6584308978887455569
-    second: BG_TimeToGrow
+      213: -5703154683439408457
+    second: Timer_Plant
   - first:
-      213: 1193519916686163499
-    second: BG_TimeAlive
-  - first:
-      213: -7370413482165155560
-    second: SeedMenu_Separator_1
-  - first:
-      213: -4115842827929513460
-    second: SeedMenu_Separator_2
-  - first:
-      213: -6348368060127701207
-    second: BG_SeedMenu_1
-  - first:
-      213: 6399447215994684731
-    second: BG_SeeMenu_2
+      213: -7248776462044683072
+    second: Greenhouse_Zoom
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,169 +103,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_Icon_S
+      name: Dirt
       rect:
         serializedVersion: 2
-        x: 1084
-        y: 3401
-        width: 314
-        height: 313
+        x: 896
+        y: 515
+        width: 288
+        height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a85beeee1f2025a0800000000000000
-      internalID: -6548182048292775773
+      spriteID: 02fbf0b93b0a534c0800000000000000
+      internalID: -4308360775248920800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG_Icon_B
-      rect:
-        serializedVersion: 2
-        x: 1484
-        y: 3401
-        width: 623
-        height: 621
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f788264a99270050800000000000000
-      internalID: 5766623590449973235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_TimeToGrow
-      rect:
-        serializedVersion: 2
-        x: 2197
-        y: 3376
-        width: 422
-        height: 363
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1537002912a206b50800000000000000
-      internalID: 6584308978887455569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_TimeAlive
-      rect:
-        serializedVersion: 2
-        x: 2684
-        y: 3352
-        width: 414
-        height: 362
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2ebe6a6a0c309010800000000000000
-      internalID: 1193519916686163499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeedMenu_Separator_1
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 3148
-        width: 1604
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 819cbc3fcf707b990800000000000000
-      internalID: -7370413482165155560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeedMenu_Separator_2
-      rect:
-        serializedVersion: 2
-        x: 2205
-        y: 3148
-        width: 1604
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c021ce131c691e6c0800000000000000
-      internalID: -4115842827929513460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_SeedMenu_1
+      name: Button_Seed
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1928
-        height: 3026
+        y: 25
+        width: 98
+        height: 98
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 153, y: 155, z: 167, w: 155}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92717a862e016e7a0800000000000000
-      internalID: -6348368060127701207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BG_SeeMenu_2
-      rect:
-        serializedVersion: 2
-        x: 2042
-        y: 0
-        width: 1928
-        height: 3026
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b35c93456576fc850800000000000000
-      internalID: 6399447215994684731
+      spriteID: 47f94efbaa3f00df0800000000000000
+      internalID: -215904867424362636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Timer_Plant
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 20
+        width: 189
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba1d7238035ad0b0800000000000000
+      internalID: -5703154683439408457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greenhouse_Zoom
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 0
+        width: 1212
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c42d93a63c276b90800000000000000
+      internalID: -7248776462044683072
       vertices: []
       indices: 
       edges: []
@@ -285,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 77c43866a6e065d428cbef91469faf45
+    spriteID: 6628f7c1f3a2a2a49bcb4a2e89b11297
     internalID: 0
     vertices: []
     indices: 
