@@ -50,7 +50,7 @@ public class DraggableDango : MonoBehaviour {
         //In Skewer block left
         if (inTrigger != null) {
             float minX = (inTrigger.collider.bounds.center - inTrigger.collider.bounds.extents + collider.bounds.extents).x;
-            rb.position = new Vector2(Mathf.Max(minX, rb.position.x), inTrigger.transform.position.y);
+            rb.position = new Vector2(Mathf.Max(minX, rb.position.x), inTrigger.transform.position.y-0.225f);
         }
     }
 

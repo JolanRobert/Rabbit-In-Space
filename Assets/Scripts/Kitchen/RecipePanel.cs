@@ -12,66 +12,62 @@ public class RecipePanel : MonoBehaviour
     [SerializeField] private Transform cancelGroup;
 
     [Header("Panel Infos")]
-    private RecipeSO recipe;
+    private RecipeSO myRecipe;
     [SerializeField] private Image recipeImage, panelImage;
     [SerializeField] private TMP_Text nameText, priceText, makingAmountText;
 
-    [Header("Attributes")] 
-    private bool active = true;
-    public RecipeType type;
-    public int price;
+    [Header("Attributes")]
+    private bool isRunning;
     private int originalOrderInHierarchy;
+    [SerializeField] private Color runningColor;
+    [SerializeField] private Color inactiveColor;
 
     public void SetupPanel(RecipeSO newRecipe) {
-        recipe = newRecipe;
-        type = recipe.recipeType;
-        recipeImage.sprite = recipe.recipeSprite;
-        name = recipe.name;
-        nameText.text = name;
-        price = recipe.price;
-        priceText.text = recipe.price + "$";
+        myRecipe = newRecipe;
         
-        foreach (RecipeElement element in recipe.recipeElements) {
+        recipeImage.sprite = myRecipe.recipeSprite;
+        nameText.text = newRecipe.name;
+        priceText.text = myRecipe.goldReward + "$";
+        
+        foreach (RecipeElement element in myRecipe.recipeElements) {
             IngredientSlot slot = Instantiate(ingredientSlotPrefab, Vector3.zero, Quaternion.identity, ingredientsGroup).GetComponent<IngredientSlot>();
             slot.Init(element,1);
         }
         
-        foreach (StationSO station in recipe.stations) {
-            StationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<StationSlot>();
+        foreach (StationSO station in myRecipe.stations) {
+            BookStationSlot slot = Instantiate(stationSlotPrefab, Vector3.zero, Quaternion.identity, stationsGroup).GetComponent<BookStationSlot>();
             slot.Init(station);
         }
 
         originalOrderInHierarchy = transform.GetSiblingIndex();
     }
 
-    public void SetAsRunning(int amount)
-    {
-        active = false;
-        panelImage.color = Color.grey;
+    public void SetAsRunning(int amount) {
+        isRunning = true;
+        panelImage.color = runningColor;
         transform.SetSiblingIndex(0);
         ingredientsGroup.gameObject.SetActive(false);
         cancelGroup.gameObject.SetActive(true);
         makingAmountText.text = $"Making (x{amount})";
     }
 
-    public void SetAsInactive()
-    {
-        active = true;
-        panelImage.color = new Color(186/255f, 255/255f, 197/255f);
+    public void SetAsNotRunning() {
+        isRunning = false;
+        panelImage.color = inactiveColor;
         transform.SetSiblingIndex(originalOrderInHierarchy);
         ingredientsGroup.gameObject.SetActive(true);
         cancelGroup.gameObject.SetActive(false);
     }
 
-    public void StartRecipe()
-    {
-        if (!active) return;
-        RecipeManager.Instance.TryStartRecipe(recipe, this);
+    public void StartRecipe() {
+        if (!KitchenManager.Instance.inService) return;
+        if (isRunning) return;
+        RecipeManager.Instance.TryStartRecipe(myRecipe, this);
     }
 
     public void CancelRecipe()
     {
         RecipeManager.Instance.EndRecipe(false);
-        SetAsInactive();
+        SetAsNotRunning();
     }
 }

@@ -21,4 +21,4 @@ MonoBehaviour:
     amount: 1
   stations:
   - {fileID: 11400000, guid: c21a7eb391cd99a43b4b23b157c6127c, type: 2}
-  price: 100
+  goldReward: 100

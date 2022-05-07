@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4805850012350151458}
   - component: {fileID: 4727391616888695891}
   - component: {fileID: 3596595411667084356}
-  - component: {fileID: 7901498360389798728}
+  - component: {fileID: 931911147745439463}
   - component: {fileID: 7008941799263639398}
   m_Layer: 6
   m_Name: Dango
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: -6376880118056362081, guid: e842cc6257609e945afa71a4e4a34436, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &7901498360389798728
+--- !u!58 &931911147745439463
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
 --- !u!114 &7008941799263639398
 MonoBehaviour:
   m_ObjectHideFlags: 0

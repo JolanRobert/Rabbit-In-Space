@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stationType: 3
   minigameScene: Skewer
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c221a7a007e52414b9ae4a11967bdd37, type: 3}

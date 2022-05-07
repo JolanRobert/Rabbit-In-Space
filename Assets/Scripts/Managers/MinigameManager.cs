@@ -16,6 +16,9 @@ public class MinigameManager : MonoBehaviour {
         //Hide customers
         KitchenManager.Instance.transform.position += Vector3.left*100;
         resultPending = true;
+        
+        //Hide orders
+        CustomerOrderManager.Instance.ordersGO.SetActive(false);
     }
     
     public void EndMinigame(bool success) {
@@ -24,7 +27,11 @@ public class MinigameManager : MonoBehaviour {
         
         SwitchScene.Instance.ChangeScene("Kitchen");
         
+        //Show customers and orders
         KitchenManager.Instance.transform.position += Vector3.right * 100;
+        CustomerOrderManager.Instance.ordersGO.SetActive(true);
+        
         if (success) RecipeManager.Instance.ForwardStep();
+        else StartCoroutine(RecipeManager.Instance.WaitForGlow());
     }
 }

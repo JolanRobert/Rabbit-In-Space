@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e85c1e83f8438247ae543a1a59a530a, type: 3}
   m_Name: Starberry Daifuku
   m_EditorClassIdentifier: 
-  name: Starberry Daifuku
   recipeType: 1
   recipeSprite: {fileID: -6592516867159476330, guid: 839e25d48c201d546bda31b0f1b0d3f1, type: 3}
   recipeElements:
@@ -22,4 +21,4 @@ MonoBehaviour:
     amount: 1
   stations:
   - {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
-  price: 125
+  goldReward: 125

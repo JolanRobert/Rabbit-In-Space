@@ -4,8 +4,6 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CustomerSpawner : MonoBehaviour {
-
-    [SerializeField] private int currentStarValue;
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
@@ -34,12 +32,9 @@ public class CustomerSpawner : MonoBehaviour {
         int randomValue = Random.Range(0, 100)+1;
         int value = 0;
 
-        foreach (StarRepartitionSO.CustomerChance cc in DataManager.Instance.starRepartitionList[currentStarValue - 1].customerChances) {
+        foreach (StarSO.CustomerChance cc in GameManager.Instance.currentStar.customerChances) {
             value += cc.probability;
             if (randomValue > value) continue;
-            
-            //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
             
             //Handle Copieur xpReward
             if (cc.customerSo.customerType == CustomerType.COPIEUR) {
@@ -47,8 +42,13 @@ public class CustomerSpawner : MonoBehaviour {
                 cc.customerSo.xpReward = customerQueue[customerQueue.Count - 1].xpReward;
             }
             
+            //Spawn Customer
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
+            
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
+            
+            customer.MakeOrder();
             break;
         }
     }
@@ -71,9 +71,6 @@ public class CustomerSpawner : MonoBehaviour {
         for (int i = 0; i < customerQueue.Count; i++) {
             customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1.5f + customerOffset;
             
-            //Les personnes devant le comptoir passent commande
-            /*if (i < nbCounterCustomer)*/ customerQueue[i].MakeOrder();
-            
             //Mise à jour du facteur d'impatience
             int nbEnervants = 0;
             //Client devant
@@ -84,7 +81,7 @@ public class CustomerSpawner : MonoBehaviour {
             if (i != customerQueue.Count-1 && customerQueue[i + 1].myCustomer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
 
-            customerQueue[i].impatienceFactor = 1 + 0.25f * nbEnervants;
+            customerQueue[i].SetImpatienceFactor(1 + 0.25f * nbEnervants);
         }
     }
 
@@ -92,8 +89,8 @@ public class CustomerSpawner : MonoBehaviour {
         int totalProbability = 0;
         List<CustomerSO> clientTypes = new List<CustomerSO>();
         
-        foreach (StarRepartitionSO srSo in DataManager.Instance.starRepartitionList) {
-            foreach (StarRepartitionSO.CustomerChance cc in srSo.customerChances) {
+        foreach (StarSO srSo in DataManager.Instance.starList) {
+            foreach (StarSO.CustomerChance cc in srSo.customerChances) {
                 if (clientTypes.Contains(cc.customerSo)) {
                     throw new Exception("Plusieurs fois le même type de client - "+srSo.starValue+" étoiles !");
                 }

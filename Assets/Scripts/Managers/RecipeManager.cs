@@ -71,7 +71,9 @@ public class RecipeManager : MonoBehaviour {
         //else Debug.Log(currentRecipe.name + " recipe has ended with failure.");
         
         currentRecipe = null;
+        stations = new Queue<StationType>();
         StartCoroutine(ResetBook());
+        StartCoroutine(WaitForGlow());
     }
 
     IEnumerator ResetBook()
@@ -109,11 +111,29 @@ public class RecipeManager : MonoBehaviour {
             EndRecipe(true);
             return;
         }
+        StartCoroutine(WaitForGlow());
+    }
+
+    public IEnumerator WaitForGlow()
+    {
+        while (SceneManager.GetActiveScene().name != "Kitchen")
+        {
+            yield return null;
+        }
         SeeNextStep();
     }
 
-    private void SeeNextStep() {
-        Debug.Log("Next step is : " + stations.Peek());
+    private void SeeNextStep()
+    {
+        if (stations.Count == 0)
+        {
+            Station.OnStepChange.Invoke(default);
+        }
+        else
+        {
+            Station.OnStepChange.Invoke(stations.Peek());
+        }
+        
     }
 
     public void PromptAmountRecipe() {
