@@ -31,7 +31,7 @@ public class ServiceManager : MonoBehaviour {
 
     public void LoadMenu() {
         if (KitchenManager.Instance.inService) {
-            EndService();
+            myTimer.EndTimer();
             return;
         }
         
