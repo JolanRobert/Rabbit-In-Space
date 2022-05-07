@@ -1696,7 +1696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &145636266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1975,7 +1975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &179139566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9375,7 +9375,7 @@ MonoBehaviour:
   - {fileID: 1421517298}
   - {fileID: 1638505348}
   upgrades: []
-  foodShop: {fileID: 179139565}
+  foodShopContent: {fileID: 145636265}
   closeOverlay: {fileID: 6596729}
 --- !u!114 &950217702
 MonoBehaviour:
