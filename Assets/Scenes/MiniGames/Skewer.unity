@@ -142,44 +142,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1290298650}
     m_Modifications:
     - target: {fileID: 956854804, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: maxX
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 956854804, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: minX
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 956854804, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: xDelta
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 956854804, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
       propertyPath: skewerID
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1600020036728494979, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: m_Size.x
-      value: 7.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1600020036728494979, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1600020036728494979, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5145219021807542120, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
       propertyPath: m_Name
       value: Skewer (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5145219021807542120, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5145219021807542120, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7867011641196165719, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
       propertyPath: m_RootOrder
@@ -580,7 +548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290298649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 3.75, z: 0}
+  m_LocalPosition: {x: -5, y: 3.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3930844151458312803}
@@ -1217,8 +1185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -340, y: -170}
-  m_SizeDelta: {x: 640, y: 300}
+  m_AnchoredPosition: {x: -285, y: -170}
+  m_SizeDelta: {x: 530, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2018380453
 MonoBehaviour:
@@ -1457,10 +1425,6 @@ PrefabInstance:
     - target: {fileID: 5145219021807542120, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
       propertyPath: m_Name
       value: Skewer
-      objectReference: {fileID: 0}
-    - target: {fileID: 5145219021807542120, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7867011641196165719, guid: e909b6b7cf1d52f4e82d4836c02ede7c, type: 3}
       propertyPath: m_RootOrder
