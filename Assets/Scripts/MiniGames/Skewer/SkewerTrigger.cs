@@ -36,6 +36,7 @@ public class SkewerTrigger : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.TryGetComponent(out DraggableDango dango)) {
+            if (!myDangos.Contains(dango)) return;
             dango.SetTrigger(null);
 
             DangoModel.Instance.SetPlayerDango(skewerID,myDangos.Count-1,DangoColor.NONE);
