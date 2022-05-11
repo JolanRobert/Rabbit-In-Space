@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   customerType: 0
-  impatienceLimit: 30
+  impatienceLimit: 80
   xpReward: 3
   nbBeforeReveal: 10
   description: "Prend un plat al\xE9atoire sur le menu"
   customerHeadSprites:
-  - {fileID: -3994744024693093290, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
-  - {fileID: 3704152636332655822, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
-  - {fileID: 2313711220228016618, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
-  - {fileID: 657091380636090156, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: -1770118719063661511, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: 8574643074699161086, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: -7837791002170975023, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: 4551762848083550670, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
   customerSprites:
-  - {fileID: 6006258108684561761, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
-  - {fileID: 5486836200598436668, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
-  - {fileID: 6596755354059348408, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
-  - {fileID: -292768363816699000, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: 1153186639303412204, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: -1095135105990487951, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: 8969130945964454529, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: -1612889882754415141, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}

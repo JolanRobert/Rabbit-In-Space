@@ -5,25 +5,35 @@ public class UIOptions : MonoBehaviour {
     [SerializeField] private GameObject optionsMain;
     [SerializeField] private GameObject optionsGraphics;
     [SerializeField] private GameObject optionsLeave;
-
+    
     public void MainToGraphics() {
-        UIManager.Instance.SetVisible(optionsMain,false);
-        UIManager.Instance.SetVisible(optionsGraphics,true);
+        optionsGraphics.transform.localScale = Vector3.one;
+        optionsMain.SetActive(false);
+        optionsGraphics.SetActive(true);
     }
 
     public void GraphicsToMain() {
-        UIManager.Instance.SetVisible(optionsGraphics,false);
-        UIManager.Instance.SetVisible(optionsMain,true);
+        optionsMain.transform.localScale = Vector3.one;
+        optionsMain.SetActive(true);
+        optionsGraphics.SetActive(false);
     }
 
     public void MainToLeave() {
-        UIManager.Instance.SetVisible(optionsMain,false);
-        UIManager.Instance.SetVisible(optionsLeave,true);
+        optionsLeave.transform.localScale = Vector3.one;
+        optionsLeave.SetActive(true);
     }
 
     public void LeaveToMain() {
-        UIManager.Instance.SetVisible(optionsLeave,false);
-        UIManager.Instance.SetVisible(optionsMain,true);
+        optionsLeave.SetActive(false);
+    }
+
+    public void ExitMain() {
+        if (optionsLeave.activeSelf) UIManager.Instance.ClosePanel(optionsLeave);
+        UIManager.Instance.ClosePanel(optionsMain);
+    }
+
+    public void ExitGraphics() {
+        UIManager.Instance.ClosePanel(optionsGraphics);
     }
 
     public void Quit() {

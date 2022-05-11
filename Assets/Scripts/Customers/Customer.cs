@@ -12,11 +12,12 @@ public class Customer : MonoBehaviour {
     public RecipeSO myRecipe;
 
     private float impatienceLimit;
-    public float impatienceFactor = 1;
+    private float impatienceFactor = 1;
 
     public int xpReward;
 
     private bool hasOrdered;
+    private bool isLeaving;
 
     private Sprite[] customerSprites;
     private Sprite[] customerHeadSprites;
@@ -45,7 +46,7 @@ public class Customer : MonoBehaviour {
             CustomerType.NORMAL => myMenu.GetRandomRecipe(),
             CustomerType.HUPPE => myMenu.GetExpensiveRecipe(),
             CustomerType.RADIN => myMenu.GetCheapRecipe(),
-            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-1].myRecipe,
+            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-2].myRecipe,
             CustomerType.ACCRO => myMenu.GetTrueRandomRecipe(),
             CustomerType.LENT => myMenu.GetRandomRecipe(),
             CustomerType.IMPATIENT => myMenu.GetRandomRecipe(),
@@ -54,28 +55,36 @@ public class Customer : MonoBehaviour {
         };
 
         CustomerOrderManager.Instance.AddCustomerOrder(this);
-        StartCoroutine(Leave());
+    }
+
+    public void Leave() {
+        if (isLeaving) return;
+        isLeaving = true;
+        StartCoroutine(LeaveCR());
     }
     
-    private IEnumerator Leave() {
+    private IEnumerator LeaveCR() {
         int m_impatienceLimit = (int)impatienceLimit;
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
             impatienceLimit -= 1 * impatienceFactor;
             if ((int) impatienceLimit == m_impatienceLimit*2/3) {
+                if (customerSprites.Length <= 1) yield break;
                 customerSR.sprite = customerSprites[1];
                 CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[1]);
             }
             else if ((int) impatienceLimit == m_impatienceLimit*1/3) {
+                if (customerSprites.Length <= 1) yield break;
                 customerSR.sprite = customerSprites[2];
                 CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[2]);
             }
         }
         
-        CompleteOrder(false);
+        CompleteOrder(CustomerState.LEFT);
     }
 
     public void TryCompleteOrder() {
+        if (!isLeaving) return;
         if (!FoodDataManager.Instance.HasRecipeItem(myRecipe.recipeType)) return;
         
         for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
@@ -87,14 +96,20 @@ public class Customer : MonoBehaviour {
             break;
         }
         
-        CompleteOrder(true);
+        CompleteOrder(CustomerState.SERVED);
     }
 
-    private void CompleteOrder(bool success) {
+    private void CompleteOrder(CustomerState state) {
+        ServiceManager.Instance.serviceSummary.NewServiceInfo(this,state);
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
     }
 
     public void CancelOrder() {
         CustomerOrderManager.Instance.RemoveCustomerOrder(this);
+    }
+
+    public void SetImpatienceFactor(float newFactor) {
+        impatienceFactor = newFactor;
+        if (isLeaving) CustomerOrderManager.Instance.UpdateCustomerOrder(this,impatienceLimit,impatienceFactor);
     }
 }

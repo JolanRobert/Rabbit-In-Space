@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e85c1e83f8438247ae543a1a59a530a, type: 3}
   m_Name: Mochi Waffle
   m_EditorClassIdentifier: 
-  name: Mochi Waffle
   recipeType: 3
   recipeSprite: {fileID: -399625179835262794, guid: 839e25d48c201d546bda31b0f1b0d3f1, type: 3}
   recipeElements:
@@ -24,4 +23,4 @@ MonoBehaviour:
     amount: 1
   stations:
   - {fileID: 11400000, guid: 46506b6ed98910747b4f53028b8be6bf, type: 2}
-  price: 75
+  goldReward: 75

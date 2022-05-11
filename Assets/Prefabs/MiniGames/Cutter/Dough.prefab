@@ -126,5 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033a72c4eb4d79648965d7491e89dd16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  halfDoughPrefab: {fileID: 7482428468210920467, guid: d0a9e7589f26c2d42b9d2dd8191d3baf, type: 3}
+  firstHalfDoughPrefab: {fileID: 7482428468210920467, guid: d0a9e7589f26c2d42b9d2dd8191d3baf, type: 3}
+  secondHalfDoughPrefab: {fileID: 7482428468210920467, guid: 2f581f1938fd27e46829746f471b6ad5, type: 3}
   popStrength: 25

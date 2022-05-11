@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Radin
   m_EditorClassIdentifier: 
   customerType: 2
-  impatienceLimit: 30
+  impatienceLimit: 80
   xpReward: 2
   nbBeforeReveal: 10
   description: Prend le plat le moins cher du menu

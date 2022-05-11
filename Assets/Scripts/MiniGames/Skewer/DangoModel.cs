@@ -77,8 +77,6 @@ public enum DangoColor {
     NONE,
     YELLOW,
     PINK,
-    GREEN,
-    ORANGE,
-    PURPLE
+    GREEN
 }
 }

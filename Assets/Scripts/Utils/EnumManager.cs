@@ -24,3 +24,7 @@ public enum UpgradeType {
 public enum CustomerType {
     NORMAL, HUPPE, RADIN, COPIEUR, ACCRO, LENT, IMPATIENT, ENERVANT
 }
+
+public enum CustomerState {
+    SERVED, LEFT, KICKED
+}
