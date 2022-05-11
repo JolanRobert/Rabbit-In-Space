@@ -76,7 +76,10 @@ public class ServiceSummary : MonoBehaviour {
     }
 
     private void EndAnim() {
-        if (isAnimXPEnded && isAnimMoneyEnded && isAnimCustomerEnded) nextButton.interactable = true;
+        if (isAnimXPEnded && isAnimMoneyEnded && isAnimCustomerEnded) {
+            ResetSummary();
+            nextButton.interactable = true;
+        }
     }
 
     private IEnumerator AnimXP(float animTime) {
@@ -191,5 +194,9 @@ public class ServiceSummary : MonoBehaviour {
         customerServedXP = 0;
         customersLeftXP = 0;
         customersKickedXP = 0;
+
+        isAnimXPEnded = false;
+        isAnimMoneyEnded = false;
+        isAnimCustomerEnded = false;
     }
 }

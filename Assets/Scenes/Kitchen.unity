@@ -2999,7 +2999,6 @@ MonoBehaviour:
   - {fileID: 2038010801}
   - {fileID: 1320844696}
   - {fileID: 280989230}
-  orderList: []
 --- !u!1 &318935092
 GameObject:
   m_ObjectHideFlags: 0
@@ -10061,7 +10060,7 @@ MonoBehaviour:
   serviceValidPanel: {fileID: 1749662689}
   serviceInvalidPanel: {fileID: 688818426}
   serviceWarningText: {fileID: 1787229357}
-  serviceTime: 120
+  serviceTime: 10
   myTimer: {fileID: 0}
   serviceSummary: {fileID: 1129318688}
 --- !u!1 &1007877981
