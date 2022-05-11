@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4805850012350151458}
   - component: {fileID: 4727391616888695891}
-  - component: {fileID: 3596595411667084356}
+  - component: {fileID: 6333553786881594533}
   - component: {fileID: 931911147745439463}
   - component: {fileID: 7008941799263639398}
   m_Layer: 6
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6712096105973495494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3596595411667084356
+--- !u!50 &6333553786881594533
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -134,9 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef18fc67f1806344b202db7907cdd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3596595411667084356}
   killY: -6
   fallSpeed: 8
-  inTrigger: {fileID: 0}
   easeType: 5
   dangoColor: 0
