@@ -40,6 +40,7 @@ public class ServiceTimer : MonoBehaviour {
     }
 
     public void EndTimer() {
+        StopAllCoroutines();
         StartCoroutine(TimerEndCoroutine());
     }
 
