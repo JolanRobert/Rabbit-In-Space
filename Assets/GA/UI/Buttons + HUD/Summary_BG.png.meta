@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 31d8ea1de70ab1f47801c8ac0533b26b
+guid: c17c675a1b8c21842abfff5aff6ce592
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -9011780523053854224
-    second: Empty_Button
-  - first:
-      213: 8692185246313700833
-    second: Empty_Bar
-  - first:
-      213: -4630487151889622484
-    second: Play_Button
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -98,74 +89,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Empty_Button
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 245
-        width: 68
-        height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f157995c59bfe280800000000000000
-      internalID: -9011780523053854224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Empty_Bar
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 180
-        width: 454
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 24, y: 25, z: 26, w: 23}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ed5b68ad68d0a870800000000000000
-      internalID: 8692185246313700833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Play_Button
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 0
-        width: 270
-        height: 161
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2adb9ef7743dbfb0800000000000000
-      internalID: -4630487151889622484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0871d1db95aa27644895237680b699f9
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
