@@ -7145,10 +7145,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ace6fc7a8bcb114798f8f56eb1a210a, type: 2}
   - {fileID: 11400000, guid: 995bfe4002b0a184d97fecbd0b9c18fd, type: 2}
   recipeList:
-  - {fileID: 11400000, guid: 61afbe123767909459720add2a35e40c, type: 2}
+  - {fileID: 11400000, guid: 6df684e0706610e46bddfa2393ee05f3, type: 2}
   - {fileID: 11400000, guid: 88228eaee9d4a634fb8228224eb05707, type: 2}
-  - {fileID: 11400000, guid: ee580925e83e72d458a142de7d0f8ca7, type: 2}
-  - {fileID: 11400000, guid: 8087618563aa7c14ab524468be30628e, type: 2}
+  - {fileID: 11400000, guid: 55fe8317ee1d62042b34c60baf811af0, type: 2}
   - {fileID: 11400000, guid: 95088f6237a83014182c165e045831fe, type: 2}
   inService: 0
 --- !u!1 &722894933
