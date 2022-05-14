@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TabGroup : MonoBehaviour {
 
@@ -35,8 +36,8 @@ public class TabGroup : MonoBehaviour {
 
         int index = element.transform.GetSiblingIndex();
         for (int i = 0; i < objectsToSwap.Count; i++) {
-            if (i == index) objectsToSwap[i].SetActive(true);
-            else objectsToSwap[i].SetActive(false);
+            objectsToSwap[i].SetActive(i == index);
+            objectsToSwap[i].GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
         }
     }
 

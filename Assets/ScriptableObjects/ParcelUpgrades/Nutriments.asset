@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Nutriments
   m_EditorClassIdentifier: 
   upgradeType: 1
-  name: Nutriments
   description: "Diminue de moiti\xE9 le temps de pousse"
-  unlockCost: 200
+  unlockCost: 100
+  isActivable: 0

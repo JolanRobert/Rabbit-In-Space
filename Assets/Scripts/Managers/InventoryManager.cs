@@ -5,7 +5,7 @@ public class InventoryManager : MonoBehaviour {
     
     public static InventoryManager Instance;
 
-    public bool isFridgeInit, isWorkplanInit;
+    private bool isFridgeInit, isWorkplanInit;
 
     public List<FoodDataManager.FoodItem> foodItems = new List<FoodDataManager.FoodItem>();
     public List<FoodDataManager.RecipeItem> recipeItems = new List<FoodDataManager.RecipeItem>();
@@ -13,6 +13,15 @@ public class InventoryManager : MonoBehaviour {
     void Awake() {
         if (Instance != null) Destroy(gameObject);
         else Instance = this;
+    }
+
+    void Start() {
+        InitFridge();
+        InitWorkplan();
+        
+        foreach (FoodSO food in DataManager.Instance.foodList) {
+            FoodDataManager.Instance.SetItem(food.foodType,100);
+        }
     }
 
     private void InitFridge() {

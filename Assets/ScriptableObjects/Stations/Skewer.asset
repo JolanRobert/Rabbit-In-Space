@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82946ecdd25d0a408207b426c52925c, type: 3}
   m_Name: Skewer
   m_EditorClassIdentifier: 
-  name: Skewer
   stationType: 3
-  minigameScene: {fileID: 102900000, guid: 9500ad84e95a45a4c9a53cff2b569594, type: 3}
-  icon: {fileID: 0}
+  minigameScene: Skewer
+  icon: {fileID: 21300000, guid: c221a7a007e52414b9ae4a11967bdd37, type: 3}

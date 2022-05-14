@@ -14,7 +14,7 @@ public enum FoodType {
 }
 
 public enum RecipeType {
-    NONE, STARBERRY_DAIFUKU, HANAMI_DANGOS, MOCHI_WAFFLE, STARBERRY_BUBBLE_TEA, KINAKO_MOCHI
+    NONE, DANGOS, MOCHI_GLACE, SESAME_MOCHI, SAKURA_MOCHI, STARBERRY_DAIFUKU, HANAMI_DANGOS, MOCHI_WAFFLE, STARBERRY_BUBBLE_TEA, KINAKO_MOCHI
 }
 
 public enum UpgradeType {
@@ -23,4 +23,8 @@ public enum UpgradeType {
 
 public enum CustomerType {
     NORMAL, HUPPE, RADIN, COPIEUR, ACCRO, LENT, IMPATIENT, ENERVANT
+}
+
+public enum CustomerState {
+    SERVED, LEFT, KICKED
 }

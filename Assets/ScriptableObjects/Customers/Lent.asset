@@ -15,6 +15,9 @@ MonoBehaviour:
   customerType: 5
   impatienceLimit: 160
   xpReward: 4
-  nbBeforeReveal: 10
+  nbBeforeReveal: 1
   description: "Prend un plat al\xE9atoire sur le menu, s'en va 2 fois moins vite"
-  customerSprite: {fileID: 5905982034480578280, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  customerHeadSprites:
+  - {fileID: 5905982034480578280, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  customerSprites:
+  - {fileID: 5905982034480578280, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

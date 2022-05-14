@@ -15,6 +15,15 @@ MonoBehaviour:
   customerType: 0
   impatienceLimit: 80
   xpReward: 3
-  nbBeforeReveal: 10
+  nbBeforeReveal: 1
   description: "Prend un plat al\xE9atoire sur le menu"
-  customerSprite: {fileID: -5484296841916871878, guid: 3e4519d26c7490245a7c3905f15e80fd, type: 3}
+  customerHeadSprites:
+  - {fileID: -1770118719063661511, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: 8574643074699161086, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: -7837791002170975023, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: 4551762848083550670, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  customerSprites:
+  - {fileID: 1153186639303412204, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: -1095135105990487951, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: 8969130945964454529, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
+  - {fileID: -1612889882754415141, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}

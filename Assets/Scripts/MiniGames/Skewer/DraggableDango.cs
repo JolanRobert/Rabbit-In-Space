@@ -1,27 +1,28 @@
-using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 
 namespace Skewer {
 public class DraggableDango : MonoBehaviour {
-    [SerializeField] private Rigidbody2D rb;
-    private new Collider2D collider;
 
+    private Camera camera;
+    private Rigidbody2D rb;
+    private Collider2D collider;
+
+    [Header("Parameters")]
     [SerializeField] private float killY;
     [SerializeField] private float fallSpeed;
-
-    public SkewerTrigger inTrigger;
     [SerializeField] private Ease easeType;
 
-    private Vector2 screenPosition;
-    private int touchId;
+    private SkewerTrigger inTrigger;
+    private float minPosX = -100f;
 
     private bool isDragged;
-    private bool isFalling;
 
     public DangoColor dangoColor;
 
     void Awake() {
+        camera = Camera.main;
+        rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
     }
 
@@ -31,37 +32,46 @@ public class DraggableDango : MonoBehaviour {
 
     void Update() {
         if (isDragged) {
-            isFalling = false;
-            var touch = Input.touches.FirstOrDefault(t => t.fingerId == touchId);
+            Touch touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Ended) OnMouseUp();
-            else {
-                screenPosition = touch.position;
-                rb.position = Camera.main.ScreenToWorldPoint(screenPosition) + Vector3.forward * 10;
+            else
+            {
+                rb.velocity = ((camera.ScreenToWorldPoint(touch.position) + Vector3.forward * 10) - (Vector3)rb.position)*7.5f;
+                rb.gravityScale = 0;
             }
         }
 
-        if (!isDragged && !isFalling && inTrigger == null) {
-            isFalling = true;
-            rb.DOMoveY(killY, fallSpeed).SetSpeedBased(true).SetEase(easeType)
-                .OnComplete(() => { Destroy(gameObject); });
+        if (!isDragged && inTrigger == null) {
+            rb.gravityScale = 2;
         }
 
         //In Skewer block left
         if (inTrigger != null) {
-            float minX = (inTrigger.collider.bounds.center - inTrigger.collider.bounds.extents + collider.bounds.extents).x;
-            rb.position = new Vector2(Mathf.Max(minX, rb.position.x), inTrigger.transform.position.y);
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.position = new Vector2(Mathf.Max(minPosX, rb.position.x), inTrigger.transform.position.y-0.225f);
+            rb.gravityScale = 0;
         }
     }
 
     private void OnMouseDown() {
         rb.DOKill();
         isDragged = true;
-        touchId = Input.touches.FirstOrDefault(t => t.phase == TouchPhase.Began).fingerId;
     }
 
     private void OnMouseUp() {
         isDragged = false;
+    }
+
+    public void SetTrigger(SkewerTrigger trigger)
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        inTrigger = trigger;
+
+        if (inTrigger == null) minPosX = -100f;
+        else minPosX = inTrigger.minPosX +
+                       (collider.bounds.extents.x * 2 + 0.1f) * inTrigger.myDangos.Count +
+                       collider.bounds.extents.x;
     }
 }
 }

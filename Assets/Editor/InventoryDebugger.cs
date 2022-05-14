@@ -4,8 +4,10 @@ using UnityEditor;
 [CustomEditor(typeof(FoodDataManager))]
 public class InventoryDebugger : Editor {
     
-    private FoodType itemType = FoodType.MOON_RICE;
-    private int amount = 1;
+    private FoodType foodType = FoodType.MOON_RICE;
+    private RecipeType recipeType = RecipeType.HANAMI_DANGOS;
+    private int foodAmount = 1;
+    private int recipeAmout = 1;
     public override void OnInspectorGUI() {
         base.OnInspectorGUI();
         
@@ -13,8 +15,12 @@ public class InventoryDebugger : Editor {
         
         FoodDataManager foodDataManager = (FoodDataManager) target;
         
-        itemType = (FoodType)EditorGUILayout.EnumPopup("Item :", itemType);
-        amount = EditorGUILayout.IntField("Amount :", amount);
-        if (GUILayout.Button("Add Item")) foodDataManager.AddItem(itemType,amount);
+        foodType = (FoodType)EditorGUILayout.EnumPopup("Item :", foodType);
+        foodAmount = EditorGUILayout.IntField("Amount :", foodAmount);
+        if (GUILayout.Button("Add Food")) foodDataManager.AddItem(foodType,foodAmount);
+        
+        recipeType = (RecipeType)EditorGUILayout.EnumPopup("Item :", recipeType);
+        recipeAmout = EditorGUILayout.IntField("Amount :", recipeAmout);
+        if (GUILayout.Button("Add Recipe")) foodDataManager.AddRecipe(recipeType,recipeAmout);
     }
 }

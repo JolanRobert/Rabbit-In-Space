@@ -1,46 +1,38 @@
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
     public static UIManager Instance;
-    private Stack<GameObject> panels = new Stack<GameObject>();
+    private List<GameObject> panels = new List<GameObject>();
     
     void Awake() {
         Instance = this;
     }
 
     public void OpenPanel(GameObject go) {
-        if (panels.Contains(go)) return; //If panel already open return
+        if (go.activeSelf) return; //If panel already open return
         
         PlayerManager.Instance.GetInteract().isInteracting = true;
-        panels.Push(go);
-        panels.Peek().transform.localScale = Vector3.zero;
-        panels.Peek().SetActive(true);
-        panels.Peek().transform.DOScale(1, 0.325f);
+        panels.Add(go);
+        go.transform.localScale = Vector3.zero;
+        go.SetActive(true);
+        go.transform.DOScale(1, 0.325f);
     }
 
-    public void ClosePanel() {
-        ClosePanel(false);
+    public void ClosePanel(GameObject go) {
+        panels.Remove(go);
+        go.transform.DOScale(0, 0.325f).OnComplete(() => {
+            go.SetActive(false);
+        });
+        
+        if (panels.Count == 0) PlayerManager.Instance.GetInteract().isInteracting = false;
     }
 
     public void CloseAllPanel() {
-        ClosePanel(true);
-    }
-
-    private void ClosePanel(bool allPanel) {
-        GameObject toClose = panels.Peek();
-        toClose.transform.DOScale(0, 0.325f).OnComplete(() => {
-            toClose.gameObject.SetActive(false);
-        });
-        
-        panels.Pop();
-        if (panels.Count == 0) PlayerManager.Instance.GetInteract().isInteracting = false;
-        else if (allPanel) CloseAllPanel();
-    }
-
-    public void SetVisible(GameObject go, bool isVisible) {
-        go.SetActive(isVisible);
+        while (panels.Count > 0) ClosePanel(panels[panels.Count-1]);
     }
 }

@@ -4,24 +4,31 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Customer : IInteractable {
+public class Customer : MonoBehaviour {
 
-    [SerializeField] private CustomerOrder customerOrder;
     [SerializeField] private SpriteRenderer customerSR;
 
-    private RecipeSO myOrder;
-    public CustomerType customerType;
-    
+    public CustomerSO myCustomer;
+    public RecipeSO myRecipe;
+
     private float impatienceLimit;
-    public float impatienceFactor = 1;
+    private float impatienceFactor = 1;
 
     public int xpReward;
 
     private bool hasOrdered;
+    private bool isLeaving;
+
+    private Sprite[] customerSprites;
+    private Sprite[] customerHeadSprites;
 
     public void Init(CustomerSO cSo) {
-        customerSR.sprite = cSo.customerSprite;
-        customerType = cSo.customerType;
+        myCustomer = cSo;
+
+        customerSprites = cSo.customerSprites;
+        customerHeadSprites = cSo.customerHeadSprites;
+        customerSR.sprite = customerSprites[0];
+        
         impatienceLimit = cSo.impatienceLimit;
         xpReward = cSo.xpReward;
     }
@@ -35,11 +42,11 @@ public class Customer : IInteractable {
         myMenu = KitchenManager.Instance.myMenu;
         cSpawner = KitchenManager.Instance.customerSpawner;
 
-        myOrder = customerType switch {
+        myRecipe = myCustomer.customerType switch {
             CustomerType.NORMAL => myMenu.GetRandomRecipe(),
             CustomerType.HUPPE => myMenu.GetExpensiveRecipe(),
             CustomerType.RADIN => myMenu.GetCheapRecipe(),
-            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-1].GetOrder(),
+            CustomerType.COPIEUR => cSpawner.customerQueue[cSpawner.customerQueue.Count-2].myRecipe,
             CustomerType.ACCRO => myMenu.GetTrueRandomRecipe(),
             CustomerType.LENT => myMenu.GetRandomRecipe(),
             CustomerType.IMPATIENT => myMenu.GetRandomRecipe(),
@@ -47,53 +54,62 @@ public class Customer : IInteractable {
             _ => throw new Exception("Unknown customer type")
         };
 
-        customerOrder.gameObject.SetActive(true);
-        customerOrder.Init(myOrder);
-        StartCoroutine(Leave());
+        CustomerOrderManager.Instance.AddCustomerOrder(this);
+    }
+
+    public void Leave() {
+        if (isLeaving) return;
+        isLeaving = true;
+        StartCoroutine(LeaveCR());
     }
     
-    private IEnumerator Leave() {
-        float m_impatienceLimit = impatienceLimit;
+    private IEnumerator LeaveCR() {
+        int m_impatienceLimit = (int)impatienceLimit;
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
             impatienceLimit -= 1 * impatienceFactor;
-            customerOrder.UpdateImpatienceProgress(impatienceLimit/m_impatienceLimit);
+            if ((int) impatienceLimit == m_impatienceLimit*2/3) {
+                if (customerSprites.Length <= 1) yield break;
+                customerSR.sprite = customerSprites[1];
+                CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[1]);
+            }
+            else if ((int) impatienceLimit == m_impatienceLimit*1/3) {
+                if (customerSprites.Length <= 1) yield break;
+                customerSR.sprite = customerSprites[2];
+                CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[2]);
+            }
         }
         
-        CompleteOrder(false);
+        CompleteOrder(CustomerState.LEFT);
     }
 
-    private void TryCompleteOrder() {
-        if (!FoodDataManager.Instance.HasRecipeItem(myOrder.recipeType)) return;
+    public void TryCompleteOrder() {
+        if (!isLeaving) return;
+        if (!FoodDataManager.Instance.HasRecipeItem(myRecipe.recipeType)) return;
         
         for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
             FoodDataManager.RecipeItem item = InventoryManager.Instance.recipeItems[i];
             
-            if (item.recipeType != myOrder.recipeType) continue;
+            if (item.recipeType != myRecipe.recipeType) continue;
             item.amount -= 1;
             UIKitchen.Instance.UpdateWorkplanSlot(i,item.amount);
             break;
         }
         
-        CompleteOrder(true);
+        CompleteOrder(CustomerState.SERVED);
     }
 
-    private void CompleteOrder(bool success) {
+    private void CompleteOrder(CustomerState state) {
+        ServiceManager.Instance.serviceSummary.NewServiceInfo(this,state);
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
     }
 
-    private RecipeSO GetOrder() {
-        return myOrder;
+    public void CancelOrder() {
+        CustomerOrderManager.Instance.RemoveCustomerOrder(this);
     }
-    
-    public override void Interact() {
-        CustomerSpawner customerSpawner = KitchenManager.Instance.customerSpawner;
-        for (int i = 0; i < customerSpawner.nbCounterCustomer; i++) {
-            if (customerSpawner.customerQueue[i] != this) continue;
-            TryCompleteOrder();
-            break;
-        }
 
-        PlayerManager.Instance.GetInteract().isInteracting = false;
+    public void SetImpatienceFactor(float newFactor) {
+        impatienceFactor = newFactor;
+        if (isLeaving) CustomerOrderManager.Instance.UpdateCustomerOrder(this,impatienceLimit,impatienceFactor);
     }
 }

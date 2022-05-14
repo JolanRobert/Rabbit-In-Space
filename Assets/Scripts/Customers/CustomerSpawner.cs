@@ -4,15 +4,13 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CustomerSpawner : MonoBehaviour {
-
-    [SerializeField] private int currentStarValue;
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
-    [SerializeField] private Vector3 customerSpawnPoint;
+    [SerializeField] private Transform customerSpawnPoint;
     
     [Header("Customer Spawner Values")]
-    public int nbCounterCustomer;
+    [SerializeField] private int nbCounterCustomer;
     [SerializeField] private int nbHiddenCustomer;
 
     public List<Customer> customerQueue = new List<Customer>();
@@ -34,12 +32,9 @@ public class CustomerSpawner : MonoBehaviour {
         int randomValue = Random.Range(0, 100)+1;
         int value = 0;
 
-        foreach (StarRepartitionSO.CustomerChance cc in DataManager.Instance.starRepartitionList[currentStarValue - 1].customerChances) {
+        foreach (StarSO.CustomerChance cc in GameManager.Instance.currentStar.customerChances) {
             value += cc.probability;
             if (randomValue > value) continue;
-            
-            //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint, Quaternion.Euler(60,0,0), transform).GetComponent<Customer>();
             
             //Handle Copieur xpReward
             if (cc.customerSo.customerType == CustomerType.COPIEUR) {
@@ -47,14 +42,20 @@ public class CustomerSpawner : MonoBehaviour {
                 cc.customerSo.xpReward = customerQueue[customerQueue.Count - 1].xpReward;
             }
             
+            //Spawn Customer
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
+            
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
+            
+            customer.MakeOrder();
             break;
         }
     }
 
     public void DepopCustomer(Customer customer) {
         customerQueue.Remove(customer);
+        customer.CancelOrder();
         Destroy(customer.gameObject);
         
         if (!KitchenManager.Instance.inService) return;
@@ -68,23 +69,19 @@ public class CustomerSpawner : MonoBehaviour {
         Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
         
         for (int i = 0; i < customerQueue.Count; i++) {
-            customerQueue[i].transform.position = customerSpawnPoint - Vector3.right * i * 1.5f + customerOffset;
-            customerQueue[i].interactPosition = -customerQueue[i].transform.position + new Vector3(-1.25f, 0, -2);
-            
-            //Les personnes devant le comptoir passent commande
-            if (i < nbCounterCustomer) customerQueue[i].MakeOrder();
+            customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1.5f + customerOffset;
             
             //Mise à jour du facteur d'impatience
             int nbEnervants = 0;
             //Client devant
-            if (i != 0 && customerQueue[i - 1].customerType == CustomerType.ENERVANT)
+            if (i != 0 && customerQueue[i - 1].myCustomer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
             
             //Client derrière
-            if (i != customerQueue.Count-1 && customerQueue[i + 1].customerType == CustomerType.ENERVANT)
+            if (i != customerQueue.Count-1 && customerQueue[i + 1].myCustomer.customerType == CustomerType.ENERVANT)
                 nbEnervants++;
 
-            customerQueue[i].impatienceFactor = 1 + 0.25f * nbEnervants;
+            customerQueue[i].SetImpatienceFactor(1 + 0.25f * nbEnervants);
         }
     }
 
@@ -92,8 +89,8 @@ public class CustomerSpawner : MonoBehaviour {
         int totalProbability = 0;
         List<CustomerSO> clientTypes = new List<CustomerSO>();
         
-        foreach (StarRepartitionSO srSo in DataManager.Instance.starRepartitionList) {
-            foreach (StarRepartitionSO.CustomerChance cc in srSo.customerChances) {
+        foreach (StarSO srSo in DataManager.Instance.starList) {
+            foreach (StarSO.CustomerChance cc in srSo.customerChances) {
                 if (clientTypes.Contains(cc.customerSo)) {
                     throw new Exception("Plusieurs fois le même type de client - "+srSo.starValue+" étoiles !");
                 }
@@ -112,16 +109,4 @@ public class CustomerSpawner : MonoBehaviour {
             //Debug.Log(sr.starValue+" étoiles OK !");
         }
     }
-
-    /*[Serializable]
-    public class StarRepartition {
-        public int starValue;
-        public List<CustomerChance> customerChances;
-    }
-
-    [Serializable]
-    public class CustomerChance {
-        public CustomerSO customerSo;
-        [Range(0,100)] public int probability;
-    }*/
 }
