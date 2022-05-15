@@ -56,7 +56,6 @@ public class ServiceManager : MonoBehaviour {
 
     private void StartService() {
         UIManager.Instance.ClosePanel(serviceValidPanel);
-        //serviceSummary.ResetSummary();
         
         KitchenManager.Instance.inService = true;
         KitchenManager.Instance.customerSpawner.StartService();
@@ -71,6 +70,10 @@ public class ServiceManager : MonoBehaviour {
     private IEnumerator EndServiceCoroutine() {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
+        
+        CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
+        PlayerManager.Instance.GetAnimation().Haswon(true);
+        yield return new WaitForSeconds(1);
         
         UIManager.Instance.OpenPanel(serviceSummary.gameObject);
         serviceSummary.InitSummary();

@@ -77,7 +77,6 @@ public class ServiceSummary : MonoBehaviour {
 
     private void EndAnim() {
         if (isAnimXPEnded && isAnimMoneyEnded && isAnimCustomerEnded) {
-            ResetSummary();
             nextButton.interactable = true;
         }
     }
@@ -185,7 +184,14 @@ public class ServiceSummary : MonoBehaviour {
         todayXP -= xp;
     }
 
-    public void ResetSummary() {
+    public void CloseSummary() {
+        ResetSummary();
+        UIManager.Instance.ClosePanel(gameObject);
+        PlayerManager.Instance.GetAnimation().Haswon(false);
+        CameraController.Instance.Reset();
+    }
+
+    private void ResetSummary() {
         todayXP = 0;
         todayGold = 0;
         customersServedAmount = 0;
