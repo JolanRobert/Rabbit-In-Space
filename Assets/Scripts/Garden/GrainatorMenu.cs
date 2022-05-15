@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GrainatorMenu : MonoBehaviour {
-    
+
+    [SerializeField] private ParcelMenuEntry myParcelMenuEntry;
     [SerializeField] private GameObject entryPrefab;
     [SerializeField] private float radius;
     [SerializeField] private Image selectedFoodSprite;
@@ -12,7 +13,6 @@ public class GrainatorMenu : MonoBehaviour {
     private List<GameObject> entries = new List<GameObject>();
     
     void Start() {
-        GetComponent<Button>().onClick.AddListener(Toggle);
         AddEntry(null,FoodType.NONE);
 
         foreach (FoodSO foodSo in DataManager.Instance.foodList) {
@@ -60,8 +60,7 @@ public class GrainatorMenu : MonoBehaviour {
     }
 
     private void OnSelectFood(FoodType foodType) {
-        ParcelMenuEntry pme = transform.parent.GetComponent<ParcelMenuEntry>();
-        GardenManager.Instance.myParcel.foodList[pme.foodSlot].SetGrainatorFood(foodType);
+        GardenManager.Instance.myParcel.foodList[myParcelMenuEntry.foodSlot].SetGrainatorFood(foodType);
         SetFoodSprite(foodType);
     }
 

@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour {
     private PlayerInput playerInput;
     private PlayerMovement playerMovement;
     private PlayerInteract playerInteract;
+    private PlayerAnimation playerAnimation;
 
     private void Awake() {
         Instance = this;
@@ -16,6 +17,7 @@ public class PlayerManager : MonoBehaviour {
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
         playerInteract = GetComponent<PlayerInteract>();
+        playerAnimation = GetComponent<PlayerAnimation>();
     }
 
     public PlayerInput GetInput() {
@@ -28,5 +30,9 @@ public class PlayerManager : MonoBehaviour {
 
     public PlayerInteract GetInteract() {
         return playerInteract;
+    }
+
+    public PlayerAnimation GetAnimation() {
+        return playerAnimation;
     }
 }

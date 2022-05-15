@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e85c1e83f8438247ae543a1a59a530a, type: 3}
-  m_Name: Hanami Dangos
+  m_Name: "Mochi Glac\xE9"
   m_EditorClassIdentifier: 
   recipeType: 2
-  recipeSprite: {fileID: 704668964717809353, guid: 839e25d48c201d546bda31b0f1b0d3f1, type: 3}
+  recipeSprite: {fileID: -6592516867159476330, guid: 839e25d48c201d546bda31b0f1b0d3f1, type: 3}
   recipeElements:
   - food: {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
-    amount: 2
-  - food: {fileID: 11400000, guid: 3ace6fc7a8bcb114798f8f56eb1a210a, type: 2}
-    amount: 2
+    amount: 1
+  - food: {fileID: 11400000, guid: 995bfe4002b0a184d97fecbd0b9c18fd, type: 2}
+    amount: 4
   stations:
   - {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
-  - {fileID: 11400000, guid: d683adb435a69be4eab83ea439b3ee3f, type: 2}
-  goldReward: 25
+  - {fileID: 11400000, guid: c21a7eb391cd99a43b4b23b157c6127c, type: 2}
+  goldReward: 28

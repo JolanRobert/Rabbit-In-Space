@@ -15,7 +15,7 @@ MonoBehaviour:
   customerType: 1
   impatienceLimit: 80
   xpReward: 4
-  nbBeforeReveal: 10
+  nbBeforeReveal: 1
   description: Prend le plat le plus cher du menu
   customerHeadSprites:
   - {fileID: 1223526088056373679, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}

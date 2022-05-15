@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 3969470173392646928, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: 2564371660620649439, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: 2945860285502092737, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
-  price: 10
-  growingTime: 10
-  decayTime: 20
-  minMaxProduction: {x: 1, y: 2}
+  price: 0
+  growingTime: 60
+  decayTime: 3600
+  minMaxProduction: {x: 3, y: 5}
