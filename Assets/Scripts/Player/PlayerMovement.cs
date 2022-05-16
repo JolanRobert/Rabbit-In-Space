@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Move(Vector3 newPosition) {
         if (playerManager.GetInteract().isInteracting) return;
-        if (playerManager.GetAnimation().isAnimateLock) return;
+        if (playerManager.GetAnimation().isLock) return;
         if (newPosition == Vector3.negativeInfinity) return;
         newPosition.y = transform.position.y;
         agent.destination = newPosition;

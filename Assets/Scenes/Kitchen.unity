@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rabbitAnimator: {fileID: 1156139763}
   outlineAnimator: {fileID: 239541843770806846}
-  isAnimateLock: 0
+  isLock: 0
 --- !u!1 &172811248
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class PlayerAnimation : MonoBehaviour {
     [SerializeField] private Animator rabbitAnimator;
     [SerializeField] private Animator outlineAnimator;
 
-    public bool isAnimateLock;
+    public bool isLock;
 
     public void Speed(float speed) {
         rabbitAnimator.SetFloat("Speed",speed);
@@ -14,18 +14,18 @@ public class PlayerAnimation : MonoBehaviour {
     }
 
     public void Haswon(bool state) {
-        rabbitAnimator.SetBool("Haswon",state);
-        outlineAnimator.SetBool("Haswon",state);
-
         //Look at Camera
-        //if (state) transform.rotation = Quaternion.Euler(0, 170, 0);
         if (state) {
+            rabbitAnimator.Play("Win");
+            outlineAnimator.Play("Win");
             PlayerManager.Instance.GetMovement().StopMove();
             transform.DORotate(new Vector3(0,170,0),1f);
-            isAnimateLock = true;
+            isLock = true;
         }
         else {
-            isAnimateLock = false;
+            rabbitAnimator.Play("Idle");
+            outlineAnimator.Play("Idle");
+            isLock = false;
         }
     }
 }
