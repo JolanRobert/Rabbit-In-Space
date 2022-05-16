@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class ServiceManager : MonoBehaviour {
@@ -19,6 +20,9 @@ public class ServiceManager : MonoBehaviour {
 
     [Header("Service Summary")]
     public ServiceSummary serviceSummary;
+
+    [Header("Service Window")]
+    [SerializeField] private MeshRenderer windowMR;
 
     void Awake() {
         if (Instance != null) Destroy(gameObject);
@@ -59,6 +63,8 @@ public class ServiceManager : MonoBehaviour {
         
         KitchenManager.Instance.inService = true;
         KitchenManager.Instance.customerSpawner.StartService();
+
+        windowMR.material.DOColor(new Color(0, 1, 1, 0), 1);
         
         myTimer.StartTimer(serviceTime);
     }
@@ -70,6 +76,8 @@ public class ServiceManager : MonoBehaviour {
     private IEnumerator EndServiceCoroutine() {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
+        
+        windowMR.material.DOColor(new Color(0, 1, 1, 200/255f), 1);
         
         CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
         PlayerManager.Instance.GetAnimation().Haswon(true);
