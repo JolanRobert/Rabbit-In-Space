@@ -19,7 +19,7 @@ public class ServiceManager : MonoBehaviour {
     [SerializeField] private ServiceTimer myTimer;
 
     [Header("Service Summary")]
-    public ServiceSummary serviceSummary;
+    public ServiceSummary mySummary;
 
     [Header("Service Window")]
     [SerializeField] private MeshRenderer windowMR;
@@ -31,6 +31,7 @@ public class ServiceManager : MonoBehaviour {
 
     void Start() {
         myTimer = ServiceTimer.Instance;
+        mySummary = ServiceSummary.Instance;
     }
 
     public void LoadMenu() {
@@ -83,10 +84,10 @@ public class ServiceManager : MonoBehaviour {
         PlayerManager.Instance.GetAnimation().Haswon(true);
         yield return new WaitForSeconds(1);
         
-        UIManager.Instance.OpenPanel(serviceSummary.gameObject);
-        serviceSummary.InitSummary();
+        UIManager.Instance.OpenPanel(mySummary.summaryGO);
+        mySummary.InitSummary();
 
         yield return new WaitForSeconds(1);
-        StartCoroutine(serviceSummary.AnimSummary());
+        StartCoroutine(mySummary.AnimSummary());
     }
 }
