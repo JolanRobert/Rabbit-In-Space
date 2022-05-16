@@ -25,6 +25,7 @@ public class InventoryManager : MonoBehaviour {
     }
 
     private void InitFridge() {
+        if (isFridgeInit) return;
         isFridgeInit = true;
         foreach (FoodSO fSo in DataManager.Instance.foodList) {
             FoodDataManager.FoodItem foodItem = FoodDataManager.Instance.Load(fSo.foodType.ToString());
@@ -34,6 +35,7 @@ public class InventoryManager : MonoBehaviour {
     }
 
     private void InitWorkplan() {
+        if (isWorkplanInit) return;
         isWorkplanInit = true;
         foreach (RecipeSO rSo in DataManager.Instance.recipeList) {
             recipeItems.Add(new FoodDataManager.RecipeItem(rSo.recipeType));
@@ -41,7 +43,7 @@ public class InventoryManager : MonoBehaviour {
     }
     
     public int GetAmountOfFoodItem(FoodSO fSo) {
-        if (!isFridgeInit) InitFridge();
+        InitFridge();
         foreach (FoodDataManager.FoodItem foodItem in foodItems) {
             if (foodItem.foodType != fSo.foodType) continue;
             return foodItem.amount;
@@ -50,7 +52,7 @@ public class InventoryManager : MonoBehaviour {
     }
     
     public int GetAmountOfRecipeItem(RecipeSO rSo) {
-        if (!isWorkplanInit) InitWorkplan();
+        InitWorkplan();
         foreach (FoodDataManager.RecipeItem recipeItem in recipeItems) {
             if (recipeItem.recipeType != rSo.recipeType) continue;
             return recipeItem.amount;
