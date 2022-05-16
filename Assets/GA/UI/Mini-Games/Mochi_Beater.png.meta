@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 31d8ea1de70ab1f47801c8ac0533b26b
+guid: d05d64a76140ebf42a23bb85f69b372b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9011780523053854224
-    second: Empty_Button
+      213: -7339290641555315788
+    second: MochiBeater_Hammer
   - first:
-      213: 8692185246313700833
-    second: Empty_Bar
-  - first:
-      213: -4630487151889622484
-    second: Play_Button
+      213: 1132640744063126226
+    second: MochiBeater_Bowl
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,55 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Empty_Button
+      name: MochiBeater_Hammer
       rect:
         serializedVersion: 2
-        x: 158
-        y: 245
-        width: 68
-        height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f157995c59bfe280800000000000000
-      internalID: -9011780523053854224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Empty_Bar
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 180
-        width: 454
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 24, y: 25, z: 26, w: 23}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ed5b68ad68d0a870800000000000000
-      internalID: 8692185246313700833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Play_Button
-      rect:
-        serializedVersion: 2
-        x: 75
+        x: 8
         y: 0
-        width: 270
-        height: 161
+        width: 362
+        height: 989
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +111,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2adb9ef7743dbfb0800000000000000
-      internalID: -4630487151889622484
+      spriteID: 4b32fb6fb0a952a90800000000000000
+      internalID: -7339290641555315788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MochiBeater_Bowl
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 236
+        width: 838
+        height: 672
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da440871c2f7bf00800000000000000
+      internalID: 1132640744063126226
       vertices: []
       indices: 
       edges: []
@@ -165,7 +141,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0871d1db95aa27644895237680b699f9
+    spriteID: 65c7a0aeb728274458128f98a1300c09
     internalID: 0
     vertices: []
     indices: 

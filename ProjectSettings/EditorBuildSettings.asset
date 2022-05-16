@@ -5,11 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Kitchen.unity
-    guid: b5b5935739e878c468ed06149e2869be
-  - enabled: 1
-    path: Assets/Scenes/MiniGames/Boiler.unity
+    path: Assets/Scenes/MiniGames/Mochi Beater.unity
     guid: 88791330b8d52a44593b5ec5c772ed42
   - enabled: 1
     path: Assets/Scenes/MiniGames/Cutter.unity
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGames/Mixer.unity
     guid: f78a88aae36da2a46bc693370c218182
   - enabled: 1
-    path: Assets/Scenes/MiniGames/Mochi Beater.unity
+    path: Assets/Scenes/MiniGames/Boiler.unity
     guid: 4d5a74c35821c1c458e574c2c5675beb
   - enabled: 1
     path: Assets/Scenes/MiniGames/Rolling Pin.unity

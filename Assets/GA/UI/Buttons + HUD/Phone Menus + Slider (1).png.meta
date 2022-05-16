@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 31d8ea1de70ab1f47801c8ac0533b26b
+guid: 1c2370ac403a65644a67c08beb444755
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9011780523053854224
-    second: Empty_Button
+      213: -121187993914576311
+    second: Directory_BG
   - first:
-      213: 8692185246313700833
-    second: Empty_Bar
+      213: -3971242673348155705
+    second: Recipe_BG
   - first:
-      213: -4630487151889622484
-    second: Play_Button
+      213: -2527952275987285708
+    second: Handle_Slider
+  - first:
+      213: -4558650333235873529
+    second: Slider
+  - first:
+      213: -4233963588901450861
+    second: Recipe_Tab
+  - first:
+      213: 2089711692934751479
+    second: Directory_Tab
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,55 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Empty_Button
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 245
-        width: 68
-        height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f157995c59bfe280800000000000000
-      internalID: -9011780523053854224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Empty_Bar
+      name: Directory_BG
       rect:
         serializedVersion: 2
         x: 0
-        y: 180
-        width: 454
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 24, y: 25, z: 26, w: 23}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ed5b68ad68d0a870800000000000000
-      internalID: 8692185246313700833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Play_Button
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 0
-        width: 270
-        height: 161
+        y: 2
+        width: 706
+        height: 580
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +123,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2adb9ef7743dbfb0800000000000000
-      internalID: -4630487151889622484
+      spriteID: 942fdaf5924715ef0800000000000000
+      internalID: -121187993914576311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipe_BG
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 2
+        width: 706
+        height: 580
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6e53244df43e8c0800000000000000
+      internalID: -3971242673348155705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Handle_Slider
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 493
+        width: 70
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43933a47cc8eaecd0800000000000000
+      internalID: -2527952275987285708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 47
+        width: 40
+        height: 426
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7097248bcab6cb0c0800000000000000
+      internalID: -4558650333235873529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipe_Tab
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 582
+        width: 224
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b47936c80fd35c0800000000000000
+      internalID: -4233963588901450861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Directory_Tab
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 582
+        width: 224
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f42b5486b5200d10800000000000000
+      internalID: 2089711692934751479
       vertices: []
       indices: 
       edges: []
@@ -165,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0871d1db95aa27644895237680b699f9
+    spriteID: 42355de9db33c38459177e4358be7db6
     internalID: 0
     vertices: []
     indices: 
