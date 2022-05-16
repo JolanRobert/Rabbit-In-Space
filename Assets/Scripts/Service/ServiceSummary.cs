@@ -6,6 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ServiceSummary : MonoBehaviour {
+    
+    public static ServiceSummary Instance;
+
+    public GameObject summaryGO;
 
     [Header("Reputation")]
     [SerializeField] private Image xpBar;
@@ -34,6 +38,11 @@ public class ServiceSummary : MonoBehaviour {
 
     private bool isAnimXPEnded, isAnimMoneyEnded, isAnimCustomerEnded;
 
+    void Awake() {
+        if (Instance != null) Destroy(gameObject);
+        else Instance = this;
+    }
+    
     public void InitSummary() {
         GameManager gm = GameManager.Instance;
         
@@ -186,7 +195,7 @@ public class ServiceSummary : MonoBehaviour {
 
     public void CloseSummary() {
         ResetSummary();
-        UIManager.Instance.ClosePanel(gameObject);
+        UIManager.Instance.ClosePanel(summaryGO);
         PlayerManager.Instance.GetAnimation().Haswon(false);
         CameraController.Instance.Reset();
     }

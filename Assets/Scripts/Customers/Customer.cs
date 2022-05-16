@@ -100,7 +100,7 @@ public class Customer : MonoBehaviour {
     }
 
     private void CompleteOrder(CustomerState state) {
-        ServiceManager.Instance.serviceSummary.NewServiceInfo(this,state);
+        ServiceManager.Instance.mySummary.NewServiceInfo(this,state);
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
     }
 
