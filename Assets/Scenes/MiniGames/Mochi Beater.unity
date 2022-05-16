@@ -541,8 +541,8 @@ MonoBehaviour:
   foldingButton: {fileID: 1694088627}
   initialFoldsToMake: 5
   newFoldProbability: 0.5
-  foldingMagnitudeMin: 4.5
-  dirMargin: 0.5
+  foldingMagnitudeMin: 3.5
+  dirMargin: 1
   foldingDelay: 1
 --- !u!4 &862518678
 Transform:
@@ -1188,7 +1188,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 107.25}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694088629
 MonoBehaviour:
