@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour {
     
@@ -28,10 +30,17 @@ public class MinigameManager : MonoBehaviour {
         SwitchScene.Instance.ChangeScene("Kitchen");
         
         //Show customers and orders
-        KitchenManager.Instance.transform.position += Vector3.right * 100;
-        CustomerOrderManager.Instance.ordersGO.SetActive(true);
+        StartCoroutine(WaitForShowCustomers());
         
         if (success) RecipeManager.Instance.ForwardStep();
         else StartCoroutine(RecipeManager.Instance.WaitForGlow());
+    }
+
+    IEnumerator WaitForShowCustomers() {
+        while (SceneManager.GetActiveScene().name != "Kitchen") {
+            yield return null;
+        }
+        KitchenManager.Instance.transform.position += Vector3.right * 100;
+        CustomerOrderManager.Instance.ordersGO.SetActive(true);
     }
 }
