@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PrefabManager : MonoBehaviour
@@ -68,6 +66,6 @@ public class PrefabManager : MonoBehaviour
 
     public void ResetRecipeBook()
     {
-        recipePanelGroup.GetChild(0).GetComponent<RecipePanel>().SetAsInactive();
+        recipePanelGroup.GetChild(0).GetComponent<RecipePanel>().SetAsNotRunning();
     }
 }

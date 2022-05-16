@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Engrais
   m_EditorClassIdentifier: 
   upgradeType: 0
-  name: Engrais
   description: "Augmente la quantit\xE9 de produits r\xE9colt\xE9s"
-  unlockCost: 100
+  unlockCost: 50
+  isActivable: 0

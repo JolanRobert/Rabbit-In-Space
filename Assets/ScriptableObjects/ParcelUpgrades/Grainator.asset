@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Grainator
   m_EditorClassIdentifier: 
   upgradeType: 3
-  name: Grainator
   description: Plante la graine choisie automatiquement si un plant est vide
-  unlockCost: 400
+  unlockCost: 500
   isActivable: 1

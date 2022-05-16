@@ -6,7 +6,8 @@ public class InventoryDebugger : Editor {
     
     private FoodType foodType = FoodType.MOON_RICE;
     private RecipeType recipeType = RecipeType.HANAMI_DANGOS;
-    private int amount = 1;
+    private int foodAmount = 1;
+    private int recipeAmout = 1;
     public override void OnInspectorGUI() {
         base.OnInspectorGUI();
         
@@ -15,11 +16,11 @@ public class InventoryDebugger : Editor {
         FoodDataManager foodDataManager = (FoodDataManager) target;
         
         foodType = (FoodType)EditorGUILayout.EnumPopup("Item :", foodType);
-        amount = EditorGUILayout.IntField("Amount :", amount);
-        if (GUILayout.Button("Add Food")) foodDataManager.AddItem(foodType,amount);
+        foodAmount = EditorGUILayout.IntField("Amount :", foodAmount);
+        if (GUILayout.Button("Add Food")) foodDataManager.AddItem(foodType,foodAmount);
         
         recipeType = (RecipeType)EditorGUILayout.EnumPopup("Item :", recipeType);
-        amount = EditorGUILayout.IntField("Amount :", amount);
-        if (GUILayout.Button("Add Recipe")) foodDataManager.AddRecipe(recipeType,amount);
+        recipeAmout = EditorGUILayout.IntField("Amount :", recipeAmout);
+        if (GUILayout.Button("Add Recipe")) foodDataManager.AddRecipe(recipeType,recipeAmout);
     }
 }

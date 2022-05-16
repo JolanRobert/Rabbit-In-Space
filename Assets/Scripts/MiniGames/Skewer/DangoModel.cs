@@ -17,7 +17,7 @@ public class DangoModel : MonoBehaviour {
     [SerializeField] private List<DangoItem> dangoItems;
     
     private DangoColor[,] model;
-    public DangoColor[,] player;
+    private DangoColor[,] player;
 
     void Awake() {
         Instance = this;
@@ -47,7 +47,9 @@ public class DangoModel : MonoBehaviour {
         }
     }
 
-    public void SetPlayerDango(int line, int column, DangoColor dangoColor) {
+    public void SetPlayerDango(int line, int column, DangoColor dangoColor)
+    {
+        Debug.Log(line + "/" + column);
         player[line,column] = dangoColor;
         CompareModelPlayer();
     }
@@ -77,8 +79,6 @@ public enum DangoColor {
     NONE,
     YELLOW,
     PINK,
-    GREEN,
-    ORANGE,
-    PURPLE
+    GREEN
 }
 }

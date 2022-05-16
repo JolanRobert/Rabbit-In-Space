@@ -14,7 +14,7 @@ public class RecipeSO : ScriptableObject
     [Header("Attributes")] 
     public List<RecipeElement> recipeElements;
     public List<StationSO> stations;
-    public int price;
+    public int goldReward;
     
 }
 

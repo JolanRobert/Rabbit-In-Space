@@ -3,24 +3,29 @@ using UnityEngine;
 
 namespace Skewer {
 public class SkewerTrigger : MonoBehaviour {
+    
+    private Collider2D collider;
 
     [SerializeField] private int skewerID;
-    private List<DraggableDango> myDangos = new List<DraggableDango>();
+    public List<DraggableDango> myDangos = new List<DraggableDango>();
+    public float minPosX;
     
     [SerializeField] private float xDelta;
-    
-    public new Collider2D collider;
+
+    void Start() {
+        collider = GetComponent<Collider2D>();
+        minPosX = (collider.bounds.center - collider.bounds.extents).x;
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        var dango = other.GetComponent<DraggableDango>();
         if (myDangos.Count == 3) return;
         
-        if (dango != null) {
+        if (other.TryGetComponent(out DraggableDango dango)) {
             Vector3 dangoPos = dango.transform.position;
             var minX = (collider.bounds.center + collider.bounds.extents).x - xDelta;
             var maxX = (collider.bounds.center + collider.bounds.extents).x + xDelta;
             if (dangoPos.x >= minX && dangoPos.x <= maxX) {
-                dango.inTrigger = this;
+                dango.SetTrigger(this);
                 
                 DangoModel.Instance.SetPlayerDango(skewerID,myDangos.Count,dango.dangoColor);
                 dango.gameObject.layer = LayerMask.NameToLayer("FixedDango");
@@ -30,10 +35,10 @@ public class SkewerTrigger : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        var dango = other.GetComponent<DraggableDango>();
-        if (dango != null && dango.inTrigger == this) {
-            dango.inTrigger = null;
-            
+        if (other.TryGetComponent(out DraggableDango dango)) {
+            if (!myDangos.Contains(dango)) return;
+            dango.SetTrigger(null);
+
             DangoModel.Instance.SetPlayerDango(skewerID,myDangos.Count-1,DangoColor.NONE);
             dango.gameObject.layer = LayerMask.NameToLayer("Dango");
             myDangos.Remove(dango);
