@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e85c1e83f8438247ae543a1a59a530a, type: 3}
   m_Name: Starberry Daifuku
   m_EditorClassIdentifier: 
-  recipeType: 5
+  recipeType: 4
   recipeSprite: {fileID: -6592516867159476330, guid: 839e25d48c201d546bda31b0f1b0d3f1, type: 3}
   recipeElements:
   - food: {fileID: 11400000, guid: 7a89da2ca92842644b819f0601c727d8, type: 2}
