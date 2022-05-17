@@ -36,7 +36,7 @@ namespace MochiBeater
             foldingVector = foldingDir * foldingMagnitudeMin; 
             arrow.eulerAngles = new Vector3 (0, 0, Vector2.SignedAngle(transform.right, foldingVector));
             dough.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(transform.up, foldingVector));
-            foldingButton.transform.position = Camera.main.WorldToScreenPoint(-foldingVector / 2);
+            foldingButton.transform.position = Camera.main.WorldToScreenPoint(-foldingVector/1.2f);
         }
 
         public void TryFold(Vector2 drag)
