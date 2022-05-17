@@ -10,6 +10,7 @@ public class SwitchScene : MonoBehaviour {
         if (Instance != null) Destroy(gameObject);
         else {
             Instance = this;
+            DontDestroyOnLoad(this);
         }
     }
     
