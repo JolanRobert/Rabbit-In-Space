@@ -1149,12 +1149,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 2
+        m_TargetAssemblyTypeName: UIGarden, Assembly-CSharp
+        m_MethodName: CloseParcelMenu
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 7710327039009468260}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10799,8 +10799,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 6589833401655882844, guid: 0fe12278b156ef3499b2d52d87d8b1e4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10808,7 +10808,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 5
 --- !u!1 &7710327039874757363
 GameObject:
   m_ObjectHideFlags: 0
@@ -12045,6 +12045,10 @@ PrefabInstance:
       propertyPath: parcelID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2146030525406852560, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
+      propertyPath: m_text
+      value: Parcel 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8721117557493417868, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12551,6 +12555,10 @@ PrefabInstance:
       propertyPath: parcelID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2146030525406852560, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
+      propertyPath: m_text
+      value: Parcel 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721117557493417868, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12661,6 +12669,10 @@ PrefabInstance:
       propertyPath: parcelID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2146030525406852560, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
+      propertyPath: m_text
+      value: Parcel 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8721117557493417868, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12770,6 +12782,10 @@ PrefabInstance:
     - target: {fileID: 1508726286075330693, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
       propertyPath: parcelID
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146030525406852560, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
+      propertyPath: m_text
+      value: Parcel 6
       objectReference: {fileID: 0}
     - target: {fileID: 8721117557493417868, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
       propertyPath: m_Pivot.x
@@ -13084,6 +13100,10 @@ PrefabInstance:
     - target: {fileID: 1508726286075330693, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
       propertyPath: parcelID
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146030525406852560, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
+      propertyPath: m_text
+      value: Parcel 3
       objectReference: {fileID: 0}
     - target: {fileID: 8721117557493417868, guid: 872c82349f7e2f648b78b8da4cf6f467, type: 3}
       propertyPath: m_Pivot.x

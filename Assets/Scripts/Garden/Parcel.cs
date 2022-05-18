@@ -1,21 +1,40 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Parcel : MonoBehaviour {
 
+    [Header("Animation")]
+    [SerializeField] private RectTransform topSprite;
+    [SerializeField] private float openTime = 0.5f;
+    
+    [Header("Data")]
     [SerializeField] private int parcelID;
     public Food[] foodList;
 
     public void OpenParcel() {
+        StartCoroutine(OpenParcelCR());
+    }
+
+    private IEnumerator OpenParcelCR() {
         if (GardenManager.Instance.myParcel != null) {
             foreach (Food food in GardenManager.Instance.myParcel.foodList) {
                 food.foodUI = null;
             }
         }
+
+        topSprite.DOMoveY(topSprite.position.y + 25, openTime);
+        yield return new WaitForSeconds(openTime);
         
         GardenManager.Instance.myParcel = this;
         UIGarden.Instance.OpenParcelMenu();
+    }
+
+    public void CloseParcel() {
+        topSprite.DOMoveY(topSprite.position.y - 25, openTime);
     }
     
     //
