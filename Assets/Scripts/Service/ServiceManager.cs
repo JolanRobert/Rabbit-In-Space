@@ -78,7 +78,7 @@ public class ServiceManager : MonoBehaviour {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
         
-        windowMR.material.DOColor(new Color(0, 1, 1, 200/255f), 1);
+        windowMR.material.DOColor(new Color(0, 1, 1, 1), 1);
         
         CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
         PlayerManager.Instance.GetAnimation().Haswon(true);
