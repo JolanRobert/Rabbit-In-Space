@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
 
+    public bool timeElapsing = true;
+    
     public int moneyAmount;
     public int xpAmount;
     public StarSO currentStar;

@@ -20,6 +20,7 @@ public class SwitchScene : MonoBehaviour {
     {
         if (SceneManager.GetActiveScene().name == "Kitchen")
         {
+            GameManager.Instance.timeElapsing = false;
             playerPos = PlayerManager.Instance.transform.position;
             playerRotation = PlayerManager.Instance.transform.rotation;
         }
@@ -32,6 +33,8 @@ public class SwitchScene : MonoBehaviour {
         while (!operation.isDone) {
             yield return null;
         }
+        
+        GameManager.Instance.timeElapsing = true;
         
         if (nextScene == "Kitchen" && playerPos != default)
         {

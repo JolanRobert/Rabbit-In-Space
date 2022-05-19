@@ -1277,6 +1277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78df733342b0f65438cfe380627cb509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeElapsing: 1
   moneyAmount: 0
   xpAmount: 0
   currentStar: {fileID: 11400000, guid: a14345aae99c06e43bc1c3a030290c84, type: 2}
@@ -10114,7 +10115,7 @@ MonoBehaviour:
   serviceValidPanel: {fileID: 1749662689}
   serviceInvalidPanel: {fileID: 688818426}
   serviceWarningText: {fileID: 1787229357}
-  serviceTime: 180
+  serviceTime: 10
   myTimer: {fileID: 0}
   mySummary: {fileID: 0}
   windowMR: {fileID: 254383063277943972}
@@ -22866,7 +22867,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 950217702}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OpenPanel
+        m_MethodName: OpenOptions
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1345514917}

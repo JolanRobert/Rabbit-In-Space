@@ -30,8 +30,10 @@ public class ServiceTimer : MonoBehaviour {
         yield return oneSec;
         timeBar.DOFillAmount(0, time).SetEase(Ease.Linear);
 
-        while (time > 0) {
+        while (time > 0)
+        {
             yield return oneSec;
+            if (!GameManager.Instance.timeElapsing) continue;
             time--;
             timeText.text = time.ToString();
         }

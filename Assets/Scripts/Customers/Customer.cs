@@ -67,6 +67,7 @@ public class Customer : MonoBehaviour {
         int m_impatienceLimit = (int)impatienceLimit;
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
+            if (!GameManager.Instance.timeElapsing) continue;
             impatienceLimit -= 1 * impatienceFactor;
             if ((int) impatienceLimit == m_impatienceLimit*2/3) {
                 if (customerSprites.Length <= 1) yield break;
