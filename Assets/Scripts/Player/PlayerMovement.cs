@@ -40,7 +40,8 @@ public class PlayerMovement : MonoBehaviour {
         agent.destination = transform.position;
     }
 
-    public void Teleport(Vector3 newPosition) {
+    public void Teleport(Vector3 newPosition, Quaternion newRotation) {
         agent.Warp(newPosition);
+        transform.rotation = newRotation;
     }
 }
