@@ -26,21 +26,17 @@ public class MinigameManager : MonoBehaviour {
     public void EndMinigame(bool success) {
         if(!resultPending) return;
         resultPending = false;
-        
-        SwitchScene.Instance.ChangeScene("Kitchen");
+        StartCoroutine(EndMinigameCR(success));
+    }
+    
+    private IEnumerator EndMinigameCR(bool success) {
+        yield return SwitchScene.Instance.LoadScene("Kitchen");
         
         //Show customers and orders
-        StartCoroutine(WaitForShowCustomers());
+        KitchenManager.Instance.transform.position += Vector3.right * 100;
+        CustomerOrderManager.Instance.ordersGO.SetActive(true);
         
         if (success) RecipeManager.Instance.ForwardStep();
         else StartCoroutine(RecipeManager.Instance.WaitForGlow());
-    }
-
-    IEnumerator WaitForShowCustomers() {
-        while (SceneManager.GetActiveScene().name != "Kitchen") {
-            yield return null;
-        }
-        KitchenManager.Instance.transform.position += Vector3.right * 100;
-        CustomerOrderManager.Instance.ordersGO.SetActive(true);
     }
 }

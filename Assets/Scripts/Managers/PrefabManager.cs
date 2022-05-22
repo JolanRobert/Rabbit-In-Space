@@ -24,11 +24,20 @@ public class PrefabManager : MonoBehaviour
     [SerializeField] private GameObject customerEntryPrefab;
     [SerializeField] private Transform customerEntryGroup;
 
-    void Awake()
-    {
+    private bool isInit;
+
+    void Awake() {
         Instance = this;
     }
+    
     void Start() {
+        SpawnPrefabs();
+    }
+
+    public void SpawnPrefabs() {
+        if (isInit) return;
+        isInit = true;
+        
         foreach (FoodSO fSo in DataManager.Instance.foodList) {
             FoodShopEntry entry = Instantiate(foodShopEntryPrefab, foodShopEntryParent).GetComponent<FoodShopEntry>();
             entry.Init(fSo);
@@ -64,8 +73,7 @@ public class PrefabManager : MonoBehaviour
         }
     }
 
-    public void ResetRecipeBook()
-    {
+    public void ResetRecipeBook() {
         recipePanelGroup.GetChild(0).GetComponent<RecipePanel>().SetAsNotRunning();
     }
 }

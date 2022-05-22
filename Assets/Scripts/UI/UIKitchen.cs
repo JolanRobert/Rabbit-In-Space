@@ -16,6 +16,7 @@ public class UIKitchen : MonoBehaviour {
     }
 
     public void UpdateFridgeSlot(int slotIndex, int value) {
+        PrefabManager.Instance.SpawnPrefabs();
         fridgeSlots[slotIndex].UpdateAmount(value);
     }
     

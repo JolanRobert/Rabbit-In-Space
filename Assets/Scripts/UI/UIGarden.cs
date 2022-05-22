@@ -31,6 +31,12 @@ public class UIGarden : MonoBehaviour {
         UIManager.Instance.OpenPanel(parcelMenu);
     }
 
+    public void CloseParcelMenu() {
+        Parcel myParcel = GardenManager.Instance.myParcel;
+        myParcel.CloseParcel();
+        UIManager.Instance.ClosePanel(parcelMenu);
+    }
+
     private void SetupParcelMenu(Parcel parcel) {
         for (int i = 0; i < plants.Count; i++) {
             parcel.foodList[i].foodUI = plants[i];
