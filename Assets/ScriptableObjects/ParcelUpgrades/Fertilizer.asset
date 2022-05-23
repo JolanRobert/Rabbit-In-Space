@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b80ecb01f1bf17042a26921a11501831, type: 3}
-  m_Name: Grainator
+  m_Name: Fertilizer
   m_EditorClassIdentifier: 
-  upgradeType: 3
-  description: Plante la graine choisie automatiquement si un plant est vide
-  unlockCost: 500
-  isActivable: 1
+  upgradeType: 0
+  description: Increase the number of crops produced per plants
+  unlockCost: 50
+  isActivable: 0

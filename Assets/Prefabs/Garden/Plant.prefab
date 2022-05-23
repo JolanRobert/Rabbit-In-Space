@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b1a9f4cbd03594ba4d908dd5d60a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myParcelMenuEntry: {fileID: 0}
   entryPrefab: {fileID: 7479915583029145754, guid: 0d6a71488b5d4d1499ab1702f569b7e2, type: 3}
   radius: 50
   selectedFoodSprite: {fileID: 7251179833584160336}
