@@ -15,7 +15,7 @@ public class UIGarden : MonoBehaviour {
     public List<ParcelUpgradeEntry> upgrades; //Contains the list of upgrades to display when ParcelMenuUpgrade is open
     
     [Header("Food Shop")]
-    [SerializeField] private GameObject foodShop;
+    [SerializeField] private GameObject foodShopContent;
     [SerializeField] private GameObject closeOverlay;
 
     void Awake() {
@@ -29,6 +29,12 @@ public class UIGarden : MonoBehaviour {
         SetupParcelUpgrade(myParcel);
         
         UIManager.Instance.OpenPanel(parcelMenu);
+    }
+
+    public void CloseParcelMenu() {
+        Parcel myParcel = GardenManager.Instance.myParcel;
+        myParcel.CloseParcel();
+        UIManager.Instance.ClosePanel(parcelMenu);
     }
 
     private void SetupParcelMenu(Parcel parcel) {
@@ -55,10 +61,10 @@ public class UIGarden : MonoBehaviour {
     }
     
     public void OpenMenuSeed(int foodSlot) {
-        foodShop.SetActive(true);
+        foodShopContent.SetActive(true);
         closeOverlay.SetActive(true);
         
-        foodShop.transform.DOMoveX(foodShop.transform.position.x - 300, 0.325f);
+        foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x - 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
         GardenManager.Instance.mySlot = foodSlot;
     }
@@ -66,9 +72,9 @@ public class UIGarden : MonoBehaviour {
     public void CloseMenuSeed() {
         closeOverlay.SetActive(false);
         
-        foodShop.transform.DOMoveX(foodShop.transform.position.x + 300, 0.325f);
+        foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x + 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f).OnComplete(() => {
-            foodShop.SetActive(false);
+            foodShopContent.SetActive(false);
         });
     }
 }

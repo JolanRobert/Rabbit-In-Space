@@ -2,6 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ServiceTimer : MonoBehaviour {
@@ -19,18 +20,20 @@ public class ServiceTimer : MonoBehaviour {
 
     public void StartTimer(int time) {
         timerGO.SetActive(true);
-        StartCoroutine(TimerCoroutine(time));
+        StartCoroutine(TimerRunCoroutine(time));
     }
 
     private WaitForSeconds oneSec = new WaitForSeconds(1);
-    private IEnumerator TimerCoroutine(int time) {
+    private IEnumerator TimerRunCoroutine(int time) {
         timeText.text = time.ToString();
         timeBar.DOFillAmount(1, 1f).SetEase(Ease.Linear);
         yield return oneSec;
         timeBar.DOFillAmount(0, time).SetEase(Ease.Linear);
 
-        while (time > 0) {
+        while (time > 0)
+        {
             yield return oneSec;
+            if (!GameManager.Instance.timeElapsing) continue;
             time--;
             timeText.text = time.ToString();
         }
@@ -38,10 +41,17 @@ public class ServiceTimer : MonoBehaviour {
         EndTimer();
     }
 
-    private void EndTimer() {
+    public void EndTimer() {
+        StopAllCoroutines();
+        StartCoroutine(TimerEndCoroutine());
+    }
+
+    private IEnumerator TimerEndCoroutine() {
         timerGO.SetActive(false);
         if (MinigameManager.Instance.resultPending) MinigameManager.Instance.EndMinigame(false);
         RecipeManager.Instance.EndRecipe(false);
+
+        while (SceneManager.GetActiveScene().name != "Kitchen") yield return null;
         ServiceManager.Instance.EndService();
     }
 }

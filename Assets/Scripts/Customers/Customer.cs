@@ -67,6 +67,7 @@ public class Customer : MonoBehaviour {
         int m_impatienceLimit = (int)impatienceLimit;
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
+            if (!GameManager.Instance.timeElapsing) continue;
             impatienceLimit -= 1 * impatienceFactor;
             if ((int) impatienceLimit == m_impatienceLimit*2/3) {
                 if (customerSprites.Length <= 1) yield break;
@@ -100,7 +101,7 @@ public class Customer : MonoBehaviour {
     }
 
     private void CompleteOrder(CustomerState state) {
-        ServiceManager.Instance.serviceSummary.NewServiceInfo(this,state);
+        ServiceManager.Instance.mySummary.NewServiceInfo(this,state);
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
     }
 

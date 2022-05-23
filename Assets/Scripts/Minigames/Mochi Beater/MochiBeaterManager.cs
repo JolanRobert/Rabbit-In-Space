@@ -16,8 +16,8 @@ namespace MochiBeater
         private int foldsToMake;
         [Range(0f,1f)][SerializeField] private float newFoldProbability;
         private Vector2 foldingVector, foldingDir;
-        [SerializeField] private float foldingMagnitude;
-        [SerializeField] private float dirMargin, magnitudeMargin;
+        [SerializeField] private float foldingMagnitudeMin;
+        [SerializeField] private float dirMargin;
         [SerializeField] private float foldingDelay;
 
         void Awake()
@@ -33,16 +33,16 @@ namespace MochiBeater
         void GetNewFolding()
         {
             foldingDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-            foldingVector = foldingDir * foldingMagnitude; 
+            foldingVector = foldingDir * foldingMagnitudeMin; 
             arrow.eulerAngles = new Vector3 (0, 0, Vector2.SignedAngle(transform.right, foldingVector));
             dough.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(transform.up, foldingVector));
-            foldingButton.transform.position = Camera.main.WorldToScreenPoint(-foldingVector / 2);
+            foldingButton.transform.position = Camera.main.WorldToScreenPoint(-foldingVector/1.2f);
         }
 
         public void TryFold(Vector2 drag)
         {
             //Debug.Log(drag.magnitude + ", " + drag.normalized);
-            if (!(drag.magnitude > foldingMagnitude - magnitudeMargin / 2) || !(drag.magnitude < foldingMagnitude + magnitudeMargin / 2))
+            if (drag.magnitude < foldingMagnitudeMin)
             {
                 Debug.Log("Invalid Magnitude");
                 return;

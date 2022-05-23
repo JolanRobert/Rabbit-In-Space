@@ -13,28 +13,19 @@ public class CustomerOrderManager : MonoBehaviour {
     [SerializeField] private RectTransform hidePosition;
 
     [SerializeField] private List<CustomerOrderEntry> customerOrderEntries = new List<CustomerOrderEntry>();
-    public List<Customer> orderList = new List<Customer>();
 
     void Awake() {
         if (Instance != null) Destroy(gameObject);
         else Instance = this;
     }
 
-    public void AddCustomerOrder(Customer customer) {
-        orderList.Add(customer);
-        customerOrderEntries[orderList.Count-1].Init(customer);
-        RearrangeOrders();
-    }
-
     private void ShowOrder(CustomerOrderEntry entry) {
-        //Transform entryParent = entry.transform.parent;
         entry.DOKill();
         entry.gameObject.SetActive(true);
         entry.transform.DOMoveX(showPosition.position.x, 1);
     }
 
     private void RevealOrder(CustomerOrderEntry entry) {
-        //Transform entryParent = entry.transform.parent;
         entry.DOKill();
         entry.gameObject.SetActive(true);
         entry.transform.DOMoveX(revealPosition.position.x, 1);
@@ -51,31 +42,31 @@ public class CustomerOrderManager : MonoBehaviour {
     }
 
     private void RearrangeOrders() {
-        for (int i = 0; i < orderList.Count; i++) {
+        for (int i = 0; i < customerOrderEntries.Count; i++) {
             if (i <= 1) {
                 ShowOrder(customerOrderEntries[i]);
-                orderList[i].Leave();
+                if (customerOrderEntries[i].customer != null) customerOrderEntries[i].customer.Leave();
             }
             else RevealOrder(customerOrderEntries[i]);
         }
     }
-
-    public void RemoveCustomerOrder(Customer customer) {
-        int customerIndex = orderList.IndexOf(customer);
-        HideOrder(customerOrderEntries[customerIndex]);
-        //customerOrderEntries[customerIndex].ResetBackground();
-        orderList.Remove(customer);
-        RearrangeOrders();
+    
+    public void AddCustomerOrder(Customer customer) {
+        foreach (CustomerOrderEntry entry in customerOrderEntries) {
+            if (entry.customer != null) continue;
+            entry.Init(customer);
+            break;
+        }
         
-        if (orderList.Count == 0) ResetOrders();
+        RearrangeOrders();
     }
 
-    private void ResetOrders() {
-        for (int i = 0; i < customerOrderEntries.Count; i++) {
-            Transform entry = customerOrderEntries[i].transform;
-            entry.DOKill();
-            entry.DOMoveX(hidePosition.position.x, 0);
-        }
+    public void RemoveCustomerOrder(Customer customer) {
+        CustomerOrderEntry entry = GetCustomerOrderEntry(customer);
+        entry.ResetBackground();
+        entry.customer = null;
+        
+        HideOrder(entry);
     }
 
     //Change customer head depending of the impatience
@@ -91,8 +82,16 @@ public class CustomerOrderManager : MonoBehaviour {
     public void UpdateCustomerOrder(Customer customer, float timeLeft, float impatienceFactor) {
         foreach (CustomerOrderEntry entry in customerOrderEntries) {
             if (entry.customer != customer) continue;
-            //entry.UpdateBackground(timeLeft,impatienceFactor);
+            entry.UpdateBackground(timeLeft,impatienceFactor);
             return;
         }
+    }
+
+    private CustomerOrderEntry GetCustomerOrderEntry(Customer customer) {
+        foreach (CustomerOrderEntry entry in customerOrderEntries) {
+            if (entry.customer == customer) return entry;
+        }
+
+        return null;
     }
 }

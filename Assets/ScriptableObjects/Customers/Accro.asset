@@ -15,9 +15,9 @@ MonoBehaviour:
   customerType: 4
   impatienceLimit: 80
   xpReward: 5
-  nbBeforeReveal: 10
+  nbBeforeReveal: 1
   description: "Prend son plat favori, tir\xE9 au sort parmi tous les plats du jeu"
-  customerSprites:
-  - {fileID: 8300460384929931605, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
   customerHeadSprites:
+  - {fileID: 8300460384929931605, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  customerSprites:
   - {fileID: 8300460384929931605, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}

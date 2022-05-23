@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] [Range(1,1000)] private float rabbitAngularSpeed;
     [SerializeField] [Range(1,100)] private float rabbitAcceleration;
     
-    private void Start() {
+    void Start() {
         playerManager = PlayerManager.Instance;
         agent = GetComponent<NavMeshAgent>();
         
@@ -20,8 +20,15 @@ public class PlayerMovement : MonoBehaviour {
         agent.acceleration = rabbitAcceleration;
     }
 
+    void Update() {
+        PlayerManager.Instance.GetAnimation().Speed(agent.velocity.magnitude);
+    }
+
     public void Move(Vector3 newPosition) {
+        Debug.Log(newPosition);
+        Debug.Log(transform.position);
         if (playerManager.GetInteract().isInteracting) return;
+        if (playerManager.GetAnimation().isLock) return;
         if (newPosition == Vector3.negativeInfinity) return;
         newPosition.y = transform.position.y;
         agent.destination = newPosition;
@@ -29,7 +36,12 @@ public class PlayerMovement : MonoBehaviour {
         playerManager.GetInteract().StopInteract();
     }
 
-    public void Teleport(Vector3 newPosition) {
+    public void StopMove() {
+        agent.destination = transform.position;
+    }
+
+    public void Teleport(Vector3 newPosition, Quaternion newRotation) {
         agent.Warp(newPosition);
+        transform.rotation = newRotation;
     }
 }

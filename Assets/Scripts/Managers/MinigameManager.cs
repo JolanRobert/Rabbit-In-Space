@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MinigameManager : MonoBehaviour {
     
@@ -24,8 +26,11 @@ public class MinigameManager : MonoBehaviour {
     public void EndMinigame(bool success) {
         if(!resultPending) return;
         resultPending = false;
-        
-        SwitchScene.Instance.ChangeScene("Kitchen");
+        StartCoroutine(EndMinigameCR(success));
+    }
+    
+    private IEnumerator EndMinigameCR(bool success) {
+        yield return SwitchScene.Instance.LoadScene("Kitchen");
         
         //Show customers and orders
         KitchenManager.Instance.transform.position += Vector3.right * 100;

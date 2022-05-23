@@ -11,33 +11,9 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2208695106660384752, guid: cf4a066595cc1c24195259836697acda, type: 3}
-    - target: {fileID: 4727391616888695891, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727391616888695891, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727391616888695891, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4805850012350151458, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805850012350151458, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805850012350151458, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805850012350151458, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4805850012350151458, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,18 +62,6 @@ PrefabInstance:
     - target: {fileID: 7008941799263639398, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
       propertyPath: dangoColor
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7008941799263639398, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: dangoColor.b
-      value: 0.38823533
-      objectReference: {fileID: 0}
-    - target: {fileID: 7008941799263639398, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: dangoColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7008941799263639398, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}
-      propertyPath: dangoColor.r
-      value: 0.627451
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17ff05dc5bb52a4fba18fc7e4fa8abb, type: 3}

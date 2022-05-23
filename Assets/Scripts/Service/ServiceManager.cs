@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class ServiceManager : MonoBehaviour {
@@ -18,7 +19,10 @@ public class ServiceManager : MonoBehaviour {
     [SerializeField] private ServiceTimer myTimer;
 
     [Header("Service Summary")]
-    public ServiceSummary serviceSummary;
+    public ServiceSummary mySummary;
+
+    [Header("Service Window")]
+    [SerializeField] private MeshRenderer windowMR;
 
     void Awake() {
         if (Instance != null) Destroy(gameObject);
@@ -27,11 +31,12 @@ public class ServiceManager : MonoBehaviour {
 
     void Start() {
         myTimer = ServiceTimer.Instance;
+        mySummary = ServiceSummary.Instance;
     }
 
     public void LoadMenu() {
         if (KitchenManager.Instance.inService) {
-            EndService();
+            myTimer.EndTimer();
             return;
         }
         
@@ -56,10 +61,11 @@ public class ServiceManager : MonoBehaviour {
 
     private void StartService() {
         UIManager.Instance.ClosePanel(serviceValidPanel);
-        //serviceSummary.ResetSummary();
         
         KitchenManager.Instance.inService = true;
         KitchenManager.Instance.customerSpawner.StartService();
+
+        windowMR.material.DOColor(new Color(0, 1, 1, 0), 1);
         
         myTimer.StartTimer(serviceTime);
     }
@@ -72,10 +78,16 @@ public class ServiceManager : MonoBehaviour {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
         
-        UIManager.Instance.OpenPanel(serviceSummary.gameObject);
-        serviceSummary.InitSummary();
+        windowMR.material.DOColor(new Color(0, 1, 1, 1), 1);
+        
+        CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
+        PlayerManager.Instance.GetAnimation().Haswon(true);
+        yield return new WaitForSeconds(1);
+        
+        UIManager.Instance.OpenPanel(mySummary.summaryGO);
+        mySummary.InitSummary();
 
         yield return new WaitForSeconds(1);
-        StartCoroutine(serviceSummary.AnimSummary());
+        StartCoroutine(mySummary.AnimSummary());
     }
 }

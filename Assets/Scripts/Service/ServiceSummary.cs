@@ -6,6 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ServiceSummary : MonoBehaviour {
+    
+    public static ServiceSummary Instance;
+
+    public GameObject summaryGO;
 
     [Header("Reputation")]
     [SerializeField] private Image xpBar;
@@ -34,6 +38,11 @@ public class ServiceSummary : MonoBehaviour {
 
     private bool isAnimXPEnded, isAnimMoneyEnded, isAnimCustomerEnded;
 
+    void Awake() {
+        if (Instance != null) Destroy(gameObject);
+        else Instance = this;
+    }
+    
     public void InitSummary() {
         GameManager gm = GameManager.Instance;
         
@@ -76,7 +85,9 @@ public class ServiceSummary : MonoBehaviour {
     }
 
     private void EndAnim() {
-        if (isAnimXPEnded && isAnimMoneyEnded && isAnimCustomerEnded) nextButton.interactable = true;
+        if (isAnimXPEnded && isAnimMoneyEnded && isAnimCustomerEnded) {
+            nextButton.interactable = true;
+        }
     }
 
     private IEnumerator AnimXP(float animTime) {
@@ -182,7 +193,14 @@ public class ServiceSummary : MonoBehaviour {
         todayXP -= xp;
     }
 
-    public void ResetSummary() {
+    public void CloseSummary() {
+        ResetSummary();
+        UIManager.Instance.ClosePanel(summaryGO);
+        PlayerManager.Instance.GetAnimation().Haswon(false);
+        CameraController.Instance.Reset();
+    }
+
+    private void ResetSummary() {
         todayXP = 0;
         todayGold = 0;
         customersServedAmount = 0;
@@ -191,5 +209,9 @@ public class ServiceSummary : MonoBehaviour {
         customerServedXP = 0;
         customersLeftXP = 0;
         customersKickedXP = 0;
+
+        isAnimXPEnded = false;
+        isAnimMoneyEnded = false;
+        isAnimCustomerEnded = false;
     }
 }
