@@ -15,12 +15,18 @@ public class UIManager : MonoBehaviour {
 
     public void OpenPanel(GameObject go) {
         if (go.activeSelf) return; //If panel already open return
-        
+
         PlayerManager.Instance.GetInteract().isInteracting = true;
         panels.Add(go);
         go.transform.localScale = Vector3.zero;
         go.SetActive(true);
         go.transform.DOScale(1, 0.325f);
+    }
+
+    public void OpenOptions(GameObject go)
+    {
+        GameManager.Instance.timeElapsing = false;
+        OpenPanel(go);
     }
 
     public void ClosePanel(GameObject go) {
