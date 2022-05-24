@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour {
     public List<StarSO> starList;
 
     void Awake() {
-        Instance = this;
+        if (Instance != null) Destroy(gameObject);
+        else Instance = this;
     }
 }

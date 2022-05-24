@@ -42,7 +42,7 @@ public class SwitchScene : MonoBehaviour {
         while (!operation.isDone) yield return null;
         GameManager.Instance.timeElapsing = true;
 
-        if (nextScene.Equals("Kitchen")) {
+        if (nextScene.Equals("Kitchen") && savePlayerPosition != default) {
             PlayerManager.Instance.GetMovement().Teleport(savePlayerPosition,savePlayerRotation);
         }
         
