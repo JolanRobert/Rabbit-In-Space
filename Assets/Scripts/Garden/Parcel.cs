@@ -15,11 +15,15 @@ public class Parcel : MonoBehaviour {
     [SerializeField] private int parcelID;
     public Food[] foodList;
 
+    private bool isOpening;
+
     public void OpenParcel() {
+        if (isOpening) return;
         StartCoroutine(OpenParcelCR());
     }
 
     private IEnumerator OpenParcelCR() {
+        isOpening = true;
         if (GardenManager.Instance.myParcel != null) {
             foreach (Food food in GardenManager.Instance.myParcel.foodList) {
                 food.foodUI = null;
@@ -31,6 +35,8 @@ public class Parcel : MonoBehaviour {
         
         GardenManager.Instance.myParcel = this;
         UIGarden.Instance.OpenParcelMenu();
+        yield return new WaitForSeconds(0.2f);
+        isOpening = false;
     }
 
     public void CloseParcel() {
