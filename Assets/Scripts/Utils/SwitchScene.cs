@@ -2,6 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class SwitchScene : MonoBehaviour {
 
@@ -10,7 +11,8 @@ public class SwitchScene : MonoBehaviour {
     private Vector3 savePlayerPosition;
     private Quaternion savePlayerRotation;
 
-    [SerializeField] private CanvasGroup loadingScreen;
+    [SerializeField] private CanvasGroup loadingFade;
+    [SerializeField] private VideoPlayer loadingVideo;
     [SerializeField] private float loadingAnimationTime;
 
     void Awake() {
@@ -32,7 +34,8 @@ public class SwitchScene : MonoBehaviour {
         }
         
         //Play animation
-        loadingScreen.DOFade(1, loadingAnimationTime);
+        loadingVideo.Play();
+        loadingFade.DOFade(1, loadingAnimationTime);
         yield return new WaitForSeconds(loadingAnimationTime);
 
         if (GameManager.Instance != null) GameManager.Instance.timeElapsing = false;
@@ -42,11 +45,13 @@ public class SwitchScene : MonoBehaviour {
         while (!operation.isDone) yield return null;
         GameManager.Instance.timeElapsing = true;
 
-        if (nextScene.Equals("Kitchen")) {
+        if (nextScene.Equals("Kitchen") && savePlayerPosition != default) {
             PlayerManager.Instance.GetMovement().Teleport(savePlayerPosition,savePlayerRotation);
         }
         
         //End animation
-        loadingScreen.DOFade(0, loadingAnimationTime);
+        loadingFade.DOFade(0, loadingAnimationTime);
+        yield return new WaitForSeconds(loadingAnimationTime);
+        loadingVideo.Stop();
     }
 }
