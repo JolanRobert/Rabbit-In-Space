@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Baquet
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
+  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,15 +21,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: b7ccbb23729b3c94bb2067285ef11f7a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e72fd7d532c0de74995d67e47da6cafc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: a1103ad28b5d6ad4d981ba261cddcb38, type: 3}
+        m_Texture: {fileID: 2800000, guid: ef61b861f70461745821f912c04b81cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: b7ccbb23729b3c94bb2067285ef11f7a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e72fd7d532c0de74995d67e47da6cafc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
@@ -37,19 +37,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: a1103ad28b5d6ad4d981ba261cddcb38, type: 3}
+        m_Texture: {fileID: 2800000, guid: ef61b861f70461745821f912c04b81cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 739a090017a685f4a97b5466461c5a63, type: 3}
+        m_Texture: {fileID: 2800000, guid: dcbab7a823af4f748ad49a25de6681ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b7ccbb23729b3c94bb2067285ef11f7a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e72fd7d532c0de74995d67e47da6cafc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 658d104ceffbab04489cd8343197fbc2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
