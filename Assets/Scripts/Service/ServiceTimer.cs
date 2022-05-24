@@ -25,13 +25,16 @@ public class ServiceTimer : MonoBehaviour {
 
     private WaitForSeconds oneSec = new WaitForSeconds(1);
     private IEnumerator TimerRunCoroutine(int time) {
+        float totalTime = time;
         timeText.text = time.ToString();
         timeBar.DOFillAmount(1, 1f).SetEase(Ease.Linear);
         yield return oneSec;
-        timeBar.DOFillAmount(0, time).SetEase(Ease.Linear);
-
+        
         while (time > 0) {
+            while (!GameManager.Instance.timeElapsing) yield return null;
+            timeBar.DOFillAmount((time-1)/totalTime, 1).SetEase(Ease.Linear);
             yield return oneSec;
+
             time--;
             timeText.text = time.ToString();
         }

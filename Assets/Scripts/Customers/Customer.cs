@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Customer : MonoBehaviour {
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem waitingParticles;
+    [SerializeField] private ParticleSystem annoyedParticles;
+    [SerializeField] private ParticleSystem happyParticles;
 
     [SerializeField] private SpriteRenderer customerSR;
 
@@ -65,8 +68,12 @@ public class Customer : MonoBehaviour {
     
     private IEnumerator LeaveCR() {
         int m_impatienceLimit = (int)impatienceLimit;
+        
+        waitingParticles.Play();
+        
         while (impatienceLimit > 0) {
             yield return new WaitForSeconds(1);
+            if (!GameManager.Instance.timeElapsing) continue;
             impatienceLimit -= 1 * impatienceFactor;
             if ((int) impatienceLimit == m_impatienceLimit*2/3) {
                 if (customerSprites.Length <= 1) yield break;
@@ -74,6 +81,9 @@ public class Customer : MonoBehaviour {
                 CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[1]);
             }
             else if ((int) impatienceLimit == m_impatienceLimit*1/3) {
+                waitingParticles.Stop();
+                annoyedParticles.Play();
+                
                 if (customerSprites.Length <= 1) yield break;
                 customerSR.sprite = customerSprites[2];
                 CustomerOrderManager.Instance.UpdateCustomerOrder(this,customerHeadSprites[2]);
@@ -100,6 +110,17 @@ public class Customer : MonoBehaviour {
     }
 
     private void CompleteOrder(CustomerState state) {
+        StartCoroutine(CompleteOrderCR(state));
+    }
+
+    private IEnumerator CompleteOrderCR(CustomerState state) {
+        waitingParticles.Stop();
+        annoyedParticles.Stop();
+        if (state == CustomerState.SERVED) {
+            happyParticles.Play();
+            yield return new WaitForSeconds(1);
+        }
+        
         ServiceManager.Instance.mySummary.NewServiceInfo(this,state);
         KitchenManager.Instance.customerSpawner.DepopCustomer(this);
     }
