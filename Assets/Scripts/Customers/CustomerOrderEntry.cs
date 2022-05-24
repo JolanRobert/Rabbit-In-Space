@@ -10,6 +10,8 @@ public class CustomerOrderEntry : MonoBehaviour {
     [SerializeField] private Image customerSR;
     [SerializeField] private Image orderSR;
 
+    private Tween colorTween;
+
     public void Init(Customer customer) {
         this.customer = customer;
 
@@ -17,12 +19,18 @@ public class CustomerOrderEntry : MonoBehaviour {
         orderSR.sprite = customer.myRecipe.recipeSprite;
     }
 
+    void Update() {
+        if (colorTween == null) return;
+        if (colorTween.IsPlaying() && !GameManager.Instance.timeElapsing) colorTween.Pause();
+        else if (!colorTween.IsPlaying() && GameManager.Instance.timeElapsing) colorTween.Play();
+    }
+
     public void UpdateSprite(Sprite newSprite) {
         customerSR.sprite = newSprite;
     }
 
     public void UpdateBackground(float timeLeft, float impatienceFactor) {
-        backgroundSR.DOColor(new Color(255 / 255f, 50 / 255f, 50 / 255f, 1), timeLeft / impatienceFactor);
+        colorTween = backgroundSR.DOColor(new Color(255 / 255f, 50 / 255f, 50 / 255f, 1), timeLeft / impatienceFactor);
     }
 
     public void ResetBackground() {
