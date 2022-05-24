@@ -9,7 +9,6 @@ public class PlayerInteract : MonoBehaviour {
     public bool isInteracting;
     
     public void TryInteract(IInteractable interactableGO) {
-        Debug.Log(interactableGO.name);
         if (isTryingToInteract) StopCoroutine(interactCR);
         interactCR = StartCoroutine(InteractCR(interactableGO));
     }
