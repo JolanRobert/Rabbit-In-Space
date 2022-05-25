@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class ServiceManager : MonoBehaviour {
 
@@ -65,7 +66,7 @@ public class ServiceManager : MonoBehaviour {
         KitchenManager.Instance.inService = true;
         KitchenManager.Instance.customerSpawner.StartService();
 
-        windowMR.material.DOColor(new Color(0, 1, 1, 0), 1);
+        UpdateWindow();
         
         myTimer.StartTimer(serviceTime);
     }
@@ -78,7 +79,7 @@ public class ServiceManager : MonoBehaviour {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
         
-        windowMR.material.DOColor(new Color(0, 1, 1, 1), 1);
+        UpdateWindow();
         
         CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
         PlayerManager.Instance.GetAnimation().Haswon(true);
@@ -89,5 +90,9 @@ public class ServiceManager : MonoBehaviour {
 
         yield return new WaitForSeconds(1);
         StartCoroutine(mySummary.AnimSummary());
+    }
+
+    public void UpdateWindow() {
+        windowMR.material.DOColor(KitchenManager.Instance.inService ? new Color(0, 1, 1, 0) : new Color(0, 1, 1, 1), 1);
     }
 }

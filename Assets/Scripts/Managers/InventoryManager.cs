@@ -18,10 +18,6 @@ public class InventoryManager : MonoBehaviour {
     void Start() {
         InitFridge();
         InitWorkplan();
-        
-        foreach (FoodSO food in DataManager.Instance.foodList) {
-            FoodDataManager.Instance.SetItem(food.foodType,100);
-        }
     }
 
     private void InitFridge() {

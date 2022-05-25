@@ -9,34 +9,52 @@ using MochiBeater;
 
 namespace MochiBeater
 {
-    public class FoldingDoughButton : MonoBehaviour, IBeginDragHandler, IEndDragHandler
+    public class FoldingDoughButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler//, IBeginDragHandler, IEndDragHandler
     {
         public bool dragValidity;
         public bool isDragging;
         public Vector2 dragPosition;
-        public Vector2 deltaDrag;
-        
-        public void OnBeginDrag(PointerEventData eventData)
+        //public Vector2 deltaDrag;
+
+        public void OnPointerUp(PointerEventData eventData)
         {
             isDragging = true;
             dragValidity = true;
-            dragPosition = Camera.main.ScreenToWorldPoint(eventData.position);
         }
-    
-        public void OnEndDrag(PointerEventData eventData)
+
+        public void OnPointerDown(PointerEventData eventData)
         {
             isDragging = false;
 
             if (dragValidity)
             {
-                deltaDrag = Camera.main.ScreenToWorldPoint(eventData.position) - (Vector3)dragPosition;
-                MochiBeaterManager.Instance.TryFold(deltaDrag);
+                //deltaDrag = Camera.main.ScreenToWorldPoint(eventData.position) - (Vector3)dragPosition;
+                MochiBeaterManager.Instance.TryFold();
             }
         }
+
+        /*public void OnBeginDrag(PointerEventData eventData)
+        {
+            isDragging = true;
+            dragValidity = true;
+            dragPosition = Camera.main.ScreenToWorldPoint(eventData.position);
+        }*/
+    
+        /*public void OnEndDrag(PointerEventData eventData)
+        {
+            isDragging = false;
+
+            if (dragValidity)
+            {
+                //deltaDrag = Camera.main.ScreenToWorldPoint(eventData.position) - (Vector3)dragPosition;
+                MochiBeaterManager.Instance.TryFold();
+            }
+        }*/
 
         public void StompFinger()
         {
             dragValidity = false;
+            isDragging = false;
         }
     }
 }
