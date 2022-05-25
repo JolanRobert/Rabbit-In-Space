@@ -469,6 +469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4813ae18604be8541a7546893353ee20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingFade: {fileID: 0}
+  loadingVideo: {fileID: 0}
+  loadingAnimationTime: 0
 --- !u!4 &853642849
 Transform:
   m_ObjectHideFlags: 0
@@ -556,11 +559,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000452673070970011, guid: a49389cb8c311664bb407bfd973610aa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 25
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 9000452673070970011, guid: a49389cb8c311664bb407bfd973610aa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -52
       objectReference: {fileID: 0}
     - target: {fileID: 9000452673070970011, guid: a49389cb8c311664bb407bfd973610aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
