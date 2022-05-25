@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class RecipeManager : MonoBehaviour {
     
     public static RecipeManager Instance;
+
+    [SerializeField] private RecipeSummary recipeSummary;
     
     public RecipeSO currentRecipe, pendingRecipe;
     public RecipePanel pendingRecipePanel;
@@ -65,7 +67,8 @@ public class RecipeManager : MonoBehaviour {
                 item.amount += 1 * recipeAmount;
                 break;
             }
-            
+            StartCoroutine(WaitForSuccessRecipe());
+
             //Debug.Log(currentRecipe.name + " recipe has ended with success.");
         }
         //else Debug.Log(currentRecipe.name + " recipe has ended with failure.");
@@ -74,6 +77,14 @@ public class RecipeManager : MonoBehaviour {
         stations = new Queue<StationType>();
         StartCoroutine(ResetBook());
         StartCoroutine(WaitForGlow());
+    }
+    public IEnumerator WaitForSuccessRecipe()
+    {
+        while (SceneManager.GetActiveScene().name != "Kitchen")
+        {
+            yield return null;
+        }
+        recipeSummary.OpenSummary(currentRecipe);
     }
 
     IEnumerator ResetBook()

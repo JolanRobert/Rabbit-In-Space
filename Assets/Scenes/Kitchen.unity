@@ -752,7 +752,7 @@ MonoBehaviour:
   serviceValidPanel: {fileID: 1749662689}
   serviceInvalidPanel: {fileID: 688818426}
   serviceWarningText: {fileID: 1787229357}
-  serviceTime: 10
+  serviceTime: 180
   myTimer: {fileID: 0}
   mySummary: {fileID: 0}
   windowMR: {fileID: 254383063277943972}
