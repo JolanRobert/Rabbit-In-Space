@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stationType: 1
   minigameScene: Mochi Beater
-  icon: {fileID: 21300000, guid: a52f537fd298bc34c9ba4541bf9eaf23, type: 3}
+  icon: {fileID: -4122444937419807670, guid: 4eb58e7fae5a6e648a049598e13123ce, type: 3}
