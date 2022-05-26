@@ -451,10 +451,7 @@ GameObject:
   - component: {fileID: 8721117557493417868}
   - component: {fileID: 8721117557493417875}
   - component: {fileID: 8721117557493417869}
-  - component: {fileID: 1508726286075330693}
-  - component: {fileID: 4694088940934742935}
-  - component: {fileID: 1526337226118925645}
-  - component: {fileID: 5001283676217679020}
+  - component: {fileID: 6416212418588294031}
   m_Layer: 5
   m_Name: GardenEntry
   m_TagString: Untagged
@@ -537,8 +534,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1508726286075330693}
-        m_TargetAssemblyTypeName: Parcel, Assembly-CSharp
+      - m_Target: {fileID: 6416212418588294031}
+        m_TargetAssemblyTypeName: GardenEntry, Assembly-CSharp
         m_MethodName: OpenParcel
         m_Mode: 1
         m_Arguments:
@@ -549,7 +546,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1508726286075330693
+--- !u!114 &6416212418588294031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,58 +555,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8721117557493417871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e766a40e61504114699f97bc64a8812b, type: 3}
+  m_Script: {fileID: 11500000, guid: b58aad7d37e5c34408d769213884f1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   topSprite: {fileID: 3058784748676765909}
   openTime: 0.5
-  parcelID: 0
-  foodList:
-  - {fileID: 4694088940934742935}
-  - {fileID: 1526337226118925645}
-  - {fileID: 5001283676217679020}
---- !u!114 &4694088940934742935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8721117557493417871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4743753d86311824b9a397ef5bb07035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodType: 0
-  foodUI: {fileID: 0}
-  grainatorFood: 0
---- !u!114 &1526337226118925645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8721117557493417871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4743753d86311824b9a397ef5bb07035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodType: 0
-  foodUI: {fileID: 0}
-  grainatorFood: 0
---- !u!114 &5001283676217679020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8721117557493417871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4743753d86311824b9a397ef5bb07035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodType: 0
-  foodUI: {fileID: 0}
-  grainatorFood: 0
