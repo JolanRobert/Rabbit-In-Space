@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheatManager : MonoBehaviour
-{
+public class CheatManager : MonoBehaviour {
+
+    [SerializeField] private int moreIngredientsAmount;
+    [SerializeField] private int moreGoldAmount;
+    
     public void MoreIngredients() {
         foreach (FoodSO ingredient in KitchenManager.Instance.foodList) {
-            FoodDataManager.Instance.AddItem(ingredient.foodType, 50);
+            FoodDataManager.Instance.AddItem(ingredient.foodType, moreIngredientsAmount);
         }
     }
 
@@ -15,6 +18,6 @@ public class CheatManager : MonoBehaviour
     }
 
     public void MoreGold() {
-        GameManager.Instance.GainGold(1000);
+        GameManager.Instance.GainGold(moreGoldAmount);
     }
 }
