@@ -8,9 +8,11 @@ public class GardenManager : MonoBehaviour {
     [Header("Current Selection")]
     public Parcel myParcel;
     public int mySlot;
+
+    [SerializeField] private List<Parcel> parcelList;
     
     //Parcel ID, Upgrade List (ParcelUpgrade Memory)
-    public Dictionary<int, List<Parcel.Upgrade>> upgrades = new Dictionary<int, List<Parcel.Upgrade>>();
+    //public Dictionary<int, List<Parcel.Upgrade>> upgrades = new Dictionary<int, List<Parcel.Upgrade>>();
 
     void Awake() {
         if (Instance != null) Destroy(gameObject);
@@ -18,12 +20,17 @@ public class GardenManager : MonoBehaviour {
     }
 
     void Start() {
-        for (int i = 0; i < 6; i++) {
+        /*for (int i = 0; i < 6; i++) {
             upgrades.Add(i,new List<Parcel.Upgrade>());
             foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
                 upgrades[i].Add(new Parcel.Upgrade(puSo.upgradeType));
             }
-        }
+        }*/
+    }
+
+    public void SelectParcel(GardenEntry entry) {
+        myParcel = parcelList[entry.transform.GetSiblingIndex()];
+        myParcel.gardenEntry = entry;
     }
     
     //Plant with seed menu
