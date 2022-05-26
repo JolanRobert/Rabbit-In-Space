@@ -30,10 +30,7 @@ public class GameManager : MonoBehaviour {
         while (xpAmount >= currentStar.xpBeforeNextStar) {
             xpAmount -= currentStar.xpBeforeNextStar;
             currentStar = currentStar.nextStar;
-            if (currentStar.nextStar == null) {
-                xpAmount = 0;
-                return;
-            }
+            if (currentStar.nextStar == null) xpAmount = 0;
         }
         
         UIGame.Instance.UpdateStars(currentStar,GetXPLeft());
