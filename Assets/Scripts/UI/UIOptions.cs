@@ -27,14 +27,9 @@ public class UIOptions : MonoBehaviour {
         optionsLeave.SetActive(false);
     }
 
-    public void ExitMain() {
+    public void ExitOptions() {
         if (optionsLeave.activeSelf) UIManager.Instance.ClosePanel(optionsLeave);
         UIManager.Instance.ClosePanel(optionsMain);
-        GameManager.Instance.timeElapsing = true;
-    }
-
-    public void ExitGraphics() {
-        UIManager.Instance.ClosePanel(optionsGraphics);
         GameManager.Instance.timeElapsing = true;
     }
 
