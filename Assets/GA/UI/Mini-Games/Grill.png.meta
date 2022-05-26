@@ -19,22 +19,22 @@ TextureImporter:
     second: Star
   - first:
       213: -4633407525001140484
-    second: Mochi_Raw
+    second: 1_Mochi_Raw
   - first:
       213: -5695350647912881824
-    second: Mochi_Cooking_1
+    second: 2_Mochi_Cooking_1
   - first:
       213: 2039408549716505541
-    second: Mochi_Cooking_2
+    second: 3_Mochi_Cooking_2
   - first:
       213: 5427033654635005772
-    second: Mochi_Perfect
+    second: 4_Mochi_Perfect
   - first:
       213: -8019360798285819247
-    second: Mochi_Burned_1
+    second: 5_Mochi_Burned_1
   - first:
       213: -8333258782180015949
-    second: Mochi_Burned_2
+    second: 6_Mochi_Burned_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mochi_Raw
+      name: 1_Mochi_Raw
       rect:
         serializedVersion: 2
         x: 17
@@ -250,7 +250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mochi_Cooking_1
+      name: 2_Mochi_Cooking_1
       rect:
         serializedVersion: 2
         x: 217
@@ -271,7 +271,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mochi_Cooking_2
+      name: 3_Mochi_Cooking_2
       rect:
         serializedVersion: 2
         x: 405
@@ -292,7 +292,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mochi_Perfect
+      name: 4_Mochi_Perfect
       rect:
         serializedVersion: 2
         x: 606
@@ -313,7 +313,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mochi_Burned_1
+      name: 5_Mochi_Burned_1
       rect:
         serializedVersion: 2
         x: 792
@@ -334,7 +334,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mochi_Burned_2
+      name: 6_Mochi_Burned_2
       rect:
         serializedVersion: 2
         x: 985
