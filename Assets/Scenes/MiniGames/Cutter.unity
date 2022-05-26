@@ -256,12 +256,12 @@ MonoBehaviour:
   errorCounter: {fileID: 1044138158}
   doughPrefab: {fileID: 6992507180396954820, guid: d72fca28fc7b8e34db29fd7f0f43407e, type: 3}
   completionGauge: {fileID: 1134146628}
-  initialAmountToCut: 5
-  delayBetweenThrows: 2
+  initialAmountToCut: 8
+  delayBetweenThrows: 0.6
   doughThrowStrengthMin: 600
   doughThrowStrengthMax: 750
   doughThrowStrength: 0
-  throwSwingMax: 0.175
+  throwSwingMax: 0.25
   startPosY: -6
   startPosXMin: -6
   startPosXMax: 6
@@ -469,6 +469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4813ae18604be8541a7546893353ee20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingFade: {fileID: 0}
+  loadingVideo: {fileID: 0}
+  loadingAnimationTime: 0
 --- !u!4 &853642849
 Transform:
   m_ObjectHideFlags: 0

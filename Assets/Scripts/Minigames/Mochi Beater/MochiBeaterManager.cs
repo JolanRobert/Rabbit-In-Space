@@ -9,7 +9,7 @@ namespace MochiBeater
     {
         public static MochiBeaterManager Instance;
         [SerializeField] private Animator animator;
-        [SerializeField] private Transform arrow, dough;
+        [SerializeField] private Transform /*arrow,*/ dough;
         [SerializeField] private Image completionGauge;
         [SerializeField] private GameObject foldingButton;
         [SerializeField] private int initialFoldsToMake;
@@ -34,13 +34,14 @@ namespace MochiBeater
         {
             foldingDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
             foldingVector = foldingDir * foldingMagnitudeMin; 
-            arrow.eulerAngles = new Vector3 (0, 0, Vector2.SignedAngle(transform.right, foldingVector));
+            foldingButton.transform.eulerAngles = new Vector3 (0, 0, Vector2.SignedAngle(-transform.up, foldingVector));
             dough.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(transform.up, foldingVector));
             foldingButton.transform.position = Camera.main.WorldToScreenPoint(-foldingVector/1.2f);
         }
 
         public void TryFold(Vector2 drag)
         {
+            /*
             //Debug.Log(drag.magnitude + ", " + drag.normalized);
             if (drag.magnitude < foldingMagnitudeMin)
             {
@@ -54,7 +55,27 @@ namespace MochiBeater
             {
                 Debug.Log("Invalid dir");
                 return;
+            }*/
+            SucceedFold();
+        }
+
+        public void TryFold()
+        {
+            /*
+            //Debug.Log(drag.magnitude + ", " + drag.normalized);
+            if (drag.magnitude < foldingMagnitudeMin)
+            {
+                Debug.Log("Invalid Magnitude");
+                return;
             }
+            if (!(drag.normalized.x > foldingDir.x - dirMargin / 2) ||
+                !(drag.normalized.x < foldingDir.x + dirMargin / 2) ||
+                !(drag.normalized.y > foldingDir.y - dirMargin / 2) ||
+                !(drag.normalized.y < foldingDir.y + dirMargin / 2))
+            {
+                Debug.Log("Invalid dir");
+                return;
+            }*/
             SucceedFold();
         }
 
@@ -74,10 +95,10 @@ namespace MochiBeater
 
         IEnumerator FoldingDelay()
         {
-            arrow.gameObject.SetActive(false);
+            //arrow.gameObject.SetActive(false);
             foldingButton.gameObject.SetActive(false);
             yield return new WaitForSeconds(foldingDelay);
-            arrow.gameObject.SetActive(true);
+            //arrow.gameObject.SetActive(true);
             foldingButton.gameObject.SetActive(true);
         }
     }
