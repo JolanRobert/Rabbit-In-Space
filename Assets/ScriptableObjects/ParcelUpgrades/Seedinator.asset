@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b80ecb01f1bf17042a26921a11501831, type: 3}
-  m_Name: Recoltout
+  m_Name: Seedinator
   m_EditorClassIdentifier: 
-  upgradeType: 2
-  description: "R\xE9cup\xE8re automatiquement les plants arriv\xE9s \xE0 maturit\xE9"
+  upgradeType: 3
+  description: If the parcel is empty, will plant the chosen seed automatically
   unlockCost: 500
   isActivable: 1
