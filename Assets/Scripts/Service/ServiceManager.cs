@@ -67,8 +67,9 @@ public class ServiceManager : MonoBehaviour {
         KitchenManager.Instance.customerSpawner.StartService();
 
         UpdateWindow();
-        
+
         myTimer.StartTimer(serviceTime);
+        ServiceButton.Instance.UpdateMaterial();
     }
 
     public void EndService() {
@@ -78,6 +79,7 @@ public class ServiceManager : MonoBehaviour {
     private IEnumerator EndServiceCoroutine() {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
+        ServiceButton.Instance.UpdateMaterial();
         
         UpdateWindow();
         
