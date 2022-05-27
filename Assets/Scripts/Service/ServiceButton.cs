@@ -13,7 +13,7 @@ public class ServiceButton : IInteractable {
     }
     
     public override void Interact() {
-        ServiceManager.Instance.LoadMenu();
+        ServiceManager.Instance.LoadMenuFromButton();
     }
 
     public void UpdateMaterial() {
