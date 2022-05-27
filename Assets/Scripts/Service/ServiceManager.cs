@@ -90,6 +90,7 @@ public class ServiceManager : MonoBehaviour {
         ServiceButton.Instance.UpdateMaterial();
         
         UpdateWindow();
+        yield return new WaitForSeconds(0.25f);
         
         CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
         PlayerManager.Instance.GetAnimation().Haswon(true);
