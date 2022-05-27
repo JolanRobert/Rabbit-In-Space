@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Nutrients
   m_EditorClassIdentifier: 
   upgradeType: 1
+  upgradeSprite: {fileID: -8892367964624201093, guid: b86c375aedf9eee448900de3098ad58d, type: 3}
   description: Reduce the time of the plant's growth by half
   unlockCost: 100
   isActivable: 0

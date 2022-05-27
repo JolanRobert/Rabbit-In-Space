@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 234445f95e138ab48b9ea3d6b3fc4696
+guid: b4aa9df27f6c4e947a34bbfbdef80a3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5498624122272784625
-    second: Upgrades_Deco_1
+      213: 911210973362052126
+    second: Grill_2_0
   - first:
-      213: -3659243032151640054
-    second: Upgrades_Shop_BG
-  - first:
-      213: -1377707542256923510
-    second: Upgrades_Deco_2
+      213: 2721573995345697915
+    second: Grill_2_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -77,7 +74,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +86,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,64 +109,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Upgrades_Deco_1
+      name: Grill_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 757
-        width: 1043
-        height: 185
+        x: 22
+        y: 22
+        width: 173
+        height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f0a67991890f4c40800000000000000
-      internalID: 5498624122272784625
+      spriteID: e1cdeae6d8545ac00800000000000000
+      internalID: 911210973362052126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Upgrades_Shop_BG
+      name: Grill_2_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 0
-        width: 913
-        height: 556
+        x: 213
+        y: 33
+        width: 85
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 36, y: 34, z: 34, w: 37}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0837c989d1c73dc0800000000000000
-      internalID: -3659243032151640054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Upgrades_Deco_2
-      rect:
-        serializedVersion: 2
-        x: 1048
-        y: 365
-        width: 349
-        height: 183
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8c466b2a4661ece0800000000000000
-      internalID: -1377707542256923510
+      spriteID: b7c55861129f4c520800000000000000
+      internalID: 2721573995345697915
       vertices: []
       indices: 
       edges: []
@@ -177,7 +153,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6f2d810c91dd7af4cbdccf5c815ed797
+    spriteID: c4a31c4e6e3ef9f4980d141d768d15f1
     internalID: 0
     vertices: []
     indices: 
