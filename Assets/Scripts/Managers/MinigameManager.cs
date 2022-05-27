@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class MinigameManager : MonoBehaviour {
     
     public static MinigameManager Instance;
-    public bool resultPending;
+    [HideInInspector]
+    public bool resultPending = true;
     
     void Awake() {
         if (Instance != null) Destroy(gameObject);

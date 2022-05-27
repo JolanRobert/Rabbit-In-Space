@@ -93,6 +93,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 39aa7284249911e419449c20a1b0db98, type: 2}
+  - {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,6 +177,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 628e2aefe01af3d42a37f4ff2648f44c, type: 2}
+  - {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,7 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 0, y: 0, z: 0.25}
   interactPanel: {fileID: 0}
-  meshRenderer: {fileID: 1868837598831168419}
+  meshRenderers:
+  - {fileID: 1868837598831168419}
   station: {fileID: 11400000, guid: c21a7eb391cd99a43b4b23b157c6127c, type: 2}
   glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
   emptyMaterial: {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
@@ -482,7 +485,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -0.5, y: 0, z: 0}
   interactPanel: {fileID: 0}
-  meshRenderer: {fileID: 4629858394501030269}
+  meshRenderers:
+  - {fileID: 1208065269359338537}
+  - {fileID: 4629858394501030269}
   station: {fileID: 11400000, guid: 46506b6ed98910747b4f53028b8be6bf, type: 2}
   glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
   emptyMaterial: {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
@@ -546,6 +551,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 80b4c3d38964d954da05b51336b865eb, type: 2}
+  - {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -916,7 +922,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: -1.2, y: 0, z: -0.3}
   interactPanel: {fileID: 0}
-  meshRenderer: {fileID: 8590322308240824078}
+  meshRenderers:
+  - {fileID: 8590322308240824078}
+  - {fileID: 9005120294753442112}
   station: {fileID: 11400000, guid: b8f358c0e9394c4438b4a922a4fe2b72, type: 2}
   glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
   emptyMaterial: {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
@@ -1113,6 +1121,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4513e7cc46354674ab74a3c5a20d082e, type: 2}
+  - {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1214,6 +1223,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 825798225f4d6af4781e9dbbc65da28e, type: 2}
   - {fileID: 2100000, guid: 8ba64ca8d953e9544817acf7d1f1275f, type: 2}
   - {fileID: 2100000, guid: 7ac046c320491c940bbb9a2f44ad3712, type: 2}
+  - {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1654,6 +1664,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 04a90f1db8306364893421f060317d18, type: 2}
+  - {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1703,7 +1714,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 0.3, y: 0, z: 0}
   interactPanel: {fileID: 0}
-  meshRenderer: {fileID: 7923944746181172556}
+  meshRenderers:
+  - {fileID: 7923944746181172556}
   station: {fileID: 11400000, guid: d683adb435a69be4eab83ea439b3ee3f, type: 2}
   glowMaterial: {fileID: 2100000, guid: 1759fc2dbc4bb3048b6cf66ecf6eb234, type: 2}
   emptyMaterial: {fileID: 2100000, guid: bc2f8889fee1877429bd83e69dfb17c0, type: 2}
@@ -1818,6 +1830,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 0.35, y: 0, z: -0.35}
   interactPanel: {fileID: 0}
+  openMaterial: {fileID: 0}
+  closeMaterial: {fileID: 0}
 --- !u!1 &7977702439337851233
 GameObject:
   m_ObjectHideFlags: 0

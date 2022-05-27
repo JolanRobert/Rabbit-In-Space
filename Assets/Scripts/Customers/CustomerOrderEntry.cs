@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class CustomerOrderEntry : MonoBehaviour {
     [SerializeField] private Image backgroundSR;
     [SerializeField] private Image customerSR;
     [SerializeField] private Image orderSR;
+    [SerializeField] private TMP_Text ownedRecipeAmountText;
 
     private Tween colorTween;
 
@@ -17,6 +19,7 @@ public class CustomerOrderEntry : MonoBehaviour {
 
         customerSR.sprite = customer.myCustomer.customerHeadSprites[0];
         orderSR.sprite = customer.myRecipe.recipeSprite;
+        UpdateOwnedRecipeAmount();
     }
 
     void Update() {
@@ -36,6 +39,10 @@ public class CustomerOrderEntry : MonoBehaviour {
     public void ResetBackground() {
         backgroundSR.DOKill();
         backgroundSR.color = new Color(50 / 255f, 255 / 255f, 50 / 255f, 1);
+    }
+
+    public void UpdateOwnedRecipeAmount() {
+        ownedRecipeAmountText.text = $"Owned : {InventoryManager.Instance.GetAmountOfRecipeItem(customer.myRecipe)}";
     }
 
     public void TryCompleteOrder() {

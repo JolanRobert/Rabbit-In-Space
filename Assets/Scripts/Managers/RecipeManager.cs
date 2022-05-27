@@ -61,17 +61,9 @@ public class RecipeManager : MonoBehaviour {
 
     public void EndRecipe(bool success) {
         if (success) {
-            for (int i = 0; i < InventoryManager.Instance.recipeItems.Count; i++) {
-                FoodDataManager.RecipeItem item = InventoryManager.Instance.recipeItems[i];
-                if (item.recipeType != currentRecipe.recipeType) continue;
-                item.amount += 1 * recipeAmount;
-                break;
-            }
+            FoodDataManager.Instance.AddRecipe(currentRecipe.recipeType, recipeAmount);
             StartCoroutine(WaitForSuccessRecipe());
-
-            //Debug.Log(currentRecipe.name + " recipe has ended with success.");
         }
-        //else Debug.Log(currentRecipe.name + " recipe has ended with failure.");
         
         currentRecipe = null;
         stations = new Queue<StationType>();

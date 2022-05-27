@@ -55,5 +55,6 @@ public class SwitchScene : MonoBehaviour {
         loadingFade.blocksRaycasts = false;
         yield return new WaitForSeconds(loadingAnimationTime);
         loadingVideo.Stop();
+        CustomerSpawner.Instance.MoveCustomers();
     }
 }

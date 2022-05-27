@@ -20,6 +20,7 @@ public class ErrorCounter : MonoBehaviour
     }
 
     public void Fail() {
+        if(currentErrors == maxErrors) return;
         errorCrosses[currentErrors].GetComponent<Image>().color = Color.white;
         currentErrors++;
         if(currentErrors == maxErrors) MinigameManager.Instance.EndMinigame(false);
