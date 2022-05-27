@@ -96,7 +96,10 @@ public class Food : MonoBehaviour {
     }
 
     public void ReduceTime(int sec) {
-        if (foodType == FoodType.NONE) return;
+        if (foodType == FoodType.NONE) {
+            UIGarden.Instance.OpenMenuSeed(foodUI.foodSlot);
+            return;
+        }
         if (GrowingTime <= 0) return; 
         GrowingTime -= sec;
     }
