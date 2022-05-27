@@ -3,19 +3,19 @@ using UnityEngine;
 public class UIOptions : MonoBehaviour {
 
     [SerializeField] private GameObject optionsMain;
-    [SerializeField] private GameObject optionsGraphics;
+    [SerializeField] private GameObject optionsCheats;
     [SerializeField] private GameObject optionsLeave;
     
-    public void MainToGraphics() {
-        optionsGraphics.transform.localScale = Vector3.one;
+    public void MainToCheats() {
+        optionsCheats.transform.localScale = Vector3.one;
         optionsMain.SetActive(false);
-        optionsGraphics.SetActive(true);
+        optionsCheats.SetActive(true);
     }
 
-    public void GraphicsToMain() {
+    public void CheatsToMain() {
         optionsMain.transform.localScale = Vector3.one;
         optionsMain.SetActive(true);
-        optionsGraphics.SetActive(false);
+        optionsCheats.SetActive(false);
     }
 
     public void MainToLeave() {
@@ -27,14 +27,9 @@ public class UIOptions : MonoBehaviour {
         optionsLeave.SetActive(false);
     }
 
-    public void ExitMain() {
+    public void ExitOptions() {
         if (optionsLeave.activeSelf) UIManager.Instance.ClosePanel(optionsLeave);
         UIManager.Instance.ClosePanel(optionsMain);
-        GameManager.Instance.timeElapsing = true;
-    }
-
-    public void ExitGraphics() {
-        UIManager.Instance.ClosePanel(optionsGraphics);
         GameManager.Instance.timeElapsing = true;
     }
 

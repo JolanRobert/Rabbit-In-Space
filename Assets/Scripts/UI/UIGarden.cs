@@ -33,7 +33,7 @@ public class UIGarden : MonoBehaviour {
 
     public void CloseParcelMenu() {
         Parcel myParcel = GardenManager.Instance.myParcel;
-        myParcel.CloseParcel();
+        myParcel.gardenEntry.CloseParcel();
         UIManager.Instance.ClosePanel(parcelMenu);
     }
 
