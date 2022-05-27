@@ -18,6 +18,12 @@ MonoBehaviour:
   nbBeforeReveal: 1
   description: "Prend un plat al\xE9atoire sur le menu, s'en va 2 fois plus vite"
   customerHeadSprites:
-  - {fileID: -5716375310670982321, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  - {fileID: -9068545622262623162, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: 1512543120673476006, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: 678510028800168564, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: 4090995600530358268, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
   customerSprites:
-  - {fileID: -5716375310670982321, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  - {fileID: -6090546030914582314, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: -2418996438792930742, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: 37828344823450622, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: 1485278753052364112, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}

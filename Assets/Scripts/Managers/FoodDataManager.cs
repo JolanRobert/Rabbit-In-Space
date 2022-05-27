@@ -40,8 +40,8 @@ public class FoodDataManager : MonoBehaviour {
             RecipeItem item = InventoryManager.Instance.recipeItems[i];
             
             if (item.recipeType != recipeType) continue;
-            UIKitchen.Instance.UpdateWorkplanSlot(i,item.amount);
             item.amount += amount;
+            UIKitchen.Instance.UpdateWorkplanSlot(i,item.amount);
             CustomerOrderManager.Instance.UpdateCustomersOwnedRecipeAmount();
             break;
         }
