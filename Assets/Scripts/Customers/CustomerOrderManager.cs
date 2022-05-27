@@ -49,6 +49,7 @@ public class CustomerOrderManager : MonoBehaviour {
             }
             else RevealOrder(customerOrderEntries[i]);
         }
+        UpdateCustomersOwnedRecipeAmount();
     }
     
     public void AddCustomerOrder(Customer customer) {
@@ -93,5 +94,13 @@ public class CustomerOrderManager : MonoBehaviour {
         }
 
         return null;
+    }
+
+    public void UpdateCustomersOwnedRecipeAmount() {
+        if(customerOrderEntries == null) return;
+        foreach (CustomerOrderEntry entry in customerOrderEntries) {
+            if(entry.customer == null) continue;
+            entry.UpdateOwnedRecipeAmount();
+        }
     }
 }

@@ -95,6 +95,6 @@ public class ServiceManager : MonoBehaviour {
     }
 
     public void UpdateWindow() {
-        windowMR.material.DOColor(KitchenManager.Instance.inService ? new Color(0, 1, 1, 0) : new Color(0, 1, 1, 1), 1);
+        windowMR.material.DOColor(KitchenManager.Instance.inService ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1), 1);
     }
 }

@@ -69,7 +69,7 @@ public class CustomerSpawner : MonoBehaviour {
         Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
         
         for (int i = 0; i < customerQueue.Count; i++) {
-            customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1.5f + customerOffset;
+            customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1f + customerOffset;
             
             //Mise à jour du facteur d'impatience
             int nbEnervants = 0;
