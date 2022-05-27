@@ -22,8 +22,8 @@ public class GrillMachine : MonoBehaviour {
     void Start() {
         for (int i = 0; i < nbMochis; i++) {
             float radiansOfSeparation = Mathf.PI * 2 / nbMochis;
-            float x = Mathf.Sin(radiansOfSeparation * i) * 1.75f;
-            float y = Mathf.Cos(radiansOfSeparation * i) * 1.75f;
+            float x = Mathf.Sin(radiansOfSeparation * i) * 3.5f;
+            float y = Mathf.Cos(radiansOfSeparation * i) * 2.25f;
 
             Vector3 mochiPosition = transform.position + new Vector3(x, y, 0);
             GrillMochi mochi = Instantiate(grillMochiPrefab, mochiPosition, Quaternion.identity).GetComponent<GrillMochi>();
