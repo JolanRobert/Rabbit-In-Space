@@ -51,10 +51,8 @@ public class InventoryManager : MonoBehaviour {
         InitWorkplan();
         foreach (FoodDataManager.RecipeItem recipeItem in recipeItems) {
             if (recipeItem.recipeType != rSo.recipeType) continue;
-            Debug.Log(recipeItem + " ok");
             return recipeItem.amount;
         }
-        Debug.Log(rSo.recipeType + " non");
         return 0;
     }
 }
