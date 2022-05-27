@@ -611,6 +611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Completion Gauge Container
       objectReference: {fileID: 0}
+    - target: {fileID: 4713118603515094094, guid: 122b675618cf1fd4eb1164859111025a, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4713118603515094095, guid: 122b675618cf1fd4eb1164859111025a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -645,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713118603515094095, guid: 122b675618cf1fd4eb1164859111025a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 350
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 4713118603515094095, guid: 122b675618cf1fd4eb1164859111025a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -704,7 +708,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1134146628 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4713118604953966882, guid: 122b675618cf1fd4eb1164859111025a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4713118603515094094, guid: 122b675618cf1fd4eb1164859111025a, type: 3}
   m_PrefabInstance: {fileID: 1134146626}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

@@ -14,6 +14,7 @@ public class ServiceManager : MonoBehaviour {
     [SerializeField] private GameObject serviceValidPanel;
     [SerializeField] private GameObject serviceInvalidPanel;
     [SerializeField] private GameObject serviceWarningText;
+    [SerializeField] private GameObject serviceConfirmEndPanel;
 
     [Header("Service Timer")]
     [SerializeField] [Range(1,500)] private int serviceTime = 360;
@@ -35,6 +36,13 @@ public class ServiceManager : MonoBehaviour {
         mySummary = ServiceSummary.Instance;
     }
 
+    public void LoadMenuFromButton() {
+        if (KitchenManager.Instance.inService) {
+            UIManager.Instance.OpenPanel(serviceConfirmEndPanel);
+            return;
+        }
+        LoadMenu();
+    }
     public void LoadMenu() {
         if (KitchenManager.Instance.inService) {
             myTimer.EndTimer();
@@ -60,7 +68,7 @@ public class ServiceManager : MonoBehaviour {
         UIManager.Instance.OpenPanel(serviceValidPanel);
     }
 
-    private void StartService() {
+    public void StartService() {
         UIManager.Instance.ClosePanel(serviceValidPanel);
         
         KitchenManager.Instance.inService = true;
