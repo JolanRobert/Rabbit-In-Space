@@ -639,6 +639,7 @@ MonoBehaviour:
   growthText: {fileID: 5439435379794873819}
   newSeed: {fileID: 5439435379813394402}
   grainatorSelect: {fileID: 239036213524152877}
+  parcelSprite: {fileID: 21300000, guid: 9e280c0773a1c554e9eb0ee82cb4b595, type: 3}
 --- !u!1 &5439435381083176676
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7464370195473465707, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e280c0773a1c554e9eb0ee82cb4b595, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

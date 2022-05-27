@@ -18,6 +18,10 @@ public class UIGarden : MonoBehaviour {
     [SerializeField] private GameObject foodShopContent;
     [SerializeField] private GameObject closeOverlay;
 
+    [Header("Garden Menu")]
+    [SerializeField] private GameObject gardenMenu;
+    [SerializeField] private List<GardenEntry> gardenEntries;
+
     void Awake() {
         Instance = this;
     }
