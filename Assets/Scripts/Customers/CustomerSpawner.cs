@@ -4,6 +4,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CustomerSpawner : MonoBehaviour {
+
+    public static CustomerSpawner Instance;
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
@@ -16,6 +18,7 @@ public class CustomerSpawner : MonoBehaviour {
     public List<Customer> customerQueue = new List<Customer>();
 
     void Start() {
+        Instance = this;
         CheckStarRepartitionValues();
     }
 
@@ -65,7 +68,7 @@ public class CustomerSpawner : MonoBehaviour {
 
     //Déplace les clients
     //Gère les commandes et les facteurs d'impatience
-    private void MoveCustomers() {
+    public void MoveCustomers() {
         Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
         
         for (int i = 0; i < customerQueue.Count; i++) {
