@@ -21,6 +21,7 @@ public class ParcelMenuEntry : MonoBehaviour {
     
     [Header("Special")]
     [SerializeField] private GameObject grainatorSelect;
+    [SerializeField] private Sprite parcelSprite;
 
     void Start() {
         newSeed.onClick.AddListener(() => {
@@ -66,8 +67,7 @@ public class ParcelMenuEntry : MonoBehaviour {
     }
     
     public void Reset() {
-        plantSprite.sprite = null;
-        plantSprite.rectTransform.sizeDelta = new Vector2(250, 250);
+        plantSprite.sprite = parcelSprite;
         
         plantName.text = "";
         

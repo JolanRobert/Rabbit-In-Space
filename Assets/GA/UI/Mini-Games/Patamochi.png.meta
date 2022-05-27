@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 3c07f652849a5b4468dd00a0c7f914c5
+guid: 268b8613ccb84544c950fc537ee1140b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8508290537986900259
-    second: Reaction_Good
+      213: -4399330274223520963
+    second: Patamochi_0
   - first:
-      213: 4900325892876801998
-    second: Bubble_Top
+      213: -4554478902582267496
+    second: Patamochi_1
   - first:
-      213: -4238588696011852618
-    second: Bubble_Bottom_ColorChanging
+      213: -6153395966796247343
+    second: Patamochi_2
   - first:
-      213: 3328943929177015435
-    second: Reaction_Bad
+      213: 7225547271148241359
+    second: Patamochi_3
+  - first:
+      213: -870046963515377232
+    second: Patamochi_4
+  - first:
+      213: -3813433646936601140
+    second: Patamochi_5
+  - first:
+      213: -4148868591046872610
+    second: Patamochi_6
+  - first:
+      213: -7036139126252201544
+    second: Patamochi_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,85 +115,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reaction_Good
+      name: Patamochi_0
       rect:
         serializedVersion: 2
-        x: 1732
-        y: 1204
-        width: 314
-        height: 267
+        x: 107
+        y: 656
+        width: 286
+        height: 281
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 321c68a5a25831670800000000000000
-      internalID: 8508290537986900259
+      spriteID: d33094b9c6072f2c0800000000000000
+      internalID: -4399330274223520963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bubble_Top
+      name: Patamochi_1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 8
-        width: 1233
-        height: 902
+        x: 474
+        y: 656
+        width: 279
+        height: 284
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec71290cf64710440800000000000000
-      internalID: 4900325892876801998
+      spriteID: 891b29a919d3bc0c0800000000000000
+      internalID: -4554478902582267496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bubble_Bottom_ColorChanging
+      name: Patamochi_2
       rect:
         serializedVersion: 2
-        x: 1482
-        y: 16
-        width: 1235
-        height: 908
+        x: 834
+        y: 656
+        width: 311
+        height: 238
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b43a39b9028d25c0800000000000000
-      internalID: -4238588696011852618
+      spriteID: 1dec9c468feba9aa0800000000000000
+      internalID: -6153395966796247343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reaction_Bad
+      name: Patamochi_3
       rect:
         serializedVersion: 2
-        x: 859
-        y: 1208
-        width: 312
-        height: 314
+        x: 1228
+        y: 645
+        width: 306
+        height: 245
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b840ac7bdd8c23e20800000000000000
-      internalID: 3328943929177015435
+      spriteID: fc18594e5fc464460800000000000000
+      internalID: 7225547271148241359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patamochi_4
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 661
+        width: 302
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b932c975e8fce3f0800000000000000
+      internalID: -870046963515377232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patamochi_5
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 257
+        width: 292
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd42d37d46f31bc0800000000000000
+      internalID: -3813433646936601140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patamochi_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 234
+        width: 308
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed130e28ff14c66c0800000000000000
+      internalID: -4148868591046872610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patamochi_7
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 257
+        width: 278
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b992856ebc9a5e90800000000000000
+      internalID: -7036139126252201544
       vertices: []
       indices: 
       edges: []
@@ -189,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 11a7171e351ffa74bbaf644435920120
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

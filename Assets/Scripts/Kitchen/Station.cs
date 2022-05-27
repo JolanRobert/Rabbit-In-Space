@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Station : IInteractable
 {
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private List<MeshRenderer> meshRenderers;
     [SerializeField] private StationSO station;
     [SerializeField] private Material glowMaterial;
     [SerializeField] private Material emptyMaterial;
@@ -29,15 +29,20 @@ public class Station : IInteractable
     {
         if (active)
         {
-            meshRenderer.GetMaterials(mats);
-            mats[mats.Count - 1] = glowMaterial;
-            meshRenderer.materials = mats.ToArray(); //C'est le dernier material qui est changé, faut réserver ce slot vide du coup
+            foreach (MeshRenderer renderer in meshRenderers) {
+                renderer.GetMaterials(mats);
+                mats[mats.Count - 1] = glowMaterial;
+                renderer.materials = mats.ToArray(); //C'est le dernier material qui est changé, faut réserver ce slot vide du coup
+            }
+            
         }
         else
         {
-            meshRenderer.GetMaterials(mats);
-            mats[mats.Count - 1] = emptyMaterial;
-            meshRenderer.materials = mats.ToArray();
+            foreach (MeshRenderer renderer in meshRenderers) {
+                renderer.GetMaterials(mats);
+                mats[mats.Count - 1] = emptyMaterial;
+                renderer.materials = mats.ToArray();
+            }
         }
     }
 }

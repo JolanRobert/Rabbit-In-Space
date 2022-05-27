@@ -31,4 +31,9 @@ public class UIGame : MonoBehaviour {
         if (currentStar.starValue == 5) return;
         starImageList[currentStar.starValue].fillAmount = 1 - xpLeft / (float)currentStar.xpBeforeNextStar;
     }
+
+    public void CancelShift() {
+        UIManager.Instance.CloseAllPanel();
+        ServiceManager.Instance.LoadMenu();
+    }
 }

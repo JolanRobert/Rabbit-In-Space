@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pluck-It-All
   m_EditorClassIdentifier: 
   upgradeType: 2
+  upgradeSprite: {fileID: -5029450754575763731, guid: b86c375aedf9eee448900de3098ad58d, type: 3}
   description: Picks up all the crops from grown plants automatically
   unlockCost: 500
   isActivable: 1

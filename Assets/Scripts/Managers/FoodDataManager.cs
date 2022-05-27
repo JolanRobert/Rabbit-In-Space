@@ -42,6 +42,7 @@ public class FoodDataManager : MonoBehaviour {
             if (item.recipeType != recipeType) continue;
             UIKitchen.Instance.UpdateWorkplanSlot(i,item.amount);
             item.amount += amount;
+            CustomerOrderManager.Instance.UpdateCustomersOwnedRecipeAmount();
             break;
         }
     }
