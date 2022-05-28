@@ -109,7 +109,7 @@ public class Customer : MonoBehaviour {
         CompleteOrder(CustomerState.SERVED);
     }
 
-    private void CompleteOrder(CustomerState state) {
+    public void CompleteOrder(CustomerState state) {
         StartCoroutine(CompleteOrderCR(state));
     }
 
