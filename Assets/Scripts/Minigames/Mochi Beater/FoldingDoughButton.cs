@@ -13,16 +13,16 @@ namespace MochiBeater
     {
         public bool dragValidity;
         public bool isDragging;
-        public Vector2 dragPosition;
+        //public Vector2 dragPosition;
         //public Vector2 deltaDrag;
 
-        public void OnPointerUp(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
         {
             isDragging = true;
             dragValidity = true;
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public void OnPointerUp(PointerEventData eventData)
         {
             isDragging = false;
 
