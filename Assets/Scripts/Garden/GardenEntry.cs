@@ -1,6 +1,7 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GardenEntry : MonoBehaviour {
     
@@ -8,8 +9,11 @@ public class GardenEntry : MonoBehaviour {
     [SerializeField] private RectTransform topSprite;
     [SerializeField] private float openTime = 0.5f;
     private float openYPos, baseYPos;
-    
     private bool isOpen;
+
+    [Header("Plant States")]
+    [SerializeField] private Image[] plantStateList;
+    [SerializeField] private Sprite noneSprite, growSprite, endSprite, deadSprite;
     
     void Start() {
         //Init anim position
@@ -41,5 +45,14 @@ public class GardenEntry : MonoBehaviour {
     public void CloseParcel() {
         topSprite.DOAnchorPosY(baseYPos, openTime);
         isOpen = false;
+    }
+
+    public void SetupPlantStates(Food[] foodList) {
+        for (int i = 0; i < plantStateList.Length; i++) {
+            if (foodList[i].GrowthLevel == -1) plantStateList[i].sprite = noneSprite;
+            else if (foodList[i].GrowthLevel <= 1) plantStateList[i].sprite = growSprite;
+            else if (foodList[i].GrowthLevel == 2) plantStateList[i].sprite = endSprite;
+            else if (foodList[i].GrowthLevel == 3) plantStateList[i].sprite = deadSprite;
+        }
     }
 }

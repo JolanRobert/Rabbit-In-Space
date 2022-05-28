@@ -9,7 +9,7 @@ public class GardenManager : MonoBehaviour {
     public Parcel myParcel;
     public int mySlot;
 
-    [SerializeField] private List<Parcel> parcelList;
+    public List<Parcel> parcelList;
     
     //Parcel ID, Upgrade List (ParcelUpgrade Memory)
     //public Dictionary<int, List<Parcel.Upgrade>> upgrades = new Dictionary<int, List<Parcel.Upgrade>>();
@@ -17,15 +17,6 @@ public class GardenManager : MonoBehaviour {
     void Awake() {
         if (Instance != null) Destroy(gameObject);
         else Instance = this;
-    }
-
-    void Start() {
-        /*for (int i = 0; i < 6; i++) {
-            upgrades.Add(i,new List<Parcel.Upgrade>());
-            foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
-                upgrades[i].Add(new Parcel.Upgrade(puSo.upgradeType));
-            }
-        }*/
     }
 
     public void SelectParcel(GardenEntry entry) {

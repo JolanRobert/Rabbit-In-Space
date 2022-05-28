@@ -68,7 +68,7 @@ public class ServiceManager : MonoBehaviour {
         UIManager.Instance.OpenPanel(serviceValidPanel);
     }
 
-    private void StartService() {
+    public void StartService() {
         UIManager.Instance.ClosePanel(serviceValidPanel);
         
         KitchenManager.Instance.inService = true;
@@ -90,6 +90,7 @@ public class ServiceManager : MonoBehaviour {
         ServiceButton.Instance.UpdateMaterial();
         
         UpdateWindow();
+        yield return new WaitForSeconds(0.25f);
         
         CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
         PlayerManager.Instance.GetAnimation().Haswon(true);

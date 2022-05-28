@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1780968259745420288, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1780968259827188514, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}
       propertyPath: customerOrderEntries.Array.data[0]
       value: 

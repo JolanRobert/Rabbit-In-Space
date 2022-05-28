@@ -18,6 +18,12 @@ MonoBehaviour:
   nbBeforeReveal: 1
   description: "Prend son plat favori, tir\xE9 au sort parmi tous les plats du jeu"
   customerHeadSprites:
-  - {fileID: 8300460384929931605, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  - {fileID: -8247963285980081921, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
+  - {fileID: 4923930577093466245, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
+  - {fileID: 4254865465823781915, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
+  - {fileID: 3411200376672421992, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
   customerSprites:
-  - {fileID: 8300460384929931605, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  - {fileID: 2787351691385786322, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
+  - {fileID: -8128257700511655496, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
+  - {fileID: 2724917027644240261, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
+  - {fileID: 7258982066356260571, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}

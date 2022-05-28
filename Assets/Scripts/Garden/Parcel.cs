@@ -13,8 +13,6 @@ public class Parcel : MonoBehaviour {
     public Food[] foodList;
     [SerializeField] private List<Upgrade> upgradeList;
 
-    
-
     void Start() {
         //Init upgrade list
         foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
@@ -22,8 +20,6 @@ public class Parcel : MonoBehaviour {
         }
     }
 
-    
-    
     //
     // UPGRADES
     //

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fertilizer
   m_EditorClassIdentifier: 
   upgradeType: 0
+  upgradeSprite: {fileID: -8582785883882460918, guid: b86c375aedf9eee448900de3098ad58d, type: 3}
   description: Increase the number of crops produced per plants
   unlockCost: 50
   isActivable: 0

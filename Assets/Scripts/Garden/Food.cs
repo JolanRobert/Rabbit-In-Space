@@ -46,13 +46,16 @@ public class Food : MonoBehaviour {
     private int decayTime;
     private Vector2 minMaxProduction;
 
-    private int growthLevel;
-    private int GrowthLevel {
+    private int growthLevel = -1;
+    public int GrowthLevel {
         get => growthLevel;
         set {
             growthLevel = value;
-
+            myParcel.gardenEntry.SetupPlantStates(myParcel.foodList);
+            
             if (foodUI == null) return;
+            if (value == -1) return;
+            
             foodUI.UpdatePlantSprite(plantSprites[growthLevel]);
             if (growthLevel == 2) foodUI.UpdateGrowthText("Done");
             else if (growthLevel == 3) foodUI.UpdateGrowthText("Dead");
@@ -93,7 +96,10 @@ public class Food : MonoBehaviour {
     }
 
     public void ReduceTime(int sec) {
-        if (foodType == FoodType.NONE) return;
+        if (foodType == FoodType.NONE) {
+            UIGarden.Instance.OpenMenuSeed(foodUI.foodSlot);
+            return;
+        }
         if (GrowingTime <= 0) return; 
         GrowingTime -= sec;
     }
@@ -118,6 +124,7 @@ public class Food : MonoBehaviour {
         StopAllCoroutines();
         if (foodUI != null) foodUI.Reset();
         foodType = FoodType.NONE;
+        GrowthLevel = -1;
         
         if (myParcel.IsUpgradeActive(UpgradeType.GRAINATOR) && grainatorFood != FoodType.NONE) {
             foreach (FoodSO foodSo in DataManager.Instance.foodList) {

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Seedinator
   m_EditorClassIdentifier: 
   upgradeType: 3
+  upgradeSprite: {fileID: 1129352249376485256, guid: b86c375aedf9eee448900de3098ad58d, type: 3}
   description: If the parcel is empty, will plant the chosen seed automatically
   unlockCost: 500
   isActivable: 1

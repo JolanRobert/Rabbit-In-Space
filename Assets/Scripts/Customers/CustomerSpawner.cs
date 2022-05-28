@@ -46,7 +46,7 @@ public class CustomerSpawner : MonoBehaviour {
             }
             
             //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(35,0,0), transform).GetComponent<Customer>();
             
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
