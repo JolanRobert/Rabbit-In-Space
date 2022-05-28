@@ -15,6 +15,8 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     [SerializeField] private GameObject soldOut;
     [SerializeField] private TMP_Text activeUpgrade;
 
+    private int unlockCostValue;
+
     private UpgradeType upgradeType;
     private bool isActivable;
 
@@ -25,6 +27,7 @@ public class ParcelUpgradeEntry : MonoBehaviour {
         upgradeImage.sprite = puSo.upgradeSprite;
         description.text = puSo.description;
         unlockCost.text = $"{puSo.unlockCost}$";
+        unlockCostValue = puSo.unlockCost;
 
         upgradeType = puSo.upgradeType;
         isActivable = puSo.isActivable;
@@ -37,7 +40,10 @@ public class ParcelUpgradeEntry : MonoBehaviour {
             else EnableUpgrade();
         }
         else {
-            GardenManager.Instance.myParcel.BuyUpgrade(upgradeType);
+            if (GameManager.Instance.SpendGold(unlockCostValue)) GardenManager.Instance.myParcel.BuyUpgrade(upgradeType);
+            else {
+                GardenManager.Instance.SpawnError(transform,"Not enough money !");
+            }
         }
     }
 

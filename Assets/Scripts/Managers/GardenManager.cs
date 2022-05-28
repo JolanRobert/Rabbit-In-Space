@@ -11,8 +11,9 @@ public class GardenManager : MonoBehaviour {
 
     public List<Parcel> parcelList;
     
-    //Parcel ID, Upgrade List (ParcelUpgrade Memory)
-    //public Dictionary<int, List<Parcel.Upgrade>> upgrades = new Dictionary<int, List<Parcel.Upgrade>>();
+    [Header("ErrorMsg")]
+    [SerializeField] private GameObject errorMsgPrefab;
+    private float lastSpawnTime = 0f;
 
     void Awake() {
         if (Instance != null) Destroy(gameObject);
@@ -31,5 +32,12 @@ public class GardenManager : MonoBehaviour {
             myParcel.foodList[mySlot].StartNewFood(foodSo);
             UIGarden.Instance.CloseMenuSeed();
         }
+    }
+
+    public void SpawnError(Transform parent, string message) {
+        if (Time.time < lastSpawnTime + 1) return;
+        ErrorMsg errorMsg = Instantiate(errorMsgPrefab, parent.position, Quaternion.identity, parent).GetComponent<ErrorMsg>();
+        errorMsg.Init(message);
+        lastSpawnTime = Time.time;
     }
 }

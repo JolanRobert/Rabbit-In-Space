@@ -18,12 +18,12 @@ MonoBehaviour:
   nbBeforeReveal: 1
   description: "Prend un plat al\xE9atoire sur le menu, s'en va 2 fois plus vite"
   customerHeadSprites:
-  - {fileID: -9068545622262623162, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
-  - {fileID: 1512543120673476006, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
-  - {fileID: 678510028800168564, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
-  - {fileID: 4090995600530358268, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: 2297438421596486112, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: -3971222528498846433, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: 9203310281966103649, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: -3541812818319105605, guid: d965baa6b43846e489fa5548462bba27, type: 3}
   customerSprites:
-  - {fileID: -6090546030914582314, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
-  - {fileID: -2418996438792930742, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
-  - {fileID: 37828344823450622, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
-  - {fileID: 1485278753052364112, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
+  - {fileID: 5786008625761283488, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: 781628951991648539, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: -1333201519114401996, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: 2856403727464404216, guid: d965baa6b43846e489fa5548462bba27, type: 3}
