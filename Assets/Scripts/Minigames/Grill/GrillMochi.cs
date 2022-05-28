@@ -1,12 +1,17 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using Grill;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GrillMochi : MonoBehaviour {
 
-    private SpriteRenderer mochiSprite;
-    
+    private SpriteRenderer renderer;
+
+    [SerializeField] private List<Sprite> mochiSprites;
+
     [SerializeField] private float minGrillSpeedFactor;
     [SerializeField] private float maxgrillSpeedFactor;
     private float grillSpeedFactor;
@@ -15,7 +20,7 @@ public class GrillMochi : MonoBehaviour {
     [HideInInspector] public float mochiState = 1f;
 
     void Start() {
-        mochiSprite = GetComponent<SpriteRenderer>();
+        renderer = GetComponent<SpriteRenderer>();
         
         grillSpeedFactor = Random.Range(minGrillSpeedFactor, maxgrillSpeedFactor);
         StartCoroutine(Bake());
@@ -25,10 +30,7 @@ public class GrillMochi : MonoBehaviour {
         while (mochiState < 7f) {
             mochiState += grillStrenght * grillSpeedFactor;
             mochiState = Mathf.Clamp(mochiState, 1, 7);
-            mochiSprite.DOColor(
-                mochiState <= 4
-                    ? new Color(1, 1, 1 - (mochiState - 1) / 3, 1)
-                    : new Color(1 - (mochiState - 4) / 3, 1 - (mochiState - 4) / 3, 0, 1), 0.2f);
+            renderer.sprite = mochiSprites[(int)Mathf.Round(mochiState) - 1];
 
             yield return new WaitForSeconds(1);
         }

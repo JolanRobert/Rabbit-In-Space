@@ -112,6 +112,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21fa1537c98f9f4dab17786fc3ba027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mochiSprites:
+  - {fileID: -4633407525001140484, guid: ed6466065a7a8db4fa731617e061c65b, type: 3}
+  - {fileID: -5695350647912881824, guid: ed6466065a7a8db4fa731617e061c65b, type: 3}
+  - {fileID: 2039408549716505541, guid: ed6466065a7a8db4fa731617e061c65b, type: 3}
+  - {fileID: 5427033654635005772, guid: ed6466065a7a8db4fa731617e061c65b, type: 3}
+  - {fileID: -8019360798285819247, guid: ed6466065a7a8db4fa731617e061c65b, type: 3}
+  - {fileID: -8333258782180015949, guid: ed6466065a7a8db4fa731617e061c65b, type: 3}
+  - {fileID: 911210973362052126, guid: b4aa9df27f6c4e947a34bbfbdef80a3c, type: 3}
   minGrillSpeedFactor: 0.5
   maxgrillSpeedFactor: 1.5
   mochiState: 1
