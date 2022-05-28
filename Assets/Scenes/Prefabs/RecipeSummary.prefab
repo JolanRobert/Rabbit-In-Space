@@ -51,7 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summary: {fileID: 3554143429181596056}
   recipeImage: {fileID: 723704162586601773}
-  animationTime: 2
+  congratsImage: {fileID: 8789391244276320934}
+  presenceTime: 1
+  fadeTime: 0.4
 --- !u!1 &3554143429181596056
 GameObject:
   m_ObjectHideFlags: 0
