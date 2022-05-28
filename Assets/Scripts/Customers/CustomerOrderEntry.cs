@@ -48,4 +48,8 @@ public class CustomerOrderEntry : MonoBehaviour {
     public void TryCompleteOrder() {
         customer.TryCompleteOrder();
     }
+
+    public void ForceServe() {
+        customer.CompleteOrder(CustomerState.SERVED);
+    }
 }
