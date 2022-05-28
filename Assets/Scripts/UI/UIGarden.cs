@@ -8,7 +8,7 @@ public class UIGarden : MonoBehaviour {
     public static UIGarden Instance;
 
     [Header("Parcel Menu")]
-    [SerializeField] private GameObject parcelMenu;
+    [SerializeField] private ParcelMenu parcelMenu;
     public List<ParcelMenuEntry> plants;
     
     [Header("Parcel Upgrade")]
@@ -29,16 +29,21 @@ public class UIGarden : MonoBehaviour {
     public void OpenParcelMenu() {
         Parcel myParcel = GardenManager.Instance.myParcel;
         
+        SetupUpgrades();
         SetupParcelMenu(myParcel);
         SetupParcelUpgrade(myParcel);
         
-        UIManager.Instance.OpenPanel(parcelMenu);
+        UIManager.Instance.OpenPanel(parcelMenu.gameObject);
     }
 
     public void CloseParcelMenu() {
         Parcel myParcel = GardenManager.Instance.myParcel;
         myParcel.gardenEntry.CloseParcel();
-        UIManager.Instance.ClosePanel(parcelMenu);
+        UIManager.Instance.ClosePanel(parcelMenu.gameObject);
+    }
+
+    public void SetupUpgrades() {
+        parcelMenu.SetupUpgrades(GardenManager.Instance.myParcel);
     }
 
     private void SetupParcelMenu(Parcel parcel) {

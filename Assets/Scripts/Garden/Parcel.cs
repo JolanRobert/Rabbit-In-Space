@@ -39,6 +39,8 @@ public class Parcel : MonoBehaviour {
                 pme.ShowGrainator(true);
             }
         }
+        
+        UIGarden.Instance.SetupUpgrades();
     }
 
     public void ToggleUpgrade(UpgradeType upgradeType, bool state) {
@@ -54,6 +56,8 @@ public class Parcel : MonoBehaviour {
                 foodList[i].SetGrainatorFood(!state ? FoodType.NONE : foodList[i].grainatorFood);
             }
         }
+        
+        UIGarden.Instance.SetupUpgrades();
     }
 
     public bool IsUpgradeBought(UpgradeType upgradeType) {
