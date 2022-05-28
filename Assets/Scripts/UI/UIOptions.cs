@@ -1,11 +1,16 @@
 using UnityEngine;
 
 public class UIOptions : MonoBehaviour {
-
+    
     [SerializeField] private GameObject optionsMain;
     [SerializeField] private GameObject optionsCheats;
     [SerializeField] private GameObject optionsLeave;
-    
+    [SerializeField] private GameObject tutorial;
+
+    public void OpenTutorial() {
+        UIManager.Instance.ClosePanel(optionsMain);
+        UIManager.Instance.OpenPanel(tutorial);
+    }
     public void MainToCheats() {
         optionsCheats.transform.localScale = Vector3.one;
         optionsMain.SetActive(false);

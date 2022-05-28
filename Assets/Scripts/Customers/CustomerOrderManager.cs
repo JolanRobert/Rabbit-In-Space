@@ -103,4 +103,8 @@ public class CustomerOrderManager : MonoBehaviour {
             entry.UpdateOwnedRecipeAmount();
         }
     }
+
+    public void ForceServe() {
+        customerOrderEntries[0].ForceServe();
+    }
 }

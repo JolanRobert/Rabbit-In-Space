@@ -7,6 +7,7 @@ namespace Grill {
 public class HeatBar : MonoBehaviour {
 
     private Image heatBar;
+    [SerializeField] private Image strongHeatIndic;
     
     [Range(1,100)] [SerializeField] private int coolingPercentPerSec;
     public float heatValue;
@@ -25,7 +26,8 @@ public class HeatBar : MonoBehaviour {
 
     public void ChangeHeat(int amount) {
         heatValue = Mathf.Clamp(heatValue + amount, 0, 100);
-        heatBar.DOFillAmount(heatValue/100, 0.2f);
+        heatBar.DOFillAmount(heatValue / 100, 0.2f);
+        strongHeatIndic.enabled = heatValue > 80;
     }
 }
 }
