@@ -242,6 +242,17 @@ Transform:
   m_Father: {fileID: 1893316083}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318439003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 551644317482694345, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+  m_PrefabInstance: {fileID: 889751987790026926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &318935092
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +557,8 @@ MonoBehaviour:
   recipeAmountPrompt: {fileID: 2042884464}
   fridgeSlots: []
   workplanSlots: []
+  fridge: {fileID: 823483904}
+  fridgeDoor: {fileID: 318439003}
 --- !u!114 &950217701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,9 +1345,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 950217702}
     - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 950217702}
+      objectReference: {fileID: 950217700}
+    - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseFridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIKitchen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 889751989561157398, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
