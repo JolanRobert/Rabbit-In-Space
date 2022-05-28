@@ -775,7 +775,7 @@ MonoBehaviour:
   serviceInvalidPanel: {fileID: 688818426}
   serviceWarningText: {fileID: 1787229357}
   serviceConfirmEndPanel: {fileID: 889751987790026934}
-  serviceTime: 260
+  serviceTime: 180
   myTimer: {fileID: 0}
   mySummary: {fileID: 0}
   windowMR: {fileID: 1000323017808332977}
@@ -1211,6 +1211,14 @@ PrefabInstance:
     - target: {fileID: 889751988730620648, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 950217702}
+    - target: {fileID: 889751988974413685, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePanel
       objectReference: {fileID: 0}
     - target: {fileID: 889751989561157398, guid: 25c38880e6dd1f94380e7af936a51e29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

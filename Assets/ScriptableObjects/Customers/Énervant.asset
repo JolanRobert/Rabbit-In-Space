@@ -19,6 +19,12 @@ MonoBehaviour:
   description: "Prend un plat al\xE9atoire du menu, les clients autour de lui s'impatientent
     25% plus vite"
   customerHeadSprites:
-  - {fileID: -8256170660068176849, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  - {fileID: 2297438421596486112, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: -3971222528498846433, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: 9203310281966103649, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: -3541812818319105605, guid: d965baa6b43846e489fa5548462bba27, type: 3}
   customerSprites:
-  - {fileID: -8256170660068176849, guid: 2e1f284db564cc34c96906b3a48f0fab, type: 3}
+  - {fileID: 5786008625761283488, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: 781628951991648539, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: -1333201519114401996, guid: d965baa6b43846e489fa5548462bba27, type: 3}
+  - {fileID: 2856403727464404216, guid: d965baa6b43846e489fa5548462bba27, type: 3}
