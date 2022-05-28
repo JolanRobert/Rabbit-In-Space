@@ -70,17 +70,21 @@ public class UIGarden : MonoBehaviour {
     }
     
     public void OpenMenuSeed(int foodSlot) {
+        foodShopContent.transform.DOComplete();
+        parcelMenu.transform.DOComplete();
+        
         foodShopContent.SetActive(true);
         closeOverlay.SetActive(true);
-        
         foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x - 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
         GardenManager.Instance.mySlot = foodSlot;
     }
 
     public void CloseMenuSeed() {
-        closeOverlay.SetActive(false);
+        foodShopContent.transform.DOComplete();
+        parcelMenu.transform.DOComplete();
         
+        closeOverlay.SetActive(false);
         foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x + 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f).OnComplete(() => {
             foodShopContent.SetActive(false);

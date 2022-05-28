@@ -2627,6 +2627,7 @@ MonoBehaviour:
   - {fileID: 966009438186287576}
   - {fileID: 4645024643873198400}
   - {fileID: 2775715046679831015}
+  errorMsgPrefab: {fileID: 999192536666559998, guid: 12ab305218d99d44a9df51d357dea65b, type: 3}
 --- !u!1 &1780968260275564864
 GameObject:
   m_ObjectHideFlags: 0

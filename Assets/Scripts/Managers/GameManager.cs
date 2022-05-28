@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour {
         UIGame.Instance.UpdateGoldText(moneyAmount);
     }
 
+    public bool SpendGold(int amount) {
+        if (moneyAmount < amount) return false;
+        moneyAmount -= amount;
+        UIGame.Instance.UpdateGoldText(moneyAmount);
+        return true;
+    }
+
     public void GainXP(int amount) {
         if (currentStar.nextStar == null) return;
         

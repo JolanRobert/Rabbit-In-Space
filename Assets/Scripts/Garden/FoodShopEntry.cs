@@ -22,6 +22,10 @@ public class FoodShopEntry : MonoBehaviour {
 
         GetComponent<EnumManager>().itemType = foodSo.foodType;
         GetComponent<Button>().onClick.AddListener(() => {
+            if (!GameManager.Instance.SpendGold(foodSo.price)) {
+                GardenManager.Instance.SpawnError(transform,"Not enough money !");
+                return;
+            }
             GardenManager.Instance.PlantSeed(GetComponent<EnumManager>().itemType);
         });
     }

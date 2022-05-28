@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 1000323018353160952}
   - component: {fileID: 1000323018353160951}
   - component: {fileID: 1000323018353160950}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,8 +1830,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPosition: {x: 0.35, y: 0, z: -0.35}
   interactPanel: {fileID: 0}
-  openMaterial: {fileID: 0}
-  closeMaterial: {fileID: 0}
+  openMaterial: {fileID: 2100000, guid: f1dd786e1d473294b85c3fd2e04ce55b, type: 2}
+  closeMaterial: {fileID: 2100000, guid: 4995d8ff22482e44f9082569f62cf801, type: 2}
 --- !u!1 &7977702439337851233
 GameObject:
   m_ObjectHideFlags: 0
