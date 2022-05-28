@@ -7,42 +7,25 @@ using UnityEngine.UI;
 
 public class Parcel : MonoBehaviour {
 
-    [Header("Animation")]
-    [SerializeField] private RectTransform topSprite;
-    [SerializeField] private float openTime = 0.5f;
+    public GardenEntry gardenEntry;
     
     [Header("Data")]
-    [SerializeField] private int parcelID;
     public Food[] foodList;
+    [SerializeField] private List<Upgrade> upgradeList;
 
-    public void OpenParcel() {
-        StartCoroutine(OpenParcelCR());
-    }
-
-    private IEnumerator OpenParcelCR() {
-        if (GardenManager.Instance.myParcel != null) {
-            foreach (Food food in GardenManager.Instance.myParcel.foodList) {
-                food.foodUI = null;
-            }
+    void Start() {
+        //Init upgrade list
+        foreach (ParcelUpgradeSO puSo in DataManager.Instance.parcelUpgradeList) {
+            upgradeList.Add(new Upgrade(puSo.upgradeType));
         }
-
-        topSprite.DOMoveY(topSprite.position.y + 25, openTime);
-        yield return new WaitForSeconds(openTime);
-        
-        GardenManager.Instance.myParcel = this;
-        UIGarden.Instance.OpenParcelMenu();
     }
 
-    public void CloseParcel() {
-        topSprite.DOMoveY(topSprite.position.y - 25, openTime);
-    }
-    
     //
     // UPGRADES
     //
 
     public void BuyUpgrade(UpgradeType upgradeType) {
-        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
+        foreach (Upgrade up in upgradeList) {
             if (up.upgradeType != upgradeType) continue;
             up.isBought = true;
             up.isActive = true;
@@ -56,10 +39,12 @@ public class Parcel : MonoBehaviour {
                 pme.ShowGrainator(true);
             }
         }
+        
+        UIGarden.Instance.SetupUpgrades();
     }
 
     public void ToggleUpgrade(UpgradeType upgradeType, bool state) {
-        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
+        foreach (Upgrade up in upgradeList) {
             if (up.upgradeType != upgradeType) continue;
             up.isActive = state;
             break;
@@ -71,10 +56,12 @@ public class Parcel : MonoBehaviour {
                 foodList[i].SetGrainatorFood(!state ? FoodType.NONE : foodList[i].grainatorFood);
             }
         }
+        
+        UIGarden.Instance.SetupUpgrades();
     }
 
     public bool IsUpgradeBought(UpgradeType upgradeType) {
-        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
+        foreach (Upgrade up in upgradeList) {
             if (up.upgradeType != upgradeType) continue;
             return up.isBought;
         }
@@ -83,7 +70,7 @@ public class Parcel : MonoBehaviour {
     }
 
     public bool IsUpgradeActive(UpgradeType upgradeType) {
-        foreach (Upgrade up in GardenManager.Instance.upgrades[parcelID]) {
+        foreach (Upgrade up in upgradeList) {
             if (up.upgradeType != upgradeType) continue;
             return up.isActive;
         }

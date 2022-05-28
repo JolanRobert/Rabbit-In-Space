@@ -4,6 +4,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CustomerSpawner : MonoBehaviour {
+
+    public static CustomerSpawner Instance;
     
     [Header("Customer")]
     [SerializeField] private GameObject customerPrefab;
@@ -16,6 +18,7 @@ public class CustomerSpawner : MonoBehaviour {
     public List<Customer> customerQueue = new List<Customer>();
 
     void Start() {
+        Instance = this;
         CheckStarRepartitionValues();
     }
 
@@ -43,7 +46,7 @@ public class CustomerSpawner : MonoBehaviour {
             }
             
             //Spawn Customer
-            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(50,0,0), transform).GetComponent<Customer>();
+            Customer customer = Instantiate(customerPrefab, customerSpawnPoint.position, Quaternion.Euler(35,0,0), transform).GetComponent<Customer>();
             
             customer.Init(cc.customerSo);
             customerQueue.Add(customer);
@@ -65,11 +68,11 @@ public class CustomerSpawner : MonoBehaviour {
 
     //Déplace les clients
     //Gère les commandes et les facteurs d'impatience
-    private void MoveCustomers() {
+    public void MoveCustomers() {
         Vector3 customerOffset = MinigameManager.Instance.resultPending ? Vector3.left * 100 : Vector3.zero;
         
         for (int i = 0; i < customerQueue.Count; i++) {
-            customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1.5f + customerOffset;
+            customerQueue[i].transform.position = customerSpawnPoint.position + Vector3.right * i * 1f + customerOffset;
             
             //Mise à jour du facteur d'impatience
             int nbEnervants = 0;

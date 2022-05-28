@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour {
         UIGame.Instance.UpdateGoldText(moneyAmount);
     }
 
+    public bool SpendGold(int amount) {
+        if (moneyAmount < amount) return false;
+        moneyAmount -= amount;
+        UIGame.Instance.UpdateGoldText(moneyAmount);
+        return true;
+    }
+
     public void GainXP(int amount) {
         if (currentStar.nextStar == null) return;
         
@@ -30,10 +37,7 @@ public class GameManager : MonoBehaviour {
         while (xpAmount >= currentStar.xpBeforeNextStar) {
             xpAmount -= currentStar.xpBeforeNextStar;
             currentStar = currentStar.nextStar;
-            if (currentStar.nextStar == null) {
-                xpAmount = 0;
-                return;
-            }
+            if (currentStar.nextStar == null) xpAmount = 0;
         }
         
         UIGame.Instance.UpdateStars(currentStar,GetXPLeft());

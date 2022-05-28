@@ -9,9 +9,13 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     
     [Header("UI")]
     [SerializeField] private new TMP_Text name;
-    [SerializeField] private GameObject infos;
-    [SerializeField] private GameObject banner;
+    [SerializeField] private Image upgradeImage;
+    [SerializeField] private TMP_Text description;
+    [SerializeField] private TMP_Text unlockCost;
+    [SerializeField] private GameObject soldOut;
     [SerializeField] private TMP_Text activeUpgrade;
+
+    private int unlockCostValue;
 
     private UpgradeType upgradeType;
     private bool isActivable;
@@ -20,8 +24,10 @@ public class ParcelUpgradeEntry : MonoBehaviour {
         touchableUpgrade.onClick.AddListener(OnClickUpgrade);
         
         name.text = puSo.name;
-        infos.transform.GetChild(0).GetComponent<TMP_Text>().text = puSo.description;
-        infos.transform.GetChild(1).GetComponent<TMP_Text>().text = puSo.unlockCost + "$";
+        upgradeImage.sprite = puSo.upgradeSprite;
+        description.text = puSo.description;
+        unlockCost.text = $"{puSo.unlockCost}$";
+        unlockCostValue = puSo.unlockCost;
 
         upgradeType = puSo.upgradeType;
         isActivable = puSo.isActivable;
@@ -34,14 +40,18 @@ public class ParcelUpgradeEntry : MonoBehaviour {
             else EnableUpgrade();
         }
         else {
-            GardenManager.Instance.myParcel.BuyUpgrade(upgradeType);
+            if (GameManager.Instance.SpendGold(unlockCostValue)) GardenManager.Instance.myParcel.BuyUpgrade(upgradeType);
+            else {
+                GardenManager.Instance.SpawnError(transform,"Not enough money !");
+            }
         }
     }
 
     public void SetupUpgrade(bool unlock, bool active) {
         if (unlock) {
-            infos.SetActive(false);
-            banner.SetActive(true);
+            description.gameObject.SetActive(false);
+            unlockCost.gameObject.SetActive(false);
+            soldOut.SetActive(true);
             if (isActivable) {
                 activeUpgrade.gameObject.SetActive(true);
                 if (active) EnableUpgrade();
@@ -49,8 +59,9 @@ public class ParcelUpgradeEntry : MonoBehaviour {
             }
         }
         else {
-            infos.SetActive(true);
-            banner.SetActive(false);
+            description.gameObject.SetActive(true);
+            unlockCost.gameObject.SetActive(true);
+            soldOut.SetActive(false);
             if (isActivable) {
                 activeUpgrade.gameObject.SetActive(false);
             }
@@ -58,14 +69,14 @@ public class ParcelUpgradeEntry : MonoBehaviour {
     }
 
     private void EnableUpgrade() {
-        activeUpgrade.text = "Activé";
-        activeUpgrade.color = Color.green;
+        activeUpgrade.text = "Active";
+        activeUpgrade.color = new Color(85 / 255f, 195 / 255f, 5 / 255f, 1);
         GardenManager.Instance.myParcel.ToggleUpgrade(upgradeType,true);
     }
 
     private void DisableUpgrade() {
-        activeUpgrade.text = "Désactivé";
-        activeUpgrade.color = Color.red;
+        activeUpgrade.text = "Inactive";
+        activeUpgrade.color = new Color(185 / 255f, 15 / 255f, 5 / 255f, 1);
         GardenManager.Instance.myParcel.ToggleUpgrade(upgradeType,false);
     }
 }

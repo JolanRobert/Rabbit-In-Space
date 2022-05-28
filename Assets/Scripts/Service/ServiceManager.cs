@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class ServiceManager : MonoBehaviour {
 
@@ -14,6 +13,7 @@ public class ServiceManager : MonoBehaviour {
     [SerializeField] private GameObject serviceValidPanel;
     [SerializeField] private GameObject serviceInvalidPanel;
     [SerializeField] private GameObject serviceWarningText;
+    [SerializeField] private GameObject serviceConfirmEndPanel;
 
     [Header("Service Timer")]
     [SerializeField] [Range(1,500)] private int serviceTime = 360;
@@ -35,6 +35,13 @@ public class ServiceManager : MonoBehaviour {
         mySummary = ServiceSummary.Instance;
     }
 
+    public void LoadMenuFromButton() {
+        if (KitchenManager.Instance.inService) {
+            UIManager.Instance.OpenPanel(serviceConfirmEndPanel);
+            return;
+        }
+        LoadMenu();
+    }
     public void LoadMenu() {
         if (KitchenManager.Instance.inService) {
             myTimer.EndTimer();
@@ -60,15 +67,16 @@ public class ServiceManager : MonoBehaviour {
         UIManager.Instance.OpenPanel(serviceValidPanel);
     }
 
-    private void StartService() {
+    public void StartService() {
         UIManager.Instance.ClosePanel(serviceValidPanel);
         
         KitchenManager.Instance.inService = true;
         KitchenManager.Instance.customerSpawner.StartService();
 
         UpdateWindow();
-        
+
         myTimer.StartTimer(serviceTime);
+        ServiceButton.Instance.UpdateMaterial();
     }
 
     public void EndService() {
@@ -78,8 +86,10 @@ public class ServiceManager : MonoBehaviour {
     private IEnumerator EndServiceCoroutine() {
         KitchenManager.Instance.inService = false;
         KitchenManager.Instance.customerSpawner.EndService();
+        ServiceButton.Instance.UpdateMaterial();
         
         UpdateWindow();
+        yield return new WaitForSeconds(0.25f);
         
         CameraController.Instance.FocusElement(PlayerManager.Instance.transform);
         PlayerManager.Instance.GetAnimation().Haswon(true);
@@ -93,6 +103,6 @@ public class ServiceManager : MonoBehaviour {
     }
 
     public void UpdateWindow() {
-        windowMR.material.DOColor(KitchenManager.Instance.inService ? new Color(0, 1, 1, 0) : new Color(0, 1, 1, 1), 1);
+        windowMR.material.DOColor(KitchenManager.Instance.inService ? new Color(1, 1, 1, 0) : new Color(1, 1, 1, 1), 1);
     }
 }

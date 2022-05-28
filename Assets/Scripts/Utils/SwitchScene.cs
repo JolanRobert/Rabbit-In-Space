@@ -36,6 +36,7 @@ public class SwitchScene : MonoBehaviour {
         //Play animation
         loadingVideo.Play();
         loadingFade.DOFade(1, loadingAnimationTime);
+        loadingFade.blocksRaycasts = true;
         yield return new WaitForSeconds(loadingAnimationTime);
 
         if (GameManager.Instance != null) GameManager.Instance.timeElapsing = false;
@@ -51,7 +52,9 @@ public class SwitchScene : MonoBehaviour {
         
         //End animation
         loadingFade.DOFade(0, loadingAnimationTime);
+        loadingFade.blocksRaycasts = false;
         yield return new WaitForSeconds(loadingAnimationTime);
         loadingVideo.Stop();
+        CustomerSpawner.Instance.MoveCustomers();
     }
 }

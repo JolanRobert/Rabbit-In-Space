@@ -8,7 +8,7 @@ public class UIGarden : MonoBehaviour {
     public static UIGarden Instance;
 
     [Header("Parcel Menu")]
-    [SerializeField] private GameObject parcelMenu;
+    [SerializeField] private ParcelMenu parcelMenu;
     public List<ParcelMenuEntry> plants;
     
     [Header("Parcel Upgrade")]
@@ -18,6 +18,10 @@ public class UIGarden : MonoBehaviour {
     [SerializeField] private GameObject foodShopContent;
     [SerializeField] private GameObject closeOverlay;
 
+    [Header("Garden Menu")]
+    [SerializeField] private GameObject gardenMenu;
+    [SerializeField] private List<GardenEntry> gardenEntries;
+
     void Awake() {
         Instance = this;
     }
@@ -25,16 +29,21 @@ public class UIGarden : MonoBehaviour {
     public void OpenParcelMenu() {
         Parcel myParcel = GardenManager.Instance.myParcel;
         
+        SetupUpgrades();
         SetupParcelMenu(myParcel);
         SetupParcelUpgrade(myParcel);
         
-        UIManager.Instance.OpenPanel(parcelMenu);
+        UIManager.Instance.OpenPanel(parcelMenu.gameObject);
     }
 
     public void CloseParcelMenu() {
         Parcel myParcel = GardenManager.Instance.myParcel;
-        myParcel.CloseParcel();
-        UIManager.Instance.ClosePanel(parcelMenu);
+        myParcel.gardenEntry.CloseParcel();
+        UIManager.Instance.ClosePanel(parcelMenu.gameObject);
+    }
+
+    public void SetupUpgrades() {
+        parcelMenu.SetupUpgrades(GardenManager.Instance.myParcel);
     }
 
     private void SetupParcelMenu(Parcel parcel) {
@@ -61,17 +70,21 @@ public class UIGarden : MonoBehaviour {
     }
     
     public void OpenMenuSeed(int foodSlot) {
+        foodShopContent.transform.DOComplete();
+        parcelMenu.transform.DOComplete();
+        
         foodShopContent.SetActive(true);
         closeOverlay.SetActive(true);
-        
         foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x - 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
         GardenManager.Instance.mySlot = foodSlot;
     }
 
     public void CloseMenuSeed() {
-        closeOverlay.SetActive(false);
+        foodShopContent.transform.DOComplete();
+        parcelMenu.transform.DOComplete();
         
+        closeOverlay.SetActive(false);
         foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x + 300, 0.325f);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f).OnComplete(() => {
             foodShopContent.SetActive(false);
