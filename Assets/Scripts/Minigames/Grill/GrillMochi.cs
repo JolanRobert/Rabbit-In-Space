@@ -11,6 +11,7 @@ public class GrillMochi : MonoBehaviour {
     private SpriteRenderer renderer;
 
     [SerializeField] private List<Sprite> mochiSprites;
+    [SerializeField] private List<GameObject> fxs;
 
     [SerializeField] private float minGrillSpeedFactor;
     [SerializeField] private float maxgrillSpeedFactor;
@@ -32,6 +33,20 @@ public class GrillMochi : MonoBehaviour {
             mochiState = Mathf.Clamp(mochiState, 1, 7);
             renderer.sprite = mochiSprites[(int)Mathf.Round(mochiState) - 1];
 
+            if (mochiState < 4) {
+                fxs[0].SetActive(true);
+                fxs[1].SetActive(false);
+                fxs[2].SetActive(false);
+            }else if (mochiState < 5) {
+                fxs[0].SetActive(false);
+                fxs[1].SetActive(true);
+                fxs[2].SetActive(false);
+            }
+            else {
+                fxs[0].SetActive(false);
+                fxs[1].SetActive(false);
+                fxs[2].SetActive(true);
+            }
             yield return new WaitForSeconds(1);
         }
     }
