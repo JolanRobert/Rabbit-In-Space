@@ -164,6 +164,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4963880380557963912, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 950217702}
+    - target: {fileID: 4963880380557963912, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963880380557963912, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 444391761}
     - target: {fileID: 8878647272118576268, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
       propertyPath: m_Name
       value: Tutorial
