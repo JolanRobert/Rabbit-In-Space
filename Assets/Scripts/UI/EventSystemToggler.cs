@@ -21,13 +21,11 @@ public class EventSystemToggler : MonoBehaviour
     }
 
     public void Cut() { 
-        Debug.Log(0);
         eventSystem.enabled = false;
         inputModule.enabled = false;
     }
 
     public void Enable() {
-        Debug.Log(1);
         eventSystem.enabled = true;
         inputModule.enabled = true;
     }

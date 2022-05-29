@@ -73,9 +73,11 @@ public class UIGarden : MonoBehaviour {
         foodShopContent.transform.DOComplete();
         parcelMenu.transform.DOComplete();
         
+        EventSystemToggler.Instance.Cut();
+        
         foodShopContent.SetActive(true);
         closeOverlay.SetActive(true);
-        foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x - 300, 0.325f);
+        foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x - 300, 0.325f).OnComplete(EventSystemToggler.Instance.Enable);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
         GardenManager.Instance.mySlot = foodSlot;
     }
