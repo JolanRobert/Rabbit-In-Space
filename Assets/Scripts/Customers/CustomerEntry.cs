@@ -22,7 +22,7 @@ public class CustomerEntry : MonoBehaviour {
         revealedBehaviour = cSo.description;
         revealedXp = cSo.customerType == CustomerType.COPIEUR ? "Variable" : cSo.xpReward.ToString();
         
-        UpdateReveal(0);
+        UpdateReveal(nbBeforeReveal);
     }
 
     public void UpdateReveal(int amount) {
