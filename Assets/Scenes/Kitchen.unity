@@ -934,7 +934,7 @@ MonoBehaviour:
   serviceInvalidPanel: {fileID: 688818426}
   serviceWarningText: {fileID: 1787229357}
   serviceConfirmEndPanel: {fileID: 889751987790026934}
-  serviceTime: 10
+  serviceTime: 180
   myTimer: {fileID: 0}
   mySummary: {fileID: 0}
   windowMR: {fileID: 1000323017808332977}
@@ -2891,6 +2891,30 @@ PrefabInstance:
     - target: {fileID: 8991269686282588494, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.8205777
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150795752629346236, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150795752629346236, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150795752629346236, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150795752629346236, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150795752629346236, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150795752629346236, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4283ee5d94ddfca45b7e9f00a5e9aa21, type: 3}

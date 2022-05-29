@@ -20,6 +20,6 @@ MonoBehaviour:
   - {fileID: 2564371660620649439, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   - {fileID: 2945860285502092737, guid: e9c2cffad23e6f2439ede9e3c4fe41bb, type: 3}
   price: 0
-  growingTime: 5
-  decayTime: 5
+  growingTime: 30
+  decayTime: 180
   minMaxProduction: {x: 3, y: 5}
