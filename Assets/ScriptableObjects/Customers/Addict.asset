@@ -16,7 +16,7 @@ MonoBehaviour:
   impatienceLimit: 80
   xpReward: 5
   nbBeforeReveal: 1
-  description: "Prend son plat favori, tir\xE9 au sort parmi tous les plats du jeu"
+  description: Orders their favorite dish, even if it's not on the menu.
   customerHeadSprites:
   - {fileID: -8247963285980081921, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
   - {fileID: 4923930577093466245, guid: 9aa71137cf123da4687c48aedcab52f5, type: 3}
