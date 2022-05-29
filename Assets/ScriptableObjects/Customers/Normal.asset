@@ -16,7 +16,7 @@ MonoBehaviour:
   impatienceLimit: 80
   xpReward: 3
   nbBeforeReveal: 1
-  description: "Prend un plat al\xE9atoire sur le menu"
+  description: Orders randomly from the menu.
   customerHeadSprites:
   - {fileID: -1770118719063661511, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}
   - {fileID: 8574643074699161086, guid: 8d0f759716b0a74469ab1a01daa3b70b, type: 3}

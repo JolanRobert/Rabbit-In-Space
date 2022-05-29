@@ -16,8 +16,7 @@ MonoBehaviour:
   impatienceLimit: 80
   xpReward: 3
   nbBeforeReveal: 1
-  description: "Prend un plat al\xE9atoire du menu, les clients autour de lui s'impatientent
-    25% plus vite"
+  description: Orders from the menus, but nearby clients leave 25% faster.
   customerHeadSprites:
   - {fileID: -9068545622262623162, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
   - {fileID: 1512543120673476006, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}

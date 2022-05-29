@@ -16,7 +16,7 @@ MonoBehaviour:
   impatienceLimit: 40
   xpReward: 3
   nbBeforeReveal: 1
-  description: "Prend un plat al\xE9atoire sur le menu, s'en va 2 fois plus vite"
+  description: Orders from the menu, but leaves twice as fast.
   customerHeadSprites:
   - {fileID: 2297438421596486112, guid: d965baa6b43846e489fa5548462bba27, type: 3}
   - {fileID: -3971222528498846433, guid: d965baa6b43846e489fa5548462bba27, type: 3}
