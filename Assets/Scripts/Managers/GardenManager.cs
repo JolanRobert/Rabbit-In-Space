@@ -22,7 +22,6 @@ public class GardenManager : MonoBehaviour {
 
     public void SelectParcel(GardenEntry entry) {
         myParcel = parcelList[entry.transform.GetSiblingIndex()];
-        myParcel.gardenEntry = entry;
     }
     
     //Plant with seed menu

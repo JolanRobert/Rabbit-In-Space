@@ -21,6 +21,7 @@ public class PlayerInput : MonoBehaviour {
     }
 
     private bool IsMouseOverUI() {
+        if (playerManager.GetInteract().isInteracting) return false;
         return Input.touchCount > 0 ? EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) : EventSystem.current.IsPointerOverGameObject();
     }
 

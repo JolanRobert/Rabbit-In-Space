@@ -37,8 +37,11 @@ public class UIGarden : MonoBehaviour {
     }
 
     public void CloseParcelMenu() {
-        Parcel myParcel = GardenManager.Instance.myParcel;
-        myParcel.gardenEntry.CloseParcel();
+        GardenManager.Instance.myParcel.gardenEntry.CloseParcel();
+        foreach (Food food in GardenManager.Instance.myParcel.foodList) {
+            food.foodUI = null;
+        }
+        GardenManager.Instance.myParcel = null;
         UIManager.Instance.ClosePanel(parcelMenu.gameObject);
     }
 
@@ -73,9 +76,11 @@ public class UIGarden : MonoBehaviour {
         foodShopContent.transform.DOComplete();
         parcelMenu.transform.DOComplete();
         
+        EventSystemToggler.Instance.Cut();
+        
         foodShopContent.SetActive(true);
         closeOverlay.SetActive(true);
-        foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x - 300, 0.325f);
+        foodShopContent.transform.DOMoveX(foodShopContent.transform.position.x - 300, 0.325f).OnComplete(EventSystemToggler.Instance.Enable);
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x - 150, 0.325f);
         GardenManager.Instance.mySlot = foodSlot;
     }
@@ -89,5 +94,10 @@ public class UIGarden : MonoBehaviour {
         parcelMenu.transform.DOMoveX(parcelMenu.transform.position.x + 150, 0.325f).OnComplete(() => {
             foodShopContent.SetActive(false);
         });
+    }
+
+    public void OpenGarden() {
+        if (KitchenManager.Instance.inService) return;
+        UIManager.Instance.OpenPanel(gardenMenu);
     }
 }
