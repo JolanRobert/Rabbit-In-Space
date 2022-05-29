@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1223926706598220313, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1780968258782564891, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -478,6 +482,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2705664178423615142, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 1549449338}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}
 --- !u!1 &268584895
@@ -737,7 +745,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022832429}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6c21d50406b4fe942a014dc5e3d1778d, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 63a1ea49d6d8e254daa0ba3e69aeeb2b, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 2107979530}
@@ -1248,6 +1256,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1549449338 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1223926706598220313, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}
+  m_PrefabInstance: {fileID: 123844961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1705904619 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3240802186086170406, guid: 43a647fbe9bed074bb999e7f6c0179f2, type: 3}

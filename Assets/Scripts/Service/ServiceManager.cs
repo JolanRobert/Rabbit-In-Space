@@ -95,6 +95,7 @@ public class ServiceManager : MonoBehaviour {
         PlayerManager.Instance.GetAnimation().Haswon(true);
         yield return new WaitForSeconds(1);
         
+        UIManager.Instance.CloseAllPanel();
         UIManager.Instance.OpenPanel(mySummary.summaryGO);
         mySummary.InitSummary();
 

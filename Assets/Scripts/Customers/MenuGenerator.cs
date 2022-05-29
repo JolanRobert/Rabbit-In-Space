@@ -11,7 +11,6 @@ public class MenuGenerator : MonoBehaviour {
         List<RecipeSO> availableRecipes = GetAvailableRecipes();
         if (availableRecipes.Count == 0) {
             todayMenu.Clear();
-            Debug.Log("Aucun plat ne correspond aux critères de lancement d'un service !");
             return;
         }
 
