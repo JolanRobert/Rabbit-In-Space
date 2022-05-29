@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e85c1e83f8438247ae543a1a59a530a, type: 3}
-  m_Name: "Mochi Glac\xE9"
+  m_Name: Ice Cream Mochi
   m_EditorClassIdentifier: 
   recipeType: 1
   recipeSprite: {fileID: 5622187694559158797, guid: 3c4bd35f10d19f946a4f7edd30ddbcf8, type: 3}

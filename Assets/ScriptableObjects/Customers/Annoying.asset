@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf46a37841b3b2d42bc8c6dac6c4c3b0, type: 3}
-  m_Name: "\xC9nervant"
+  m_Name: Annoying
   m_EditorClassIdentifier: 
   customerType: 7
   impatienceLimit: 80
