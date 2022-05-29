@@ -156,23 +156,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1292337837}
     m_Modifications:
-    - target: {fileID: 4124066133360970808, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
+    - target: {fileID: 2246358626806023198, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4963880380557963912, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 950217702}
-    - target: {fileID: 4963880380557963912, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClosePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4963880380557963912, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 444391761}
-    - target: {fileID: 5764375976868745803, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
+    - target: {fileID: 4124066133360970808, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -181,6 +169,10 @@ PrefabInstance:
       value: Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8878647272118576268, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127510959834622942, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
