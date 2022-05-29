@@ -33,6 +33,7 @@ public class GardenEntry : MonoBehaviour {
     private IEnumerator OpenParcelCR() {
         GardenManager.Instance.SelectParcel(this);
 
+        EventSystemToggler.Instance.Cut();
         topSprite.DOAnchorPosY(openYPos, openTime);
         yield return new WaitForSeconds(openTime);
 
