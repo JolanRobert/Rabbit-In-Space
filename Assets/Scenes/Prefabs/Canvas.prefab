@@ -808,7 +808,7 @@ RectTransform:
   - {fileID: 889751987783512276}
   - {fileID: 889751987929883396}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1148,7 +1148,7 @@ RectTransform:
   - {fileID: 889751988205398689}
   - {fileID: 889751989850459950}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1232,7 +1232,7 @@ RectTransform:
   - {fileID: 889751988619948625}
   - {fileID: 889751988265983800}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1673,6 +1673,7 @@ RectTransform:
   m_Children:
   - {fileID: 889751989771772652}
   - {fileID: 5233316307088035280}
+  - {fileID: 468318212361381893}
   - {fileID: 889751988612974255}
   - {fileID: 889751987993116184}
   - {fileID: 1822400947197957612}
@@ -3347,7 +3348,7 @@ RectTransform:
   - {fileID: 889751988974413684}
   - {fileID: 824332098624791242}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3913,7 +3914,7 @@ RectTransform:
   - {fileID: 889751988477268051}
   - {fileID: 5249061263421344011}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3955,7 +3956,7 @@ RectTransform:
   - {fileID: 4140948317080315815}
   - {fileID: 331757414734255158}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4292,7 +4293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &889751988799755436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4312,7 +4313,7 @@ RectTransform:
   - {fileID: 5126724824087532371}
   - {fileID: 889751987933096737}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7206,7 +7207,7 @@ RectTransform:
   - {fileID: 889751988315092586}
   - {fileID: 889751989815920669}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7419,7 +7420,7 @@ RectTransform:
   - {fileID: 889751989713195781}
   - {fileID: 889751988463218689}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8286,7 +8287,7 @@ RectTransform:
   - {fileID: 1822400947242554715}
   - {fileID: 1822400947381555488}
   m_Father: {fileID: 889751988263632023}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14634,7 +14635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170674509327954162, guid: 5e23ea7e32ce50a47ab9dcc71bd1e2eb, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4284228392
       objectReference: {fileID: 0}
     - target: {fileID: 5719134376974508007, guid: 5e23ea7e32ce50a47ab9dcc71bd1e2eb, type: 3}
       propertyPath: m_Pivot.x
@@ -14924,6 +14925,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &468318212361381893 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5719134376974508007, guid: 5e23ea7e32ce50a47ab9dcc71bd1e2eb, type: 3}
-  m_PrefabInstance: {fileID: 889751989799235886}
+  m_CorrespondingSourceObject: {fileID: 9211526257844276731, guid: 01bd83148dfd9b94c80bf5e6b63ed5ca, type: 3}
+  m_PrefabInstance: {fileID: 8766862219772732926}
   m_PrefabAsset: {fileID: 0}
