@@ -51,7 +51,7 @@ public class Food : MonoBehaviour {
         get => growthLevel;
         set {
             growthLevel = value;
-            myParcel.gardenEntry.SetupPlantStates(myParcel.foodList);
+            if (myParcel.gardenEntry != null) myParcel.gardenEntry.SetupPlantStates(myParcel.foodList);
             
             if (foodUI == null) return;
             if (value == -1) return;

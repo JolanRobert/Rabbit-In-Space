@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour {
         go.SetActive(true);
         go.transform.DOScale(1, 0.325f);
         
-        if (panels.Count == 1) OverlayManager.Instance.OpenOverlay();
+        if (panels.Count == 1) OpenOverlay();
     }
 
     public void OpenOptions(GameObject go) {
@@ -41,11 +41,29 @@ public class UIManager : MonoBehaviour {
 
         if (panels.Count == 0) {
             PlayerManager.Instance.GetInteract().isInteracting = false;
-            OverlayManager.Instance.CloseOverlay();
+            CloseOverlay();
         }
     }
 
     public void CloseAllPanel() {
         while (panels.Count > 0) ClosePanel(panels[panels.Count-1]);
+    }
+
+    private void OpenOverlay() {
+        overlay.DOComplete();
+        overlay.gameObject.SetActive(true);
+        overlay.DOFade(200 / 255f, 0.325f);
+    }
+
+    private void CloseOverlay() {
+        overlay.DOComplete();
+        overlay.DOFade(0, 0.325f).OnComplete(() => {
+            overlay.gameObject.SetActive(false);
+        });
+    }
+
+    public void ForceCloseOverlay() {
+        overlay.color = new Color(0, 0, 0, 0);
+        overlay.gameObject.SetActive(false);
     }
 }
