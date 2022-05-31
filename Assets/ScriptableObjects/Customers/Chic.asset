@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf46a37841b3b2d42bc8c6dac6c4c3b0, type: 3}
-  m_Name: "Hupp\xE9"
+  m_Name: Chic
   m_EditorClassIdentifier: 
   customerType: 1
   impatienceLimit: 80
   xpReward: 4
   nbBeforeReveal: 1
-  description: Prend le plat le plus cher du menu
+  description: Orders the most expensive dish on the menu.
   customerHeadSprites:
   - {fileID: 1223526088056373679, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}
   - {fileID: 1639429620285364922, guid: 02c721a1d8bf0d34890e4f15e9ea7f6f, type: 3}

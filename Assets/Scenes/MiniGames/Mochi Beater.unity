@@ -560,7 +560,7 @@ MonoBehaviour:
   newFoldProbability: 1
   foldingMagnitudeMin: 2.5
   dirMargin: 1
-  foldingDelay: 1
+  foldingDelay: 0.2
 --- !u!4 &862518678
 Transform:
   m_ObjectHideFlags: 0

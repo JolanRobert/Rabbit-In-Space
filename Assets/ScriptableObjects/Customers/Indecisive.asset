@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf46a37841b3b2d42bc8c6dac6c4c3b0, type: 3}
-  m_Name: Lent
+  m_Name: Indecisive
   m_EditorClassIdentifier: 
   customerType: 5
   impatienceLimit: 160
   xpReward: 4
   nbBeforeReveal: 1
-  description: "Prend un plat al\xE9atoire sur le menu, s'en va 2 fois moins vite"
+  description: Orders from the menu, leaves twice as slow.
   customerHeadSprites:
   - {fileID: -472261932062224585, guid: 48c6b71cbef98d041996fec9a6d8b28c, type: 3}
   - {fileID: -7873344479431288308, guid: 48c6b71cbef98d041996fec9a6d8b28c, type: 3}

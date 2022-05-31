@@ -38,7 +38,6 @@ public class Food : MonoBehaviour {
             }
             else if (growingTime == 0) {
                 foodUI.UpdateGrowthFill(m_growingTime-GrowingTime,m_growingTime);
-                GrowthLevel = 2;
             }
         }
     }
@@ -51,7 +50,9 @@ public class Food : MonoBehaviour {
         get => growthLevel;
         set {
             growthLevel = value;
-            if (myParcel.gardenEntry != null) myParcel.gardenEntry.SetupPlantStates(myParcel.foodList);
+            if (myParcel.gardenEntry != null) {
+                myParcel.gardenEntry.SetupPlantStates(myParcel.foodList);
+            }
             
             if (foodUI == null) return;
             if (value == -1) return;
@@ -91,6 +92,7 @@ public class Food : MonoBehaviour {
             GrowingTime--;
         }
         
+        GrowthLevel = 2;
         if (myParcel.IsUpgradeActive(UpgradeType.RECOLTOUT)) Harvest();
         else StartCoroutine(Decay());
     }

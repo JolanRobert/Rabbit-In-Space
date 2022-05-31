@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -304}
-  m_SizeDelta: {x: 1220, y: 330}
+  m_AnchoredPosition: {x: 0, y: -393}
+  m_SizeDelta: {x: 1220, y: 485.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1821110651000017081
 CanvasRenderer:
@@ -65,10 +65,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Don\u2019t worry! Once a recipe is selected, the next step of the recipe
-    is indicated by an highlighted outline, you just need to follow it.\r\nEach cooking
-    station (the hammer, the cutting board\u2026) launches a different mini-game.
-    It\u2019s up to you to discover them!\r\n"
+  m_text: "Don\u2019t worry! Once a recipe is selected, the next step is indicated
+    by an highlighted outline, you just need to follow it. Each cooking station (the
+    hammer, the cutting board\u2026) launches a different mini-game when you touch
+    it. It\u2019s up to you to discover them!\r\nOnce you're done, touch the client
+    icon on the right to serve them !\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9322aace013e90c4392e00732835cd10, type: 2}
   m_sharedMaterial: {fileID: 5200649915909509718, guid: 9322aace013e90c4392e00732835cd10, type: 2}
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 28.25
   m_fontSizeBase: 33
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -13.394012, z: 0, w: 337.27283}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -466,7 +467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f8f9d336a8b3cb439f4ba43d9b1745c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c44158c23b7b94d479c5a62474f19436, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -701,7 +702,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.8
+  m_fontSize: 35
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -737,7 +738,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 210.89362}
+  m_margin: {x: 0, y: 0, z: 0, w: 196}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -808,7 +809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b805da5a1d1912459636082f79267a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 543cfae8024c16949a19cd12dfe64874, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -883,7 +884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Here is your recipe book ! It is here that you can start preparing meals!\r\nChoose
+  m_text: "Here is your recipe book! It is here that you can start preparing meals!\r\nChoose
     the recipe your first client wants.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9322aace013e90c4392e00732835cd10, type: 2}
@@ -911,7 +912,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.8
+  m_fontSize: 35
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -947,7 +948,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 245.73224}
+  m_margin: {x: 0, y: 0, z: 0, w: 196}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1018,7 +1019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa6c0ab60c165584687aeda481d0a541, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 177c155c98eacc4469457eed37769aec, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1455,7 +1456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ff0ed4578020dd9488e0adfa52688447, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de5a3efa46553a74d964040b26870ee6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1633,8 +1634,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116.123535, y: -200}
-  m_SizeDelta: {x: 950, y: 85}
+  m_AnchoredPosition: {x: 0, y: -319}
+  m_SizeDelta: {x: 950, y: 362.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2428421664233446662
 CanvasRenderer:
@@ -1666,7 +1667,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Once the green circle under your crop is full, you can touch the crop
     to collect your ingredients.\r\nLet\u2019s leave the greenhouse and touch the
-    service-starting button (it is the big button near the window!).\r\n"
+    service-starting button (it is the big button to the left of the window!).\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9322aace013e90c4392e00732835cd10, type: 2}
   m_sharedMaterial: {fileID: 5200649915909509718, guid: 9322aace013e90c4392e00732835cd10, type: 2}
@@ -1693,7 +1694,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.05
+  m_fontSize: 28.1
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1729,7 +1730,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -221.21057, w: -65.38995}
+  m_margin: {x: 0, y: 16.32962, z: -104.47266, w: 209.59514}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1894,7 +1895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2eb6fe39f1f8f634b8703ea4a8b96a46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84f34aa2f9886004986c5ecbf163179e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2038,7 +2039,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 201.22281}
+  m_margin: {x: 0, y: 0, z: 0, w: 196}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2198,7 +2199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a9127dbc1af17d4fb26a7f7bfb0ac78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99dfb9cf8762c2d42a419319751f239b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2320,9 +2321,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'First, you need ingredients. You can access the greenhouse using the button
-    in the bottom-right corner. Once in the greenhouse window, select the plot you
-    want to go in and click on it.
+  m_text: 'Your goal is to serve clients to increase your reputation! But first,
+    you need ingredients. You can access the greenhouse using the button in the bottom-right
+    corner. Once in the greenhouse window, select the plot you want to go in and
+    touch it.
 
 '
   m_isRightToLeft: 0
@@ -2351,7 +2353,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 29.95
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2387,7 +2389,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 174.98914}
+  m_margin: {x: 0, y: 0, z: 0, w: 196}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2458,9 +2460,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You can grow ingredients here. You can plant a new crop by clicking on
-    an empty slot.\r\nEach seed has a different growing time and price. Start with
-    the Moon Rice.\r\nYou can speed up the growth by clicking on the crop you wish.\r\nYou
+  m_text: "You can grow ingredients here. You can plant a new crop by touching an
+    empty slot.\r\nEach seed has a different growing time and price. Start with the
+    Moon Rice.\r\nYou can speed up the growth by tapping the crop you wish.\r\nYou
     can also buy some useful upgrades for your plots.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9322aace013e90c4392e00732835cd10, type: 2}
@@ -2488,7 +2490,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.5
+  m_fontSize: 28.3
   m_fontSizeBase: 33
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2524,7 +2526,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 110.16115}
+  m_margin: {x: 0, y: 0, z: 0, w: 106.310745}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2863,7 +2865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f2b75aea3d4afaf49b66513e9c158a2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05deab92c496ba045981696d2ffff776, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3259,7 +3261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1034848722237267030
 RectTransform:
   m_ObjectHideFlags: 0

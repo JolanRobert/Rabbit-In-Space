@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf46a37841b3b2d42bc8c6dac6c4c3b0, type: 3}
-  m_Name: Radin
+  m_Name: Stingy
   m_EditorClassIdentifier: 
   customerType: 2
   impatienceLimit: 80
   xpReward: 2
   nbBeforeReveal: 1
-  description: Prend le plat le moins cher du menu
+  description: Orders the cheapest dish on the menu.
   customerHeadSprites:
   - {fileID: 2085304999023188788, guid: 69d29578a1e6762448535e4b089d982b, type: 3}
   - {fileID: 8176819627262263674, guid: 69d29578a1e6762448535e4b089d982b, type: 3}

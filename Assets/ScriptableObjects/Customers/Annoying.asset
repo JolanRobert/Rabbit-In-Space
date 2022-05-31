@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf46a37841b3b2d42bc8c6dac6c4c3b0, type: 3}
-  m_Name: "\xC9nervant"
+  m_Name: Annoying
   m_EditorClassIdentifier: 
   customerType: 7
   impatienceLimit: 80
   xpReward: 3
   nbBeforeReveal: 1
-  description: "Prend un plat al\xE9atoire du menu, les clients autour de lui s'impatientent
-    25% plus vite"
+  description: Orders from the menus, but nearby clients leave 25% faster.
   customerHeadSprites:
   - {fileID: -9068545622262623162, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}
   - {fileID: 1512543120673476006, guid: 74cd1a733651faa4893227d2d0abb843, type: 3}

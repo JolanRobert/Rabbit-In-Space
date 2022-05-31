@@ -32,6 +32,7 @@ public class PlayerInteract : MonoBehaviour {
 
     private void Interact(IInteractable interactableGO) {
         isInteracting = true;
+        UIManager.Instance.CloseAllPanel();
         interactableGO.Interact();
     }
 }

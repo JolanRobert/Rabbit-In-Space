@@ -258,7 +258,7 @@ MonoBehaviour:
   doughPrefab: {fileID: 6992507180396954820, guid: d72fca28fc7b8e34db29fd7f0f43407e, type: 3}
   completionGauge: {fileID: 1134146628}
   initialAmountToCut: 8
-  delayBetweenThrows: 0.6
+  delayBetweenThrows: 0.4
   doughThrowStrengthMin: 600
   doughThrowStrengthMax: 750
   doughThrowStrength: 0

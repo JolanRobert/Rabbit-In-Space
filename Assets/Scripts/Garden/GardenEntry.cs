@@ -26,6 +26,15 @@ public class GardenEntry : MonoBehaviour {
     }
 
     public void OpenParcel() {
+        GardenManager.Instance.SelectParcel(this);
+        UIGarden.Instance.OpenParcelMenu();
+    }
+
+    public void CloseParcel() {
+        
+    }
+
+    /*public void OpenParcel() {
         if (isOpen) return;
         StartCoroutine(OpenParcelCR());
     }
@@ -45,7 +54,7 @@ public class GardenEntry : MonoBehaviour {
     public void CloseParcel() {
         topSprite.DOAnchorPosY(baseYPos, openTime);
         isOpen = false;
-    }
+    }*/
 
     public void SetupPlantStates(Food[] foodList) {
         for (int i = 0; i < plantStateList.Length; i++) {
